@@ -356,6 +356,28 @@ h1 {
   line-height: 1.5;
 }
 
+.faq-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.faq-item h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
 .segment-controls {
   display: flex;
   flex-wrap: wrap;
@@ -534,6 +556,12 @@ h1 {
   padding: 14px;
 }
 
+.contact-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .contact-card h3 {
   margin: 0 0 8px;
   font-size: 1rem;
@@ -582,6 +610,10 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .articles-grid {
     grid-template-columns: 1fr;
   }
@@ -604,7 +636,8 @@ h1 {
   .cards-grid-compact,
   .districts,
   .features,
-  .steps {
+  .steps,
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 
