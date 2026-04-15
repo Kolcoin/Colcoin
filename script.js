@@ -5,7 +5,7 @@ const topProjects = [
     metro: "10 минут до метро",
     price: "от 9.1 млн ₽",
     sourceLabel: "Авторская витрина",
-    sourceUrl: "./starts/complex-63393.html"
+    sourceUrl: "./starts/complex-98100.html"
   },
   {
     title: "ЖК City Line",
@@ -13,7 +13,7 @@ const topProjects = [
     metro: "15 минут до центра",
     price: "от 11.4 млн ₽",
     sourceLabel: "Авторская витрина",
-    sourceUrl: "./starts/complex-63393.html"
+    sourceUrl: "./starts/complex-98100.html"
   },
   {
     title: "ЖК Park Side",
@@ -21,7 +21,7 @@ const topProjects = [
     metro: "рядом МЦД",
     price: "от 7.8 млн ₽",
     sourceLabel: "Авторская витрина",
-    sourceUrl: "./starts/complex-63393.html"
+    sourceUrl: "./starts/complex-98100.html"
   }
 ];
 
@@ -37,18 +37,18 @@ const launchBlocks = [
     buttonClass: "btn-warm",
     projects: [
       {
-        title: "Старт #63393",
+        title: "Старт #98100",
         district: "Москва",
         metro: "подбор по параметрам",
         price: "по запросу",
-        sourceUrl: "./starts/complex-63393.html"
+        sourceUrl: "./starts/complex-98100.html"
       },
       {
-        title: "Старт #63393 (семейный формат)",
+        title: "Старт #98100 (семейный формат)",
         district: "Московская область",
         metro: "рядом транспорт",
         price: "по запросу",
-        sourceUrl: "./starts/complex-63393.html"
+        sourceUrl: "./starts/complex-98100.html"
       }
     ]
   },
@@ -63,18 +63,18 @@ const launchBlocks = [
     buttonClass: "btn-cool",
     projects: [
       {
-        title: "Старт #63393 (инвест-формат)",
+        title: "Старт #98100 (инвест-формат)",
         district: "Москва",
         metro: "транспортная доступность",
         price: "по запросу",
-        sourceUrl: "./starts/complex-63393.html"
+        sourceUrl: "./starts/complex-98100.html"
       },
       {
-        title: "Старт #63393 (доходный сценарий)",
+        title: "Старт #98100 (доходный сценарий)",
         district: "Москва и МО",
         metro: "быстрый выезд",
         price: "по запросу",
-        sourceUrl: "./starts/complex-63393.html"
+        sourceUrl: "./starts/complex-98100.html"
       }
     ]
   },
@@ -89,18 +89,18 @@ const launchBlocks = [
     buttonClass: "btn-berry",
     projects: [
       {
-        title: "Старт #63393 (семья)",
+        title: "Старт #98100 (семья)",
         district: "Москва",
         metro: "школы и сервисы",
         price: "по запросу",
-        sourceUrl: "./starts/complex-63393.html"
+        sourceUrl: "./starts/complex-98100.html"
       },
       {
-        title: "Старт #63393 (расширение)",
+        title: "Старт #98100 (расширение)",
         district: "Московская область",
         metro: "спокойная локация",
         price: "по запросу",
-        sourceUrl: "./starts/complex-63393.html"
+        sourceUrl: "./starts/complex-98100.html"
       }
     ]
   }
@@ -108,12 +108,12 @@ const launchBlocks = [
 
 const premiumProjects = [
   {
-    title: "Старт #63393",
+    title: "Старт #98100",
     district: "Москва и область",
     metro: "подбор по цели",
     price: "по запросу",
     sourceLabel: "Новая статья",
-    sourceUrl: "./starts/complex-63393.html"
+    sourceUrl: "./starts/complex-98100.html"
   }
 ];
 
