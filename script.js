@@ -1,70 +1,27 @@
 const topProjects = [
   {
-    title: "ЖК Изумрудные холмы",
-    district: "Красногорск, МО",
-    metro: "22 км от центра Москвы",
-    price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
-    sourceUrl: "./starts/izumrudnye-kholmy.html"
+    title: "ЖК Urban Riverside",
+    district: "СЗАО, Москва",
+    metro: "10 минут до метро",
+    price: "от 9.1 млн ₽",
+    sourceLabel: "Авторская витрина",
+    sourceUrl: "./starts/complex-63393.html"
   },
   {
-    title: "ЖК Летний сад",
-    district: "Москва",
-    metro: "район Селигерская / 800-летия Москвы",
-    price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
-    sourceUrl: "./starts/letniy-sad.html"
+    title: "ЖК City Line",
+    district: "ЮАО, Москва",
+    metro: "15 минут до центра",
+    price: "от 11.4 млн ₽",
+    sourceLabel: "Авторская витрина",
+    sourceUrl: "./starts/complex-63393.html"
   },
   {
-    title: "ЖК Нормандия",
-    district: "Лосиноостровский район, Москва",
-    metro: "Медведково (пешком)",
-    price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
-    sourceUrl: "./starts/normandiya.html"
-  },
-  {
-    title: "ЖК Headliner",
-    district: "ЦАО, Москва",
-    metro: "Москва-Сити",
-    price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
-    sourceUrl: "./starts/headliner.html"
-  }
-];
-
-const launchProjects = [
-  {
-    title: "Изумрудные холмы",
-    district: "Красногорск, МО",
-    metro: "комплексная квартальная застройка",
-    price: "старт в витрине Нмаркет.ПРО",
-    sourceLabel: "Источник: отдельная SEO-страница",
-    sourceUrl: "./starts/izumrudnye-kholmy.html"
-  },
-  {
-    title: "Летний сад",
-    district: "Москва",
-    metro: "вблизи Селигерской",
-    price: "старт в витрине Нмаркет.ПРО",
-    sourceLabel: "Источник: отдельная SEO-страница",
-    sourceUrl: "./starts/letniy-sad.html"
-  },
-  {
-    title: "Нормандия",
-    district: "Москва",
-    metro: "Лосиноостровский район",
-    price: "старт в витрине Нмаркет.ПРО",
-    sourceLabel: "Источник: отдельная SEO-страница",
-    sourceUrl: "./starts/normandiya.html"
-  },
-  {
-    title: "Headliner",
-    district: "ЦАО, Москва",
-    metro: "Москва-Сити",
-    price: "старт в витрине Нмаркет.ПРО",
-    sourceLabel: "Источник: отдельная SEO-страница",
-    sourceUrl: "./starts/headliner.html"
+    title: "ЖК Park Side",
+    district: "Московская область",
+    metro: "рядом МЦД",
+    price: "от 7.8 млн ₽",
+    sourceLabel: "Авторская витрина",
+    sourceUrl: "./starts/complex-63393.html"
   }
 ];
 
@@ -80,18 +37,18 @@ const launchBlocks = [
     buttonClass: "btn-warm",
     projects: [
       {
-        title: "Изумрудные холмы",
-        district: "Красногорск, МО",
-        metro: "22 км от центра Москвы",
-        price: "цены по запросу",
-        sourceUrl: "./starts/izumrudnye-kholmy.html"
+        title: "Старт #63393",
+        district: "Москва",
+        metro: "подбор по параметрам",
+        price: "по запросу",
+        sourceUrl: "./starts/complex-63393.html"
       },
       {
-        title: "Летний сад",
-        district: "Москва",
-        metro: "Селигерская / 800-летия Москвы",
-        price: "цены по запросу",
-        sourceUrl: "./starts/letniy-sad.html"
+        title: "Старт #63393 (семейный формат)",
+        district: "Московская область",
+        metro: "рядом транспорт",
+        price: "по запросу",
+        sourceUrl: "./starts/complex-63393.html"
       }
     ]
   },
@@ -106,18 +63,18 @@ const launchBlocks = [
     buttonClass: "btn-cool",
     projects: [
       {
-        title: "Headliner",
-        district: "ЦАО, Москва",
-        metro: "Москва-Сити",
-        price: "цены по запросу",
-        sourceUrl: "./starts/headliner.html"
+        title: "Старт #63393 (инвест-формат)",
+        district: "Москва",
+        metro: "транспортная доступность",
+        price: "по запросу",
+        sourceUrl: "./starts/complex-63393.html"
       },
       {
-        title: "Нормандия",
-        district: "Лосиноостровский район, Москва",
-        metro: "Медведково (пешком)",
-        price: "цены по запросу",
-        sourceUrl: "./starts/normandiya.html"
+        title: "Старт #63393 (доходный сценарий)",
+        district: "Москва и МО",
+        metro: "быстрый выезд",
+        price: "по запросу",
+        sourceUrl: "./starts/complex-63393.html"
       }
     ]
   },
@@ -132,18 +89,18 @@ const launchBlocks = [
     buttonClass: "btn-berry",
     projects: [
       {
-        title: "Летний сад",
+        title: "Старт #63393 (семья)",
         district: "Москва",
-        metro: "развитый район",
-        price: "цены по запросу",
-        sourceUrl: "./starts/letniy-sad.html"
+        metro: "школы и сервисы",
+        price: "по запросу",
+        sourceUrl: "./starts/complex-63393.html"
       },
       {
-        title: "Изумрудные холмы",
-        district: "Красногорск, МО",
-        metro: "квартальная застройка",
-        price: "цены по запросу",
-        sourceUrl: "./starts/izumrudnye-kholmy.html"
+        title: "Старт #63393 (расширение)",
+        district: "Московская область",
+        metro: "спокойная локация",
+        price: "по запросу",
+        sourceUrl: "./starts/complex-63393.html"
       }
     ]
   }
@@ -151,44 +108,20 @@ const launchBlocks = [
 
 const premiumProjects = [
   {
-    title: "Headliner",
-    district: "ЦАО, Москва",
-    metro: "вид на Москву-реку и Москва-Сити",
-    price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
-    sourceUrl: "./starts/headliner.html"
-  },
-  {
-    title: "Нормандия",
-    district: "Лосиноостровский район",
-    metro: "Медведково",
-    price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
-    sourceUrl: "./starts/normandiya.html"
-  },
-  {
-    title: "Летний сад",
-    district: "Москва",
-    metro: "Селигерская",
-    price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
-    sourceUrl: "./starts/letniy-sad.html"
-  },
-  {
-    title: "Изумрудные холмы",
-    district: "Красногорск",
-    metro: "МО",
-    price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
-    sourceUrl: "./starts/izumrudnye-kholmy.html"
+    title: "Старт #63393",
+    district: "Москва и область",
+    metro: "подбор по цели",
+    price: "по запросу",
+    sourceLabel: "Новая статья",
+    sourceUrl: "./starts/complex-63393.html"
   }
 ];
 
 const districts = [
-  { name: "ЦАО", info: "Headliner · Нмаркет.ПРО" },
-  { name: "СВАО", info: "Нормандия · Нмаркет.ПРО" },
-  { name: "САО", info: "Летний сад · Нмаркет.ПРО" },
-  { name: "Красногорск, МО", info: "Изумрудные холмы · Нмаркет.ПРО" }
+  { name: "Москва", info: "актуальные старты · по запросу" },
+  { name: "Московская область", info: "актуальные старты · по запросу" },
+  { name: "Новая Москва", info: "актуальные старты · по запросу" },
+  { name: "Ближнее Подмосковье", info: "актуальные старты · по запросу" }
 ];
 
 function renderCards(targetId, items) {
@@ -290,7 +223,6 @@ function setupLeadForm() {
 }
 
 renderCards("top-projects", topProjects);
-renderCards("launch-projects", launchProjects);
 renderLaunchBlocks();
 renderCards("premium-projects", premiumProjects);
 renderDistricts();

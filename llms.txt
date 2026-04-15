@@ -14,7 +14,7 @@ http://localhost:4173/
 Scope summary:
 - Starts of sales for new-build residential projects in Moscow and Moscow region
 - Project overviews, developer context, broker contacts, and client lead flow
-- Content curation references Nmarket public project pages
+- Content is based on broker editorial overviews and user-provided project links
 
 Important contact data:
 - Phone: +7 985 761-48-85
