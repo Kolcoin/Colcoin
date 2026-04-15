@@ -330,6 +330,14 @@ h1 {
   gap: 10px;
 }
 
+.seo-article img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
 .seo-article h3 {
   margin: 0;
   font-size: 1.05rem;

@@ -1,144 +1,164 @@
 const topProjects = [
-  { title: "Квартал Мит", district: "СЗАО, Москва", metro: "Пятницкое шоссе", price: "от 10.6 млн ₽", sourceLabel: "старт февраль 2026" },
-  { title: "Зелёный парк", district: "ЗелАО, Москва", metro: "Зеленоград", price: "от 7.7 млн ₽", sourceLabel: "вывод корпусов март 2026" },
-  { title: "Нарвин", district: "САО, Москва", metro: "Водный стадион", price: "от 12.26 млн ₽", sourceLabel: "вывод корпусов март 2026" },
-  { title: "Татум", district: "ЮЗАО, Москва", metro: "Калужская / Воронцовская", price: "от 20.33 млн ₽", sourceLabel: "старт продаж март 2026" }
+  {
+    title: "ЖК Изумрудные холмы",
+    district: "Красногорск, МО",
+    metro: "22 км от центра Москвы",
+    price: "цены по запросу",
+    sourceLabel: "Нмаркет.ПРО · etalon-msk",
+    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+  },
+  {
+    title: "ЖК Летний сад",
+    district: "Москва",
+    metro: "район Селигерская / 800-летия Москвы",
+    price: "цены по запросу",
+    sourceLabel: "Нмаркет.ПРО · etalon-msk",
+    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+  },
+  {
+    title: "ЖК Нормандия",
+    district: "Лосиноостровский район, Москва",
+    metro: "Медведково (пешком)",
+    price: "цены по запросу",
+    sourceLabel: "Нмаркет.ПРО · etalon-msk",
+    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+  },
+  {
+    title: "ЖК Headliner",
+    district: "ЦАО, Москва",
+    metro: "Москва-Сити",
+    price: "цены по запросу",
+    sourceLabel: "Нмаркет.ПРО · headliner",
+    sourceUrl: "https://promo.nmarket.pro/headliner"
+  }
 ];
 
 const launchProjects = [
   {
-    title: "Аникеевский",
+    title: "Изумрудные холмы",
     district: "Красногорск, МО",
-    metro: "Николо-Урюпино",
-    price: "от 4.6 млн ₽",
-    sourceLabel: "Novostroy-M · март 2026",
-    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
+    metro: "комплексная квартальная застройка",
+    price: "старт в витрине Нмаркет.ПРО",
+    sourceLabel: "Источник: Нмаркет.ПРО",
+    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
   },
   {
-    title: "Никольский квартал Отрада",
-    district: "Красногорск, МО",
-    metro: "мкр. Опалиха",
-    price: "от 5.1 млн ₽",
-    sourceLabel: "Novostroy-M · февраль 2026",
-    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_fevral_2026"
+    title: "Летний сад",
+    district: "Москва",
+    metro: "вблизи Селигерской",
+    price: "старт в витрине Нмаркет.ПРО",
+    sourceLabel: "Источник: Нмаркет.ПРО",
+    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
   },
   {
-    title: "Сити-квартал Отрада",
-    district: "Красногорск, МО",
-    metro: "Чернево-2",
-    price: "от 6.5 млн ₽",
-    sourceLabel: "Novostroy-M · март 2026",
-    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
+    title: "Нормандия",
+    district: "Москва",
+    metro: "Лосиноостровский район",
+    price: "старт в витрине Нмаркет.ПРО",
+    sourceLabel: "Источник: Нмаркет.ПРО",
+    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
   },
   {
-    title: "Лесная Отрада",
-    district: "Аристово, МО",
-    metro: "Пятницкое шоссе",
-    price: "от 6.44 млн ₽",
-    sourceLabel: "Novostroy-M · февраль 2026",
-    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_fevral_2026"
-  },
-  {
-    title: "Сердце Лыткарино",
-    district: "Лыткарино, МО",
-    metro: "Томилинский лесопарк",
-    price: "от 6 млн ₽",
-    sourceLabel: "Novostroy-M · март 2026",
-    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
-  },
-  {
-    title: "Прибрежный Парк",
-    district: "Домодедово, МО",
-    metro: "с. Ям",
-    price: "от 5.8 млн ₽",
-    sourceLabel: "Novostroy-M · март 2026",
-    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
-  },
-  {
-    title: "Восточное Бутово",
-    district: "Ленинский, МО",
-    metro: "Бутовский лесопарк",
-    price: "от 7.1 млн ₽",
-    sourceLabel: "Novostroy-M · март 2026",
-    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
-  },
-  {
-    title: "Белая Дача Парк",
-    district: "Котельники, МО",
-    metro: "Томилинский лесопарк",
-    price: "от 9.37 млн ₽",
-    sourceLabel: "Novostroy-M · март 2026",
-    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
+    title: "Headliner",
+    district: "ЦАО, Москва",
+    metro: "Москва-Сити",
+    price: "старт в витрине Нмаркет.ПРО",
+    sourceLabel: "Источник: Нмаркет.ПРО",
+    sourceUrl: "https://promo.nmarket.pro/headliner"
   }
 ];
 
 const premiumProjects = [
-  { title: "АУРУС Резиденции", district: "ЦАО, Москва", metro: "Москва-Сити", price: "от 38.88 млн ₽", sourceLabel: "старт февраль 2026" },
-  { title: "Оне", district: "Пресненский р-н", metro: "Москва-Сити", price: "от 74.4 млн ₽", sourceLabel: "новый пул март 2026" },
-  { title: "Резиденция Омега", district: "Гагаринский р-н", metro: "ул. Фотиевой", price: "от 123 млн ₽", sourceLabel: "старт март 2026" },
-  { title: "Мастерс", district: "Хорошевский р-н", metro: "Аэропорт", price: "цена по запросу", sourceLabel: "старт март 2026" }
+  {
+    title: "Headliner",
+    district: "ЦАО, Москва",
+    metro: "вид на Москву-реку и Москва-Сити",
+    price: "цены по запросу",
+    sourceLabel: "Нмаркет.ПРО · headliner",
+    sourceUrl: "https://promo.nmarket.pro/headliner"
+  },
+  {
+    title: "Нормандия",
+    district: "Лосиноостровский район",
+    metro: "Медведково",
+    price: "цены по запросу",
+    sourceLabel: "Нмаркет.ПРО · etalon-msk",
+    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+  },
+  {
+    title: "Летний сад",
+    district: "Москва",
+    metro: "Селигерская",
+    price: "цены по запросу",
+    sourceLabel: "Нмаркет.ПРО · etalon-msk",
+    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+  },
+  {
+    title: "Изумрудные холмы",
+    district: "Красногорск",
+    metro: "МО",
+    price: "цены по запросу",
+    sourceLabel: "Нмаркет.ПРО · etalon-msk",
+    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+  }
 ];
 
 const segments = [
   {
     id: "first",
     chip: "🔑 Первая квартира",
-    title: "Первая квартира в Москве и ближнем Подмосковье",
-    description: "Студии и 1-комнатные форматы от 4.6 млн ₽ в новых стартах продаж.",
-    tags: ["Ипотека от 0.1%", "Рассрочка 0%", "Субсидии"],
+    title: "Старты для первой покупки",
+    description: "Выбор из московских и подмосковных проектов по Нмаркет.ПРО.",
+    tags: ["Подбор по цели", "Официальные страницы", "Актуальные витрины"],
     projects: [
-      { title: "Аникеевский", district: "Красногорск, МО", metro: "4–6 этажей", price: "от 4.6 млн ₽" },
-      { title: "Никольский квартал Отрада", district: "Опалиха, МО", metro: "студии 21.2 м²", price: "от 5.1 млн ₽" },
-      { title: "Лесная Отрада", district: "Аристово, МО", metro: "без отделки", price: "от 6.44 млн ₽" }
+      { title: "Изумрудные холмы", district: "Красногорск, МО", metro: "квартальный формат", price: "Нмаркет.ПРО" },
+      { title: "Летний сад", district: "Москва", metro: "развитый район", price: "Нмаркет.ПРО" },
+      { title: "Нормандия", district: "Москва", metro: "зелёная локация", price: "Нмаркет.ПРО" }
     ]
   },
   {
     id: "invest",
     chip: "📈 Инвестиция",
-    title: "Инвестиционные старты рядом с Москвой",
-    description: "Выбираем новые корпуса и старты продаж с потенциалом роста цены входа.",
-    tags: ["Доход 8-12%", "Рост стоимости", "Аренда"],
+    title: "Проекты с инвестиционным интересом",
+    description: "Центральные и масштабные объекты из публичных страниц Нмаркет.ПРО.",
+    tags: ["Москва", "ЦАО", "Крупные проекты"],
     projects: [
-      { title: "Квартал Мит", district: "Митино, Москва", metro: "Пятницкое шоссе", price: "от 10.6 млн ₽" },
-      { title: "Нарвин", district: "Головинский р-н", metro: "Водный стадион", price: "от 12.26 млн ₽" },
-      { title: "Зелёный парк", district: "Зеленоград", metro: "готовые кварталы", price: "от 7.7 млн ₽" }
+      { title: "Headliner", district: "ЦАО", metro: "небоскрёбы", price: "Нмаркет.ПРО" },
+      { title: "Летний сад", district: "Москва", metro: "метро рядом", price: "Нмаркет.ПРО" },
+      { title: "Нормандия", district: "Москва", metro: "устойчивый спрос", price: "Нмаркет.ПРО" }
     ]
   },
   {
     id: "upgrade",
     chip: "🏡 Расширение",
-    title: "Семья растёт — расширяемся в новых очередях",
-    description: "2–4 комнаты в новых корпусах Москвы и Новой Москвы, включая trade-in.",
-    tags: ["Trade-in", "Зачёт квартиры", "Без переплат"],
+    title: "Расширение жилплощади",
+    description: "Семейные форматы в проектах с готовой инфраструктурой.",
+    tags: ["Семья", "Инфраструктура", "Надёжный застройщик"],
     projects: [
-      { title: "Преображенская площадь (2 очередь)", district: "ВАО, Москва", metro: "Преображенская площадь", price: "от 15.3 млн ₽" },
-      { title: "Северный порт (2 очередь)", district: "САО, Москва", metro: "Беломорская", price: "от 15.4 млн ₽" },
-      { title: "Литературный Квартал", district: "Внуково, НАО", metro: "Рассказовка / Пыхтино", price: "от 10.3 млн ₽" }
+      { title: "Изумрудные холмы", district: "Красногорск", metro: "микрорайон", price: "Нмаркет.ПРО" },
+      { title: "Летний сад", district: "Москва", metro: "территория комфорта", price: "Нмаркет.ПРО" },
+      { title: "Headliner", district: "ЦАО", metro: "многофункциональный комплекс", price: "Нмаркет.ПРО" }
     ]
   },
   {
     id: "family",
     chip: "💜 Для близких",
-    title: "Надёжная квартира для родителей и детей",
-    description: "Подбираем спокойные районы и комплексы с готовой инфраструктурой.",
-    tags: ["Безопасные районы", "Оформление", "Рядом с вузами"],
+    title: "Покупка для родителей и детей",
+    description: "Подбираем проекты с удобной транспортной доступностью и окружением.",
+    tags: ["Транспорт", "Школы и сады", "Городская среда"],
     projects: [
-      { title: "Баланс", district: "Рязанский р-н, Москва", metro: "Окская", price: "от 14 млн ₽" },
-      { title: "Бунинская набережная", district: "Коммунарка, НАО", metro: "НАО", price: "от 9.3 млн ₽" },
-      { title: "Первый Московский", district: "Филимонковский р-н", metro: "Филатов Луг", price: "от 12.79 млн ₽" }
+      { title: "Нормандия", district: "Москва", metro: "рядом парки", price: "Нмаркет.ПРО" },
+      { title: "Летний сад", district: "Москва", metro: "собственная инфраструктура", price: "Нмаркет.ПРО" },
+      { title: "Изумрудные холмы", district: "МО", metro: "комплексный проект", price: "Нмаркет.ПРО" }
     ]
   }
 ];
 
 const districts = [
-  { name: "СЗАО", info: "Митино и Северо-Запад · от 10.6 млн ₽" },
-  { name: "САО", info: "Головинский и Левобережный · от 12.26 млн ₽" },
-  { name: "ВАО", info: "Преображенское и Сокольники · от 15.3 млн ₽" },
-  { name: "ЮЗАО", info: "Обручевский район · от 20.33 млн ₽" },
-  { name: "НАО", info: "Новая Москва · от 9.3 млн ₽" },
-  { name: "ЦАО", info: "Пресненский район · от 38.88 млн ₽" },
-  { name: "Красногорск, МО", info: "несколько стартов · от 4.6 млн ₽" },
-  { name: "Домодедово, МО", info: "новые очереди · от 5.8 млн ₽" }
+  { name: "ЦАО", info: "Headliner · Нмаркет.ПРО" },
+  { name: "СВАО", info: "Нормандия · Нмаркет.ПРО" },
+  { name: "САО", info: "Летний сад · Нмаркет.ПРО" },
+  { name: "Красногорск, МО", info: "Изумрудные холмы · Нмаркет.ПРО" }
 ];
 
 function renderCards(targetId, items) {
