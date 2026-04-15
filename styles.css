@@ -47,6 +47,20 @@ a {
   border-bottom: 1px solid rgba(228, 232, 243, 0.8);
 }
 
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  padding: 10px 0 0;
+}
+
+.breadcrumb-nav a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .nav {
   min-height: 74px;
   display: flex;

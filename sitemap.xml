@@ -6,23 +6,23 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:4173/#launches</loc>
-    <changefreq>daily</changefreq>
+    <loc>http://localhost:4173/starts/izumrudnye-kholmy.html</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:4173/#launch-articles</loc>
-    <changefreq>daily</changefreq>
+    <loc>http://localhost:4173/starts/letniy-sad.html</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:4173/#faq-seo</loc>
+    <loc>http://localhost:4173/starts/normandiya.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://localhost:4173/#contact</loc>
+    <loc>http://localhost:4173/starts/headliner.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 </urlset>

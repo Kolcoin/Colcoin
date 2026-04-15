@@ -4,32 +4,32 @@ const topProjects = [
     district: "Красногорск, МО",
     metro: "22 км от центра Москвы",
     price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · etalon-msk",
-    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
+    sourceUrl: "./starts/izumrudnye-kholmy.html"
   },
   {
     title: "ЖК Летний сад",
     district: "Москва",
     metro: "район Селигерская / 800-летия Москвы",
     price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · etalon-msk",
-    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
+    sourceUrl: "./starts/letniy-sad.html"
   },
   {
     title: "ЖК Нормандия",
     district: "Лосиноостровский район, Москва",
     metro: "Медведково (пешком)",
     price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · etalon-msk",
-    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
+    sourceUrl: "./starts/normandiya.html"
   },
   {
     title: "ЖК Headliner",
     district: "ЦАО, Москва",
     metro: "Москва-Сити",
     price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · headliner",
-    sourceUrl: "https://promo.nmarket.pro/headliner"
+    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
+    sourceUrl: "./starts/headliner.html"
   }
 ];
 
@@ -39,32 +39,32 @@ const launchProjects = [
     district: "Красногорск, МО",
     metro: "комплексная квартальная застройка",
     price: "старт в витрине Нмаркет.ПРО",
-    sourceLabel: "Источник: Нмаркет.ПРО",
-    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+    sourceLabel: "Источник: отдельная SEO-страница",
+    sourceUrl: "./starts/izumrudnye-kholmy.html"
   },
   {
     title: "Летний сад",
     district: "Москва",
     metro: "вблизи Селигерской",
     price: "старт в витрине Нмаркет.ПРО",
-    sourceLabel: "Источник: Нмаркет.ПРО",
-    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+    sourceLabel: "Источник: отдельная SEO-страница",
+    sourceUrl: "./starts/letniy-sad.html"
   },
   {
     title: "Нормандия",
     district: "Москва",
     metro: "Лосиноостровский район",
     price: "старт в витрине Нмаркет.ПРО",
-    sourceLabel: "Источник: Нмаркет.ПРО",
-    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+    sourceLabel: "Источник: отдельная SEO-страница",
+    sourceUrl: "./starts/normandiya.html"
   },
   {
     title: "Headliner",
     district: "ЦАО, Москва",
     metro: "Москва-Сити",
     price: "старт в витрине Нмаркет.ПРО",
-    sourceLabel: "Источник: Нмаркет.ПРО",
-    sourceUrl: "https://promo.nmarket.pro/headliner"
+    sourceLabel: "Источник: отдельная SEO-страница",
+    sourceUrl: "./starts/headliner.html"
   }
 ];
 
@@ -74,32 +74,32 @@ const premiumProjects = [
     district: "ЦАО, Москва",
     metro: "вид на Москву-реку и Москва-Сити",
     price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · headliner",
-    sourceUrl: "https://promo.nmarket.pro/headliner"
+    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
+    sourceUrl: "./starts/headliner.html"
   },
   {
     title: "Нормандия",
     district: "Лосиноостровский район",
     metro: "Медведково",
     price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · etalon-msk",
-    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
+    sourceUrl: "./starts/normandiya.html"
   },
   {
     title: "Летний сад",
     district: "Москва",
     metro: "Селигерская",
     price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · etalon-msk",
-    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
+    sourceUrl: "./starts/letniy-sad.html"
   },
   {
     title: "Изумрудные холмы",
     district: "Красногорск",
     metro: "МО",
     price: "цены по запросу",
-    sourceLabel: "Нмаркет.ПРО · etalon-msk",
-    sourceUrl: "https://promo.nmarket.pro/etalon-msk"
+    sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
+    sourceUrl: "./starts/izumrudnye-kholmy.html"
   }
 ];
 

@@ -61,19 +61,66 @@
             "name": "Савушкин Эстейт",
             "url": "http://localhost:4173/",
             "inLanguage": "ru-RU",
-            "description": "Сайт о стартах продаж новостроек Москвы и Московской области и подборе квартир по цели покупки.",
+            "description": "Сайт о стартах продаж новостроек Москвы и подборе квартир по цели покупки.",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "http://localhost:4173/#launch-articles",
+              "target": "http://localhost:4173/?q={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           },
           {
-            "@type": "WebPage",
-            "name": "Старты продаж новостроек Москвы и МО — Савушкин Эстейт",
+            "@type": "Organization",
+            "name": "Савушкин Эстейт",
+            "alternateName": ["Savushkin Estate", "Савушкин Эстейт Москва"],
             "url": "http://localhost:4173/",
-            "inLanguage": "ru-RU",
-            "description": "Старты продаж новостроек Москвы и Московской области: фото, описания проектов, контакты и подбор квартиры."
+            "logo": "https://static.tildacdn.com/tild3235-3435-4166-b736-353763326161/logo-02.svg",
+            "telephone": "+7-985-761-48-85",
+            "sameAs": [
+              "https://t.me/AlexSavushkin",
+              "https://t.me/Savushkin_broker",
+              "https://www.youtube.com/@UrbanBroker",
+              "https://www.instagram.com/savushkin_broker/"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2-я ул. Марьиной Рощи, д. 2А",
+              "addressLocality": "Москва",
+              "addressRegion": "Москва",
+              "postalCode": "129594",
+              "addressCountry": "RU"
+            }
+          },
+          {
+            "@type": "LocalBusiness",
+            "name": "Савушкин Эстейт",
+            "url": "http://localhost:4173/",
+            "telephone": "+7-985-761-48-85",
+            "priceRange": "₽₽",
+            "areaServed": ["Москва", "Московская область"],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2-я ул. Марьиной Рощи, д. 2А",
+              "addressLocality": "Москва",
+              "addressRegion": "Москва",
+              "postalCode": "129594",
+              "addressCountry": "RU"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "10:00",
+                "closes": "21:00"
+              }
+            ]
           },
           {
             "@type": "RealEstateAgent",
@@ -100,6 +147,40 @@
               "Новостройки Московской области",
               "Старты продаж новостроек",
               "Подбор квартир в новостройках"
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "name": "Старты продаж новостроек Москвы и МО — Савушкин Эстейт",
+            "url": "http://localhost:4173/",
+            "inLanguage": "ru-RU",
+            "description": "Старты продаж новостроек Москвы и Московского региона: фото, описания проектов, контакты и подбор квартиры.",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": [".hero-text", ".faq-item p"]
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "http://localhost:4173/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Старты продаж",
+                "item": "http://localhost:4173/#launches"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Статьи",
+                "item": "http://localhost:4173/#launch-articles"
+              }
             ]
           },
           {
@@ -135,10 +216,10 @@
             "@type": "ItemList",
             "name": "Старты продаж новостроек Москвы и МО",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Изумрудные холмы", "url": "http://localhost:4173/#article-izumrudnye-kholmy" },
-              { "@type": "ListItem", "position": 2, "name": "Летний сад", "url": "http://localhost:4173/#article-letniy-sad" },
-              { "@type": "ListItem", "position": 3, "name": "Нормандия", "url": "http://localhost:4173/#article-normandiya" },
-              { "@type": "ListItem", "position": 4, "name": "Headliner", "url": "http://localhost:4173/#article-headliner" }
+              { "@type": "ListItem", "position": 1, "name": "Изумрудные холмы", "url": "http://localhost:4173/starts/izumrudnye-kholmy.html" },
+              { "@type": "ListItem", "position": 2, "name": "Летний сад", "url": "http://localhost:4173/starts/letniy-sad.html" },
+              { "@type": "ListItem", "position": 3, "name": "Нормандия", "url": "http://localhost:4173/starts/normandiya.html" },
+              { "@type": "ListItem", "position": 4, "name": "Headliner", "url": "http://localhost:4173/starts/headliner.html" }
             ]
           }
         ]
@@ -162,6 +243,15 @@
         <a class="btn btn-small btn-outline" href="#lead-form">Оставить заявку</a>
       </div>
     </header>
+
+
+    <nav class="container breadcrumb-nav" aria-label="Хлебные крошки">
+      <a href="./index.html">Главная</a>
+      <span>›</span>
+      <a href="#launches">Старты продаж</a>
+      <span>›</span>
+      <a href="#launch-articles">Статьи</a>
+    </nav>
 
     <main>
       <section class="hero">
@@ -244,7 +334,7 @@
                 представлен как крупный жилой микрорайон с комплексной застройкой и готовой инфраструктурой.
               </p>
               <p class="article-meta">Красногорск · источник: Нмаркет.ПРО</p>
-              <a class="project-link" href="https://promo.nmarket.pro/etalon-msk" target="_blank" rel="noopener noreferrer">Страница старта в Нмаркет.ПРО</a>
+              <a class="project-link" href="./starts/izumrudnye-kholmy.html">Открыть SEO-страницу старта</a>
             </article>
 
             <article class="seo-article" id="article-letniy-sad">
@@ -259,7 +349,7 @@
                 доступность и комплексное благоустройство. Для покупателей это востребованный формат городской новостройки.
               </p>
               <p class="article-meta">Москва · источник: Нмаркет.ПРО</p>
-              <a class="project-link" href="https://promo.nmarket.pro/etalon-msk" target="_blank" rel="noopener noreferrer">Страница старта в Нмаркет.ПРО</a>
+              <a class="project-link" href="./starts/letniy-sad.html">Открыть SEO-страницу старта</a>
             </article>
 
             <article class="seo-article" id="article-normandiya">
@@ -274,7 +364,7 @@
                 позиционируется как современный жилой комплекс с акцентом на зелёное окружение и транспорт.
               </p>
               <p class="article-meta">Москва · источник: Нмаркет.ПРО</p>
-              <a class="project-link" href="https://promo.nmarket.pro/etalon-msk" target="_blank" rel="noopener noreferrer">Страница старта в Нмаркет.ПРО</a>
+              <a class="project-link" href="./starts/normandiya.html">Открыть SEO-страницу старта</a>
             </article>
 
             <article class="seo-article" id="article-headliner">
@@ -289,7 +379,7 @@
                 небоскрёбами в ЦАО. В подборке стартов это объект для покупателей, которым важна центральная локация.
               </p>
               <p class="article-meta">ЦАО · источник: Нмаркет.ПРО</p>
-              <a class="project-link" href="https://promo.nmarket.pro/headliner" target="_blank" rel="noopener noreferrer">Страница старта в Нмаркет.ПРО</a>
+              <a class="project-link" href="./starts/headliner.html">Открыть SEO-страницу старта</a>
             </article>
           </div>
         </div>
