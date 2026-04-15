@@ -4,5 +4,5 @@ Allow: /
 # Encourage indexing and snippet generation
 Sitemap: http://localhost:4173/sitemap.xml
 
-# AI/SEO pages
+# Article pages
 Allow: /starts/
