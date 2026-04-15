@@ -315,6 +315,39 @@ h1 {
   font-size: 0.88rem;
 }
 
+.seo-articles {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.seo-article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.seo-article h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.article-meta {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.seo-article p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 .segment-controls {
   display: flex;
   flex-wrap: wrap;
@@ -512,6 +545,10 @@ h1 {
   .features,
   .districts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
   }
 
   .cards-grid-compact {
