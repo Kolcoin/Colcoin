@@ -445,6 +445,15 @@ h1 {
   gap: 10px;
 }
 
+#article-complex-63393 {
+  aspect-ratio: 1 / 1;
+  align-content: start;
+}
+
+#article-complex-63393 .project-link {
+  margin-top: auto;
+}
+
 .seo-article img {
   width: 100%;
   aspect-ratio: 16 / 9;
