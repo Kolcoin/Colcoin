@@ -588,11 +588,35 @@ h1 {
 
 .footer-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
   color: var(--text-muted);
   font-size: 0.92rem;
+  flex-wrap: wrap;
+}
+
+.footer-contacts-title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.footer-contacts {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-contact-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.footer-contact-item {
+  display: block;
 }
 
 @media (max-width: 1024px) {
