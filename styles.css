@@ -471,6 +471,34 @@ h1 {
   line-height: 1.5;
 }
 
+.article-gallery {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.article-gallery-item {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.article-gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.article-gallery-item figcaption {
+  padding: 10px 12px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 .faq-grid {
   display: grid;
   gap: 12px;
@@ -772,6 +800,10 @@ h1 {
   .stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .article-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 680px) {
@@ -798,5 +830,9 @@ h1 {
 
   .section {
     padding: 36px 0;
+  }
+
+  .article-gallery {
+    grid-template-columns: 1fr;
   }
 }
