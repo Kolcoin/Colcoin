@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Подбор квартир в новостройках Санкт-Петербурга под вашу цель: первая квартира, инвестиция, расширение или покупка для близких."
+    />
+    <title>PLEIADA HOME — Новостройки СПб</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#">
+          <span class="brand-dot"></span>
+          PLEIADA HOME
+        </a>
+        <nav class="menu">
+          <a href="#catalog">Каталог</a>
+          <a href="#segments">По цели</a>
+          <a href="#districts">Районы</a>
+          <a href="#contact">Контакты</a>
+        </nav>
+        <a class="btn btn-small btn-outline" href="#lead-form">Оставить заявку</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">1180 новостроек · 57 189 квартир</p>
+            <h1>Подберём квартиру в новостройке СПб под вашу цель</h1>
+            <p class="hero-text">
+              Первая квартира, инвестиция или расширение — находим лучшие варианты бесплатно.
+              Скидки до 1 млн ₽ от застройщиков.
+            </p>
+            <div class="stats">
+              <article><strong>0₽</strong><span>комиссия</span></article>
+              <article><strong>2 часа</strong><span>подборка</span></article>
+              <article><strong>188</strong><span>застройщиков</span></article>
+              <article><strong>4.8 ★</strong><span>рейтинг</span></article>
+            </div>
+            <a class="btn btn-large" href="#lead-form">Получить подборку квартир</a>
+          </div>
+          <aside class="hero-card" id="lead-form">
+            <h2>Бесплатная подборка за 2 часа</h2>
+            <p>Укажите цель и бюджет — эксперт подготовит релевантные предложения.</p>
+            <form class="lead-form">
+              <label for="name">Ваше имя</label>
+              <input id="name" type="text" placeholder="Например, Анна" />
+              <label for="phone">Телефон</label>
+              <input id="phone" type="tel" placeholder="+7 (___) ___-__-__" />
+              <button class="btn btn-full" type="button">Получить подборку</button>
+            </form>
+            <small>Бесплатно и без обязательств</small>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="catalog">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Топ новостроек прямо сейчас</h2>
+            <a class="section-link" href="#">Все 1180 ЖК →</a>
+          </div>
+          <div class="cards-grid" id="top-projects"></div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="segments">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Какая у вас цель?</h2>
+            <p>Подберём новостройку под конкретную задачу</p>
+          </div>
+          <div class="segment-controls" id="segment-controls"></div>
+          <div class="segment-panel">
+            <div class="segment-header">
+              <h3 id="segment-title"></h3>
+              <p id="segment-description"></p>
+              <div class="segment-tags" id="segment-tags"></div>
+            </div>
+            <div class="cards-grid cards-grid-compact" id="segment-projects"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Как это работает</h2>
+            <p>4 шага от заявки до ключей</p>
+          </div>
+          <div class="steps">
+            <article>
+              <span>01</span>
+              <h3>Расскажите о цели</h3>
+              <p>Первая квартира, инвестиция или расширение — учитываем вашу ситуацию.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Получите подборку</h3>
+              <p>За 2 часа эксперт соберёт лучшие варианты с ценами и акциями.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Посмотрите объекты</h3>
+              <p>Организуем просмотры, расскажем о районе и застройщике.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Оформите сделку</h3>
+              <p>Поможем с ипотекой, согласованиями и документами до конца.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Премиальные новостройки</h2>
+            <a class="section-link" href="#">Все предложения →</a>
+          </div>
+          <div class="cards-grid" id="premium-projects"></div>
+        </div>
+      </section>
+
+      <section class="section" id="districts">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Районы Санкт-Петербурга</h2>
+            <p>Квартиры в новостройках по районам</p>
+          </div>
+          <div class="districts" id="districts-list"></div>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Почему клиенты выбирают нас</h2>
+            <p>8 лет помогаем покупать квартиры — от подбора до ключей</p>
+          </div>
+          <div class="features">
+            <article><h3>0₽ комиссия</h3><p>Наши услуги оплачивает застройщик.</p></article>
+            <article><h3>Скидки до 1 млн ₽</h3><p>Эксклюзивные условия от партнёров.</p></article>
+            <article><h3>Рассрочка 0%</h3><p>Прямые программы без банковских переплат.</p></article>
+            <article><h3>Trade-in обмен</h3><p>Зачтём вашу текущую квартиру в новую.</p></article>
+          </div>
+          <div class="stats stats-dark">
+            <article><strong>8 лет</strong><span>на рынке СПб</span></article>
+            <article><strong>2 300+</strong><span>клиентов</span></article>
+            <article><strong>4.8 ★</strong><span>средний рейтинг</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta" id="contact">
+        <div class="container cta-box">
+          <div>
+            <h2>Расскажите о своей цели — подберём квартиру бесплатно</h2>
+            <p>Персональная подборка ЖК за 2 часа от экспертов PLEIADA HOME</p>
+          </div>
+          <a class="btn btn-large" href="#lead-form">Оставить заявку</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>© 2026 PLEIADA HOME</p>
+        <p>Санкт-Петербург · Ежедневно 10:00–21:00</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
