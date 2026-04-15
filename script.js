@@ -1,77 +1,144 @@
 const topProjects = [
-  { title: "ЖК Про.Молодость", district: "Невский р-н", metro: "Улица Дыбенко, 10 мин", price: "от 5.7 млн ₽" },
-  { title: "ЖК Легенда Васильевского", district: "Василеостровский р-н", metro: "Горный институт, 20 мин", price: "от 13.4 млн ₽" },
-  { title: "ЖК Цивилизация на Неве", district: "Невский р-н", metro: "Улица Дыбенко, 10 мин", price: "от 7.5 млн ₽" },
-  { title: "ЖК Лисино", district: "Курортный р-н", metro: "Беговая, 15 мин", price: "от 10 млн ₽" }
+  { title: "Квартал Мит", district: "СЗАО, Москва", metro: "Пятницкое шоссе", price: "от 10.6 млн ₽", sourceLabel: "старт февраль 2026" },
+  { title: "Зелёный парк", district: "ЗелАО, Москва", metro: "Зеленоград", price: "от 7.7 млн ₽", sourceLabel: "вывод корпусов март 2026" },
+  { title: "Нарвин", district: "САО, Москва", metro: "Водный стадион", price: "от 12.26 млн ₽", sourceLabel: "вывод корпусов март 2026" },
+  { title: "Татум", district: "ЮЗАО, Москва", metro: "Калужская / Воронцовская", price: "от 20.33 млн ₽", sourceLabel: "старт продаж март 2026" }
+];
+
+const launchProjects = [
+  {
+    title: "Аникеевский",
+    district: "Красногорск, МО",
+    metro: "Николо-Урюпино",
+    price: "от 4.6 млн ₽",
+    sourceLabel: "Novostroy-M · март 2026",
+    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
+  },
+  {
+    title: "Никольский квартал Отрада",
+    district: "Красногорск, МО",
+    metro: "мкр. Опалиха",
+    price: "от 5.1 млн ₽",
+    sourceLabel: "Novostroy-M · февраль 2026",
+    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_fevral_2026"
+  },
+  {
+    title: "Сити-квартал Отрада",
+    district: "Красногорск, МО",
+    metro: "Чернево-2",
+    price: "от 6.5 млн ₽",
+    sourceLabel: "Novostroy-M · март 2026",
+    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
+  },
+  {
+    title: "Лесная Отрада",
+    district: "Аристово, МО",
+    metro: "Пятницкое шоссе",
+    price: "от 6.44 млн ₽",
+    sourceLabel: "Novostroy-M · февраль 2026",
+    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_fevral_2026"
+  },
+  {
+    title: "Сердце Лыткарино",
+    district: "Лыткарино, МО",
+    metro: "Томилинский лесопарк",
+    price: "от 6 млн ₽",
+    sourceLabel: "Novostroy-M · март 2026",
+    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
+  },
+  {
+    title: "Прибрежный Парк",
+    district: "Домодедово, МО",
+    metro: "с. Ям",
+    price: "от 5.8 млн ₽",
+    sourceLabel: "Novostroy-M · март 2026",
+    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
+  },
+  {
+    title: "Восточное Бутово",
+    district: "Ленинский, МО",
+    metro: "Бутовский лесопарк",
+    price: "от 7.1 млн ₽",
+    sourceLabel: "Novostroy-M · март 2026",
+    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
+  },
+  {
+    title: "Белая Дача Парк",
+    district: "Котельники, МО",
+    metro: "Томилинский лесопарк",
+    price: "от 9.37 млн ₽",
+    sourceLabel: "Novostroy-M · март 2026",
+    sourceUrl: "https://www.novostroy-m.ru/analitika/starty_prodaj_mart_2026"
+  }
 ];
 
 const premiumProjects = [
-  { title: "ЖК Прагма City", district: "Выборгский р-н", metro: "Парнас, 10 мин", price: "от 7.7 млн ₽" },
-  { title: "ЖК МОСКО", district: "Московский р-н", metro: "Московские ворота, 10 мин", price: "от 8.1 млн ₽" },
-  { title: "ЖК Морская миля", district: "Красносельский р-н", metro: "Юго-Западная, 10 мин", price: "от 8 млн ₽" },
-  { title: "ЖК Образцовый квартал", district: "Пушкинский р-н", metro: "Купчино, 15 мин", price: "от 6.1 млн ₽" }
+  { title: "АУРУС Резиденции", district: "ЦАО, Москва", metro: "Москва-Сити", price: "от 38.88 млн ₽", sourceLabel: "старт февраль 2026" },
+  { title: "Оне", district: "Пресненский р-н", metro: "Москва-Сити", price: "от 74.4 млн ₽", sourceLabel: "новый пул март 2026" },
+  { title: "Резиденция Омега", district: "Гагаринский р-н", metro: "ул. Фотиевой", price: "от 123 млн ₽", sourceLabel: "старт март 2026" },
+  { title: "Мастерс", district: "Хорошевский р-н", metro: "Аэропорт", price: "цена по запросу", sourceLabel: "старт март 2026" }
 ];
 
 const segments = [
   {
     id: "first",
     chip: "🔑 Первая квартира",
-    title: "Хватит платить за аренду — платите за своё",
-    description: "Студии и 1-комнатные от 3 млн ₽. Ипотека от 0.1%, рассрочка без переплат.",
+    title: "Первая квартира в Москве и ближнем Подмосковье",
+    description: "Студии и 1-комнатные форматы от 4.6 млн ₽ в новых стартах продаж.",
     tags: ["Ипотека от 0.1%", "Рассрочка 0%", "Субсидии"],
     projects: [
-      { title: "ЖК LIBERTY DOM", district: "Тосненский р-н", metro: "Проспект Ветеранов, 40 мин", price: "от 2.7 млн ₽" },
-      { title: "ЖК Аннино Сити", district: "Ломоносовский р-н", metro: "Проспект Ветеранов, 25 мин", price: "от 2.7 млн ₽" },
-      { title: "ЖК Квартал Лаголово", district: "Ломоносовский р-н", metro: "Проспект Ветеранов, 20 мин", price: "от 3 млн ₽" }
+      { title: "Аникеевский", district: "Красногорск, МО", metro: "4–6 этажей", price: "от 4.6 млн ₽" },
+      { title: "Никольский квартал Отрада", district: "Опалиха, МО", metro: "студии 21.2 м²", price: "от 5.1 млн ₽" },
+      { title: "Лесная Отрада", district: "Аристово, МО", metro: "без отделки", price: "от 6.44 млн ₽" }
     ]
   },
   {
     id: "invest",
     chip: "📈 Инвестиция",
-    title: "Недвижимость доходнее вкладов — от 8% годовых",
-    description: "Студии у метро от 4 млн ₽. Аналитика окупаемости и помощь с арендой.",
+    title: "Инвестиционные старты рядом с Москвой",
+    description: "Выбираем новые корпуса и старты продаж с потенциалом роста цены входа.",
     tags: ["Доход 8-12%", "Рост стоимости", "Аренда"],
     projects: [
-      { title: "ЖК Авенир Индастриал", district: "Кировский р-н", metro: "Кировский завод, 5 мин", price: "от 5.1 млн ₽" },
-      { title: "ЖК Большой Казачий 10А", district: "Адмиралтейский р-н", metro: "Пушкинская, 5 мин", price: "от 4.5 млн ₽" },
-      { title: "ЖК Апарт-отель Заневский", district: "Красногвардейский р-н", metro: "Ладожская, 5 мин", price: "от 5.6 млн ₽" }
+      { title: "Квартал Мит", district: "Митино, Москва", metro: "Пятницкое шоссе", price: "от 10.6 млн ₽" },
+      { title: "Нарвин", district: "Головинский р-н", metro: "Водный стадион", price: "от 12.26 млн ₽" },
+      { title: "Зелёный парк", district: "Зеленоград", metro: "готовые кварталы", price: "от 7.7 млн ₽" }
     ]
   },
   {
     id: "upgrade",
     chip: "🏡 Расширение",
-    title: "Семья растёт — пора в квартиру побольше",
-    description: "2-4 комнаты с отделкой от 6 млн ₽. Trade-in: зачтём старую квартиру.",
+    title: "Семья растёт — расширяемся в новых очередях",
+    description: "2–4 комнаты в новых корпусах Москвы и Новой Москвы, включая trade-in.",
     tags: ["Trade-in", "Зачёт квартиры", "Без переплат"],
     projects: [
-      { title: "ЖК Образцовый квартал", district: "Пушкинский р-н", metro: "Купчино, 15 мин", price: "от 6.1 млн ₽" },
-      { title: "ЖК Морская миля", district: "Красносельский р-н", metro: "Юго-Западная, 10 мин", price: "от 8 млн ₽" },
-      { title: "ЖК Легенда Васильевского", district: "Василеостровский р-н", metro: "Горный институт, 20 мин", price: "от 13.4 млн ₽" }
+      { title: "Преображенская площадь (2 очередь)", district: "ВАО, Москва", metro: "Преображенская площадь", price: "от 15.3 млн ₽" },
+      { title: "Северный порт (2 очередь)", district: "САО, Москва", metro: "Беломорская", price: "от 15.4 млн ₽" },
+      { title: "Литературный Квартал", district: "Внуково, НАО", metro: "Рассказовка / Пыхтино", price: "от 10.3 млн ₽" }
     ]
   },
   {
     id: "family",
     chip: "💜 Для близких",
-    title: "Надёжная квартира — лучший подарок",
-    description: "Безопасные районы рядом с вузами. Помощь с оформлением и сопровождением.",
+    title: "Надёжная квартира для родителей и детей",
+    description: "Подбираем спокойные районы и комплексы с готовой инфраструктурой.",
     tags: ["Безопасные районы", "Оформление", "Рядом с вузами"],
     projects: [
-      { title: "ЖК Цветной город", district: "Красногвардейский р-н", metro: "Гражданский проспект, 15 мин", price: "от 4.2 млн ₽" },
-      { title: "ЖК Ручьи 2", district: "Красногвардейский р-н", metro: "Академическая, 10 мин", price: "от 4.7 млн ₽" },
-      { title: "ЖК Образцовый квартал", district: "Пушкинский р-н", metro: "Купчино, 15 мин", price: "от 6.1 млн ₽" }
+      { title: "Баланс", district: "Рязанский р-н, Москва", metro: "Окская", price: "от 14 млн ₽" },
+      { title: "Бунинская набережная", district: "Коммунарка, НАО", metro: "НАО", price: "от 9.3 млн ₽" },
+      { title: "Первый Московский", district: "Филимонковский р-н", metro: "Филатов Луг", price: "от 12.79 млн ₽" }
     ]
   }
 ];
 
 const districts = [
-  { name: "Выборгский р-н", info: "28 ЖК · от 3.1 млн ₽" },
-  { name: "Приморский р-н", info: "23 ЖК · от 4.9 млн ₽" },
-  { name: "Пушкинский р-н", info: "21 ЖК · от 3.6 млн ₽" },
-  { name: "Василеостровский р-н", info: "20 ЖК · от 7.7 млн ₽" },
-  { name: "Московский р-н", info: "20 ЖК · от 5.5 млн ₽" },
-  { name: "Петроградский р-н", info: "18 ЖК · от 6.5 млн ₽" },
-  { name: "Невский р-н", info: "18 ЖК · от 4.7 млн ₽" },
-  { name: "Красногвардейский р-н", info: "14 ЖК · от 4 млн ₽" }
+  { name: "СЗАО", info: "Митино и Северо-Запад · от 10.6 млн ₽" },
+  { name: "САО", info: "Головинский и Левобережный · от 12.26 млн ₽" },
+  { name: "ВАО", info: "Преображенское и Сокольники · от 15.3 млн ₽" },
+  { name: "ЮЗАО", info: "Обручевский район · от 20.33 млн ₽" },
+  { name: "НАО", info: "Новая Москва · от 9.3 млн ₽" },
+  { name: "ЦАО", info: "Пресненский район · от 38.88 млн ₽" },
+  { name: "Красногорск, МО", info: "несколько стартов · от 4.6 млн ₽" },
+  { name: "Домодедово, МО", info: "новые очереди · от 5.8 млн ₽" }
 ];
 
 function renderCards(targetId, items) {
@@ -84,7 +151,13 @@ function renderCards(targetId, items) {
         <h3>${item.title}</h3>
         <p class="project-meta">${item.district}</p>
         <p class="project-meta">${item.metro}</p>
+        ${item.sourceLabel ? `<p class="project-source">${item.sourceLabel}</p>` : ""}
         <p class="project-price">${item.price}</p>
+        ${
+          item.sourceUrl
+            ? `<a class="project-link" href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer">Проверить источник</a>`
+            : ""
+        }
       </article>
     `
     )
@@ -140,6 +213,7 @@ function renderSegments() {
           <h3>${item.title}</h3>
           <p class="project-meta">${item.district}</p>
           <p class="project-meta">${item.metro}</p>
+          ${item.sourceLabel ? `<p class="project-source">${item.sourceLabel}</p>` : ""}
           <p class="project-price">${item.price}</p>
         </article>
       `
@@ -182,6 +256,7 @@ function setupLeadForm() {
 }
 
 renderCards("top-projects", topProjects);
+renderCards("launch-projects", launchProjects);
 renderCards("premium-projects", premiumProjects);
 renderSegments();
 renderDistricts();

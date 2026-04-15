@@ -295,10 +295,24 @@ h1 {
   font-size: 0.92rem;
 }
 
+.project-source {
+  margin: 2px 0 0;
+  color: #4a56a6;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
 .project-price {
   margin-top: auto;
   color: #2f3f89;
   font-weight: 600;
+}
+
+.project-link {
+  margin-top: 6px;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.88rem;
 }
 
 .segment-controls {
