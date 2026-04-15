@@ -526,6 +526,33 @@ h1 {
   color: rgba(255, 255, 255, 0.88);
 }
 
+.contact-card {
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.contact-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.contact-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.contact-list a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 22px 0 28px;
