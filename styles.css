@@ -4,8 +4,11 @@
   --surface-muted: #f2f4fa;
   --text: #1c2333;
   --text-muted: #5f6980;
-  --primary: #5c4dff;
-  --primary-dark: #4738e0;
+  --primary: #1768ff;
+  --primary-dark: #0f4ec4;
+  --btn-invest: #14b8a6;
+  --btn-upgrade: #f59e0b;
+  --btn-family: #d946ef;
   --border: #e4e8f3;
   --dark: #121a2d;
   --dark-surface: #1c2742;
@@ -128,6 +131,30 @@ a {
   border-color: #c7d0ea;
   color: var(--text);
   box-shadow: none;
+}
+
+.btn-invest {
+  background: var(--btn-invest);
+}
+
+.btn-invest:hover {
+  background: #0f9485;
+}
+
+.btn-upgrade {
+  background: var(--btn-upgrade);
+}
+
+.btn-upgrade:hover {
+  background: #dc8a03;
+}
+
+.btn-family {
+  background: var(--btn-family);
+}
+
+.btn-family:hover {
+  background: #b832cd;
 }
 
 .btn-small {
@@ -327,6 +354,80 @@ h1 {
   color: var(--primary);
   font-weight: 600;
   font-size: 0.88rem;
+}
+
+.launch-groups {
+  display: grid;
+  gap: 14px;
+}
+
+.launch-block {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fff;
+}
+
+.launch-block-head {
+  margin-bottom: 12px;
+}
+
+.launch-icon {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.launch-block h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.launch-block p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.launch-block.theme-first {
+  background: linear-gradient(180deg, #fff8ef 0%, #fff 60%);
+  border-color: #f8d7b0;
+}
+
+.launch-block.theme-invest {
+  background: linear-gradient(180deg, #ecfdfa 0%, #fff 60%);
+  border-color: #b9f1e9;
+}
+
+.launch-block.theme-upgrade {
+  background: linear-gradient(180deg, #fff1f7 0%, #fff 60%);
+  border-color: #ffc9df;
+}
+
+.btn-subtle {
+  box-shadow: none;
+}
+
+.btn-warm {
+  background: #f97316;
+}
+
+.btn-warm:hover {
+  background: #ea580c;
+}
+
+.btn-cool {
+  background: #0d9488;
+}
+
+.btn-cool:hover {
+  background: #0f766e;
+}
+
+.btn-berry {
+  background: #e11d48;
+}
+
+.btn-berry:hover {
+  background: #be123c;
 }
 
 .seo-articles {
@@ -648,6 +749,10 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .launch-goals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -675,6 +780,7 @@ h1 {
   .districts,
   .features,
   .steps,
+  .launch-goals,
   .contact-grid {
     grid-template-columns: 1fr;
   }

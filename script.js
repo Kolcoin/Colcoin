@@ -68,6 +68,87 @@ const launchProjects = [
   }
 ];
 
+const launchBlocks = [
+  {
+    id: "first-home",
+    icon: "🔑",
+    title: "Первая квартира: стартуйте с понятного бюджета",
+    description:
+      "Проекты со сбалансированным входом для первой покупки, удобной инфраструктурой и понятной логистикой.",
+    tags: ["Первичная покупка", "Ипотека", "Готовая инфраструктура"],
+    buttonText: "Смотреть старты для первой квартиры",
+    buttonClass: "btn-warm",
+    projects: [
+      {
+        title: "Изумрудные холмы",
+        district: "Красногорск, МО",
+        metro: "22 км от центра Москвы",
+        price: "цены по запросу",
+        sourceUrl: "./starts/izumrudnye-kholmy.html"
+      },
+      {
+        title: "Летний сад",
+        district: "Москва",
+        metro: "Селигерская / 800-летия Москвы",
+        price: "цены по запросу",
+        sourceUrl: "./starts/letniy-sad.html"
+      }
+    ]
+  },
+  {
+    id: "invest",
+    icon: "📈",
+    title: "Инвестиционные старты: фокус на ликвидность",
+    description:
+      "Локации и форматы, которые чаще рассматривают для последующей аренды или роста стоимости.",
+    tags: ["Инвестиция", "Ликвидность", "ЦАО"],
+    buttonText: "Смотреть инвестиционные старты",
+    buttonClass: "btn-cool",
+    projects: [
+      {
+        title: "Headliner",
+        district: "ЦАО, Москва",
+        metro: "Москва-Сити",
+        price: "цены по запросу",
+        sourceUrl: "./starts/headliner.html"
+      },
+      {
+        title: "Нормандия",
+        district: "Лосиноостровский район, Москва",
+        metro: "Медведково (пешком)",
+        price: "цены по запросу",
+        sourceUrl: "./starts/normandiya.html"
+      }
+    ]
+  },
+  {
+    id: "family-upgrade",
+    icon: "🏡",
+    title: "Расширение семьи: больше метража и среды",
+    description:
+      "Подборка стартов, где есть удобные семейные сценарии жизни: районы, дворы и социальная инфраструктура.",
+    tags: ["Семья", "Расширение", "Комфортная среда"],
+    buttonText: "Смотреть семейные старты",
+    buttonClass: "btn-berry",
+    projects: [
+      {
+        title: "Летний сад",
+        district: "Москва",
+        metro: "развитый район",
+        price: "цены по запросу",
+        sourceUrl: "./starts/letniy-sad.html"
+      },
+      {
+        title: "Изумрудные холмы",
+        district: "Красногорск, МО",
+        metro: "квартальная застройка",
+        price: "цены по запросу",
+        sourceUrl: "./starts/izumrudnye-kholmy.html"
+      }
+    ]
+  }
+];
+
 const premiumProjects = [
   {
     title: "Headliner",
@@ -100,57 +181,6 @@ const premiumProjects = [
     price: "цены по запросу",
     sourceLabel: "Нмаркет.ПРО · отдельная SEO-страница",
     sourceUrl: "./starts/izumrudnye-kholmy.html"
-  }
-];
-
-const segments = [
-  {
-    id: "first",
-    chip: "🔑 Первая квартира",
-    title: "Старты для первой покупки",
-    description: "Выбор из московских и подмосковных проектов по Нмаркет.ПРО.",
-    tags: ["Подбор по цели", "Официальные страницы", "Актуальные витрины"],
-    projects: [
-      { title: "Изумрудные холмы", district: "Красногорск, МО", metro: "квартальный формат", price: "Нмаркет.ПРО" },
-      { title: "Летний сад", district: "Москва", metro: "развитый район", price: "Нмаркет.ПРО" },
-      { title: "Нормандия", district: "Москва", metro: "зелёная локация", price: "Нмаркет.ПРО" }
-    ]
-  },
-  {
-    id: "invest",
-    chip: "📈 Инвестиция",
-    title: "Проекты с инвестиционным интересом",
-    description: "Центральные и масштабные объекты из публичных страниц Нмаркет.ПРО.",
-    tags: ["Москва", "ЦАО", "Крупные проекты"],
-    projects: [
-      { title: "Headliner", district: "ЦАО", metro: "небоскрёбы", price: "Нмаркет.ПРО" },
-      { title: "Летний сад", district: "Москва", metro: "метро рядом", price: "Нмаркет.ПРО" },
-      { title: "Нормандия", district: "Москва", metro: "устойчивый спрос", price: "Нмаркет.ПРО" }
-    ]
-  },
-  {
-    id: "upgrade",
-    chip: "🏡 Расширение",
-    title: "Расширение жилплощади",
-    description: "Семейные форматы в проектах с готовой инфраструктурой.",
-    tags: ["Семья", "Инфраструктура", "Надёжный застройщик"],
-    projects: [
-      { title: "Изумрудные холмы", district: "Красногорск", metro: "микрорайон", price: "Нмаркет.ПРО" },
-      { title: "Летний сад", district: "Москва", metro: "территория комфорта", price: "Нмаркет.ПРО" },
-      { title: "Headliner", district: "ЦАО", metro: "многофункциональный комплекс", price: "Нмаркет.ПРО" }
-    ]
-  },
-  {
-    id: "family",
-    chip: "💜 Для близких",
-    title: "Покупка для родителей и детей",
-    description: "Подбираем проекты с удобной транспортной доступностью и окружением.",
-    tags: ["Транспорт", "Школы и сады", "Городская среда"],
-    projects: [
-      { title: "Нормандия", district: "Москва", metro: "рядом парки", price: "Нмаркет.ПРО" },
-      { title: "Летний сад", district: "Москва", metro: "собственная инфраструктура", price: "Нмаркет.ПРО" },
-      { title: "Изумрудные холмы", district: "МО", metro: "комплексный проект", price: "Нмаркет.ПРО" }
-    ]
   }
 ];
 
@@ -199,58 +229,42 @@ function renderDistricts() {
     .join("");
 }
 
-function renderSegments() {
-  const controls = document.getElementById("segment-controls");
-  const title = document.getElementById("segment-title");
-  const description = document.getElementById("segment-description");
-  const tags = document.getElementById("segment-tags");
-  const cardsRoot = document.getElementById("segment-projects");
+function renderLaunchBlocks() {
+  const root = document.getElementById("launch-blocks");
+  if (!root) return;
 
-  if (!controls || !title || !description || !tags || !cardsRoot) return;
+  root.innerHTML = launchBlocks
+    .map((block) => {
+      const cards = block.projects
+        .map(
+          (item) => `
+            <article class="project-card">
+              <h3>${item.title}</h3>
+              <p class="project-meta">${item.district}</p>
+              <p class="project-meta">${item.metro}</p>
+              <p class="project-price">${item.price}</p>
+              <a class="project-link" href="${item.sourceUrl}">Открыть страницу старта</a>
+            </article>
+          `
+        )
+        .join("");
 
-  let activeId = segments[0].id;
-
-  const draw = () => {
-    controls.innerHTML = segments
-      .map(
-        (segment) => `
-        <button class="segment-chip ${segment.id === activeId ? "active" : ""}" data-segment-id="${segment.id}" type="button">
-          ${segment.chip}
-        </button>
-      `
-      )
-      .join("");
-
-    const activeSegment = segments.find((segment) => segment.id === activeId) || segments[0];
-    title.textContent = activeSegment.title;
-    description.textContent = activeSegment.description;
-    tags.innerHTML = activeSegment.tags.map((tag) => `<span>${tag}</span>`).join("");
-
-    cardsRoot.innerHTML = activeSegment.projects
-      .map(
-        (item) => `
-        <article class="project-card">
-          <h3>${item.title}</h3>
-          <p class="project-meta">${item.district}</p>
-          <p class="project-meta">${item.metro}</p>
-          ${item.sourceLabel ? `<p class="project-source">${item.sourceLabel}</p>` : ""}
-          <p class="project-price">${item.price}</p>
-        </article>
-      `
-      )
-      .join("");
-  };
-
-  controls.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLElement)) return;
-    const nextId = target.dataset.segmentId;
-    if (!nextId || nextId === activeId) return;
-    activeId = nextId;
-    draw();
-  });
-
-  draw();
+      return `
+        <section class="launch-block" id="launch-${block.id}">
+          <div class="launch-block-head">
+            <p class="launch-icon">${block.icon}</p>
+            <h3>${block.title}</h3>
+            <p>${block.description}</p>
+            <div class="segment-tags">
+              ${block.tags.map((tag) => `<span>${tag}</span>`).join("")}
+            </div>
+            <a class="btn ${block.buttonClass}" href="#contact">${block.buttonText}</a>
+          </div>
+          <div class="cards-grid cards-grid-compact">${cards}</div>
+        </section>
+      `;
+    })
+    .join("");
 }
 
 function setupLeadForm() {
@@ -277,7 +291,7 @@ function setupLeadForm() {
 
 renderCards("top-projects", topProjects);
 renderCards("launch-projects", launchProjects);
+renderLaunchBlocks();
 renderCards("premium-projects", premiumProjects);
-renderSegments();
 renderDistricts();
 setupLeadForm();
