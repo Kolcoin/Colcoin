@@ -37,14 +37,14 @@ const launchBlocks = [
     buttonClass: "btn-warm",
     projects: [
       {
-        title: "ЖК Энигмия",
+        title: "Мангазея",
         district: "Москва",
         metro: "подбор по параметрам",
         price: "по запросу",
         sourceUrl: "./starts/zhk-enigmiya.html"
       },
       {
-        title: "ЖК Энигмия (семейный формат)",
+        title: "Мангазея (семейный формат)",
         district: "Московская область",
         metro: "рядом транспорт",
         price: "по запросу",
@@ -63,14 +63,14 @@ const launchBlocks = [
     buttonClass: "btn-cool",
     projects: [
       {
-        title: "ЖК Энигмия (инвест-формат)",
+        title: "Мангазея (инвест-формат)",
         district: "Москва",
         metro: "транспортная доступность",
         price: "по запросу",
         sourceUrl: "./starts/zhk-enigmiya.html"
       },
       {
-        title: "ЖК Энигмия (доходный сценарий)",
+        title: "Мангазея (доходный сценарий)",
         district: "Москва и МО",
         metro: "быстрый выезд",
         price: "по запросу",
@@ -89,14 +89,14 @@ const launchBlocks = [
     buttonClass: "btn-berry",
     projects: [
       {
-        title: "ЖК Энигмия (семья)",
+        title: "Мангазея (семья)",
         district: "Москва",
         metro: "школы и сервисы",
         price: "по запросу",
         sourceUrl: "./starts/zhk-enigmiya.html"
       },
       {
-        title: "ЖК Энигмия (расширение)",
+        title: "Мангазея (расширение)",
         district: "Московская область",
         metro: "спокойная локация",
         price: "по запросу",
@@ -108,7 +108,7 @@ const launchBlocks = [
 
 const premiumProjects = [
   {
-    title: "ЖК Энигмия",
+    title: "Мангазея",
     district: "Москва и область",
     metro: "подбор по цели",
     price: "по запросу",
