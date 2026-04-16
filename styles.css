@@ -454,6 +454,15 @@ h1 {
   margin-top: auto;
 }
 
+#article-first-donskoy {
+  aspect-ratio: 1 / 1;
+  align-content: start;
+}
+
+#article-first-donskoy .project-link {
+  margin-top: auto;
+}
+
 .seo-article img {
   width: 100%;
   aspect-ratio: 16 / 9;
