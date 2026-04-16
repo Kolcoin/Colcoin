@@ -8,10 +8,10 @@ const topProjects = [
     sourceUrl: "./starts/zhk-enigmiya.html"
   },
   {
-    title: "ЖК City Line",
-    district: "ЮАО, Москва",
-    metro: "15 минут до центра",
-    price: "от 11.4 млн ₽",
+    title: "ЖК 1-й Донской",
+    district: "7 км от МКАД · М-4 Дон",
+    metro: "станция Калинина 15–17 мин пешком",
+    price: "по запросу",
     sourceLabel: "Авторская витрина",
     sourceUrl: "./starts/zhk-enigmiya.html"
   },
@@ -37,14 +37,14 @@ const launchBlocks = [
     buttonClass: "btn-warm",
     projects: [
       {
-        title: "Мангазея",
+        title: "ЖК 1-й Донской",
         district: "Москва",
         metro: "подбор по параметрам",
         price: "по запросу",
         sourceUrl: "./starts/zhk-enigmiya.html"
       },
       {
-        title: "Мангазея (семейный формат)",
+        title: "ЖК 1-й Донской (семейный формат)",
         district: "Московская область",
         metro: "рядом транспорт",
         price: "по запросу",
@@ -63,14 +63,14 @@ const launchBlocks = [
     buttonClass: "btn-cool",
     projects: [
       {
-        title: "Мангазея (инвест-формат)",
+        title: "ЖК 1-й Донской (инвест-формат)",
         district: "Москва",
         metro: "транспортная доступность",
         price: "по запросу",
         sourceUrl: "./starts/zhk-enigmiya.html"
       },
       {
-        title: "Мангазея (доходный сценарий)",
+        title: "ЖК 1-й Донской (доходный сценарий)",
         district: "Москва и МО",
         metro: "быстрый выезд",
         price: "по запросу",
@@ -89,14 +89,14 @@ const launchBlocks = [
     buttonClass: "btn-berry",
     projects: [
       {
-        title: "Мангазея (семья)",
+        title: "ЖК 1-й Донской (семья)",
         district: "Москва",
         metro: "школы и сервисы",
         price: "по запросу",
         sourceUrl: "./starts/zhk-enigmiya.html"
       },
       {
-        title: "Мангазея (расширение)",
+        title: "ЖК 1-й Донской (расширение)",
         district: "Московская область",
         metro: "спокойная локация",
         price: "по запросу",
@@ -108,7 +108,7 @@ const launchBlocks = [
 
 const premiumProjects = [
   {
-    title: "Мангазея",
+    title: "ЖК 1-й Донской",
     district: "Москва и область",
     metro: "подбор по цели",
     price: "по запросу",
