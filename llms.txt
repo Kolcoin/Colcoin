@@ -9,7 +9,7 @@ Brand names:
 - Savushkin Estate (latin)
 
 Canonical URL:
-http://localhost:4173/
+https://shmitrix.ru/
 
 Scope summary:
 - Starts of sales for new-build residential projects in Moscow and Moscow region

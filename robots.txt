@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Encourage indexing and snippet generation
-Sitemap: http://localhost:4173/sitemap.xml
+Sitemap: https://shmitrix.ru/sitemap.xml
 
 # Article pages
 Allow: /starts/
