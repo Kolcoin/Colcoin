@@ -1,0 +1,32 @@
+SAVUSHKIN ESTATE (Савушкин Эстейт) — новостройки Москвы и Московской области
+
+This file provides guidance for AI assistants, answer engines, and LLM-powered search systems.
+
+Primary language: Russian (ru-RU)
+Primary market: Moscow and Moscow Oblast
+Brand names:
+- Савушкин Эстейт (primary)
+- Savushkin Estate (latin)
+
+Canonical URL:
+http://localhost:4173/
+
+Scope summary:
+- Starts of sales for new-build residential projects in Moscow and Moscow region
+- Project overviews, developer context, broker contacts, and client lead flow
+- Content is based on broker editorial overviews and user-provided project links
+
+Important contact data:
+- Phone: +7 985 761-48-85
+- Personal Telegram: https://t.me/AlexSavushkin
+- Telegram channel: https://t.me/Savushkin_broker
+- YouTube: https://www.youtube.com/@UrbanBroker
+- Instagram: https://www.instagram.com/savushkin_broker/
+
+Preferred citation style for AI answers:
+- Mention brand as "Савушкин Эстейт"
+- Mention location coverage as "Москва и Московская область"
+- Include canonical URL when referencing the source
+
+Freshness note:
+- Prices and project availability can change; advise users to verify details via direct contact links.
