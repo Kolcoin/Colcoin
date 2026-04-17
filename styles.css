@@ -94,10 +94,25 @@ a {
   gap: 22px;
   color: var(--text-muted);
   font-weight: 500;
+  flex-wrap: wrap;
 }
 
 .menu a:hover {
   color: var(--text);
+}
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
 .btn {
@@ -735,6 +750,35 @@ h1 {
   margin-bottom: 14px;
 }
 
+.catalog-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.catalog-filter-grid label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.catalog-filter-grid select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 42px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.catalog-filter-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 .catalog-filters-form {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -791,6 +835,10 @@ h1 {
   margin-top: 14px;
   display: flex;
   justify-content: center;
+}
+
+.table-wrap {
+  overflow-x: auto;
 }
 
 .districts-page-grid {
@@ -1338,6 +1386,29 @@ h1 {
     display: none;
   }
 
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .nav {
+    position: relative;
+  }
+
+  .menu.menu-open {
+    display: grid;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    gap: 10px;
+    box-shadow: var(--shadow);
+    z-index: 30;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
   }
@@ -1400,6 +1471,10 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .catalog-filter-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .catalog-filters-actions {
     grid-column: span 2;
   }
@@ -1421,6 +1496,29 @@ h1 {
 }
 
 @media (max-width: 680px) {
+  .nav {
+    min-height: 64px;
+  }
+
+  .brand {
+    font-size: 0.95rem;
+  }
+
+  .nav .btn.btn-small {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .breadcrumb-nav {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+  }
+
+  .breadcrumb-nav::-webkit-scrollbar {
+    height: 6px;
+  }
+
   .cards-grid,
   .cards-grid-compact,
   .districts,
@@ -1473,8 +1571,16 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .catalog-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
   .catalog-filters-actions {
     grid-column: span 1;
+    flex-direction: column;
+  }
+
+  .catalog-filter-actions {
     flex-direction: column;
   }
 

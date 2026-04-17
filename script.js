@@ -217,6 +217,33 @@ function setupLeadForm() {
   });
 }
 
+function setupMobileMenuToggle() {
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("primary-menu");
+  if (!(toggle instanceof HTMLButtonElement) || !(menu instanceof HTMLElement)) return;
+
+  const closeMenu = () => {
+    toggle.setAttribute("aria-expanded", "false");
+    menu.classList.remove("menu-open");
+  };
+
+  toggle.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+    menu.classList.toggle("menu-open", !expanded);
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1024) {
+      closeMenu();
+    }
+  });
+}
+
 function initHomePage() {
   if (typeof REALTY_PROJECTS === "undefined") return;
   const top = [...REALTY_PROJECTS].sort((a, b) => b.priority - a.priority).slice(0, 4);
@@ -231,6 +258,7 @@ function initHomePage() {
   renderCards("premium-projects", premium);
   renderDistricts();
   setupLeadForm();
+  setupMobileMenuToggle();
 }
 
 initHomePage();

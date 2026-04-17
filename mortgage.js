@@ -78,10 +78,25 @@ function initMortgageFaqAccordion() {
 
 function initMortgagePage() {
   const rateInput = document.getElementById("mortgage-rate");
+  const programSelect = document.getElementById("mortgage-program");
   const priceInput = document.getElementById("mortgage-price");
   const downPaymentInput = document.getElementById("mortgage-down-payment");
   const yearsInput = document.getElementById("mortgage-years");
   const form = document.getElementById("mortgage-form");
+
+  if (programSelect && rateInput) {
+    programSelect.innerHTML = window.REALTY_MORTGAGE_PROGRAMS
+      .map(
+        (program) => `
+        <option value="${program.id}">${program.title} · ${program.rate.toFixed(2)}%</option>
+      `
+      )
+      .join("");
+    const firstProgram = window.REALTY_MORTGAGE_PROGRAMS[0];
+    if (firstProgram) {
+      rateInput.value = String(firstProgram.rate);
+    }
+  }
 
   const tableBody = document.getElementById("mortgage-programs-table");
   if (tableBody) {
@@ -121,6 +136,13 @@ function initMortgagePage() {
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
     recalcMortgage();
+  });
+  programSelect?.addEventListener("change", () => {
+    const selected = window.REALTY_MORTGAGE_PROGRAMS.find((program) => program.id === programSelect.value);
+    if (selected && rateInput) {
+      rateInput.value = String(selected.rate);
+      recalcMortgage();
+    }
   });
   [priceInput, downPaymentInput, yearsInput, rateInput].forEach((input) => {
     input?.addEventListener("input", recalcMortgage);

@@ -28,7 +28,7 @@ function sortedPostsByDate(posts) {
 }
 
 function renderCategoryFilters(currentCategory) {
-  const root = document.getElementById("blog-categories");
+  const root = document.getElementById("blog-category-filters");
   if (!root) return;
   const categories = [...new Set(window.REALTY_BLOG_POSTS.map((post) => post.category))];
   const all = [{ key: "", label: "Все" }, ...categories.map((c) => ({ key: c, label: c }))];
@@ -49,7 +49,7 @@ function filterPosts(category) {
 }
 
 function renderPosts(posts, page) {
-  const root = document.getElementById("blog-grid");
+  const root = document.getElementById("blog-results");
   if (!root) return;
   const visible = posts.slice(0, page * BLOG_PAGE_SIZE);
   root.innerHTML = visible
