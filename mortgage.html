@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ипотека на новостройки Москвы и МО | Савушкин Эстейт</title>
+    <meta
+      name="description"
+      content="4 ипотечные программы, сравнительная таблица и калькулятор аннуитетного платежа для покупки новостройки."
+    />
+    <link rel="canonical" href="https://shmitrix.ru/mortgage.html" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="./index.html"><span class="brand-dot"></span>Савушкин Эстейт</a>
+        <nav class="menu">
+          <a href="./index.html">Главная</a>
+          <a href="./catalog.html">Каталог ЖК</a>
+          <a href="./districts.html">Районы</a>
+          <a href="./developers.html">Застройщики</a>
+          <a href="./mortgage.html">Ипотека</a>
+          <a href="./blog.html">Блог</a>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="container breadcrumb-nav" aria-label="Хлебные крошки">
+      <a href="./index.html">Главная</a>
+      <span>›</span>
+      <a href="./mortgage.html">Ипотека</a>
+    </nav>
+
+    <main class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h1>Ипотечные программы на новостройки</h1>
+            <p>Сравните условия 4 программ и рассчитайте аннуитетный платёж.</p>
+          </div>
+        </div>
+
+        <section class="article-section">
+          <h2>Сравнение ипотечных программ</h2>
+          <div class="project-table-wrap">
+            <table class="project-table">
+              <thead>
+                <tr>
+                  <th>Программа</th>
+                  <th>Ставка</th>
+                  <th>Первый взнос</th>
+                  <th>Макс. сумма</th>
+                  <th>Срок</th>
+                </tr>
+              </thead>
+              <tbody id="mortgage-programs-table"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="article-section section-muted">
+          <h2>Ипотечный калькулятор (аннуитет)</h2>
+          <form class="catalog-filters" id="mortgage-form">
+            <div class="catalog-filters-form">
+              <div class="catalog-filters-field">
+                <label for="mortgage-price">Стоимость квартиры, ₽</label>
+                <input id="mortgage-price" type="number" value="12000000" min="1000000" step="100000" />
+              </div>
+              <div class="catalog-filters-field">
+                <label for="mortgage-down-payment">Первый взнос, ₽</label>
+                <input id="mortgage-down-payment" type="number" value="2400000" min="0" step="100000" />
+              </div>
+              <div class="catalog-filters-field">
+                <label for="mortgage-rate">Ставка, % годовых</label>
+                <input id="mortgage-rate" type="number" value="6" min="0.1" max="40" step="0.1" />
+              </div>
+              <div class="catalog-filters-field">
+                <label for="mortgage-program">Программа</label>
+                <select id="mortgage-program"></select>
+              </div>
+              <div class="catalog-filters-field">
+                <label for="mortgage-years">Срок, лет</label>
+                <input id="mortgage-years" type="number" value="20" min="1" max="40" step="1" />
+              </div>
+              <div class="catalog-filters-actions">
+                <button class="btn btn-small" id="mortgage-calc-button" type="submit">Рассчитать</button>
+              </div>
+            </div>
+          </form>
+          <div class="article-kpi-grid" id="mortgage-result"></div>
+        </section>
+
+        <section class="article-section">
+          <h2>FAQ по ипотеке</h2>
+          <div class="faq-grid" id="mortgage-faq"></div>
+        </section>
+      </div>
+    </main>
+
+    <script src="./realty-data.js"></script>
+    <script src="./mortgage.js"></script>
+  </body>
+</html>

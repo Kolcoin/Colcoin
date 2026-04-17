@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Застройщики Москвы и МО | Савушкин Эстейт</title>
+    <meta
+      name="description"
+      content="Рейтинг и карточки застройщиков: сортировка по числу ЖК, актуальные девелоперы Москвы и Московской области."
+    />
+    <link rel="canonical" href="https://shmitrix.ru/developers.html" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="./index.html"><span class="brand-dot"></span>Савушкин Эстейт</a>
+        <nav class="menu">
+          <a href="./index.html">Главная</a>
+          <a href="./catalog.html">Каталог ЖК</a>
+          <a href="./districts.html">Районы</a>
+          <a href="./developers.html">Застройщики</a>
+          <a href="./mortgage.html">Ипотека</a>
+          <a href="./blog.html">Блог</a>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="container breadcrumb-nav" aria-label="Хлебные крошки">
+      <a href="./index.html">Главная</a>
+      <span>›</span>
+      <a href="./developers.html">Застройщики</a>
+    </nav>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <h1>Застройщики</h1>
+              <p>Сортировка и карточки девелоперов с количеством активных ЖК в витрине.</p>
+            </div>
+          </div>
+
+          <div class="catalog-toolbar">
+            <p class="catalog-summary" id="developers-summary">Загрузка...</p>
+            <label class="catalog-filters-field">
+              <span>Сортировка</span>
+              <select id="developers-sort">
+                <option value="count-desc">По количеству ЖК (убыв.)</option>
+                <option value="count-asc">По количеству ЖК (возр.)</option>
+                <option value="name-asc">По названию (А-Я)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="catalog-grid" id="developers-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./realty-data.js"></script>
+    <script src="./developers.js"></script>
+  </body>
+</html>

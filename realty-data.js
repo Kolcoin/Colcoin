@@ -200,3 +200,175 @@ window.REALTY_PROJECTS = [
     sourceUrl: "https://msk.nmarket.pro/search/complex/81249?isSmartLineMode=true&searchString=city%20line"
   }
 ];
+
+window.REALTY_DISTRICTS = [
+  { id: "czao", name: "ЦАО", region: "Москва", metro: "Охотный ряд", complexes: 24 },
+  { id: "sao", name: "САО", region: "Москва", metro: "Речной вокзал", complexes: 19 },
+  { id: "svao", name: "СВАО", region: "Москва", metro: "Ботанический сад", complexes: 17 },
+  { id: "vao", name: "ВАО", region: "Москва", metro: "Шоссе Энтузиастов", complexes: 16 },
+  { id: "yvao", name: "ЮВАО", region: "Москва", metro: "Текстильщики", complexes: 14 },
+  { id: "yao", name: "ЮАО", region: "Москва", metro: "Домодедовская", complexes: 15 },
+  { id: "uzao", name: "ЮЗАО", region: "Москва", metro: "Профсоюзная", complexes: 18 },
+  { id: "szao", name: "СЗАО", region: "Москва", metro: "Тушинская", complexes: 13 },
+  { id: "vidnoe", name: "Видное", region: "Московская область", metro: "Калинина (ж/д)", complexes: 11 },
+  { id: "lyubertsy", name: "Люберцы", region: "Московская область", metro: "Некрасовка", complexes: 20 },
+  { id: "krasnogorsk", name: "Красногорск", region: "Московская область", metro: "Мякинино", complexes: 18 },
+  { id: "khimki", name: "Химки", region: "Московская область", metro: "Планерная", complexes: 14 },
+  { id: "balashikha", name: "Балашиха", region: "Московская область", metro: "Новогиреево", complexes: 17 },
+  { id: "odintsovo", name: "Одинцово", region: "Московская область", metro: "МЦД-1 Одинцово", complexes: 12 },
+  { id: "mytishchi", name: "Мытищи", region: "Московская область", metro: "Медведково", complexes: 15 },
+  { id: "podolsk", name: "Подольск", region: "Московская область", metro: "МЦД-2 Подольск", complexes: 10 },
+  { id: "dolgoprudny", name: "Долгопрудный", region: "Московская область", metro: "МЦД-1 Водники", complexes: 9 }
+];
+
+window.REALTY_DEVELOPERS = [
+  { id: "fsk", name: "ФСК", displays: 38, classes: ["comfort", "business"], region: "Москва и МО" },
+  { id: "pik", name: "ПИК", displays: 46, classes: ["comfort"], region: "Москва и МО" },
+  { id: "samolet", name: "Самолет", displays: 34, classes: ["comfort"], region: "МО" },
+  { id: "mangazeya-dev", name: "Мангазея Девелопмент", displays: 12, classes: ["business", "premium"], region: "Москва" },
+  { id: "donstroy", name: "Донстрой", displays: 18, classes: ["business", "premium"], region: "Москва" },
+  { id: "ingrad", name: "INGRAD", displays: 16, classes: ["comfort", "business"], region: "Москва и МО" },
+  { id: "mr-group", name: "MR Group", displays: 21, classes: ["business", "premium"], region: "Москва" },
+  { id: "level", name: "Level Group", displays: 19, classes: ["business"], region: "Москва" }
+];
+
+window.REALTY_MORTGAGE_PROGRAMS = [
+  {
+    id: "family",
+    title: "Семейная ипотека",
+    rate: 6.0,
+    minDownPayment: 20,
+    termYears: 30,
+    maxAmountMln: 12,
+    note: "Для семей с детьми, покупка первичного жилья."
+  },
+  {
+    id: "it",
+    title: "IT-ипотека",
+    rate: 5.0,
+    minDownPayment: 20,
+    termYears: 30,
+    maxAmountMln: 18,
+    note: "Для сотрудников аккредитованных IT-компаний."
+  },
+  {
+    id: "base",
+    title: "Базовая рыночная",
+    rate: 17.9,
+    minDownPayment: 15,
+    termYears: 30,
+    maxAmountMln: 50,
+    note: "Стандартная программа для любых покупателей."
+  },
+  {
+    id: "subsidized",
+    title: "Субсидированная от застройщика",
+    rate: 10.5,
+    minDownPayment: 20,
+    termYears: 25,
+    maxAmountMln: 35,
+    note: "Ставка ниже рынка на ограниченный срок."
+  }
+];
+
+window.REALTY_MORTGAGE_FAQ = [
+  {
+    q: "Как считается ежемесячный платёж в калькуляторе?",
+    a: "Используется аннуитетная формула: одинаковый ежемесячный платёж на весь срок при фиксированной ставке."
+  },
+  {
+    q: "Какие данные нужны для предварительного расчёта?",
+    a: "Стоимость объекта, первоначальный взнос, срок кредита и выбранная ставка."
+  },
+  {
+    q: "Можно ли досрочно погасить ипотеку?",
+    a: "Да, обычно это возможно без штрафов, но условия зависят от банка и конкретного договора."
+  },
+  {
+    q: "Почему расчёт калькулятора и банка может отличаться?",
+    a: "Банк учитывает страхование, комиссии, индивидуальные надбавки и дату выдачи кредита."
+  }
+];
+
+window.REALTY_BLOG_POSTS = [
+  {
+    id: "deal-checklist-2026",
+    title: "Чеклист сделки с новостройкой в 2026: 12 обязательных проверок",
+    category: "Сделка",
+    date: "2026-04-10",
+    excerpt: "Пошагово разбираем, что проверить перед бронью и подписанием ДДУ.",
+    url: "./starts/zhk-enigmiya.html"
+  },
+  {
+    id: "mortgage-family-vs-it",
+    title: "Семейная ипотека vs IT-ипотека: что выгоднее в вашем сценарии",
+    category: "Ипотека",
+    date: "2026-04-08",
+    excerpt: "Сравниваем ставки, ограничения и итоговую переплату на реальных примерах.",
+    url: "./mortgage.html"
+  },
+  {
+    id: "district-review-sao",
+    title: "САО Москвы: где лучше брать новостройку под аренду",
+    category: "Районы",
+    date: "2026-04-07",
+    excerpt: "Арендный спрос, транспорт и локации с наибольшим потенциалом.",
+    url: "./districts.html"
+  },
+  {
+    id: "developer-rating-2026",
+    title: "Рейтинг застройщиков Москвы и МО: как читать показатели без маркетинга",
+    category: "Застройщики",
+    date: "2026-04-05",
+    excerpt: "Разбираем ключевые метрики: сроки сдачи, класс, объём предложения.",
+    url: "./developers.html"
+  },
+  {
+    id: "first-home-budget",
+    title: "Первая квартира: как рассчитать комфортный бюджет без ошибок",
+    category: "Бюджет",
+    date: "2026-04-03",
+    excerpt: "Формула бюджета покупки с учётом резерва и ежемесячной нагрузки.",
+    url: "./catalog.html"
+  },
+  {
+    id: "mcd5-impact",
+    title: "Как запуск МЦД-5 влияет на цены новостроек у станции Калинина",
+    category: "Транспорт",
+    date: "2026-04-02",
+    excerpt: "Сценарный разбор влияния транспортной доступности на ликвидность лота.",
+    url: "./starts/zhk-enigmiya.html"
+  },
+  {
+    id: "premium-entry-strategy",
+    title: "Премиум-сегмент: когда вход на старте действительно оправдан",
+    category: "Инвестиции",
+    date: "2026-03-31",
+    excerpt: "Критерии для оценки премиум-лота перед бронированием.",
+    url: "./project.html?project=mangazeya"
+  },
+  {
+    id: "layout-mistakes",
+    title: "7 ошибок при выборе планировки, которые потом дорого исправлять",
+    category: "Планировки",
+    date: "2026-03-28",
+    excerpt: "На что смотреть в планировке, если покупаете для жизни или аренды.",
+    url: "./project.html?project=enigmiya"
+  },
+  {
+    id: "new-moscow-guide",
+    title: "Новая Москва: где инфраструктура уже готова, а где только на бумаге",
+    category: "Районы",
+    date: "2026-03-26",
+    excerpt: "Карта рисков и возможностей по ключевым локациям Новой Москвы.",
+    url: "./districts.html"
+  },
+  {
+    id: "safe-booking",
+    title: "Безопасная бронь: как зафиксировать лот и не потерять деньги",
+    category: "Сделка",
+    date: "2026-03-24",
+    excerpt: "Правила безопасной брони и контрольные точки до подписания договора.",
+    url: "./catalog.html"
+  }
+];

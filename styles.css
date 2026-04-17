@@ -784,6 +784,183 @@ h1 {
   justify-content: center;
 }
 
+.districts-page-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.districts-page-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.districts-page-card h3 {
+  margin: 0;
+}
+
+.districts-page-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.districts-page-meta {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.districts-page-meta span {
+  background: #eef1ff;
+  color: #3f49b6;
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.developers-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.developers-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.developer-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.developer-card h3,
+.developer-card p {
+  margin: 0;
+}
+
+.developer-stat {
+  color: var(--text-muted);
+}
+
+.mortgage-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.mortgage-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.mortgage-card h3,
+.mortgage-card p {
+  margin: 0;
+}
+
+.mortgage-rate {
+  color: #2449d8;
+  font-weight: 700;
+}
+
+.mortgage-calculator {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mortgage-calculator label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.mortgage-calculator input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 42px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.mortgage-result {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+}
+
+.mortgage-result-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.blog-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.blog-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.blog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.blog-card h3,
+.blog-card p {
+  margin: 0;
+}
+
+.blog-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #eef1ff;
+  color: #3f49b6;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.blog-pagination {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+}
+
 .project-hero-meta {
   display: grid;
   gap: 8px;
@@ -1206,6 +1383,10 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .mortgage-result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .catalog-filters-form {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1215,6 +1396,17 @@ h1 {
   }
 
   .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .districts-page-grid,
+  .developers-grid,
+  .blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mortgage-grid,
+  .mortgage-calculator {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1264,6 +1456,10 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .mortgage-result-grid {
+    grid-template-columns: 1fr;
+  }
+
   .catalog-filters-form {
     grid-template-columns: 1fr;
   }
@@ -1274,6 +1470,14 @@ h1 {
   }
 
   .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .districts-page-grid,
+  .developers-grid,
+  .mortgage-grid,
+  .mortgage-calculator,
+  .blog-grid {
     grid-template-columns: 1fr;
   }
 }
