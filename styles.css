@@ -972,6 +972,47 @@ h1 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.mortgage-result-grid .project-card {
+  min-height: auto;
+  gap: 10px;
+}
+
+.mortgage-metric-illustration {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background-size: cover;
+  background-position: center;
+}
+
+.mortgage-metric-illustration.loan {
+  background-image: linear-gradient(145deg, #f2f5fb 0%, #e8edf7 100%);
+}
+
+.mortgage-metric-illustration.monthly {
+  background-image: linear-gradient(145deg, #f5f6f8 0%, #eceef3 100%);
+}
+
+.mortgage-metric-illustration.overpayment {
+  background-image: linear-gradient(145deg, #f3f4f6 0%, #e9ebf0 100%);
+}
+
+.mortgage-metric-illustration.rate {
+  background-image: linear-gradient(145deg, #eff2f8 0%, #e4e9f3 100%);
+}
+
+.mortgage-metric-illustration::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin: 14px;
+  border-radius: 10px;
+  background: rgba(100, 112, 145, 0.18);
+  box-shadow: 18px 14px 0 rgba(100, 112, 145, 0.12), 34px 26px 0 rgba(100, 112, 145, 0.08);
+}
+
 .blog-toolbar {
   display: flex;
   justify-content: space-between;
