@@ -102,12 +102,19 @@ function renderLaunchBlocks() {
 
   root.innerHTML = segmentDefs
     .map((segment) => {
-      const cards = sorted
+      const filteredProjects = sorted
         .filter(segment.filter)
+        .filter((item) => (segment.id === "family" ? item.id !== "first-donskoy" : true));
+      const cards = filteredProjects
         .slice(0, 2)
         .map(
           (item) => `
             <article class="project-card">
+              ${
+                item.heroImage
+                  ? `<img class="project-card-image" src="${item.heroImage}" alt="${item.title}" loading="lazy" />`
+                  : ""
+              }
               <h3>${item.title}</h3>
               <p class="project-meta">${item.district}</p>
               <p class="project-meta">${item.metro}</p>
