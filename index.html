@@ -272,8 +272,24 @@
           </div>
           <aside class="hero-card" id="lead-form">
             <h2>Персональная подборка новостроек за 2 часа</h2>
-            <p>Оставьте заявку, и мы соберём варианты по бюджету, району и формату сделки.</p>
-            <form class="lead-form">
+            <p>Оставьте заявку, и мы соберём варианты по цели, бюджету и локации.</p>
+            <form class="lead-form" id="hero-lead-form">
+              <label for="goal">Цель покупки</label>
+              <select id="goal" name="goal">
+                <option value="">Выберите цель</option>
+                <option value="first-home">Первая квартира</option>
+                <option value="investment">Инвестиция</option>
+                <option value="family">Семейное расширение</option>
+                <option value="premium">Премиум-уровень</option>
+              </select>
+              <label for="budget">Бюджет</label>
+              <select id="budget" name="budget">
+                <option value="">Выберите бюджет</option>
+                <option value="4-8">4–8 млн ₽</option>
+                <option value="8-12">8–12 млн ₽</option>
+                <option value="12-18">12–18 млн ₽</option>
+                <option value="18+">от 18 млн ₽</option>
+              </select>
               <label for="name">Ваше имя</label>
               <input id="name" type="text" placeholder="Например, Анна" />
               <label for="phone">Телефон</label>
@@ -289,7 +305,7 @@
         <div class="container">
           <div class="section-heading">
             <h2>Рекомендуемые проекты Москвы и МО</h2>
-            <a class="section-link" href="#launches">Смотреть старты →</a>
+            <a class="section-link" href="./catalog.html">Перейти в каталог →</a>
           </div>
           <div class="cards-grid" id="top-projects"></div>
         </div>
@@ -372,6 +388,18 @@
             <p>Каждый блок отражает отдельную стратегию выбора недвижимости в Москве и области.</p>
           </div>
           <div class="launch-goals" id="goal-blocks"></div>
+        </div>
+      </section>
+
+      <section class="section" id="expanded-segments">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <h2>Развёрнутые блоки по целям</h2>
+              <p>Подробно расписали каждую стратегию выбора квартиры: для жизни, инвестиций, семьи и премиум-сценария.</p>
+            </div>
+          </div>
+          <div class="launch-groups" id="expanded-segment-blocks"></div>
         </div>
       </section>
 
@@ -480,6 +508,49 @@
         </div>
       </section>
 
+      <section class="section" id="seo-text">
+        <div class="container">
+          <div class="section-heading">
+            <h2>SEO-текст: новостройки Москвы и МО</h2>
+          </div>
+          <div class="article-layout">
+            <article>
+              <h2>Подбор новостроек под цель и бюджет</h2>
+              <p>
+                «Савушкин Эстейт» помогает выбрать новостройку в Москве и Московской области под ваш сценарий: первая
+                покупка, инвестиция, семейный апгрейд или премиум-сегмент.
+              </p>
+              <p>
+                На сайте доступны актуальные карточки объектов, развёрнутые обзоры и структурированный каталог с фильтрами
+                по району, метро, бюджету, количеству комнат и классу дома.
+              </p>
+            </article>
+            <article>
+              <h2>Актуальные старты продаж и аналитика</h2>
+              <p>
+                Мы обновляем разделы со стартами продаж, добавляем сравнение лотов и даём практические рекомендации перед
+                выходом на бронь и сделку.
+              </p>
+              <p>
+                Материалы сайта предназначены для быстрого принятия решений: понятные параметры, ключевые риски и удобные
+                ссылки на подробные страницы объектов.
+              </p>
+            </article>
+            <article>
+              <h2>География и сопровождение сделки</h2>
+              <p>
+                Основной фокус: Москва, Новая Москва и Московская область. Мы сопровождаем весь цикл: от первичного
+                подбора до финального подписания документов.
+              </p>
+              <p>
+                Для связи используйте телефон +7 985 761-48-85 и Telegram @AlexSavushkin — подготовим персональную
+                подборку в краткий срок.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section cta" id="contact">
         <div class="container cta-box">
           <div>
@@ -554,6 +625,7 @@
       </div>
     </footer>
 
+    <script src="./realty-data.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

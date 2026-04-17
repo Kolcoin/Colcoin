@@ -1,128 +1,8 @@
-const topProjects = [
-  {
-    title: "ЖК Urban Riverside",
-    district: "СЗАО, Москва",
-    metro: "10 минут до метро",
-    price: "от 9.1 млн ₽",
-    sourceLabel: "Авторская витрина",
-    sourceUrl: "./starts/zhk-enigmiya.html"
-  },
-  {
-    title: "ЖК 1-й Донской",
-    district: "7 км от МКАД · М-4 Дон",
-    metro: "станция Калинина 15–17 мин пешком",
-    price: "по запросу",
-    sourceLabel: "Авторская витрина",
-    sourceUrl: "./starts/zhk-enigmiya.html"
-  },
-  {
-    title: "ЖК Park Side",
-    district: "Московская область",
-    metro: "рядом МЦД",
-    price: "от 7.8 млн ₽",
-    sourceLabel: "Авторская витрина",
-    sourceUrl: "./starts/zhk-enigmiya.html"
-  }
-];
-
-const launchBlocks = [
-  {
-    id: "first-home",
-    icon: "🔑",
-    title: "Старт для жизни: первая квартира без хаоса выбора",
-    description:
-      "Собрали варианты для первой покупки: удобные районы, понятный бюджет входа и прогнозируемые условия сделки.",
-    tags: ["Первичная покупка", "Ипотека", "Готовая инфраструктура"],
-    buttonText: "Подобрать проекты для первой покупки",
-    buttonClass: "btn-warm",
-    projects: [
-      {
-        title: "ЖК 1-й Донской",
-        district: "Москва",
-        metro: "подбор по параметрам",
-        price: "по запросу",
-        sourceUrl: "./starts/zhk-enigmiya.html"
-      },
-      {
-        title: "ЖК 1-й Донской (семейный формат)",
-        district: "Московская область",
-        metro: "рядом транспорт",
-        price: "по запросу",
-        sourceUrl: "./starts/zhk-enigmiya.html"
-      }
-    ]
-  },
-  {
-    id: "invest",
-    icon: "📈",
-    title: "Инвестиционный сценарий: новостройки с потенциалом",
-    description:
-      "Выделили проекты, которые чаще выбирают под арендную стратегию и долгосрочный рост стоимости.",
-    tags: ["Инвестиция", "Ликвидность", "ЦАО"],
-    buttonText: "Открыть инвестиционные проекты",
-    buttonClass: "btn-cool",
-    projects: [
-      {
-        title: "ЖК 1-й Донской (инвест-формат)",
-        district: "Москва",
-        metro: "транспортная доступность",
-        price: "по запросу",
-        sourceUrl: "./starts/zhk-enigmiya.html"
-      },
-      {
-        title: "ЖК 1-й Донской (доходный сценарий)",
-        district: "Москва и МО",
-        metro: "быстрый выезд",
-        price: "по запросу",
-        sourceUrl: "./starts/zhk-enigmiya.html"
-      }
-    ]
-  },
-  {
-    id: "family-upgrade",
-    icon: "🏡",
-    title: "Семейный апгрейд: больше пространства и инфраструктуры",
-    description:
-      "Подходящие варианты для семьи: комфортная среда, нужный метраж и инфраструктура рядом с домом.",
-    tags: ["Семья", "Расширение", "Комфортная среда"],
-    buttonText: "Перейти к семейным вариантам",
-    buttonClass: "btn-berry",
-    projects: [
-      {
-        title: "ЖК 1-й Донской (семья)",
-        district: "Москва",
-        metro: "школы и сервисы",
-        price: "по запросу",
-        sourceUrl: "./starts/zhk-enigmiya.html"
-      },
-      {
-        title: "ЖК 1-й Донской (расширение)",
-        district: "Московская область",
-        metro: "спокойная локация",
-        price: "по запросу",
-        sourceUrl: "./starts/zhk-enigmiya.html"
-      }
-    ]
-  }
-];
-
-const premiumProjects = [
-  {
-    title: "ЖК 1-й Донской",
-    district: "Москва и область",
-    metro: "подбор по цели",
-    price: "по запросу",
-    sourceLabel: "Новая статья",
-    sourceUrl: "./starts/zhk-enigmiya.html"
-  }
-];
-
-const districts = [
-  { name: "Москва", info: "актуальные старты · по запросу" },
-  { name: "Московская область", info: "актуальные старты · по запросу" },
-  { name: "Новая Москва", info: "актуальные старты · по запросу" },
-  { name: "Ближнее Подмосковье", info: "актуальные старты · по запросу" }
-];
+function formatPriceRange(from, to) {
+  return `от ${from.toLocaleString("ru-RU", { maximumFractionDigits: 1 })} до ${to.toLocaleString("ru-RU", {
+    maximumFractionDigits: 1
+  })} млн ₽`;
+}
 
 function renderCards(targetId, items) {
   const root = document.getElementById(targetId);
@@ -135,12 +15,10 @@ function renderCards(targetId, items) {
         <p class="project-meta">${item.district}</p>
         <p class="project-meta">${item.metro}</p>
         ${item.sourceLabel ? `<p class="project-source">${item.sourceLabel}</p>` : ""}
-        <p class="project-price">${item.price}</p>
-        ${
-          item.sourceUrl
-            ? `<a class="project-link" href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer">Проверить источник</a>`
-            : ""
-        }
+        <p class="project-price">${formatPriceRange(item.priceFrom, item.priceTo)}</p>
+        <a class="project-link" href="./project.html?project=${item.slug}" target="_blank" rel="noopener noreferrer">
+          Открыть карточку ЖК
+        </a>
       </article>
     `
     )
@@ -149,7 +27,14 @@ function renderCards(targetId, items) {
 
 function renderDistricts() {
   const root = document.getElementById("districts-list");
-  if (!root) return;
+  if (!root || typeof REALTY_PROJECTS === "undefined") return;
+  const districts = [...new Set(REALTY_PROJECTS.map((item) => item.district))]
+    .slice(0, 6)
+    .map((district) => ({
+      name: district.split(",")[0],
+      info: `актуальные старты · ${REALTY_PROJECTS.filter((p) => p.district === district).length} ЖК`
+    }));
+
   root.innerHTML = districts
     .map(
       (district) => `
@@ -164,34 +49,80 @@ function renderDistricts() {
 
 function renderLaunchBlocks() {
   const root = document.getElementById("launch-blocks");
-  if (!root) return;
+  if (!root || typeof REALTY_PROJECTS === "undefined") return;
 
-  root.innerHTML = launchBlocks
-    .map((block) => {
-      const cards = block.projects
+  const sorted = [...REALTY_PROJECTS].sort((a, b) => b.priority - a.priority);
+  const segmentDefs = [
+    {
+      id: "first-home",
+      icon: "🏠",
+      title: "Первая квартира",
+      description: "Проекты с доступным входом и удобным транспортом.",
+      tags: ["До 12 млн ₽", "Льготная ипотека", "Комфорт-класс"],
+      buttonText: "Смотреть сценарий",
+      buttonClass: "btn-warm",
+      filter: (p) => p.priceFrom <= 12
+    },
+    {
+      id: "invest",
+      icon: "📈",
+      title: "Инвестиция",
+      description: "Лоты для аренды и стратегии роста капитала.",
+      tags: ["Ликвидность", "Бизнес-класс", "Транспорт"],
+      buttonText: "Открыть подборку",
+      buttonClass: "btn-cool",
+      filter: (p) => p.classType === "business" || p.classType === "premium"
+    },
+    {
+      id: "family",
+      icon: "👨‍👩‍👧‍👦",
+      title: "Семейный формат",
+      description: "Планировки с 2+ комнатами и инфраструктурой для семьи.",
+      tags: ["2-4 комнаты", "Школы и сады", "Дворы"],
+      buttonText: "Выбрать ЖК",
+      buttonClass: "btn-berry",
+      filter: (p) => p.rooms.includes("3") || p.rooms.includes("4+")
+    },
+    {
+      id: "premium",
+      icon: "✨",
+      title: "Премиум",
+      description: "Статусные проекты с высокими стандартами и локацией.",
+      tags: ["Премиум", "Архитектура", "Приватность"],
+      buttonText: "Премиум-каталог",
+      buttonClass: "btn-invest",
+      filter: (p) => p.classType === "premium"
+    }
+  ];
+
+  root.innerHTML = segmentDefs
+    .map((segment) => {
+      const cards = sorted
+        .filter(segment.filter)
+        .slice(0, 2)
         .map(
           (item) => `
             <article class="project-card">
               <h3>${item.title}</h3>
               <p class="project-meta">${item.district}</p>
               <p class="project-meta">${item.metro}</p>
-              <p class="project-price">${item.price}</p>
-              <a class="project-link" href="${item.sourceUrl}">Открыть страницу старта</a>
+              <p class="project-price">${formatPriceRange(item.priceFrom, item.priceTo)}</p>
+              <a class="project-link" href="./project.html?project=${item.slug}">Открыть карточку</a>
             </article>
           `
         )
         .join("");
 
       return `
-        <section class="launch-block" id="launch-${block.id}">
+        <section class="launch-block" id="launch-${segment.id}">
           <div class="launch-block-head">
-            <p class="launch-icon">${block.icon}</p>
-            <h3>${block.title}</h3>
-            <p>${block.description}</p>
+            <p class="launch-icon">${segment.icon}</p>
+            <h3>${segment.title}</h3>
+            <p>${segment.description}</p>
             <div class="segment-tags">
-              ${block.tags.map((tag) => `<span>${tag}</span>`).join("")}
+              ${segment.tags.map((tag) => `<span>${tag}</span>`).join("")}
             </div>
-            <a class="btn ${block.buttonClass}" href="#contact">${block.buttonText}</a>
+            <a class="btn ${segment.buttonClass}" href="./catalog.html">${segment.buttonText}</a>
           </div>
           <div class="cards-grid cards-grid-compact">${cards}</div>
         </section>
@@ -200,30 +131,101 @@ function renderLaunchBlocks() {
     .join("");
 }
 
-function setupLeadForm() {
-  const form = document.querySelector(".lead-form");
-  if (!form) return;
+function renderExpandedSegments() {
+  const root = document.getElementById("expanded-segment-blocks");
+  if (!root || typeof REALTY_PROJECTS === "undefined") return;
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-  });
+  const segmentDetails = [
+    {
+      id: "goal-first-home",
+      title: "Сценарий «Первая квартира»",
+      text: "Фокус на минимальном входе, удобной логистике и предсказуемой финансовой модели.",
+      bullets: [
+        "Подбор в рамках комфортного ежемесячного платежа",
+        "Проверка юридической структуры сделки",
+        "Сравнение 3-5 лотов в одном бюджете"
+      ]
+    },
+    {
+      id: "goal-invest",
+      title: "Сценарий «Инвестиция»",
+      text: "Подбираем лоты с потенциалом арендного потока и роста цены на этапах строительства.",
+      bullets: [
+        "Анализ ликвидности на горизонте 2-4 лет",
+        "Оценка срока выхода и сценариев продажи",
+        "Фильтрация по транспортным кластерам"
+      ]
+    },
+    {
+      id: "goal-family",
+      title: "Сценарий «Семейный апгрейд»",
+      text: "Ключевой акцент на функциональных планировках и ежедневной инфраструктуре.",
+      bullets: [
+        "Планировки с несколькими сценариями зонирования",
+        "Близость образовательной и спортивной инфраструктуры",
+        "Пешеходные и транспортные маршруты для семьи"
+      ]
+    },
+    {
+      id: "goal-premium",
+      title: "Сценарий «Премиум»",
+      text: "Подбор проектов с повышенным уровнем сервиса, приватности и архитектурной ценности.",
+      bullets: [
+        "Сравнение качества входных групп и лобби",
+        "Оценка видовых характеристик",
+        "Приоритет по локации и статусу окружения"
+      ]
+    }
+  ];
 
-  const button = form.querySelector("button");
-  if (button) {
-    button.addEventListener("click", () => {
-      const nameInput = document.getElementById("name");
-      const name = nameInput instanceof HTMLInputElement ? nameInput.value.trim() : "";
-      alert(
-        name
-          ? `${name}, спасибо! Мы подготовим подборку и свяжемся с вами в ближайшее время.`
-          : "Спасибо! Мы подготовим подборку и свяжемся с вами в ближайшее время."
-      );
-    });
-  }
+  root.innerHTML = segmentDetails
+    .map(
+      (segment) => `
+      <section class="launch-block" id="${segment.id}">
+        <div class="launch-block-head">
+          <h3>${segment.title}</h3>
+          <p>${segment.text}</p>
+        </div>
+        <ul class="article-checklist">
+          ${segment.bullets.map((bullet) => `<li>${bullet}</li>`).join("")}
+        </ul>
+      </section>
+    `
+    )
+    .join("");
 }
 
-renderCards("top-projects", topProjects);
-renderLaunchBlocks();
-renderCards("premium-projects", premiumProjects);
-renderDistricts();
-setupLeadForm();
+function setupLeadForm() {
+  const form = document.getElementById("hero-lead-form");
+  if (!form) return;
+
+  const goal = document.getElementById("goal");
+  const budget = document.getElementById("budget");
+  const button = form.querySelector("button");
+
+  if (!(button instanceof HTMLButtonElement)) return;
+  button.addEventListener("click", () => {
+    const goalText = goal instanceof HTMLSelectElement ? goal.options[goal.selectedIndex].text : "цель не выбрана";
+    const budgetText =
+      budget instanceof HTMLSelectElement ? budget.options[budget.selectedIndex].text : "бюджет не выбран";
+    alert(`Принято. Цель: ${goalText}. Бюджет: ${budgetText}. Мы свяжемся с вами и подготовим подборку.`);
+  });
+}
+
+function initHomePage() {
+  if (typeof REALTY_PROJECTS === "undefined") return;
+  const top = [...REALTY_PROJECTS].sort((a, b) => b.priority - a.priority).slice(0, 4);
+  const premium = [...REALTY_PROJECTS]
+    .filter((item) => item.classType === "business" || item.classType === "premium")
+    .sort((a, b) => b.priority - a.priority)
+    .slice(0, 4);
+
+  renderCards("top-projects", top);
+  renderLaunchBlocks();
+  renderExpandedSegments();
+  renderCards("premium-projects", premium);
+  renderDistricts();
+  setupLeadForm();
+}
+
+initHomePage();
