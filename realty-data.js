@@ -175,9 +175,9 @@ window.REALTY_PROJECTS = [
     developer: "City Group",
     priority: 77,
     articleUrl: "./starts/enigmiya.html",
-    heroImage: "https://avatars.mds.yandex.net/get-altay/13200126/2a000001941b75e980b75f1dbb07f836385b/L_height",
+    heroImage: "https://avatars.mds.yandex.net/get-altay/7695774/2a000001871f8c4bae62920525da1007197b/L_height",
     gallery: [
-      "https://avatars.mds.yandex.net/get-altay/13200126/2a000001941b75e980b75f1dbb07f836385b/L_height",
+      "https://avatars.mds.yandex.net/get-altay/7695774/2a000001871f8c4bae62920525da1007197b/L_height",
       "https://avatars.mds.yandex.net/get-altay/14244043/2a000001941b8d22031f45ba2d3f52e90a21/L_height",
       "./assets/zhk-enigmiya/gallery-panorama.png"
     ],
