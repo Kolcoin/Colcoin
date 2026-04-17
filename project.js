@@ -1,8 +1,43 @@
+function normalizeProjectKey(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/ё/g, "е")
+    .replace(/[^a-zа-я0-9]+/gi, " ")
+    .trim();
+}
+
 function getProjectFromQuery() {
+  if (!Array.isArray(window.REALTY_PROJECTS) || window.REALTY_PROJECTS.length === 0) return null;
+
   const params = new URLSearchParams(window.location.search);
-  const slug = params.get("project") || params.get("id") || "first-donskoy";
-  const match = window.REALTY_PROJECTS.find((project) => project.slug === slug || project.id === slug);
-  return match || window.REALTY_PROJECTS[0];
+  const rawKey = (params.get("project") || params.get("id") || params.get("name") || "").trim();
+  if (!rawKey) return window.REALTY_PROJECTS[0];
+
+  const key = rawKey.toLowerCase();
+  const normalizedKey = normalizeProjectKey(rawKey);
+
+  const exactMatch = window.REALTY_PROJECTS.find((project) => {
+    const slug = String(project.slug || "").toLowerCase();
+    const id = String(project.id || "").toLowerCase();
+    return slug === key || id === key;
+  });
+  if (exactMatch) return exactMatch;
+
+  if (/^\d+$/.test(rawKey)) {
+    const numericMatch = window.REALTY_PROJECTS.find((project) => {
+      const slug = String(project.slug || "").toLowerCase();
+      const id = String(project.id || "").toLowerCase();
+      return slug.endsWith(`-${rawKey}`) || id.endsWith(`-${rawKey}`);
+    });
+    if (numericMatch) return numericMatch;
+  }
+
+  const titleMatch = window.REALTY_PROJECTS.find(
+    (project) => normalizeProjectKey(project.title) === normalizedKey
+  );
+  if (titleMatch) return titleMatch;
+
+  return window.REALTY_PROJECTS[0];
 }
 
 function getElementByIds(ids) {
