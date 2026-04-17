@@ -13,7 +13,7 @@ window.REALTY_PROJECTS = [
     developer: "ФСК",
     priority: 98,
     articleUrl: "./starts/zhk-enigmiya.html",
-    heroImage: "./assets/first-donskoy/source-desktop.png",
+    heroImage: "https://avatars.mds.yandex.net/get-altay/14329771/2a000001941b461bf15e49d4e54eac7b4085/XL",
     gallery: [
       "./assets/first-donskoy/source-desktop.png",
       "./assets/first-donskoy/source-tablet.png",
