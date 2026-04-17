@@ -96,9 +96,9 @@ window.REALTY_PROJECTS = [
     developer: "Энигма Девелопмент",
     priority: 88,
     articleUrl: "./starts/enigmiya.html",
-    heroImage: "./assets/zhk-enigmiya/gallery-main.png",
+    heroImage: "https://avatars.mds.yandex.net/get-verba/937147/2a0000019c8e4f669d5ecc1ec26bc853f96a/realty_large",
     gallery: [
-      "./assets/zhk-enigmiya/gallery-main.png",
+      "https://avatars.mds.yandex.net/get-verba/937147/2a0000019c8e4f669d5ecc1ec26bc853f96a/realty_large",
       "./assets/zhk-enigmiya/gallery-video.png",
       "./assets/zhk-enigmiya/gallery-panorama.png"
     ],
