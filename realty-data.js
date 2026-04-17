@@ -137,9 +137,9 @@ window.REALTY_PROJECTS = [
     developer: "Park Development",
     priority: 80,
     articleUrl: "./starts/zhk-enigmiya.html",
-    heroImage: "./assets/first-donskoy/source-tablet.png",
+    heroImage: "https://avatars.mds.yandex.net/get-altay/14193233/2a000001941b3d73a64989bee422ccc5ec6f/XXL_height",
     gallery: [
-      "./assets/first-donskoy/source-tablet.png",
+      "https://avatars.mds.yandex.net/get-altay/14193233/2a000001941b3d73a64989bee422ccc5ec6f/XXL_height",
       "./assets/first-donskoy/source-mobile.png",
       "./assets/zhk-enigmiya/gallery-main.png"
     ],
