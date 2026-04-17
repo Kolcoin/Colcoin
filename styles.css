@@ -64,6 +64,10 @@ a {
   font-weight: 600;
 }
 
+.breadcrumb-nav a.breadcrumb-highlight-red {
+  color: #d02b2b;
+}
+
 .nav {
   min-height: 74px;
   display: flex;
