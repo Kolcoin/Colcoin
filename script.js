@@ -11,6 +11,11 @@ function renderCards(targetId, items) {
     .map(
       (item) => `
       <article class="project-card">
+        ${
+          item.heroImage
+            ? `<img class="project-card-image" src="${item.heroImage}" alt="${item.title}" loading="lazy" />`
+            : ""
+        }
         <h3>${item.title}</h3>
         <p class="project-meta">${item.district}</p>
         <p class="project-meta">${item.metro}</p>

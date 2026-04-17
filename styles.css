@@ -335,6 +335,15 @@ h1 {
   align-content: start;
 }
 
+.project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+
 .project-card h3 {
   margin: 0;
   font-size: 1rem;
