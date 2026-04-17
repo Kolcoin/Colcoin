@@ -140,7 +140,7 @@ window.REALTY_PROJECTS = [
     heroImage: "https://avatars.mds.yandex.net/get-altay/14193233/2a000001941b3d73a64989bee422ccc5ec6f/XXL_height",
     gallery: [
       "https://avatars.mds.yandex.net/get-altay/14193233/2a000001941b3d73a64989bee422ccc5ec6f/XXL_height",
-      "./assets/first-donskoy/source-mobile.png",
+      "https://avatars.mds.yandex.net/get-altay/467304/2a000001868e5fbb52975918c10e014804b6/XXL_height",
       "./assets/zhk-enigmiya/gallery-main.png"
     ],
     layouts: [
