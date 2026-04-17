@@ -102,9 +102,7 @@ function renderLaunchBlocks() {
 
   root.innerHTML = segmentDefs
     .map((segment) => {
-      const filteredProjects = sorted
-        .filter(segment.filter)
-        .filter((item) => (segment.id === "family" ? item.id !== "first-donskoy" : true));
+      const filteredProjects = sorted.filter(segment.filter);
       const cards = filteredProjects
         .slice(0, 2)
         .map(
