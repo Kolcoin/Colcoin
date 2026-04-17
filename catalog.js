@@ -41,6 +41,7 @@ function buildCatalogCard(project) {
       <p class="project-meta">${project.metro}</p>
       <p class="project-meta">Класс: ${project.classType}</p>
       <p class="project-price">от ${project.priceFrom.toLocaleString("ru-RU", { maximumFractionDigits: 1 })} млн ₽</p>
+      <a class="project-link" href="${project.articleUrl || `./project.html?project=${encodeURIComponent(project.id)}`}">Открыть статью ЖК</a>
       <a class="project-link" href="./project.html?project=${encodeURIComponent(project.id)}">Открыть карточку ЖК</a>
     </article>
   `;
