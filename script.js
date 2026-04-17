@@ -4,6 +4,12 @@ function formatPriceRange(from, to) {
   })} млн ₽`;
 }
 
+function getProjectCardLink(item) {
+  if (item && item.articleUrl) return item.articleUrl;
+  const key = encodeURIComponent(item?.slug || item?.id || "");
+  return `./project.html?project=${key}`;
+}
+
 function renderCards(targetId, items) {
   const root = document.getElementById(targetId);
   if (!root) return;
@@ -21,7 +27,7 @@ function renderCards(targetId, items) {
         <p class="project-meta">${item.metro}</p>
         ${item.sourceLabel ? `<p class="project-source">${item.sourceLabel}</p>` : ""}
         <p class="project-price">${formatPriceRange(item.priceFrom, item.priceTo)}</p>
-        <a class="project-link" href="./project.html?project=${item.slug}" target="_blank" rel="noopener noreferrer">
+        <a class="project-link" href="${getProjectCardLink(item)}" target="_blank" rel="noopener noreferrer">
           Открыть карточку ЖК
         </a>
       </article>
@@ -117,7 +123,7 @@ function renderLaunchBlocks() {
               <p class="project-meta">${item.district}</p>
               <p class="project-meta">${item.metro}</p>
               <p class="project-price">${formatPriceRange(item.priceFrom, item.priceTo)}</p>
-              <a class="project-link" href="./project.html?project=${item.slug}">Открыть карточку</a>
+              <a class="project-link" href="${getProjectCardLink(item)}">Открыть карточку</a>
             </article>
           `
         )
