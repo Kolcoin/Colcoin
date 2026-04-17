@@ -25,10 +25,11 @@ function writeCatalogStateToUrl(state) {
 }
 
 function getBudgetRangeKey(project) {
-  if (project.priceFrom < 8) return "4-8";
-  if (project.priceFrom < 12) return "8-12";
-  if (project.priceFrom < 18) return "12-18";
-  return "18+";
+  const priceRub = Number(project.priceFrom) * 1_000_000;
+  if (priceRub <= 10_000_000) return "0-10000000";
+  if (priceRub <= 15_000_000) return "10000000-15000000";
+  if (priceRub <= 25_000_000) return "15000000-25000000";
+  return "25000000-999999999";
 }
 
 function buildCatalogCard(project) {

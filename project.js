@@ -5,11 +5,19 @@ function getProjectFromQuery() {
   return match || window.REALTY_PROJECTS[0];
 }
 
+function getElementByIds(ids) {
+  for (const id of ids) {
+    const node = document.getElementById(id);
+    if (node) return node;
+  }
+  return null;
+}
+
 function renderProjectHeader(project) {
   const title = document.getElementById("project-title");
   const subtitle = document.getElementById("project-subtitle");
-  const chips = document.getElementById("project-chips");
-  const source = document.getElementById("project-source-link");
+  const chips = getElementByIds(["project-tags", "project-chips"]);
+  const source = getElementByIds(["project-source", "project-source-link"]);
 
   if (title) title.textContent = project.title;
   if (subtitle) {
@@ -44,7 +52,7 @@ function renderProjectGallery(project) {
 }
 
 function renderLayouts(project) {
-  const body = document.getElementById("layouts-tbody");
+  const body = getElementByIds(["project-layouts", "layouts-tbody"]);
   if (!body) return;
   body.innerHTML = project.layouts
     .map(
@@ -61,7 +69,7 @@ function renderLayouts(project) {
 }
 
 function renderBuildings(project) {
-  const root = document.getElementById("buildings-list");
+  const root = getElementByIds(["project-buildings", "buildings-list"]);
   if (!root) return;
   root.innerHTML = project.buildings
     .map(
@@ -105,7 +113,7 @@ function setupFaqAccordion(project) {
 }
 
 function renderSimilar(project) {
-  const root = document.getElementById("similar-projects");
+  const root = getElementByIds(["project-similar", "similar-projects"]);
   if (!root) return;
   const similar = window.REALTY_PROJECTS.filter((item) => item.id !== project.id).slice(0, 3);
   root.innerHTML = similar
