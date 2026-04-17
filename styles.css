@@ -471,7 +471,7 @@ h1 {
 .seo-articles {
   display: grid;
   gap: 14px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .seo-article {
@@ -483,31 +483,36 @@ h1 {
   gap: 10px;
 }
 
-#article-mangazeya {
+.seo-article-square {
   aspect-ratio: 1 / 1;
   align-content: start;
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+  overflow: hidden;
 }
 
-#article-mangazeya .project-link {
+.seo-article-square .project-link {
   margin-top: auto;
 }
 
-#article-first-donskoy {
-  aspect-ratio: 1 / 1;
-  align-content: start;
+.seo-article-square h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-#article-first-donskoy .project-link {
-  margin-top: auto;
+.seo-article-square p:not(.article-meta) {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-#article-enigmiya {
-  aspect-ratio: 1 / 1;
-  align-content: start;
-}
-
-#article-enigmiya .project-link {
-  margin-top: auto;
+.seo-article-square .article-meta {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .seo-article img {
@@ -516,6 +521,22 @@ h1 {
   object-fit: cover;
   border-radius: 12px;
   border: 1px solid var(--border);
+}
+
+@media (max-width: 1024px) {
+  .seo-articles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .seo-articles {
+    grid-template-columns: 1fr;
+  }
+
+  .seo-article-square {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 .seo-article h3 {
