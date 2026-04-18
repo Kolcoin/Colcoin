@@ -26,6 +26,9 @@ class AutoposterConfig:
 
     telegram_bot_token: str
     telegram_channel_id: str
+    moderation_chat_id: str
+    moderation_enabled: bool
+    moderation_poll_interval_seconds: int
     openrouter_api_key: str
     openrouter_model: str
     openrouter_base_url: str
@@ -76,6 +79,15 @@ def _get_topics() -> list[str]:
     return topics
 
 
+def _get_bool(name: str, default: bool) -> bool:
+    raw = os.getenv(name, str(default)).strip().lower()
+    if raw in {"1", "true", "yes", "y", "on"}:
+        return True
+    if raw in {"0", "false", "no", "n", "off"}:
+        return False
+    raise ConfigError(f"Invalid boolean for {name}: {raw}")
+
+
 def load_autoposter_config() -> AutoposterConfig:
     """Load and validate autoposter configuration."""
     load_dotenv()
@@ -85,22 +97,28 @@ def load_autoposter_config() -> AutoposterConfig:
     return AutoposterConfig(
         telegram_bot_token=_require_env("TELEGRAM_BOT_TOKEN"),
         telegram_channel_id=_require_env("TELEGRAM_CHANNEL_ID"),
+        moderation_chat_id=os.getenv("AUTOPOSTER_REVIEWER_CHAT_ID", "").strip()
+        or _require_env("TELEGRAM_CHANNEL_ID"),
+        moderation_enabled=_get_bool("AUTOPOSTER_ENABLE_MODERATION", True),
+        moderation_poll_interval_seconds=_get_int(
+            "AUTOPOSTER_MODERATION_POLL_INTERVAL_SECONDS", 0
+        ),
         openrouter_api_key=openrouter_api_key,
         openrouter_model=os.getenv("AUTOP_POSTER_MODEL", "openai/gpt-4o-mini").strip(),
         openrouter_base_url=os.getenv(
             "AUTOP_POSTER_BASE_URL", "https://openrouter.io/api/v1/chat/completions"
         ).strip(),
         openrouter_referer=os.getenv("AUTOP_POSTER_REFERER", "https://example.local").strip(),
-        channel_name=os.getenv("AUTOP_POSTER_CHANNEL_NAME", "НОВОСТРОЙКИ МОСКВЫ").strip(),
-        contact_handle=os.getenv("AUTOP_POSTER_AUTHOR_CONTACT", "@AlexSavushkin").strip(),
+        channel_name=os.getenv("AUTOPOSTER_CHANNEL_NAME", "НОВОСТРОЙКИ МОСКВЫ").strip(),
+        contact_handle=os.getenv("AUTOPOSTER_CONTACT_HANDLE", "@AlexSavushkin").strip(),
         optional_contact_line=os.getenv(
-            "AUTOP_POSTER_OPTIONAL_CONTACT_LINE", "Связаться со мной в Max"
+            "AUTOPOSTER_OPTIONAL_CONTACT_LINE", "Связаться со мной в Max"
         ).strip(),
         topics=_get_topics(),
-        state_file=os.getenv("AUTOP_POSTER_STATE_FILE", ".autoposter_state.json").strip(),
-        timezone=os.getenv("AUTOP_POSTER_TIMEZONE", "Europe/Moscow").strip(),
-        publish_hour=_get_int("AUTOP_POSTER_PUBLISH_HOUR", 10),
-        publish_minute=_get_int("AUTOP_POSTER_PUBLISH_MINUTE", 0),
-        generation_temperature=_get_float("AUTOP_POSTER_TEMPERATURE", 0.7),
-        generation_max_tokens=_get_int("AUTOP_POSTER_MAX_TOKENS", 1100),
+        state_file=os.getenv("AUTOPOSTER_STATE_FILE", ".autoposter_state.json").strip(),
+        timezone=os.getenv("AUTOPOSTER_TIMEZONE", "Europe/Moscow").strip(),
+        publish_hour=_get_int("AUTOPOSTER_PUBLISH_HOUR", 10),
+        publish_minute=_get_int("AUTOPOSTER_PUBLISH_MINUTE", 0),
+        generation_temperature=_get_float("AUTOPOSTER_TEMPERATURE", 0.7),
+        generation_max_tokens=_get_int("AUTOPOSTER_MAX_TOKENS", 1100),
     )

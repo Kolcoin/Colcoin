@@ -6,6 +6,7 @@ import random
 
 from .config import load_autoposter_config
 from .generator import generate_post
+from .moderation import send_for_moderation
 from .state import StateStore
 from .telegram_publisher import TelegramPublisher
 
@@ -19,14 +20,6 @@ def choose_topic(topics: list[str], recent: list[str]) -> str:
     return random.choice(options or topics)
 
 
-def _default_bullets(topic: str) -> list[str]:
-    return [
-        f"Почему тема '{topic}' важна покупателю сегодня",
-        "На какие цифры и условия смотреть в первую очередь",
-        "Как получить лучшие условия у застройщика через сопровождение",
-    ]
-
-
 async def run_daily_post(*, dry_run: bool = False) -> str:
     """Generate one post and publish it unless dry-run is enabled."""
     config = load_autoposter_config()
@@ -34,16 +27,21 @@ async def run_daily_post(*, dry_run: bool = False) -> str:
     recent_topics = state.recent_topics(limit=2)
     topic = choose_topic(config.topics, recent_topics)
 
-    post = await generate_post(
-        config=config,
-        rubric="Ежедневный пост",
-        topic=topic,
-        bullet_points=_default_bullets(topic),
-    )
+    post = await generate_post(config=config, topic=topic)
 
     if dry_run:
         print("=== DRY RUN ===")
         print(post)
+        return post
+
+    if config.moderation_enabled:
+        token = await send_for_moderation(
+            config=config,
+            state=state,
+            topic=topic,
+            post_text=post,
+        )
+        print(f"Moderation draft sent to {config.moderation_chat_id} (token={token})")
         return post
 
     publisher = TelegramPublisher(config)

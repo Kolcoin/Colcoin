@@ -50,6 +50,18 @@ Run one post manually:
 python3 scripts/run_daily_post.py --dry-run
 ```
 
+Moderation worker (approve/reject in personal chat):
+
+```bash
+python3 scripts/run_moderation_worker.py --once
+```
+
+Run moderation worker (approve/reject in private chat):
+
+```bash
+python3 scripts/run_moderation_worker.py
+```
+
 ## Security notes
 
 - Required tokens and keys are loaded only from environment variables.

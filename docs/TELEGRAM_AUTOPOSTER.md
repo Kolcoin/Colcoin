@@ -2,8 +2,9 @@
 
 This setup gives you a practical pipeline:
 - generate one post with OpenRouter
-- publish it into Telegram channel
-- run daily by cron
+- moderation mode: send draft to your personal Telegram first
+- publish to channel only after explicit approval
+- run daily by cron + lightweight moderation worker
 - avoid repetitive topics using local JSON state
 
 ## 1) Prepare Telegram access
@@ -30,8 +31,10 @@ Recommended fields:
 - `OPENROUTER_MODEL` (default: `openai/gpt-4o-mini`)
 - `OPENROUTER_REFERER`
 - `AUTOPOSTER_CONTACT_HANDLE` (for CTA line)
-- `AUTOPOSTER_TOPICS` (pipe-separated themes, e.g. `тема1|тема2|тема3`)
+- `AUTOPOSTER_TOPICS` (semicolon-separated themes, e.g. `тема1;тема2;тема3`)
 - `AUTOPOSTER_STATE_FILE` (default: `.autoposter_state.json`)
+- `AUTOPOSTER_ENABLE_MODERATION=true`
+- `AUTOPOSTER_REVIEWER_CHAT_ID=<your personal chat id>`
 
 ## 3) Install deps
 
@@ -51,6 +54,13 @@ python3 -m autoposter.cli --dry-run
 python3 -m autoposter.cli
 ```
 
+If moderation mode is enabled, this command sends draft to your personal chat
+with buttons:
+- `Опубликовать`
+- `Отклонить`
+
+The channel receives post only after `Опубликовать`.
+
 ## 6) Daily scheduler via cron
 
 Open cron:
@@ -59,10 +69,18 @@ Open cron:
 crontab -e
 ```
 
-Add one job (example: every day at 10:00):
+Add two jobs:
+
+1) Daily generation (example: every day at 10:00):
 
 ```cron
 0 10 * * * cd /workspace && /usr/bin/python3 scripts/run_daily_post.py >> /workspace/autoposter.log 2>&1
+```
+
+2) Moderation worker (polls Telegram updates and applies approve/reject):
+
+```cron
+* * * * * cd /workspace && /usr/bin/python3 scripts/run_moderation_worker.py --moderation-worker >> /workspace/autoposter-moderation.log 2>&1
 ```
 
 ## 7) How anti-duplication works
@@ -70,6 +88,7 @@ Add one job (example: every day at 10:00):
 - Script keeps recent history in `AUTOPOSTER_STATE_FILE`
 - It avoids picking the same topic as the latest publication
 - Each run writes date, topic, and short preview
+- Pending moderation drafts are also stored in state JSON until approved/rejected
 
 ## Security rules
 

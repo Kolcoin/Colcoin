@@ -4,5 +4,6 @@ __pycache__/
 .pytest_cache/
 *.pyc
 autoposter_state.json
+.autoposter_moderation.json
 .autoposter_state.json
 autoposter.log
