@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://xn--h1aagfvid9b.xn--p1ai%{REQUEST_URI} [L,R=301]
+
+# Force canonical host (punycode for шмитрикс.рф)
+RewriteCond %{HTTP_HOST} !^xn--h1aagfvid9b\.xn--p1ai$ [NC]
+RewriteRule ^ https://xn--h1aagfvid9b.xn--p1ai%{REQUEST_URI} [L,R=301]

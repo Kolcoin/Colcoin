@@ -1,8 +1,11 @@
 User-agent: *
 Allow: /
 
-# Encourage indexing and snippet generation
+# Canonical host and sitemap
+Host: xn--h1aagfvid9b.xn--p1ai
 Sitemap: https://xn--h1aagfvid9b.xn--p1ai/sitemap.xml
 
-# Article pages
+# Service files
 Allow: /starts/
+Allow: /assets/
+Allow: /llms.txt
