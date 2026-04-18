@@ -61,6 +61,16 @@ function annuityPayment(loan, annualRate, years) {
   return (loan * monthlyRate) / (1 - (1 + monthlyRate) ** -months);
 }
 
+function reachMetrikaGoal(goal, params = {}) {
+  try {
+    if (typeof window !== "undefined" && typeof window.ym === "function") {
+      window.ym(108657608, "reachGoal", goal, params);
+    }
+  } catch (_error) {
+    // no-op in browsers where metrika is unavailable
+  }
+}
+
 function recalcMortgage() {
   const propertyPriceInput = document.getElementById("mortgage-price");
   const downPaymentInput = document.getElementById("mortgage-down-payment");
@@ -196,6 +206,8 @@ function initMortgagePage() {
 
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
+    reachMetrikaGoal("lead_submit", { source: "mortgage_form" });
+    reachMetrikaGoal("mortgage_calc");
     recalcMortgage();
   });
   programSelect?.addEventListener("change", () => {

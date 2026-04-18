@@ -1,5 +1,15 @@
 const BLOG_PAGE_SIZE = 6;
 
+function reachMetrikaGoal(goal) {
+  try {
+    if (typeof window !== "undefined" && typeof window.ym === "function") {
+      window.ym(108657608, "reachGoal", goal);
+    }
+  } catch (_error) {
+    // no-op for analytics safety
+  }
+}
+
 function getBlogState() {
   const params = new URLSearchParams(window.location.search);
   return {
@@ -104,6 +114,28 @@ function initBlogPage() {
   document.getElementById("blog-show-more")?.addEventListener("click", () => {
     state = { ...state, page: state.page + 1 };
     render();
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    const articleLink = target.closest('.blog-card a.project-link');
+    if (articleLink) {
+      reachMetrikaGoal("open_article");
+      return;
+    }
+
+    const telLink = target.closest('a[href^="tel:"]');
+    if (telLink) {
+      reachMetrikaGoal("click_phone");
+      return;
+    }
+
+    const telegramLink = target.closest('a[href*="t.me/"]');
+    if (telegramLink) {
+      reachMetrikaGoal("click_telegram");
+    }
   });
 
   render();

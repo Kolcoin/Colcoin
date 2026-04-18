@@ -1,5 +1,15 @@
 const PAGE_SIZE = 6;
 
+function reachMetrikaGoal(goal) {
+  try {
+    if (typeof window !== "undefined" && typeof window.ym === "function") {
+      window.ym(108657608, "reachGoal", goal);
+    }
+  } catch (_error) {
+    // no-op in browsers where metrika is unavailable
+  }
+}
+
 function getCatalogStateFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return {
@@ -298,6 +308,31 @@ function setupQuickFilters(onApply) {
   });
 }
 
+function setupCatalogGoalTracking() {
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    const telLink = target.closest('a[href^="tel:"]');
+    if (telLink) {
+      reachMetrikaGoal("click_phone");
+      return;
+    }
+
+    const telegramLink = target.closest('a[href*="t.me/"]');
+    if (telegramLink) {
+      reachMetrikaGoal("click_telegram");
+      return;
+    }
+
+    const toCatalogLink = target.closest('a[href*="catalog.html"]');
+    if (toCatalogLink) {
+      reachMetrikaGoal("go_to_catalog");
+      return;
+    }
+  });
+}
+
 function initCatalogPage() {
   if (!Array.isArray(window.REALTY_PROJECTS)) return;
   syncFilterOptions();
@@ -353,6 +388,8 @@ function initCatalogPage() {
     renderCatalog(state);
     writeCatalogStateToUrl(state);
   });
+
+  setupCatalogGoalTracking();
 }
 
 initCatalogPage();

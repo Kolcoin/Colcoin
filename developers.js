@@ -9,6 +9,41 @@ function sortDevelopers(items, mode) {
   return data.sort((a, b) => a.name.localeCompare(b.name, "ru"));
 }
 
+function reachMetrikaGoal(goal) {
+  try {
+    if (typeof window !== "undefined" && typeof window.ym === "function") {
+      window.ym(108657608, "reachGoal", goal);
+    }
+  } catch (_error) {
+    // analytics should not break page behavior
+  }
+}
+
+function setupDevelopersGoalTracking() {
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    const telLink = target.closest('a[href^="tel:"]');
+    if (telLink) {
+      reachMetrikaGoal("click_phone");
+      return;
+    }
+
+    const telegramLink = target.closest('a[href*="t.me/"]');
+    if (telegramLink) {
+      reachMetrikaGoal("click_telegram");
+      return;
+    }
+
+    const toCatalogLink = target.closest('a[href*="catalog.html"]');
+    if (toCatalogLink) {
+      reachMetrikaGoal("go_to_catalog");
+      return;
+    }
+  });
+}
+
 function developerCard(dev) {
   const classLabel = Array.isArray(dev.classes) ? dev.classes.join(", ") : "";
   return `
@@ -42,6 +77,8 @@ function initDevelopersPage() {
     mode = sortSelect.value;
     renderDevelopers(mode);
   });
+
+  setupDevelopersGoalTracking();
 }
 
 initDevelopersPage();

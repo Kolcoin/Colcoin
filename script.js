@@ -4,6 +4,19 @@ function formatPriceRange(from, to) {
   })} млн ₽`;
 }
 
+function reachMetrikaGoal(goal, params = {}) {
+  if (typeof window.ym !== "function") return;
+  try {
+    window.ym(108657608, "reachGoal", goal, params);
+  } catch (_error) {
+    // no-op: analytics should never break UI interactions
+  }
+}
+
+if (typeof window !== "undefined") {
+  window.trackGoal = (goal, params = {}) => reachMetrikaGoal(goal, params);
+}
+
 function getProjectCardLink(item) {
   if (item && item.articleUrl) return item.articleUrl;
   const key = encodeURIComponent(item?.slug || item?.id || "");
@@ -224,7 +237,43 @@ function setupLeadForm() {
     const goalText = goal instanceof HTMLSelectElement ? goal.options[goal.selectedIndex].text : "цель не выбрана";
     const budgetText =
       budget instanceof HTMLSelectElement ? budget.options[budget.selectedIndex].text : "бюджет не выбран";
+    reachMetrikaGoal("lead_submit", {
+      source: "hero_form",
+      goal: goal instanceof HTMLSelectElement ? goal.value || "unknown" : "unknown",
+      budget: budget instanceof HTMLSelectElement ? budget.value || "unknown" : "unknown"
+    });
     alert(`Принято. Цель: ${goalText}. Бюджет: ${budgetText}. Мы свяжемся с вами и подготовим подборку.`);
+  });
+}
+
+function setupAnalyticsGoals() {
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    const link = target.closest("a");
+    if (!link) return;
+
+    const href = link.getAttribute("href") || "";
+    if (href.startsWith("tel:")) {
+      const value = href.replace("tel:", "");
+      reachMetrikaGoal("click_phone", { phone: value });
+      return;
+    }
+
+    if (href.includes("t.me/")) {
+      reachMetrikaGoal("click_telegram", { target: href });
+      return;
+    }
+
+    if (href.includes("catalog.html")) {
+      reachMetrikaGoal("go_to_catalog", { source: "home" });
+      return;
+    }
+
+    if (href === "#lead-form" || href === "./index.html#lead-form") {
+      reachMetrikaGoal("open_lead_form", { source: "home" });
+    }
   });
 }
 
@@ -270,6 +319,7 @@ function initHomePage() {
   renderDistricts();
   setupLeadForm();
   setupMobileMenuToggle();
+  setupAnalyticsGoals();
 }
 
 initHomePage();

@@ -6,6 +6,20 @@ function normalizeProjectKey(value) {
     .trim();
 }
 
+function trackGoal(goal, params = {}) {
+  try {
+    if (typeof window !== "undefined" && typeof window.trackGoal === "function") {
+      window.trackGoal(goal, params);
+      return;
+    }
+    if (typeof window !== "undefined" && typeof window.ym === "function") {
+      window.ym(108657608, "reachGoal", goal, params);
+    }
+  } catch (_error) {
+    // analytics failures should not affect UX
+  }
+}
+
 function getProjectFromQuery() {
   if (!Array.isArray(window.REALTY_PROJECTS) || window.REALTY_PROJECTS.length === 0) return null;
 
@@ -168,12 +182,41 @@ function renderSimilar(project) {
 
 function initProjectPage() {
   const project = getProjectFromQuery();
+  trackGoal("view_project_card", { project: project?.id || "" });
   renderProjectHeader(project);
   renderProjectGallery(project);
   renderLayouts(project);
   renderBuildings(project);
   setupFaqAccordion(project);
   renderSimilar(project);
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    const sourceLink = target.closest("#project-source, #project-source-link");
+    if (sourceLink) {
+      trackGoal("open_project_source", { project: project?.id || "" });
+      return;
+    }
+
+    const telLink = target.closest('a[href^="tel:"]');
+    if (telLink) {
+      trackGoal("click_phone", { section: "project" });
+      return;
+    }
+
+    const telegramLink = target.closest('a[href*="t.me/"]');
+    if (telegramLink) {
+      trackGoal("click_telegram", { section: "project" });
+      return;
+    }
+
+    const toCatalogLink = target.closest('a[href*="catalog.html"]');
+    if (toCatalogLink) {
+      trackGoal("go_to_catalog", { section: "project" });
+    }
+  });
 }
 
 initProjectPage();
