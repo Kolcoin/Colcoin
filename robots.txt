@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Encourage indexing and snippet generation
-Sitemap: https://shmitrix.ru/sitemap.xml
+Sitemap: https://xn--h1aagfvid9b.xn--p1ai/sitemap.xml
 
 # Article pages
 Allow: /starts/
