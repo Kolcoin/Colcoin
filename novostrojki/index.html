@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Каталог новостроек Москвы и МО 2026: 186 жилых комплексов от застройщиков с ценами, планировками и сроками сдачи. Подбор квартиры бесплатно — Савушкин Эстейт." />
+    <meta name="keywords" content="новостройки Москвы 2026, купить квартиру в новостройке, ЖК Москва каталог, старт продаж новостроек, Савушкин Эстейт" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Савушкин Эстейт" />
+    <meta property="og:title" content="Каталог новостроек Москвы и МО 2026 — 186 ЖК | Савушкин Эстейт" />
+    <meta property="og:description" content="186 жилых комплексов Москвы и Московской области: цены от 4.6 млн ₽, все классы жилья, сроки сдачи 2025–2029." />
+    <meta property="og:url" content="http://localhost:4173/novostrojki/" />
+    <link rel="canonical" href="http://localhost:4173/novostrojki/" />
+    <title>Каталог новостроек Москвы и МО 2026 — 186 ЖК от застройщиков | Савушкин Эстейт</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {"@type":"ListItem","position":1,"name":"Главная","item":"http://localhost:4173/"},
+              {"@type":"ListItem","position":2,"name":"Новостройки","item":"http://localhost:4173/novostrojki/"}
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "Новостройки Москвы и МО 2026",
+            "numberOfItems": 186,
+            "itemListOrder": "https://schema.org/ItemListOrderDescending"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="../index.html">
+          <span class="brand-dot"></span>
+          Савушкин Эстейт
+        </a>
+        <nav class="menu">
+          <a href="../index.html">Главная</a>
+          <a href="../novostrojki/">Каталог</a>
+          <a href="../index.html#segments">По цели</a>
+          <a href="../index.html#contact">Контакты</a>
+        </nav>
+        <a class="btn btn-small btn-outline" href="../index.html#lead-form">Оставить заявку</a>
+      </div>
+    </header>
+
+    <nav class="container breadcrumb-nav" aria-label="Хлебные крошки">
+      <a href="../index.html">Главная</a>
+      <span>›</span>
+      <span>Новостройки</span>
+    </nav>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <h1>Новостройки Москвы и МО 2026</h1>
+              <p id="results-count">Загрузка каталога…</p>
+            </div>
+          </div>
+
+          <div class="catalog-filters">
+            <div class="filter-group">
+              <label>Класс жилья:</label>
+              <div class="filter-pills" id="class-filter">
+                <button class="pill active" data-value="all">Все</button>
+                <button class="pill" data-value="эконом">Эконом</button>
+                <button class="pill" data-value="комфорт">Комфорт</button>
+                <button class="pill" data-value="бизнес">Бизнес</button>
+                <button class="pill" data-value="элит">Элит</button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <label>Сортировка:</label>
+              <div class="filter-pills" id="sort-filter">
+                <button class="pill active" data-value="popular">По популярности</button>
+                <button class="pill" data-value="price-asc">Цена ↑</button>
+                <button class="pill" data-value="price-desc">Цена ↓</button>
+                <button class="pill" data-value="apartments">По кв-вам</button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <label>Поиск:</label>
+              <input type="text" id="search-input" class="catalog-search" placeholder="Название ЖК или район…" />
+            </div>
+          </div>
+
+          <div class="cards-grid cards-grid-catalog" id="catalog-grid"></div>
+
+          <div class="catalog-load-more" id="load-more-wrap" style="display:none">
+            <button class="btn btn-outline" id="load-more-btn">Показать ещё</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="contact-catalog">
+        <div class="container cta-box">
+          <div>
+            <h2>Не нашли подходящий вариант?</h2>
+            <p>Оставьте заявку — подберём квартиру под ваш бюджет и задачу бесплатно.</p>
+          </div>
+          <a class="btn btn-large" href="../index.html#lead-form">Оставить заявку</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>© 2026 Савушкин Эстейт</p>
+        <p>Москва · Ежедневно 10:00–21:00</p>
+        <div class="footer-contacts">
+          <p class="footer-contacts-title">Контакты:</p>
+          <ul>
+            <li><span>Телефон:</span> <a class="section-link" href="tel:+79857614885">+7 985 761-48-85</a></li>
+            <li><span>Telegram:</span> <a class="section-link" href="https://t.me/AlexSavushkin" target="_blank" rel="noopener noreferrer">@AlexSavushkin</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../data.js"></script>
+    <script src="../catalog.js"></script>
+  </body>
+</html>
