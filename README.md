@@ -36,6 +36,20 @@ Set placeholders in your local `.env` (not committed), then run tests:
 pytest
 ```
 
+## Daily Telegram autoposter
+
+There is a ready-to-run daily autoposter scaffold in `autoposter/`.
+
+Docs:
+
+- `docs/TELEGRAM_AUTOPOSTER.md`
+
+Run one post manually:
+
+```bash
+python3 scripts/run_daily_post.py --dry-run
+```
+
 ## Security notes
 
 - Required tokens and keys are loaded only from environment variables.
