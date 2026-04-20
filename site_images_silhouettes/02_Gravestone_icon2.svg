@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="24.185501"
+   height="31.912182"
+   id="svg3156"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   sodipodi:docname="Gravestone_icon.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   sodipodi:docbase="C:\Documents and Settings\Thomas Bredøl\Skrivebord">
+  <metadata
+     id="metadata2212">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:window-height="968"
+     inkscape:window-width="1280"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:zoom="11.860675"
+     inkscape:cx="0.94084395"
+     inkscape:cy="15.892857"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:current-layer="svg3156" />
+  <defs
+     id="defs3158" />
+  <g
+     transform="translate(-36.927865,-12.359062)"
+     id="g2214">
+    <path
+       d="M 50.575179,12.48553 C 44.9772,12.48553 40.404938,16.851639 40.061443,22.363552 L 40.036993,22.363552 L 40.036993,22.656959 C 40.032739,22.779949 40.012542,22.899696 40.012542,23.023717 C 40.012542,23.147738 40.032739,23.267484 40.036993,23.390475 L 40.036993,44.271244 L 61.113366,44.271244 L 61.113366,23.023717 L 61.113366,22.363552 L 61.088916,22.363552 C 60.745674,16.851396 56.173333,12.48553 50.575179,12.48553 z "
+       style="opacity:0.42038215;fill:#cccccc;stroke:none;stroke-width:0.298417;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2216" />
+  </g>
+  <g
+     transform="translate(-4.7700269,-2.115125)"
+     id="layer1">
+    <path
+       d="M 15.332664,2.115125 C 9.7346845,2.115125 5.1624227,6.4812348 4.818928,11.993147 L 4.7944775,11.993147 L 4.7944775,12.286554 C 4.7902237,12.409544 4.7700269,12.529291 4.7700269,12.653312 C 4.7700269,12.777333 4.7902237,12.897079 4.7944775,13.02007 L 4.7944775,33.900839 L 25.870851,33.900839 L 25.870851,12.653312 L 25.870851,11.993147 L 25.846401,11.993147 C 25.503159,6.4809916 20.930818,2.1151251 15.332664,2.115125 z "
+       style="opacity:1;fill:#cccccc;stroke:none;stroke-width:0.298417;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3207" />
+    <text
+       x="5.5598335"
+       y="22.994711"
+       style="font-size:8.040555px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       id="text3152"
+       xml:space="preserve"><tspan
+         x="5.5598335"
+         y="22.994711"
+         id="tspan3154">R.I.P.</tspan></text>
+  </g>
+</svg>
