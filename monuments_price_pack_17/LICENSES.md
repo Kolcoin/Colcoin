@@ -1,0 +1,72 @@
+# Image licenses for 17 models
+
+Sources are open-license files from Wikimedia Commons.
+
+- Model `1-1` -> `images/model-1-1.svg`
+  - Source: Gravestone icon
+  - License: Public domain
+  - Page: https://commons.wikimedia.org/wiki/File:Gravestone_icon.svg
+- Model `1-2` -> `images/model-1-2.svg`
+  - Source: Gravestone icon2
+  - License: Public domain
+  - Page: https://commons.wikimedia.org/wiki/File:Gravestone_icon2.svg
+- Model `1-3` -> `images/model-1-3.svg`
+  - Source: Round Landmark Icon Gravestone
+  - License: CC0
+  - Page: https://commons.wikimedia.org/wiki/File:Round_Landmark_Icon_Gravestone.svg
+- Model `1-4` -> `images/model-1-4.svg`
+  - Source: Gravestone Pinhead icon
+  - License: CC0
+  - Page: https://commons.wikimedia.org/wiki/File:Gravestone_Pinhead_icon.svg
+- Model `1-5` -> `images/model-1-5.svg`
+  - Source: Horse gravestone icon
+  - License: Public domain
+  - Page: https://commons.wikimedia.org/wiki/File:Horse_gravestone_icon.svg
+- Model `1-6` -> `images/model-1-6.svg`
+  - Source: Ram gravestone icon
+  - License: Public domain
+  - Page: https://commons.wikimedia.org/wiki/File:Ram_gravestone_icon.svg
+- Model `1-7` -> `images/model-1-7.svg`
+  - Source: Purple tombstone icon
+  - License: Public domain
+  - Page: https://commons.wikimedia.org/wiki/File:Purple_tombstone_icon.svg
+- Model `1-8` -> `images/model-1-8.svg`
+  - Source: Tombstone
+  - License: CC BY-SA 3.0
+  - Page: https://commons.wikimedia.org/wiki/File:Tombstone.svg
+- Model `1-9` -> `images/model-1-9.svg`
+  - Source: Tombstone Lorc
+  - License: CC BY 3.0
+  - Page: https://commons.wikimedia.org/wiki/File:Tombstone_-_Lorc_-_game-icons.svg
+- Model `1-10` -> `images/model-1-10.svg`
+  - Source: Tombstone Sbed
+  - License: CC BY 3.0
+  - Page: https://commons.wikimedia.org/wiki/File:Tombstone_-_Sbed_-_game-icons.svg
+- Model `1-11` -> `images/model-1-11.svg`
+  - Source: Tombstone Lorc white
+  - License: CC BY 3.0
+  - Page: https://commons.wikimedia.org/wiki/File:Tombstone_-_Lorc_-_white_-_game-icons.svg
+- Model `1-12` -> `images/model-1-12.svg`
+  - Source: Tombstone Sbed white
+  - License: CC BY 3.0
+  - Page: https://commons.wikimedia.org/wiki/File:Tombstone_-_Sbed_-_white_-_game-icons.svg
+- Model `1-13` -> `images/model-1-13.svg`
+  - Source: Maki cemetery 11
+  - License: CC0
+  - Page: https://commons.wikimedia.org/wiki/File:Maki-cemetery-11.svg
+- Model `1-14` -> `images/model-1-14.svg`
+  - Source: Maki cemetery 15
+  - License: CC0
+  - Page: https://commons.wikimedia.org/wiki/File:Maki-cemetery-15.svg
+- Model `1-15` -> `images/model-1-15.svg`
+  - Source: Maki7 cemetery JP
+  - License: CC0
+  - Page: https://commons.wikimedia.org/wiki/File:Maki7-cemetery-JP.svg
+- Model `1-16` -> `images/model-1-16.svg`
+  - Source: Maki7 cemetery white
+  - License: CC0
+  - Page: https://commons.wikimedia.org/wiki/File:Maki7-cemetery-white.svg
+- Model `1-17` -> `images/model-1-17.svg`
+  - Source: JP cemetery Pinhead
+  - License: CC0
+  - Page: https://commons.wikimedia.org/wiki/File:Jp_cemetery_Pinhead_icon.svg
