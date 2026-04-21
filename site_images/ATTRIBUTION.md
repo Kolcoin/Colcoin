@@ -1,0 +1,178 @@
+# Image attribution
+
+Images were downloaded from Wikimedia Commons with open licenses.
+Review each license before final commercial use and keep attribution where required.
+
+## standard_monuments
+
+- File: `standard_monuments/01_Archie_Miller_Arlington_National_Cemetery.jpg.jpg`
+  - Title: File:Archie Miller Arlington National Cemetery.jpg
+  - License: Public domain
+  - Author: Arlington National Cemetery
+  - Credit: https://www.flickr.com/photos/60564189@N06/49561387826/
+  - Page: https://commons.wikimedia.org/wiki/File%3AArchie_Miller_Arlington_National_Cemetery.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Archie_Miller_Arlington_National_Cemetery.jpg/1920px-Archie_Miller_Arlington_National_Cemetery.jpg
+- File: `standard_monuments/02_C0573-Kstovo-Granite-headstones.jpg.jpg`
+  - Title: File:C0573-Kstovo-Granite-headstones.jpg
+  - License: CC BY-SA 3.0
+  - Author: User:Vmenkov
+  - Credit: Self-photographed
+  - Page: https://commons.wikimedia.org/wiki/File%3AC0573-Kstovo-Granite-headstones.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/C0573-Kstovo-Granite-headstones.jpg/1920px-C0573-Kstovo-Granite-headstones.jpg
+- File: `standard_monuments/03_C0574-Kstovo-Granite-headstones.jpg.jpg`
+  - Title: File:C0574-Kstovo-Granite-headstones.jpg
+  - License: CC BY-SA 3.0
+  - Author: User:Vmenkov
+  - Credit: Self-photographed
+  - Page: https://commons.wikimedia.org/wiki/File%3AC0574-Kstovo-Granite-headstones.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/C0574-Kstovo-Granite-headstones.jpg/1920px-C0574-Kstovo-Granite-headstones.jpg
+- File: `standard_monuments/04_C0576-Kstovo-Granite-headstones.jpg.jpg`
+  - Title: File:C0576-Kstovo-Granite-headstones.jpg
+  - License: CC BY-SA 3.0
+  - Author: User:Vmenkov
+  - Credit: Self-photographed
+  - Page: https://commons.wikimedia.org/wiki/File%3AC0576-Kstovo-Granite-headstones.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/8/82/C0576-Kstovo-Granite-headstones.jpg
+- File: `standard_monuments/05_C0581-Kstovo-Granite-headstones.jpg.jpg`
+  - Title: File:C0581-Kstovo-Granite-headstones.jpg
+  - License: CC BY-SA 3.0
+  - Author: User:Vmenkov
+  - Credit: Self-photographed
+  - Page: https://commons.wikimedia.org/wiki/File%3AC0581-Kstovo-Granite-headstones.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/9/91/C0581-Kstovo-Granite-headstones.jpg
+- File: `standard_monuments/06_C0583-Kstovo-Granite-headstones.jpg.jpg`
+  - Title: File:C0583-Kstovo-Granite-headstones.jpg
+  - License: CC BY-SA 3.0
+  - Author: User:Vmenkov
+  - Credit: Self-photographed
+  - Page: https://commons.wikimedia.org/wiki/File%3AC0583-Kstovo-Granite-headstones.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/4/4e/C0583-Kstovo-Granite-headstones.jpg
+- File: `standard_monuments/07_City_of_London_Cemetery_-_overgrown_granite_grave_with_glass_chippings.jpg.jpg`
+  - Title: File:City of London Cemetery - overgrown granite grave with glass chippings.jpg
+  - License: CC BY-SA 4.0
+  - Author: Acabashi
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ACity_of_London_Cemetery_-_overgrown_granite_grave_with_glass_chippings.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/City_of_London_Cemetery_-_overgrown_granite_grave_with_glass_chippings.jpg/1920px-City_of_London_Cemetery_-_overgrown_granite_grave_with_glass_chippings.jpg
+- File: `standard_monuments/08_City_of_London_Cemetery_Winnie-the-Pooh_Bear_child_s_gravestone_headstone_1.jpg.jpg`
+  - Title: File:City of London Cemetery Winnie-the-Pooh Bear child's gravestone headstone 1.jpg
+  - License: CC BY-SA 4.0
+  - Author: Acabashi
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ACity_of_London_Cemetery_Winnie-the-Pooh_Bear_child%27s_gravestone_headstone_1.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/City_of_London_Cemetery_Winnie-the-Pooh_Bear_child%27s_gravestone_headstone_1.jpg/1920px-City_of_London_Cemetery_Winnie-the-Pooh_Bear_child%27s_gravestone_headstone_1.jpg
+- File: `standard_monuments/09_City_of_London_Cemetery_modern_headstone_gravestones_North_Boundary_Road_3_warme.jpg`
+  - Title: File:City of London Cemetery modern headstone gravestones North Boundary Road 3 warmer darker.jpg
+  - License: CC BY-SA 4.0
+  - Author: Acabashi
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ACity_of_London_Cemetery_modern_headstone_gravestones_North_Boundary_Road_3_warmer_darker.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/City_of_London_Cemetery_modern_headstone_gravestones_North_Boundary_Road_3_warmer_darker.jpg/1920px-City_of_London_Cemetery_modern_headstone_gravestones_North_Boundary_Road_3_warmer_darker.jpg
+- File: `standard_monuments/10_City_of_London_Cemetery_ranks_of_granite_graves_and_headstones_1.jpg.jpg`
+  - Title: File:City of London Cemetery ranks of granite graves and headstones 1.jpg
+  - License: CC BY-SA 4.0
+  - Author: Acabashi
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ACity_of_London_Cemetery_ranks_of_granite_graves_and_headstones_1.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/City_of_London_Cemetery_ranks_of_granite_graves_and_headstones_1.jpg/1920px-City_of_London_Cemetery_ranks_of_granite_graves_and_headstones_1.jpg
+- File: `standard_monuments/11_Elaborate_granite_headstone_Hope_Cemtery_Barre_Vermont.jpg.jpg`
+  - Title: File:Elaborate granite headstone, Hope Cemtery, Barre Vermont.jpg
+  - License: CC BY-SA 4.0
+  - Author: Kenneth C. Zirkel
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3AElaborate_granite_headstone%2C_Hope_Cemtery%2C_Barre_Vermont.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Elaborate_granite_headstone%2C_Hope_Cemtery%2C_Barre_Vermont.jpg/1920px-Elaborate_granite_headstone%2C_Hope_Cemtery%2C_Barre_Vermont.jpg
+- File: `standard_monuments/12_Frank_West_Arlington_National_Cemetery.jpg.jpg`
+  - Title: File:Frank West Arlington National Cemetery.jpg
+  - License: Public domain
+  - Author: Arlington National Cemetery
+  - Credit: https://www.flickr.com/photos/60564189@N06/49553054147/
+  - Page: https://commons.wikimedia.org/wiki/File%3AFrank_West_Arlington_National_Cemetery.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Frank_West_Arlington_National_Cemetery.jpg/1920px-Frank_West_Arlington_National_Cemetery.jpg
+
+## memorial_complexes
+
+- File: `memorial_complexes/01_British_War_Memorial_complex_in_Gnathang_Valley_East_Sikkim_01.jpg.jpg`
+  - Title: File:British War Memorial complex in Gnathang Valley, East Sikkim 01.jpg
+  - License: CC BY-SA 4.0
+  - Author: Anjan Kumar Kundu
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ABritish_War_Memorial_complex_in_Gnathang_Valley%2C_East_Sikkim_01.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/British_War_Memorial_complex_in_Gnathang_Valley%2C_East_Sikkim_01.jpg/1920px-British_War_Memorial_complex_in_Gnathang_Valley%2C_East_Sikkim_01.jpg
+- File: `memorial_complexes/02_British_War_Memorial_complex_in_Nathang_Gnathang_Valley_East_Sikkim_02.jpg.jpg`
+  - Title: File:British War Memorial complex in Nathang (Gnathang) Valley, East Sikkim 02.jpg
+  - License: CC BY 4.0
+  - Author: Amitabha Gupta
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ABritish_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_02.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_02.jpg/1920px-British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_02.jpg
+- File: `memorial_complexes/03_British_War_Memorial_complex_in_Nathang_Gnathang_Valley_East_Sikkim_03.jpg.jpg`
+  - Title: File:British War Memorial complex in Nathang (Gnathang) Valley, East Sikkim 03.jpg
+  - License: CC BY 4.0
+  - Author: Amitabha Gupta
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ABritish_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_03.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_03.jpg/1920px-British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_03.jpg
+- File: `memorial_complexes/04_British_War_Memorial_complex_in_Nathang_Gnathang_Valley_East_Sikkim_04.jpg.jpg`
+  - Title: File:British War Memorial complex in Nathang (Gnathang) Valley, East Sikkim 04.jpg
+  - License: CC BY 4.0
+  - Author: Amitabha Gupta
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ABritish_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_04.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_04.jpg/1920px-British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_04.jpg
+- File: `memorial_complexes/05_British_War_Memorial_complex_in_Nathang_Gnathang_Valley_East_Sikkim_05.jpg.jpg`
+  - Title: File:British War Memorial complex in Nathang (Gnathang) Valley, East Sikkim 05.jpg
+  - License: CC BY 4.0
+  - Author: Amitabha Gupta
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ABritish_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_05.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_05.jpg/1920px-British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_05.jpg
+- File: `memorial_complexes/06_British_War_Memorial_complex_in_Nathang_Gnathang_Valley_East_Sikkim_06.jpg.jpg`
+  - Title: File:British War Memorial complex in Nathang (Gnathang) Valley, East Sikkim 06.jpg
+  - License: CC BY 4.0
+  - Author: Amitabha Gupta
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ABritish_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_06.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_06.jpg/1920px-British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_06.jpg
+- File: `memorial_complexes/07_British_War_Memorial_complex_in_Nathang_Gnathang_Valley_East_Sikkim_07.jpg.jpg`
+  - Title: File:British War Memorial complex in Nathang (Gnathang) Valley, East Sikkim 07.jpg
+  - License: CC BY 4.0
+  - Author: Amitabha Gupta
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ABritish_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_07.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_07.jpg/1920px-British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_07.jpg
+- File: `memorial_complexes/08_British_War_Memorial_complex_in_Nathang_Gnathang_Valley_East_Sikkim_08.jpg.jpg`
+  - Title: File:British War Memorial complex in Nathang (Gnathang) Valley, East Sikkim 08.jpg
+  - License: CC BY 4.0
+  - Author: Amitabha Gupta
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ABritish_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_08.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_08.jpg/1920px-British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_08.jpg
+- File: `memorial_complexes/09_British_War_Memorial_complex_in_Nathang_Gnathang_Valley_East_Sikkim_09.jpg.jpg`
+  - Title: File:British War Memorial complex in Nathang (Gnathang) Valley, East Sikkim 09.jpg
+  - License: CC BY 4.0
+  - Author: Amitabha Gupta
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ABritish_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_09.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_09.jpg/1920px-British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_09.jpg
+- File: `memorial_complexes/10_British_War_Memorial_complex_in_Nathang_Gnathang_Valley_East_Sikkim_17.jpg.jpg`
+  - Title: File:British War Memorial complex in Nathang (Gnathang) Valley, East Sikkim 17.jpg
+  - License: CC BY 4.0
+  - Author: Amitabha Gupta
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3ABritish_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_17.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_17.jpg/1920px-British_War_Memorial_complex_in_Nathang_%28Gnathang%29_Valley%2C_East_Sikkim_17.jpg
+- File: `memorial_complexes/11_Memorial_Complex_at_Veteranov_Avenue_01.jpg.jpg`
+  - Title: File:Memorial Complex at Veteranov Avenue 01.jpg
+  - License: CC BY-SA 4.0
+  - Author: Florstein (Telegram:WikiPhoto.Space)
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3AMemorial_Complex_at_Veteranov_Avenue_01.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Memorial_Complex_at_Veteranov_Avenue_01.jpg/1920px-Memorial_Complex_at_Veteranov_Avenue_01.jpg
+- File: `memorial_complexes/12_Memorial_complex_of_participants_of_the_Great_Patriotic_War_in_Shusha_01.jpg.jpg`
+  - Title: File:Memorial complex of participants of the Great Patriotic War in Shusha 01.jpg
+  - License: CC BY-SA 3.0
+  - Author: Aykhan Zayedzadeh
+  - Credit: Own work
+  - Page: https://commons.wikimedia.org/wiki/File%3AMemorial_complex_of_participants_of_the_Great_Patriotic_War_in_Shusha_01.jpg
+  - Direct image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Memorial_complex_of_participants_of_the_Great_Patriotic_War_in_Shusha_01.jpg/1920px-Memorial_complex_of_participants_of_the_Great_Patriotic_War_in_Shusha_01.jpg

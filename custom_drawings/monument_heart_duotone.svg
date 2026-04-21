@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <linearGradient id="blackStone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2f3440"/>
+      <stop offset="45%" stop-color="#191d26"/>
+      <stop offset="100%" stop-color="#090b10"/>
+    </linearGradient>
+    <linearGradient id="redStone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#73463a"/>
+      <stop offset="45%" stop-color="#4d312b"/>
+      <stop offset="100%" stop-color="#2f201d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="8" dy="14" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1500" fill="#ffffff"/>
+
+  <g filter="url(#shadow)">
+    <path d="M420 300 C380 420, 350 750, 390 1060 L860 1060 C940 760, 940 470, 820 310 C720 175, 510 170, 420 300 Z"
+          fill="url(#blackStone)"/>
+    <path d="M420 300 C365 460, 350 720, 380 1060 L560 1060 L560 260 C495 255, 450 265, 420 300 Z"
+          fill="url(#redStone)"/>
+
+    <path d="M560 420
+             C560 370, 610 355, 640 395
+             C670 355, 720 370, 720 420
+             C720 470, 680 505, 640 540
+             C600 505, 560 470, 560 420 Z"
+          fill="#ffffff"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M160 1085 L1040 1085 L1110 1185 L230 1185 Z" fill="#0d1017"/>
+    <path d="M120 1185 L1080 1185 L1080 1340 L120 1340 Z" fill="url(#blackStone)"/>
+    <path d="M170 1205 L560 1205 C610 1205, 645 1240, 665 1270 C690 1308, 740 1318, 780 1318 L930 1318 L930 1260 L720 1260 C700 1260, 685 1252, 670 1233 C635 1188, 605 1160, 550 1160 L170 1160 Z"
+          fill="url(#redStone)"/>
+    <path d="M660 1205 C745 1205, 790 1252, 790 1310 L520 1310 C520 1250, 575 1205, 660 1205 Z"
+          fill="#2e8f3a"/>
+  </g>
+
+  <text x="600" y="1450" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#333333">
+    Unique monument concept illustration
+  </text>
+</svg>

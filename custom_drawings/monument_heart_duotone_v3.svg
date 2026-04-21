@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <linearGradient id="gBlackStone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a404a"/>
+      <stop offset="45%" stop-color="#20262f"/>
+      <stop offset="100%" stop-color="#0a0d12"/>
+    </linearGradient>
+    <linearGradient id="gRedStone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c4e40"/>
+      <stop offset="50%" stop-color="#55362f"/>
+      <stop offset="100%" stop-color="#2f211d"/>
+    </linearGradient>
+    <linearGradient id="gBaseTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1b2230"/>
+      <stop offset="100%" stop-color="#0d121b"/>
+    </linearGradient>
+    <linearGradient id="gBaseFront" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#232a36"/>
+      <stop offset="100%" stop-color="#121722"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="170%" height="170%">
+      <feDropShadow dx="8" dy="14" stdDeviation="10" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1500" fill="#ffffff"/>
+
+  <g filter="url(#shadow)">
+    <path
+      d="M430 330
+         C390 470, 375 770, 410 1060
+         L855 1060
+         C920 760, 920 480, 825 340
+         C745 225, 535 205, 430 330 Z"
+      fill="url(#gBlackStone)"
+    />
+
+    <path
+      d="M430 330
+         C385 520, 383 785, 410 1060
+         L560 1060
+         L560 248
+         C503 252, 455 275, 430 330 Z"
+      fill="url(#gRedStone)"
+    />
+
+    <path
+      d="M560 438
+         C560 392, 607 373, 640 410
+         C673 373, 720 392, 720 438
+         C720 486, 680 523, 640 555
+         C600 523, 560 486, 560 438 Z"
+      fill="#ffffff"
+    />
+
+    <path d="M568 456 C600 430, 680 430, 712 456" fill="none" stroke="#ffffff" stroke-opacity="0.28" stroke-width="5" />
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M130 1082 L1055 1082 L1128 1188 L210 1188 Z" fill="url(#gBaseTop)" />
+    <path d="M95 1188 L1085 1188 L1085 1360 L95 1360 Z" fill="url(#gBaseFront)" />
+
+    <path
+      d="M168 1210
+         L560 1210
+         C618 1210, 653 1240, 678 1280
+         C699 1312, 738 1328, 786 1328
+         L940 1328
+         L940 1256
+         L748 1256
+         C713 1256, 690 1245, 668 1218
+         C635 1178, 605 1160, 548 1160
+         L168 1160 Z"
+      fill="url(#gRedStone)"
+    />
+
+    <path
+      d="M662 1210
+         C748 1210, 814 1258, 814 1320
+         L502 1320
+         C502 1260, 576 1210, 662 1210 Z"
+      fill="#29a63d"
+    />
+
+    <path
+      d="M660 1200
+         C764 1200, 834 1264, 834 1337
+         L484 1337
+         C484 1264, 556 1200, 660 1200 Z
+         M660 1210
+         C576 1210, 502 1260, 502 1320
+         L814 1320
+         C814 1258, 748 1210, 662 1210 Z"
+      fill="#090d12"
+      fill-opacity="0.95"
+    />
+  </g>
+</svg>
