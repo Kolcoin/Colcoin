@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <defs>
+    <linearGradient id="gBlack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#383f4b"/>
+      <stop offset="50%" stop-color="#1d232d"/>
+      <stop offset="100%" stop-color="#080b10"/>
+    </linearGradient>
+    <linearGradient id="gRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#835248"/>
+      <stop offset="50%" stop-color="#5a3932"/>
+      <stop offset="100%" stop-color="#34231f"/>
+    </linearGradient>
+    <linearGradient id="gBase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#11161f"/>
+      <stop offset="100%" stop-color="#07090d"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="170%" height="170%">
+      <feDropShadow dx="9" dy="16" stdDeviation="12" flood-color="#000000" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1500" fill="#ffffff"/>
+
+  <g filter="url(#shadow)">
+    <path d="M390 325 C350 505, 350 770, 385 1065 L870 1065 C925 775, 920 490, 830 345 C745 205, 505 190, 390 325 Z"
+          fill="url(#gBlack)"/>
+
+    <path d="M390 325 C352 520, 352 775, 382 1065 L565 1065 L565 262 C500 262, 425 278, 390 325 Z"
+          fill="url(#gRed)"/>
+
+    <path d="M565 438
+             C565 388, 616 370, 648 412
+             C680 370, 731 388, 731 438
+             C731 489, 688 526, 648 561
+             C608 526, 565 489, 565 438 Z"
+          fill="#ffffff"/>
+
+    <path d="M570 460 L735 460" stroke="#d8dbe2" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M150 1090 L1040 1090 L1115 1198 L228 1198 Z" fill="#0f1520"/>
+    <rect x="120" y="1198" width="960" height="150" rx="2" fill="url(#gBase)"/>
+
+    <path d="M170 1218
+             L555 1218
+             C608 1218, 636 1246, 664 1286
+             C687 1318, 728 1333, 776 1333
+             L935 1333 L935 1264
+             L742 1264
+             C708 1264, 684 1250, 663 1221
+             C633 1183, 602 1168, 548 1168
+             L170 1168 Z"
+          fill="url(#gRed)"/>
+
+    <path d="M658 1218
+             C744 1218, 804 1264, 804 1322
+             L500 1322
+             C500 1264, 571 1218, 658 1218 Z"
+          fill="#24903a"/>
+  </g>
+</svg>
