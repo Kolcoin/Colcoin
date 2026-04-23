@@ -66,7 +66,6 @@ function renderProjectHeader(project) {
   const title = document.getElementById("project-title");
   const subtitle = document.getElementById("project-subtitle");
   const chips = getElementByIds(["project-tags", "project-chips"]);
-  const source = getElementByIds(["project-source", "project-source-link"]);
 
   if (title) title.textContent = project.title;
   if (subtitle) {
@@ -82,7 +81,6 @@ function renderProjectHeader(project) {
       .map((chip) => `<span>${chip}</span>`)
       .join("");
   }
-  if (source) source.href = project.sourceUrl;
 }
 
 function renderProjectGallery(project) {
@@ -193,12 +191,6 @@ function initProjectPage() {
   document.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement)) return;
-
-    const sourceLink = target.closest("#project-source, #project-source-link");
-    if (sourceLink) {
-      trackGoal("open_project_source", { project: project?.id || "" });
-      return;
-    }
 
     const telLink = target.closest('a[href^="tel:"]');
     if (telLink) {
