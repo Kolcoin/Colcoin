@@ -41,48 +41,6 @@ window.REALTY_PROJECTS = [
     sourceUrl: "https://msk.nmarket.pro/search/complex/81249?isSmartLineMode=true&searchString=park%20side"
   },
   {
-    id: "mangazeya",
-    slug: "mangazeya",
-    title: "Мангазея",
-    district: "САО, Москва",
-    metro: "Речной вокзал",
-    classType: "business",
-    rooms: ["1", "2", "3", "4+"],
-    priceFrom: 14.5,
-    priceTo: 29.4,
-    delivery: "III кв. 2027",
-    developer: "Мангазея Девелопмент",
-    priority: 92,
-    articleUrl: "./starts/mangazeya.html",
-    heroImage:
-      "https://апи.мангазея-на-речном.рф/upload/iblock/f5f/2hu3qlxkwr55xvd0rm151qugyxmi71g6.png",
-    gallery: [
-      "https://апи.мангазея-на-речном.рф/upload/iblock/f5f/2hu3qlxkwr55xvd0rm151qugyxmi71g6.png",
-      "./assets/zhk-enigmiya/gallery-main.png",
-      "./assets/zhk-enigmiya/gallery-panorama.png"
-    ],
-    layouts: [
-      { type: "1-комн.", area: "37–46 м²", price: "от 14.5 млн ₽", finish: "White box" },
-      { type: "2-комн.", area: "58–72 м²", price: "от 19.8 млн ₽", finish: "White box" },
-      { type: "3-комн.", area: "81–102 м²", price: "от 25.6 млн ₽", finish: "Без отделки" }
-    ],
-    buildings: [
-      { name: "Башня А", handover: "III кв. 2027", status: "Монолит, 30 этажей" },
-      { name: "Башня B", handover: "IV кв. 2027", status: "Монолит, 27 этажей" }
-    ],
-    faq: [
-      {
-        q: "Кому подходит Мангазея?",
-        a: "Покупателям для жизни в Москве и инвесторам, которым важна ликвидность локации у метро."
-      },
-      {
-        q: "Какие риски нужно проверить до сделки?",
-        a: "Сроки ввода, параметры договора, выбор корпуса и полный бюджет владения с допрасходами."
-      }
-    ],
-    sourceUrl: "https://msk.nmarket.pro/search/complex/89572?isSmartLineMode=true"
-  },
-  {
     id: "enigmiya",
     slug: "enigmiya",
     title: "ЖК Энигмия",
