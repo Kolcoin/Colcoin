@@ -45,16 +45,33 @@ function getBudgetRangeKey(project) {
 }
 
 function buildCatalogCard(project) {
+  const classLabelMap = {
+    comfort: "Комфорт",
+    business: "Бизнес",
+    premium: "Премиум"
+  };
+  const classLabel = classLabelMap[project.classType] || "Комфорт";
+  const cardLink = `./project.html?project=${encodeURIComponent(project.id)}`;
+  const articleLink = project.articleUrl || cardLink;
+
   return `
-    <article class="project-card catalog-card">
-      <img src="${project.heroImage}" alt="${project.title}" loading="lazy" />
+    <article class="project-card project-card-rich catalog-card">
+      <div class="project-card-media">
+        <img src="${project.heroImage}" alt="${project.title}" loading="lazy" />
+        <span class="project-card-badge">${classLabel}</span>
+      </div>
       <h3>${project.title}</h3>
       <p class="project-meta">${project.district}</p>
       <p class="project-meta">${project.metro}</p>
-      <p class="project-meta">Класс: ${project.classType}</p>
-      <p class="project-price">от ${project.priceFrom.toLocaleString("ru-RU", { maximumFractionDigits: 1 })} млн ₽</p>
-      <a class="project-link" href="${project.articleUrl || `./project.html?project=${encodeURIComponent(project.id)}`}">Открыть статью ЖК</a>
-      <a class="project-link" href="./project.html?project=${encodeURIComponent(project.id)}">Открыть карточку ЖК</a>
+      <div class="project-card-chips">
+        <span>${classLabel}-класс</span>
+        <span>${project.delivery || "Срок уточняется"}</span>
+      </div>
+      <div class="project-card-footer">
+        <p class="project-price">от ${project.priceFrom.toLocaleString("ru-RU", { maximumFractionDigits: 1 })} млн ₽</p>
+        <a class="btn btn-small project-card-main-link" href="${cardLink}">Карточка ЖК</a>
+      </div>
+      <a class="project-link" href="${articleLink}">Обзор и статья проекта</a>
     </article>
   `;
 }

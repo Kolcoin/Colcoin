@@ -23,29 +23,58 @@ function getProjectCardLink(item) {
   return `./project.html?project=${key}`;
 }
 
+function getClassLabel(classType) {
+  const labels = {
+    comfort: "Комфорт",
+    business: "Бизнес",
+    premium: "Премиум"
+  };
+  return labels[classType] || "Комфорт";
+}
+
+function buildShowcaseCard(item, options = {}) {
+  const cardLink = `./project.html?project=${encodeURIComponent(item?.slug || item?.id || "")}`;
+  const articleLink = getProjectCardLink(item);
+  const showArticleLink = Boolean(options.showArticleLink);
+  const showSource = Boolean(options.showSource) && item.sourceLabel;
+  const priceFrom = Number(item.priceFrom).toLocaleString("ru-RU", { maximumFractionDigits: 1 });
+  const badge = getClassLabel(item.classType);
+  const delivery = item.delivery || "Срок уточняется";
+
+  return `
+      <article class="project-card project-card-rich">
+        ${
+          item.heroImage
+            ? `<div class="project-card-media">
+                <img class="project-card-image" src="${item.heroImage}" alt="${item.title}" loading="lazy" />
+                <span class="project-card-badge">${badge}</span>
+              </div>`
+            : ""
+        }
+        <div class="project-card-body">
+          <h3>${item.title}</h3>
+          <p class="project-meta">${item.district}</p>
+          <p class="project-meta">${item.metro}</p>
+          <div class="project-card-chips">
+            <span>${badge}-класс</span>
+            <span>${delivery}</span>
+          </div>
+          ${showSource ? `<p class="project-source">${item.sourceLabel}</p>` : ""}
+          <div class="project-card-footer">
+            <p class="project-price">от ${priceFrom} млн ₽</p>
+            <a class="btn btn-small project-card-main-link" href="${cardLink}">Карточка ЖК</a>
+          </div>
+          ${showArticleLink ? `<a class="project-link" href="${articleLink}">Обзор и статья проекта</a>` : ""}
+        </div>
+      </article>
+    `;
+}
+
 function renderCards(targetId, items) {
   const root = document.getElementById(targetId);
   if (!root) return;
   root.innerHTML = items
-    .map(
-      (item) => `
-      <article class="project-card">
-        ${
-          item.heroImage
-            ? `<img class="project-card-image" src="${item.heroImage}" alt="${item.title}" loading="lazy" />`
-            : ""
-        }
-        <h3>${item.title}</h3>
-        <p class="project-meta">${item.district}</p>
-        <p class="project-meta">${item.metro}</p>
-        ${item.sourceLabel ? `<p class="project-source">${item.sourceLabel}</p>` : ""}
-        <p class="project-price">${formatPriceRange(item.priceFrom, item.priceTo)}</p>
-        <a class="project-link" href="${getProjectCardLink(item)}" target="_blank" rel="noopener noreferrer">
-          Открыть карточку ЖК
-        </a>
-      </article>
-    `
-    )
+    .map((item) => buildShowcaseCard(item, { showArticleLink: true, showSource: true }))
     .join("");
 }
 
@@ -124,22 +153,7 @@ function renderLaunchBlocks() {
       const filteredProjects = sorted.filter(segment.filter);
       const cards = filteredProjects
         .slice(0, 2)
-        .map(
-          (item) => `
-            <article class="project-card">
-              ${
-                item.heroImage
-                  ? `<img class="project-card-image" src="${item.heroImage}" alt="${item.title}" loading="lazy" />`
-                  : ""
-              }
-              <h3>${item.title}</h3>
-              <p class="project-meta">${item.district}</p>
-              <p class="project-meta">${item.metro}</p>
-              <p class="project-price">${formatPriceRange(item.priceFrom, item.priceTo)}</p>
-              <a class="project-link" href="${getProjectCardLink(item)}">Открыть карточку</a>
-            </article>
-          `
-        )
+        .map((item) => buildShowcaseCard(item, { showArticleLink: false, showSource: false }))
         .join("");
 
       return `

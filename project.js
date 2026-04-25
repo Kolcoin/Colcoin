@@ -20,6 +20,15 @@ function trackGoal(goal, params = {}) {
   }
 }
 
+function getClassLabel(classType) {
+  const labels = {
+    comfort: "Комфорт",
+    business: "Бизнес",
+    premium: "Премиум"
+  };
+  return labels[classType] || "Комфорт";
+}
+
 function getProjectFromQuery() {
   if (!Array.isArray(window.REALTY_PROJECTS) || window.REALTY_PROJECTS.length === 0) return null;
 
@@ -166,12 +175,26 @@ function renderSimilar(project) {
   root.innerHTML = similar
     .map(
       (item) => `
-      <article class="project-card">
+      <article class="project-card project-card-rich">
+        ${
+          item.heroImage
+            ? `<div class="project-card-media">
+                <img class="project-card-image" src="${item.heroImage}" alt="${item.title}" loading="lazy" />
+                <span class="project-card-badge">${getClassLabel(item.classType)}</span>
+              </div>`
+            : ""
+        }
         <h3>${item.title}</h3>
         <p class="project-meta">${item.district}</p>
         <p class="project-meta">${item.metro}</p>
-        <p class="project-price">от ${item.priceFrom} млн ₽</p>
-        <a class="project-link" href="./project.html?project=${encodeURIComponent(item.slug)}">Открыть карточку</a>
+        <div class="project-card-chips">
+          <span>${getClassLabel(item.classType)}-класс</span>
+          <span>${item.delivery || "Срок уточняется"}</span>
+        </div>
+        <div class="project-card-footer">
+          <p class="project-price">от ${Number(item.priceFrom).toLocaleString("ru-RU", { maximumFractionDigits: 1 })} млн ₽</p>
+          <a class="btn btn-small project-card-main-link" href="./project.html?project=${encodeURIComponent(item.slug)}">Карточка ЖК</a>
+        </div>
       </article>
     `
     )

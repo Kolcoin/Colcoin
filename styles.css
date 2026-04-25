@@ -354,6 +354,17 @@ h1 {
   align-content: start;
 }
 
+.project-card-rich {
+  padding: 12px;
+  gap: 10px;
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(21, 34, 66, 0.08);
+}
+
+.project-card-media {
+  position: relative;
+}
+
 .project-card img {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -361,6 +372,26 @@ h1 {
   border-radius: 10px;
   border: 1px solid var(--border);
   margin-bottom: 4px;
+}
+
+.project-card-rich .project-card-image {
+  border-radius: 14px;
+  margin-bottom: 0;
+}
+
+.project-card-badge {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: rgba(20, 29, 52, 0.84);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .project-card h3 {
@@ -385,6 +416,34 @@ h1 {
   margin-top: auto;
   color: #2f3f89;
   font-weight: 600;
+}
+
+.project-card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-card-chips span {
+  border: 1px solid #dbe3fb;
+  background: #f3f6ff;
+  color: #34408a;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.project-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.project-card-main-link {
+  white-space: nowrap;
 }
 
 .project-link {
