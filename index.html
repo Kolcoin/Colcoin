@@ -52,7 +52,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260425-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260425-2" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -279,26 +279,34 @@
     </nav>
 
     <main>
-      <section class="hero">
+      <section class="hero hero-modern">
         <div class="container hero-grid">
-          <div>
-            <p class="eyebrow">Москва и МО · актуальная витрина новостроек</p>
-            <h1>Подбор новостроек Москвы и МО: актуальные старты продаж и цены</h1>
+          <div class="hero-content">
+            <p class="eyebrow">Новостройки Москвы и МО · подбор под цель</p>
+            <h1>Подберём квартиру в новостройке Москвы и МО под вашу задачу</h1>
             <p class="hero-text">
-              Подбираем квартиры в новостройках под ваш сценарий: для жизни, инвестиций или расширения семьи.
-              Показываем актуальные старты и разбираем каждый проект на отдельной странице.
+              Первая квартира, инвестиция, расширение или покупка для близких — формируем персональную подборку
+              с понятной ценой входа, сроками и рисками сделки.
             </p>
+            <div class="hero-benefits">
+              <span>Скидки от застройщиков</span>
+              <span>Персональный сценарий сделки</span>
+              <span>Москва и область</span>
+            </div>
             <div class="stats">
               <article><strong>0₽</strong><span>комиссия</span></article>
               <article><strong>2 часа</strong><span>подборка</span></article>
-              <article><strong>2</strong><span>актуальные статьи</span></article>
-              <article><strong>4.8 ★</strong><span>рейтинг</span></article>
+              <article><strong id="stat-projects-count">0</strong><span>ЖК в базе</span></article>
+              <article><strong id="stat-developers-count">0</strong><span>застройщиков</span></article>
             </div>
-            <a class="btn btn-large" href="#lead-form">Получить подборку квартир</a>
+            <div class="hero-actions">
+              <a class="btn btn-large" href="#lead-form">Получить подборку</a>
+              <a class="btn btn-large btn-outline" href="./catalog.html">Открыть каталог ЖК</a>
+            </div>
           </div>
           <aside class="hero-card" id="lead-form">
-            <h2>Персональная подборка новостроек за 2 часа</h2>
-            <p>Оставьте заявку, и мы соберём варианты по цели, бюджету и локации.</p>
+            <h2>Получить подборку квартир</h2>
+            <p>Бесплатно за 2 часа от эксперта по новостройкам Москвы и МО.</p>
             <form class="lead-form" id="hero-lead-form">
               <label for="goal">Цель покупки</label>
               <select id="goal" name="goal">
@@ -330,7 +338,7 @@
       <section class="section" id="catalog">
         <div class="container">
           <div class="section-heading">
-            <h2>Рекомендуемые проекты Москвы и МО</h2>
+            <h2>Топ новостроек прямо сейчас</h2>
             <a class="section-link" href="./catalog.html">Перейти в каталог →</a>
           </div>
           <div class="cards-grid" id="top-projects"></div>
@@ -396,8 +404,8 @@
       <section class="section section-muted" id="segments">
         <div class="container">
           <div class="section-heading">
-            <h2>Выберите формат покупки</h2>
-            <p>Каждый блок отражает отдельную стратегию выбора недвижимости в Москве и области.</p>
+            <h2>Какая у вас цель?</h2>
+            <p>Подберём новостройку под вашу конкретную задачу.</p>
           </div>
           <div class="launch-goals" id="goal-blocks"></div>
         </div>
@@ -638,6 +646,6 @@
     </footer>
 
     <script src="./realty-data.js?v=20260417-3"></script>
-    <script src="./script.js?v=20260425-1"></script>
+    <script src="./script.js?v=20260425-2"></script>
   </body>
 </html>

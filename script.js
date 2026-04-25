@@ -174,6 +174,74 @@ function renderLaunchBlocks() {
     .join("");
 }
 
+function renderGoalCards() {
+  const root = document.getElementById("goal-blocks");
+  if (!root) return;
+
+  const goals = [
+    {
+      icon: "🔑",
+      title: "Первая квартира",
+      text: "Хватит платить за аренду — выбирайте своё. Студии и 1-комнатные форматы с мягким входом в ипотеку.",
+      tags: ["Ипотека", "Рассрочка", "Стартовый бюджет"],
+      link: "./catalog.html?quickFilter=budget-low"
+    },
+    {
+      icon: "📈",
+      title: "Инвестиция",
+      text: "Фокус на ликвидных лотах у метро, стратегии аренды и росте стоимости на горизонте 2–4 лет.",
+      tags: ["Доходность", "Ликвидность", "Перепродажа"],
+      link: "./catalog.html?quickFilter=business-plus"
+    },
+    {
+      icon: "🏡",
+      title: "Расширение",
+      text: "2–4 комнаты для семейного апгрейда: больше функциональной площади и удобная инфраструктура рядом.",
+      tags: ["2-4 комнаты", "Семья", "Trade-in"],
+      link: "./catalog.html?rooms=3"
+    },
+    {
+      icon: "💜",
+      title: "Для близких",
+      text: "Надежные локации с понятной логистикой, безопасной юридической схемой и прозрачной финансовой моделью.",
+      tags: ["Безопасно", "Рядом с метро", "Юрпроверка"],
+      link: "./districts.html"
+    }
+  ];
+
+  root.innerHTML = goals
+    .map(
+      (goal) => `
+      <article class="segment-goal-card">
+        <p class="segment-goal-icon">${goal.icon}</p>
+        <h3>${goal.title}</h3>
+        <p>${goal.text}</p>
+        <div class="segment-goal-tags">
+          ${goal.tags.map((tag) => `<span>${tag}</span>`).join("")}
+        </div>
+        <a class="segment-goal-link" href="${goal.link}">Подобрать →</a>
+      </article>
+    `
+    )
+    .join("");
+}
+
+function renderHeroStats() {
+  const projectsNode = document.getElementById("stat-projects-count");
+  const developersNode = document.getElementById("stat-developers-count");
+  if (!Array.isArray(window.REALTY_PROJECTS)) return;
+
+  const projectCount = window.REALTY_PROJECTS.length;
+  const developersCount = new Set(window.REALTY_PROJECTS.map((item) => item.developer).filter(Boolean)).size;
+
+  if (projectsNode) {
+    projectsNode.textContent = projectCount.toLocaleString("ru-RU");
+  }
+  if (developersNode) {
+    developersNode.textContent = developersCount.toLocaleString("ru-RU");
+  }
+}
+
 function renderExpandedSegments() {
   const root = document.getElementById("expanded-segment-blocks");
   if (!root || typeof REALTY_PROJECTS === "undefined") return;
@@ -327,6 +395,8 @@ function initHomePage() {
     .slice(0, 4);
 
   renderCards("top-projects", top);
+  renderHeroStats();
+  renderGoalCards();
   renderLaunchBlocks();
   renderExpandedSegments();
   renderCards("premium-projects", premium);

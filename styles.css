@@ -193,6 +193,10 @@ a {
   padding: 56px 0 30px;
 }
 
+.hero-modern {
+  padding-top: 40px;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
@@ -299,6 +303,83 @@ h1 {
   display: block;
   margin-top: 10px;
   color: var(--text-muted);
+}
+
+.hero-modern .hero-text {
+  max-width: 58ch;
+}
+
+.hero-content {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.hero-benefits {
+  margin: 18px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-benefits span {
+  border: 1px solid #d7e1fb;
+  background: #f5f8ff;
+  color: #2f3f89;
+  border-radius: 999px;
+  padding: 6px 11px;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.hero-actions {
+  margin-top: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.launch-goals {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.goal-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.goal-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: #3246a8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.goal-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.goal-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.goal-card .project-link {
+  margin-top: auto;
 }
 
 .section {
@@ -1602,6 +1683,10 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .segment-goals-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .cards-grid,
   .features,
   .districts {
@@ -1727,6 +1812,14 @@ h1 {
 
   .hero {
     padding-top: 32px;
+  }
+
+  .goal-option-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .segment-goals-grid {
+    grid-template-columns: 1fr;
   }
 
   .section {
