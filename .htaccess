@@ -1,5 +1,8 @@
 RewriteEngine On
 
+# Normalize legacy uppercase .HTML URLs
+RewriteRule ^seo/novostroyki-svao-moskva\.HTML$ /seo/novostroyki-svao-moskva.html [L,R=301]
+
 # Force HTTPS
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://xn--h1aagfvid9b.xn--p1ai%{REQUEST_URI} [L,R=301]
