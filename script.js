@@ -18,6 +18,12 @@ const HOME_TOP_PINNED_IDS = [
   "nmarket-65154" // FORIVER
 ];
 
+const HOME_SEGMENT_PINNED_IDS = {
+  "first-home": "nmarket-87790",
+  invest: "nmarket-88942",
+  family: "nmarket-85427"
+};
+
 function getHomeProjects() {
   if (!Array.isArray(window.REALTY_PROJECTS)) return [];
   return window.REALTY_PROJECTS.filter((item) => !HOME_EXCLUDED_PROJECT_IDS.has(item?.id || item?.slug));
@@ -187,9 +193,13 @@ function renderLaunchBlocks(projects = []) {
   root.innerHTML = segmentDefs
     .map((segment) => {
       const filteredProjects = sorted.filter(segment.filter);
-      const cards = filteredProjects
-        .slice(0, 2)
-        .map((item) => buildShowcaseCard(item, { showArticleLink: false, showSource: false }))
+      const pinnedId = HOME_SEGMENT_PINNED_IDS[segment.id];
+      const pinned = pinnedId
+        ? filteredProjects.find((item) => (item?.id || item?.slug) === pinnedId)
+        : null;
+
+      const cards = (pinned ? [pinned] : filteredProjects.slice(0, 1))
+        .map((item) => buildShowcaseCard(item, { showSource: false }))
         .join("");
 
       return `
@@ -203,7 +213,7 @@ function renderLaunchBlocks(projects = []) {
             </div>
             <a class="btn ${segment.buttonClass}" href="./catalog.html">${segment.buttonText}</a>
           </div>
-          <div class="cards-grid cards-grid-compact">${cards}</div>
+          <div class="cards-grid cards-grid-compact cards-grid-symmetric">${cards}</div>
         </section>
       `;
     })

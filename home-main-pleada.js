@@ -18,6 +18,12 @@
     "nmarket-65154" // FORIVER
   ];
 
+  const HOME_SEGMENT_PINNED = {
+    "first-home": "nmarket-87790",
+    invest: "nmarket-88942",
+    family: "nmarket-85427"
+  };
+
   function esc(value) {
     return String(value ?? "")
       .replaceAll("&", "&amp;")
@@ -188,10 +194,11 @@
 
     root.innerHTML = segmentDefs
       .map((segment) => {
-        const cards = sorted
-          .filter(segment.filter)
-          .slice(0, 2)
-          .map((item) => buildCard(item, { showArticleLink: false, showSource: false }))
+        const filtered = sorted.filter(segment.filter);
+        const pinnedId = HOME_SEGMENT_PINNED[segment.id];
+        const pinnedItem = pinnedId ? filtered.find((item) => normalizeId(item) === pinnedId) : null;
+        const cards = (pinnedItem ? [pinnedItem] : filtered.slice(0, 1))
+          .map((item) => buildCard(item, { showSource: false }))
           .join("");
         return `
           <section class="launch-block" id="launch-${segment.id}">
