@@ -4,7 +4,12 @@
   if (window.__PLEADA_HOME_MAIN_SCRIPT__) return;
   window.__PLEADA_HOME_MAIN_SCRIPT__ = true;
 
-  const HOME_EXCLUDED_PROJECT_IDS = new Set([]);
+  const HOME_EXCLUDED_PROJECT_IDS = new Set([
+    "nmarket-89152", // Коттеджный поселок Истра Дом
+    "nmarket-91501", // Старый город
+    "nmarket-91999", // ПОРТ ЭММ ЗАВИДОВО
+    "nmarket-92083" // Космопарк
+  ]);
 
   const HOME_TOP_PINNED_IDS = [
     "nmarket-14867", // Лайм
