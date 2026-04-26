@@ -4,6 +4,18 @@ function formatPriceRange(from, to) {
   })} млн ₽`;
 }
 
+const HOME_EXCLUDED_PROJECT_IDS = new Set([
+  "nmarket-89152", // Коттеджный поселок Истра Дом
+  "nmarket-91501", // Старый город
+  "nmarket-91999", // ПОРТ ЭММ ЗАВИДОВО
+  "nmarket-92083" // Космопарк
+]);
+
+function getHomeProjects() {
+  if (!Array.isArray(window.REALTY_PROJECTS)) return [];
+  return window.REALTY_PROJECTS.filter((item) => !HOME_EXCLUDED_PROJECT_IDS.has(item?.id || item?.slug));
+}
+
 function reachMetrikaGoal(goal, params = {}) {
   if (typeof window.ym !== "function") return;
   try {
@@ -78,14 +90,15 @@ function renderCards(targetId, items) {
     .join("");
 }
 
-function renderDistricts() {
+function renderDistricts(projects = []) {
   const root = document.getElementById("districts-list");
-  if (!root || typeof REALTY_PROJECTS === "undefined") return;
-  const districts = [...new Set(REALTY_PROJECTS.map((item) => item.district))]
+  const source = projects.length ? projects : getHomeProjects();
+  if (!root || !source.length) return;
+  const districts = [...new Set(source.map((item) => item.district))]
     .slice(0, 6)
     .map((district) => ({
       name: district.split(",")[0],
-      info: `актуальные старты · ${REALTY_PROJECTS.filter((p) => p.district === district).length} ЖК`
+      info: `актуальные старты · ${source.filter((p) => p.district === district).length} ЖК`
     }));
 
   root.innerHTML = districts
@@ -100,11 +113,12 @@ function renderDistricts() {
     .join("");
 }
 
-function renderLaunchBlocks() {
+function renderLaunchBlocks(projects = []) {
   const root = document.getElementById("launch-blocks");
-  if (!root || typeof REALTY_PROJECTS === "undefined") return;
+  const source = projects.length ? projects : getHomeProjects();
+  if (!root || !source.length) return;
 
-  const sorted = [...REALTY_PROJECTS].sort((a, b) => b.priority - a.priority);
+  const sorted = [...source].sort((a, b) => b.priority - a.priority);
   const segmentDefs = [
     {
       id: "first-home",
@@ -226,13 +240,14 @@ function renderGoalCards() {
     .join("");
 }
 
-function renderHeroStats() {
+function renderHeroStats(projects = []) {
   const projectsNode = document.getElementById("stat-projects-count");
   const developersNode = document.getElementById("stat-developers-count");
-  if (!Array.isArray(window.REALTY_PROJECTS)) return;
+  const source = projects.length ? projects : getHomeProjects();
+  if (!source.length) return;
 
-  const projectCount = window.REALTY_PROJECTS.length;
-  const developersCount = new Set(window.REALTY_PROJECTS.map((item) => item.developer).filter(Boolean)).size;
+  const projectCount = source.length;
+  const developersCount = new Set(source.map((item) => item.developer).filter(Boolean)).size;
 
   if (projectsNode) {
     projectsNode.textContent = projectCount.toLocaleString("ru-RU");
@@ -388,19 +403,20 @@ function setupMobileMenuToggle() {
 
 function initHomePage() {
   if (typeof REALTY_PROJECTS === "undefined") return;
-  const top = [...REALTY_PROJECTS].sort((a, b) => b.priority - a.priority).slice(0, 4);
-  const premium = [...REALTY_PROJECTS]
+  const homeProjects = getHomeProjects();
+  const top = [...homeProjects].sort((a, b) => b.priority - a.priority).slice(0, 4);
+  const premium = [...homeProjects]
     .filter((item) => item.classType === "business" || item.classType === "premium")
     .sort((a, b) => b.priority - a.priority)
     .slice(0, 4);
 
   renderCards("top-projects", top);
-  renderHeroStats();
+  renderHeroStats(homeProjects);
   renderGoalCards();
-  renderLaunchBlocks();
+  renderLaunchBlocks(homeProjects);
   renderExpandedSegments();
   renderCards("premium-projects", premium);
-  renderDistricts();
+  renderDistricts(homeProjects);
   setupLeadForm();
   setupMobileMenuToggle();
   setupAnalyticsGoals();
