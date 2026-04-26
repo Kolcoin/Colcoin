@@ -191,6 +191,7 @@ function renderLaunchBlocks(projects = []) {
     }
   ];
 
+  const usedIds = new Set();
   root.innerHTML = segmentDefs
     .map((segment) => {
       const filteredProjects = sorted.filter(segment.filter);
@@ -199,15 +200,22 @@ function renderLaunchBlocks(projects = []) {
         ? filteredProjects.find((item) => (item?.id || item?.slug) === pinnedId)
         : null;
 
-      const orderedProjects = pinned
-        ? [
-            pinned,
-            ...filteredProjects.filter((item) => (item?.id || item?.slug) !== pinnedId)
-          ]
-        : filteredProjects;
+      const picked = [];
+      if (pinned) {
+        picked.push(pinned);
+        usedIds.add(pinned?.id || pinned?.slug);
+      }
 
-      const cards = orderedProjects
-        .slice(0, 3)
+      for (const item of filteredProjects) {
+        const itemId = item?.id || item?.slug;
+        if (picked.length >= 3) break;
+        if (usedIds.has(itemId)) continue;
+        if (picked.some((x) => (x?.id || x?.slug) === itemId)) continue;
+        picked.push(item);
+        usedIds.add(itemId);
+      }
+
+      const cards = picked
         .map((item) => buildShowcaseCard(item, { showSource: false }))
         .join("");
 

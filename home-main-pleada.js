@@ -193,14 +193,34 @@
       }
     ];
 
+    const usedIds = new Set();
     root.innerHTML = segmentDefs
       .map((segment) => {
         const filtered = sorted.filter(segment.filter);
         const pinnedId = HOME_SEGMENT_PINNED[segment.id];
         const pinnedItem = pinnedId ? filtered.find((item) => normalizeId(item) === pinnedId) : null;
-        const rest = filtered.filter((item) => normalizeId(item) !== (pinnedItem ? normalizeId(pinnedItem) : ""));
-        const symmetricCards = pinnedItem ? [pinnedItem, ...rest.slice(0, 2)] : filtered.slice(0, 3);
-        const cards = symmetricCards.map((item) => buildCard(item, { showSource: false })).join("");
+        const localUsed = new Set();
+        const picks = [];
+
+        if (pinnedItem) {
+          const pid = normalizeId(pinnedItem);
+          if (!usedIds.has(pid)) {
+            picks.push(pinnedItem);
+            usedIds.add(pid);
+            localUsed.add(pid);
+          }
+        }
+
+        for (const item of filtered) {
+          const id = normalizeId(item);
+          if (!id || usedIds.has(id) || localUsed.has(id)) continue;
+          picks.push(item);
+          usedIds.add(id);
+          localUsed.add(id);
+          if (picks.length === 3) break;
+        }
+
+        const cards = picks.map((item) => buildCard(item, { showSource: false })).join("");
         return `
           <section class="launch-block" id="launch-${segment.id}">
             <div class="launch-block-head">
