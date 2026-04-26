@@ -1,0 +1,145 @@
+# План переобхода: новые 100 SEO-страниц
+
+Пачки по 5 URL для отправки в:
+- Яндекс Вебмастер -> Переобход страниц
+- Google Search Console -> Проверка URL -> Запрос на индексацию
+
+## Неделя 1
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-arbat-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-arbat-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-arbat-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-arbat-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-basmannyy-dlya-zhizni.html
+
+## Неделя 2
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-basmannyy-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-basmannyy-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-basmannyy-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-hamovniki-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-hamovniki-dlya-investiciy.html
+
+## Неделя 3
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-hamovniki-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-hamovniki-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-presnenskiy-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-presnenskiy-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-presnenskiy-s-ipotekoy.html
+
+## Неделя 4
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-presnenskiy-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-taganskiy-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-taganskiy-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-taganskiy-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-taganskiy-do-15-mln.html
+
+## Неделя 5
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-marfino-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-marfino-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-marfino-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-marfino-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-rostokino-dlya-zhizni.html
+
+## Неделя 6
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-rostokino-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-rostokino-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-rostokino-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-sokol-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-sokol-dlya-investiciy.html
+
+## Неделя 7
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-sokol-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-sokol-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-aeroport-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-aeroport-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-aeroport-s-ipotekoy.html
+
+## Неделя 8
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-aeroport-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-begovoy-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-begovoy-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-begovoy-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-begovoy-do-15-mln.html
+
+## Неделя 9
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-lefortovo-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-lefortovo-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-lefortovo-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-lefortovo-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-pechatniki-dlya-zhizni.html
+
+## Неделя 10
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-pechatniki-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-pechatniki-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-pechatniki-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-tekstilshchiki-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-tekstilshchiki-dlya-investiciy.html
+
+## Неделя 11
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-tekstilshchiki-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-tekstilshchiki-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-zyuzino-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-zyuzino-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-zyuzino-s-ipotekoy.html
+
+## Неделя 12
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-zyuzino-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-chertanovo-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-chertanovo-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-chertanovo-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-chertanovo-do-15-mln.html
+
+## Неделя 13
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-orehovo-borisovo-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-orehovo-borisovo-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-orehovo-borisovo-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-orehovo-borisovo-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-fili-park-dlya-zhizni.html
+
+## Неделя 14
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-fili-park-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-fili-park-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-fili-park-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-kuncevo-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-kuncevo-dlya-investiciy.html
+
+## Неделя 15
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-kuncevo-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-kuncevo-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-solncevo-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-solncevo-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-solncevo-s-ipotekoy.html
+
+## Неделя 16
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-solncevo-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-yasenevo-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-yasenevo-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-yasenevo-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-yasenevo-do-15-mln.html
+
+## Неделя 17
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-cheryomushki-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-cheryomushki-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-cheryomushki-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-cheryomushki-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-ramenki-dlya-zhizni.html
+
+## Неделя 18
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-ramenki-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-ramenki-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-ramenki-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-ochakovo-matveevskoe-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-ochakovo-matveevskoe-dlya-investiciy.html
+
+## Неделя 19
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-ochakovo-matveevskoe-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-ochakovo-matveevskoe-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-nekrasovka-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-nekrasovka-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-nekrasovka-s-ipotekoy.html
+
+## Неделя 20
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-nekrasovka-do-15-mln.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-nagatino-sadovniki-dlya-zhizni.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-nagatino-sadovniki-dlya-investiciy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-nagatino-sadovniki-s-ipotekoy.html
+- https://xn--h1aagfvid9b.xn--p1ai/seo/novostroyki-nagatino-sadovniki-do-15-mln.html
