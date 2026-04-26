@@ -4,6 +4,8 @@
   if (window.__PLEADA_HOME_MAIN_SCRIPT__) return;
   window.__PLEADA_HOME_MAIN_SCRIPT__ = true;
 
+  const HOME_EXCLUDED_PROJECT_IDS = new Set([]);
+
   const HOME_TOP_PINNED_IDS = [
     "nmarket-14867", // Лайм
     "nmarket-61552", // ILOVE
@@ -35,7 +37,7 @@
 
   function getHomeProjects() {
     if (!Array.isArray(window.REALTY_PROJECTS)) return [];
-    return window.REALTY_PROJECTS;
+    return window.REALTY_PROJECTS.filter((item) => !HOME_EXCLUDED_PROJECT_IDS.has(normalizeId(item)));
   }
 
   function getPinnedTopProjects(source) {
