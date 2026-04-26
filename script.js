@@ -191,28 +191,39 @@ function renderLaunchBlocks(projects = []) {
     }
   ];
 
+  const reservedPinnedIds = new Set(
+    segmentDefs.map((segment) => HOME_SEGMENT_PINNED_IDS[segment.id]).filter(Boolean)
+  );
   const usedIds = new Set();
   root.innerHTML = segmentDefs
     .map((segment) => {
       const filteredProjects = sorted.filter(segment.filter);
       const pinnedId = HOME_SEGMENT_PINNED_IDS[segment.id];
-      const pinned = pinnedId
-        ? filteredProjects.find((item) => (item?.id || item?.slug) === pinnedId)
-        : null;
+      const pinned = pinnedId ? sorted.find((item) => (item?.id || item?.slug) === pinnedId) : null;
 
       const picked = [];
+      const localUsed = new Set();
       if (pinned) {
-        picked.push(pinned);
-        usedIds.add(pinned?.id || pinned?.slug);
+        const pinnedKey = pinned?.id || pinned?.slug;
+        if (pinnedKey && !usedIds.has(pinnedKey)) {
+          picked.push(pinned);
+          usedIds.add(pinnedKey);
+          localUsed.add(pinnedKey);
+        }
       }
 
-      for (const item of filteredProjects) {
-        const itemId = item?.id || item?.slug;
+      const pools = [filteredProjects, sorted];
+      for (const pool of pools) {
+        for (const item of pool) {
+          const itemId = item?.id || item?.slug;
+          if (!itemId || picked.length >= 3) break;
+          if (usedIds.has(itemId) || localUsed.has(itemId)) continue;
+          if (reservedPinnedIds.has(itemId) && itemId !== pinnedId) continue;
+          picked.push(item);
+          usedIds.add(itemId);
+          localUsed.add(itemId);
+        }
         if (picked.length >= 3) break;
-        if (usedIds.has(itemId)) continue;
-        if (picked.some((x) => (x?.id || x?.slug) === itemId)) continue;
-        picked.push(item);
-        usedIds.add(itemId);
       }
 
       const cards = picked

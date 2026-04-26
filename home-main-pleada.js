@@ -47,6 +47,11 @@
     return labels[classType] || "Комфорт";
   }
 
+  function getProjectById(source, id) {
+    if (!id) return null;
+    return source.find((item) => normalizeId(item) === id) || null;
+  }
+
   function getHomeProjects() {
     if (!Array.isArray(window.REALTY_PROJECTS)) return [];
     return window.REALTY_PROJECTS.filter((item) => !HOME_EXCLUDED_PROJECT_IDS.has(normalizeId(item)));
@@ -198,7 +203,7 @@
       .map((segment) => {
         const filtered = sorted.filter(segment.filter);
         const pinnedId = HOME_SEGMENT_PINNED[segment.id];
-        const pinnedItem = pinnedId ? filtered.find((item) => normalizeId(item) === pinnedId) : null;
+        const pinnedItem = pinnedId ? getProjectById(sorted, pinnedId) : null;
         const localUsed = new Set();
         const picks = [];
 
