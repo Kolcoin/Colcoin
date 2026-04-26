@@ -4,13 +4,6 @@
   if (window.__PLEADA_HOME_MAIN_SCRIPT__) return;
   window.__PLEADA_HOME_MAIN_SCRIPT__ = true;
 
-  const HOME_EXCLUDED_PROJECT_IDS = new Set([
-    "nmarket-89152", // Коттеджный поселок Истра Дом
-    "nmarket-91501", // Старый город
-    "nmarket-91999", // ПОРТ ЭММ ЗАВИДОВО
-    "nmarket-92083" // Космопарк
-  ]);
-
   const HOME_TOP_PINNED_IDS = [
     "nmarket-14867", // Лайм
     "nmarket-61552", // ILOVE
@@ -42,7 +35,7 @@
 
   function getHomeProjects() {
     if (!Array.isArray(window.REALTY_PROJECTS)) return [];
-    return window.REALTY_PROJECTS.filter((item) => !HOME_EXCLUDED_PROJECT_IDS.has(normalizeId(item)));
+    return window.REALTY_PROJECTS;
   }
 
   function getPinnedTopProjects(source) {
