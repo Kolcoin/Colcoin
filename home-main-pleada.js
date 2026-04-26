@@ -244,25 +244,6 @@
       .join("");
   }
 
-  function setupMobileMenuToggle() {
-    const toggle = document.getElementById("mobile-menu-toggle");
-    const menu = document.getElementById("primary-menu");
-    if (!(toggle instanceof HTMLButtonElement) || !(menu instanceof HTMLElement)) return;
-
-    const closeMenu = () => {
-      toggle.setAttribute("aria-expanded", "false");
-      menu.classList.remove("menu-open");
-    };
-
-    toggle.addEventListener("click", () => {
-      const expanded = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", expanded ? "false" : "true");
-      menu.classList.toggle("menu-open", !expanded);
-    });
-
-    menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-  }
-
   function initPleadaHomeMain() {
     const projects = getHomeProjects();
     if (!projects.length) return;
@@ -278,7 +259,6 @@
     renderHeroStats(projects);
     renderDistricts(projects);
     renderLaunchBlocks(projects);
-    setupMobileMenuToggle();
   }
 
   window.initPleadaHomeMain = initPleadaHomeMain;
