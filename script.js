@@ -11,9 +11,34 @@ const HOME_EXCLUDED_PROJECT_IDS = new Set([
   "nmarket-92083" // Космопарк
 ]);
 
+const HOME_TOP_PINNED_IDS = [
+  "nmarket-14867", // Лайм
+  "nmarket-61552", // ILOVE
+  "nmarket-83554", // Level Академическая
+  "nmarket-65154" // FORIVER
+];
+
 function getHomeProjects() {
   if (!Array.isArray(window.REALTY_PROJECTS)) return [];
   return window.REALTY_PROJECTS.filter((item) => !HOME_EXCLUDED_PROJECT_IDS.has(item?.id || item?.slug));
+}
+
+function getPinnedTopProjects(source = []) {
+  if (!source.length) return [];
+
+  const projectById = new Map(source.map((item) => [item?.id || item?.slug, item]));
+  const pinned = HOME_TOP_PINNED_IDS.map((id) => projectById.get(id)).filter(Boolean);
+
+  if (pinned.length >= 4) {
+    return pinned.slice(0, 4);
+  }
+
+  const pinnedSet = new Set(pinned.map((item) => item?.id || item?.slug));
+  const fallback = [...source]
+    .filter((item) => !pinnedSet.has(item?.id || item?.slug))
+    .sort((a, b) => b.priority - a.priority);
+
+  return [...pinned, ...fallback].slice(0, 4);
 }
 
 function reachMetrikaGoal(goal, params = {}) {
@@ -404,7 +429,7 @@ function setupMobileMenuToggle() {
 function initHomePage() {
   if (typeof REALTY_PROJECTS === "undefined") return;
   const homeProjects = getHomeProjects();
-  const top = [...homeProjects].sort((a, b) => b.priority - a.priority).slice(0, 4);
+  const top = getPinnedTopProjects(homeProjects);
   const premium = [...homeProjects]
     .filter((item) => item.classType === "business" || item.classType === "premium")
     .sort((a, b) => b.priority - a.priority)
