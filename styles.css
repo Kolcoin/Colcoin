@@ -418,10 +418,12 @@ h1 {
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .cards-grid-compact {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .project-card {
@@ -440,6 +442,17 @@ h1 {
   gap: 10px;
   border-radius: 18px;
   box-shadow: 0 10px 26px rgba(21, 34, 66, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+  flex: 1;
 }
 
 .project-card-media {
@@ -544,10 +557,14 @@ h1 {
   border-radius: var(--radius);
   padding: 18px;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
 }
 
 .launch-block-head {
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .launch-icon {
@@ -612,6 +629,7 @@ h1 {
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .seo-article {
@@ -621,6 +639,7 @@ h1 {
   padding: 18px;
   display: grid;
   gap: 10px;
+  height: 100%;
 }
 
 .seo-article-square {
@@ -1468,6 +1487,7 @@ h1 {
   display: grid;
   gap: 12px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .steps article {
@@ -1475,6 +1495,9 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .steps span {
