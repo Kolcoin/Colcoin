@@ -21,7 +21,8 @@ const HOME_TOP_PINNED_IDS = [
 const HOME_SEGMENT_PINNED_IDS = {
   "first-home": "nmarket-87790",
   invest: "nmarket-88942",
-  family: "nmarket-85427"
+  family: "nmarket-85427",
+  premium: "nmarket-65154"
 };
 
 function getHomeProjects() {
