@@ -70,9 +70,7 @@ function getClassLabel(classType) {
 }
 
 function buildShowcaseCard(item, options = {}) {
-  const cardLink = `./project.html?project=${encodeURIComponent(item?.slug || item?.id || "")}`;
-  const articleLink = getProjectCardLink(item);
-  const showArticleLink = Boolean(options.showArticleLink);
+  const cardLink = getProjectCardLink(item);
   const showSource = Boolean(options.showSource) && item.sourceLabel;
   const priceFrom = Number(item.priceFrom).toLocaleString("ru-RU", { maximumFractionDigits: 1 });
   const badge = getClassLabel(item.classType);
@@ -101,7 +99,6 @@ function buildShowcaseCard(item, options = {}) {
             <p class="project-price">от ${priceFrom} млн ₽</p>
             <a class="btn btn-small project-card-main-link" href="${cardLink}">Карточка ЖК</a>
           </div>
-          ${showArticleLink ? `<a class="project-link" href="${articleLink}">Обзор и статья проекта</a>` : ""}
         </div>
       </article>
     `;
@@ -111,7 +108,7 @@ function renderCards(targetId, items) {
   const root = document.getElementById(targetId);
   if (!root) return;
   root.innerHTML = items
-    .map((item) => buildShowcaseCard(item, { showArticleLink: true, showSource: true }))
+    .map((item) => buildShowcaseCard(item, { showSource: true }))
     .join("");
 }
 

@@ -61,9 +61,7 @@
   }
 
   function buildCard(item, options = {}) {
-    const cardLink = `./project.html?project=${encodeURIComponent(normalizeId(item))}`;
-    const articleLink = getProjectCardLink(item);
-    const showArticleLink = options.showArticleLink ?? true;
+    const cardLink = getProjectCardLink(item);
     const showSource = options.showSource ?? true;
 
     const classLabel = getClassLabel(item.classType);
@@ -97,7 +95,6 @@
             <p class="project-price">от ${esc(priceFrom)} млн ₽</p>
             <a class="btn btn-small project-card-main-link" href="${esc(cardLink)}">Карточка ЖК</a>
           </div>
-          ${showArticleLink ? `<a class="project-link" href="${esc(articleLink)}">Обзор и статья проекта</a>` : ""}
         </div>
       </article>
     `;
@@ -243,8 +240,8 @@
       .sort((a, b) => (b.priority || 0) - (a.priority || 0))
       .slice(0, 4);
 
-    renderCards("top-projects", top, { showArticleLink: true, showSource: true });
-    renderCards("premium-projects", premium, { showArticleLink: true, showSource: true });
+    renderCards("top-projects", top, { showSource: true });
+    renderCards("premium-projects", premium, { showSource: true });
     renderHeroStats(projects);
     renderDistricts(projects);
     renderLaunchBlocks(projects);
