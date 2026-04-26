@@ -198,9 +198,9 @@
         const filtered = sorted.filter(segment.filter);
         const pinnedId = HOME_SEGMENT_PINNED[segment.id];
         const pinnedItem = pinnedId ? filtered.find((item) => normalizeId(item) === pinnedId) : null;
-        const cards = (pinnedItem ? [pinnedItem] : filtered.slice(0, 1))
-          .map((item) => buildCard(item, { showSource: false }))
-          .join("");
+        const rest = filtered.filter((item) => normalizeId(item) !== (pinnedItem ? normalizeId(pinnedItem) : ""));
+        const symmetricCards = pinnedItem ? [pinnedItem, ...rest.slice(0, 2)] : filtered.slice(0, 3);
+        const cards = symmetricCards.map((item) => buildCard(item, { showSource: false })).join("");
         return `
           <section class="launch-block" id="launch-${segment.id}">
             <div class="launch-block-head">
@@ -212,7 +212,7 @@
               </div>
               <a class="btn ${segment.buttonClass}" href="./catalog.html">${esc(segment.buttonText)}</a>
             </div>
-            <div class="cards-grid cards-grid-compact">${cards}</div>
+            <div class="cards-grid cards-grid-compact cards-grid-symmetric">${cards}</div>
           </section>
         `;
       })

@@ -22,7 +22,7 @@ const HOME_SEGMENT_PINNED_IDS = {
   "first-home": "nmarket-87790",
   invest: "nmarket-88942",
   family: "nmarket-85427",
-  premium: "nmarket-77467"
+  premium: "nmarket-76605"
 };
 
 function getHomeProjects() {
@@ -199,7 +199,15 @@ function renderLaunchBlocks(projects = []) {
         ? filteredProjects.find((item) => (item?.id || item?.slug) === pinnedId)
         : null;
 
-      const cards = (pinned ? [pinned] : filteredProjects.slice(0, 1))
+      const orderedProjects = pinned
+        ? [
+            pinned,
+            ...filteredProjects.filter((item) => (item?.id || item?.slug) !== pinnedId)
+          ]
+        : filteredProjects;
+
+      const cards = orderedProjects
+        .slice(0, 3)
         .map((item) => buildShowcaseCard(item, { showSource: false }))
         .join("");
 
