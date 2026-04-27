@@ -52,7 +52,6 @@ function buildCatalogCard(project) {
   };
   const classLabel = classLabelMap[project.classType] || "Комфорт";
   const cardLink = `./project.html?project=${encodeURIComponent(project.id)}`;
-  const articleLink = project.articleUrl || cardLink;
 
   return `
     <article class="project-card project-card-rich catalog-card">
@@ -69,9 +68,8 @@ function buildCatalogCard(project) {
       </div>
       <div class="project-card-footer">
         <p class="project-price">от ${project.priceFrom.toLocaleString("ru-RU", { maximumFractionDigits: 1 })} млн ₽</p>
-        <a class="btn btn-small project-card-main-link" href="${cardLink}">Карточка ЖК</a>
+        <a class="btn btn-small project-card-main-link" href="${cardLink}">Подробнее</a>
       </div>
-      <a class="project-link" href="${articleLink}">Обзор и статья проекта</a>
     </article>
   `;
 }

@@ -191,10 +191,7 @@ function renderSimilar(project) {
           <span>${getClassLabel(item.classType)}-класс</span>
           <span>${item.delivery || "Срок уточняется"}</span>
         </div>
-        <div class="project-card-footer">
-          <p class="project-price">от ${Number(item.priceFrom).toLocaleString("ru-RU", { maximumFractionDigits: 1 })} млн ₽</p>
-          <a class="btn btn-small project-card-main-link" href="./project.html?project=${encodeURIComponent(item.slug)}">Карточка ЖК</a>
-        </div>
+        <p class="project-price">от ${Number(item.priceFrom).toLocaleString("ru-RU", { maximumFractionDigits: 1 })} млн ₽</p>
       </article>
     `
     )

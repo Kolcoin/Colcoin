@@ -126,7 +126,7 @@
           }
           <div class="project-card-footer">
             <p class="project-price">от ${esc(priceFrom)} млн ₽</p>
-            <a class="btn btn-small project-card-main-link" href="${esc(cardLink)}">Карточка ЖК</a>
+            <a class="btn btn-small project-card-main-link" href="${esc(cardLink)}">Подробнее</a>
           </div>
         </div>
       </article>

@@ -104,7 +104,7 @@ function buildShowcaseCard(item, options = {}) {
           ${showSource ? `<p class="project-source">${item.sourceLabel}</p>` : ""}
           <div class="project-card-footer">
             <p class="project-price">от ${priceFrom} млн ₽</p>
-            <a class="btn btn-small project-card-main-link" href="${cardLink}">Карточка ЖК</a>
+            <a class="btn btn-small project-card-main-link" href="${cardLink}">Подробнее</a>
           </div>
         </div>
       </article>
