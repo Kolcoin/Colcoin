@@ -12,7 +12,7 @@ window.REALTY_PROJECTS = [
     delivery: "IV кв. 2026",
     developer: "ФСК",
     priority: 98,
-    articleUrl: "./fix-nmarket-85433.php",
+    articleUrl: "./starts/nmarket-85433.html",
     heroImage: "https://avatars.mds.yandex.net/get-altay/14329771/2a000001941b461bf15e49d4e54eac7b4085/XL",
     gallery: [
       "./assets/first-donskoy/source-desktop.png",
@@ -94,7 +94,7 @@ window.REALTY_PROJECTS = [
     delivery: "IV кв. 2026",
     developer: "Park Development",
     priority: 80,
-    articleUrl: "./fix-nmarket-85433.php",
+    articleUrl: "./starts/nmarket-85433.html",
     heroImage: "https://avatars.mds.yandex.net/get-altay/14193233/2a000001941b3d73a64989bee422ccc5ec6f/XXL_height",
     gallery: [
       "https://avatars.mds.yandex.net/get-altay/14193233/2a000001941b3d73a64989bee422ccc5ec6f/XXL_height",
@@ -24458,7 +24458,7 @@ window.REALTY_PROJECTS = [
     "delivery": "Сдан — 2 кв. 2027",
     "developer": "ГК ФСК/ДСК",
     "priority": 40,
-    "articleUrl": "./fix-nmarket-85433.php",
+    "articleUrl": "./starts/nmarket-85433.html",
     "heroImage": "https://img1.nmarket.pro/photo/pid/12c28871-3920-46a3-b298-d35764f2433e/?type=jpg&v=1&wpsid=13",
     "gallery": [
       "https://img1.nmarket.pro/photo/pid/12c28871-3920-46a3-b298-d35764f2433e/?type=jpg&v=1&wpsid=13",
@@ -26725,7 +26725,7 @@ window.REALTY_BLOG_POSTS = [
     category: "Сделка",
     date: "2026-04-10",
     excerpt: "Пошагово разбираем, что проверить перед бронью и подписанием ДДУ.",
-    url: "./fix-nmarket-85433.php"
+    url: "./starts/nmarket-85433.html"
   },
   {
     id: "mortgage-family-vs-it",
@@ -26765,7 +26765,7 @@ window.REALTY_BLOG_POSTS = [
     category: "Транспорт",
     date: "2026-04-02",
     excerpt: "Сценарный разбор влияния транспортной доступности на ликвидность лота.",
-    url: "./fix-nmarket-85433.php"
+    url: "./starts/nmarket-85433.html"
   },
   {
     id: "premium-entry-strategy",
