@@ -4,6 +4,27 @@
   if (window.__PLEADA_HOME_MAIN_SCRIPT__) return;
   window.__PLEADA_HOME_MAIN_SCRIPT__ = true;
 
+  function setupMobileMenuToggle() {
+    if (window.__MOBILE_MENU_INIT_DONE__) return;
+    const toggle = document.getElementById("mobile-menu-toggle");
+    const menu = document.getElementById("primary-menu");
+    if (!(toggle instanceof HTMLButtonElement) || !(menu instanceof HTMLElement)) return;
+    window.__MOBILE_MENU_INIT_DONE__ = true;
+
+    const closeMenu = () => {
+      toggle.setAttribute("aria-expanded", "false");
+      menu.classList.remove("menu-open");
+    };
+
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+      menu.classList.toggle("menu-open", !expanded);
+    });
+
+    menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  }
+
   const HOME_EXCLUDED_PROJECT_IDS = new Set([
     "nmarket-89152", // Коттеджный поселок Истра Дом
     "nmarket-91501", // Старый город
@@ -254,6 +275,7 @@
       .sort((a, b) => (b.priority || 0) - (a.priority || 0))
       .slice(0, 4);
 
+    setupMobileMenuToggle();
     renderCards("top-projects", top, { showSource: true });
     renderCards("premium-projects", premium, { showSource: true });
     renderHeroStats(projects);

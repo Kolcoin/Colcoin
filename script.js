@@ -435,9 +435,11 @@ function setupAnalyticsGoals() {
 }
 
 function setupMobileMenuToggle() {
+  if (window.__MOBILE_MENU_INIT_DONE__) return;
   const toggle = document.getElementById("mobile-menu-toggle");
   const menu = document.getElementById("primary-menu");
   if (!(toggle instanceof HTMLButtonElement) || !(menu instanceof HTMLElement)) return;
+  window.__MOBILE_MENU_INIT_DONE__ = true;
 
   const closeMenu = () => {
     toggle.setAttribute("aria-expanded", "false");
