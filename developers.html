@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Застройщики Москвы и МО | Савушкин Эстейт</title>
+    <meta
+      name="description"
+      content="Рейтинг и карточки застройщиков: сортировка по числу ЖК, актуальные девелоперы Москвы и Московской области."
+    />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Савушкин Эстейт" />
+    <meta property="og:title" content="Застройщики Москвы и МО | Савушкин Эстейт" />
+    <meta
+      property="og:description"
+      content="Рейтинг и карточки застройщиков: сортировка по числу ЖК, актуальные девелоперы Москвы и Московской области."
+    />
+    <meta property="og:url" content="https://xn--h1aagfvid9b.xn--p1ai/developers.html" />
+    <meta property="og:image" content="https://static.tildacdn.com/tild6339-3531-4536-b739-626330353335/headliner-moskva-jk-.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Застройщики Москвы и МО | Савушкин Эстейт" />
+    <meta
+      name="twitter:description"
+      content="Рейтинг и карточки застройщиков: сортировка по числу ЖК, актуальные девелоперы Москвы и Московской области."
+    />
+    <meta name="twitter:image" content="https://static.tildacdn.com/tild6339-3531-4536-b739-626330353335/headliner-moskva-jk-.jpg" />
+
+    <link rel="canonical" href="https://xn--h1aagfvid9b.xn--p1ai/developers.html" />
+        <link rel="alternate" hreflang="ru-RU" href="https://xn--h1aagfvid9b.xn--p1ai/developers.html" />
+    <link rel="alternate" hreflang="x-default" href="https://xn--h1aagfvid9b.xn--p1ai/developers.html" />
+    <link rel="stylesheet" href="./styles.css?v=20260417-2" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Застройщики Москвы и МО | Савушкин Эстейт",
+        "description": "Рейтинг и карточки застройщиков: сортировка по числу ЖК, актуальные девелоперы Москвы и Московской области.",
+        "url": "https://xn--h1aagfvid9b.xn--p1ai/developers.html",
+        "inLanguage": "ru-RU",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Савушкин Эстейт",
+          "url": "https://xn--h1aagfvid9b.xn--p1ai/"
+        }
+      }
+    </script>
+
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108657608', 'ym');
+
+    ym(108657608, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108657608" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="./index.html"><span class="brand-dot"></span>Савушкин Эстейт</a>
+        <nav class="menu">
+          <a href="./index.html">Главная</a>
+          <a href="./catalog.html">Каталог</a>
+          <a href="./districts.html">Районы</a>
+          <a href="./developers.html">Застройщики</a>
+          <a href="./mortgage.html">Ипотека</a>
+          <a href="./blog.html">Блог</a>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="container breadcrumb-nav" aria-label="Хлебные крошки">
+      <a href="./index.html">Главная</a>
+      <span>›</span>
+      <a href="./developers.html">Застройщики</a>
+    </nav>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <h1>Застройщики</h1>
+              <p>Сортировка и карточки девелоперов с количеством активных ЖК в витрине.</p>
+            </div>
+          </div>
+
+          <div class="catalog-toolbar">
+            <p class="catalog-summary" id="developers-summary">Загрузка...</p>
+            <label class="catalog-filters-field">
+              <span>Сортировка</span>
+              <select id="developers-sort">
+                <option value="count-desc">По количеству ЖК (убыв.)</option>
+                <option value="count-asc">По количеству ЖК (возр.)</option>
+                <option value="name-asc">По названию (А-Я)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="catalog-grid" id="developers-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./realty-data.js?v=20260427-2"></script>
+    <script src="./developers.js?v=20260417-2"></script>
+  </body>
+</html>
