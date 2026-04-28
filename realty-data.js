@@ -26798,5 +26798,166 @@ window.REALTY_BLOG_POSTS = [
     date: "2026-03-24",
     excerpt: "Правила безопасной брони и контрольные точки до подписания договора.",
     url: "./catalog.html"
+  },
+  {
+    id: "novostroyki-tsao-moskva-2026",
+    title: "Новостройки ЦАО Москвы в 2026: как выбрать проект без переплаты",
+    category: "Районы",
+    date: "2026-04-28",
+    excerpt: "Сравниваем локации ЦАО по бюджету входа и транспортным сценариям без лишних рисков.",
+    url: "./seo/novostroyki-tsao-moskva-2026.html"
+  },
+  {
+    id: "novostroyki-vao-moskva-2026",
+    title: "Новостройки ВАО Москвы: районы и сценарии покупки в 2026",
+    category: "Районы",
+    date: "2026-04-28",
+    excerpt: "Разбор сильных локаций ВАО и практический чеклист перед бронью квартиры.",
+    url: "./seo/novostroyki-vao-moskva-2026.html"
+  },
+  {
+    id: "novostroyki-yuzao-moskva-2026",
+    title: "Новостройки ЮЗАО Москвы: где выше ликвидность и комфорт для семьи",
+    category: "Районы",
+    date: "2026-04-28",
+    excerpt: "Показываем как сравнивать проекты ЮЗАО по транспорту и инфраструктуре.",
+    url: "./seo/novostroyki-yuzao-moskva-2026.html"
+  },
+  {
+    id: "novostroyki-zao-biznes-class-2026",
+    title: "Новостройки ЗАО бизнес-класса: что проверять перед покупкой в 2026",
+    category: "ЖК",
+    date: "2026-04-28",
+    excerpt: "Критерии выбора бизнес-класса в ЗАО и ключевые сигналы перед сделкой.",
+    url: "./seo/novostroyki-zao-biznes-class-2026.html"
+  },
+  {
+    id: "starty-prodazh-moskva-mai-2026",
+    title: "Старты продаж новостроек Москвы: май 2026 и вход на ранней стадии",
+    category: "Покупка",
+    date: "2026-04-28",
+    excerpt: "Пошаговый сценарий входа на старте продаж с расчетом рисков.",
+    url: "./seo/starty-prodazh-moskva-mai-2026.html"
+  },
+  {
+    id: "kak-vybrat-novostroyku-dlya-semi-moskva",
+    title: "Как выбрать новостройку для семьи в Москве: 7 ключевых параметров",
+    category: "Покупка",
+    date: "2026-04-28",
+    excerpt: "Семейный сценарий покупки: планировка школа логистика и бюджет владения.",
+    url: "./seo/kak-vybrat-novostroyku-dlya-semi-moskva.html"
+  },
+  {
+    id: "novostroyki-u-metro-sovremennye-trendy-2026",
+    title: "Новостройки у метро в Москве: как оценить реальную транспортную доступность",
+    category: "Покупка",
+    date: "2026-04-28",
+    excerpt: "Чеклист оценки маршрутов и времени в пути до покупки квартиры у метро.",
+    url: "./seo/novostroyki-u-metro-sovremennye-trendy-2026.html"
+  },
+  {
+    id: "semeynaya-ipoteka-moskva-usloviya-2026",
+    title: "Семейная ипотека в Москве в 2026: условия лимиты и частые ошибки",
+    category: "Ипотека",
+    date: "2026-04-28",
+    excerpt: "Практическое руководство по семейной ипотеке и снижению платежа.",
+    url: "./seo/semeynaya-ipoteka-moskva-usloviya-2026.html"
+  },
+  {
+    id: "it-ipoteka-moskva-kalkulyator-scenariy",
+    title: "IT-ипотека в Москве: кому подходит и как считать реальный платеж",
+    category: "Ипотека",
+    date: "2026-04-28",
+    excerpt: "Сравнение IT-ипотеки с альтернативами для разных уровней дохода.",
+    url: "./seo/it-ipoteka-moskva-kalkulyator-scenariy.html"
+  },
+  {
+    id: "ipoteka-bez-pervonachalnogo-vznosa-moskva",
+    title: "Ипотека без первоначального взноса: риски и рабочие альтернативы",
+    category: "Ипотека",
+    date: "2026-04-28",
+    excerpt: "Разбираем как не перегрузить бюджет при минимальном входе в сделку.",
+    url: "./seo/ipoteka-bez-pervonachalnogo-vznosa-moskva.html"
+  },
+  {
+    id: "investicii-v-novostroyki-moskva-2026",
+    title: "Инвестиции в новостройки Москвы в 2026: как выбрать ликвидный лот",
+    category: "Инвестиции",
+    date: "2026-04-28",
+    excerpt: "Методика отбора лотов для перепродажи и аренды с оценкой рисков выхода.",
+    url: "./seo/investicii-v-novostroyki-moskva-2026.html"
+  },
+  {
+    id: "kak-ocenit-likvidnost-novostroyki-moskva",
+    title: "Как оценить ликвидность новостройки перед покупкой в Москве и МО",
+    category: "Инвестиции",
+    date: "2026-04-28",
+    excerpt: "Проверяем ликвидность проекта по десяти параметрам до внесения аванса.",
+    url: "./seo/kak-ocenit-likvidnost-novostroyki-moskva.html"
+  },
+  {
+    id: "novostroyki-dlya-sdachi-v-arendu-moskva",
+    title: "Новостройки для сдачи в аренду в Москве: какие форматы работают лучше",
+    category: "Инвестиции",
+    date: "2026-04-28",
+    excerpt: "Сравниваем студии и 1-комнатные форматы по спросу и доходности.",
+    url: "./seo/novostroyki-dlya-sdachi-v-arendu-moskva.html"
+  },
+  {
+    id: "reiting-zastroyschikov-moskva-2026",
+    title: "Рейтинг застройщиков Москвы и МО 2026: как читать цифры без маркетинга",
+    category: "Застройщики",
+    date: "2026-04-28",
+    excerpt: "Критерии оценки девелопера: сроки качество продукта и темпы реализации.",
+    url: "./seo/reiting-zastroyschikov-moskva-2026.html"
+  },
+  {
+    id: "kak-proveryat-zastroyschika-pered-sdelkoy",
+    title: "Как проверить застройщика перед покупкой новостройки: чеклист 2026",
+    category: "Застройщики",
+    date: "2026-04-28",
+    excerpt: "Юридический и финансовый чеклист проверки девелопера до брони.",
+    url: "./seo/kak-proveryat-zastroyschika-pered-sdelkoy.html"
+  },
+  {
+    id: "ddu-chto-proverit-pered-podpisaniem",
+    title: "ДДУ: что проверить перед подписанием чтобы не потерять деньги",
+    category: "Юридическое",
+    date: "2026-04-28",
+    excerpt: "Пошаговая проверка договора долевого участия и критичных пунктов сделки.",
+    url: "./seo/ddu-chto-proverit-pered-podpisaniem.html"
+  },
+  {
+    id: "pereustupka-prav-v-novostroyke-moskva",
+    title: "Переуступка в новостройке Москвы: как провести сделку безопасно",
+    category: "Юридическое",
+    date: "2026-04-28",
+    excerpt: "Юридические риски и рабочий алгоритм покупки по переуступке.",
+    url: "./seo/pereustupka-prav-v-novostroyke-moskva.html"
+  },
+  {
+    id: "guide-checklist-pokupki-novostroyki-2026",
+    title: "Гайд: полный чеклист покупки новостройки в Москве и МО в 2026",
+    category: "Гайды",
+    date: "2026-04-28",
+    excerpt: "Универсальный план действий от выбора проекта до регистрации сделки.",
+    url: "./seo/guide-checklist-pokupki-novostroyki-2026.html"
+  },
+  {
+    id: "guide-kak-sravnivat-zhk-v-odnom-byudzhete",
+    title: "Гайд: как сравнивать ЖК в одном бюджете и не ошибиться с выбором",
+    category: "Гайды",
+    date: "2026-04-28",
+    excerpt: "Практическая таблица сравнения проектов по цене и локации и рискам.",
+    url: "./seo/guide-kak-sravnivat-zhk-v-odnom-byudzhete.html"
+  },
+  {
+    id: "analitika-cen-novostroyki-moskva-mo-2026",
+    title: "Аналитика цен на новостройки Москвы и МО: тренды 2026",
+    category: "Аналитика",
+    date: "2026-04-28",
+    excerpt: "Разбор ценовой динамики по сегментам и локациям с практическими выводами.",
+    url: "./seo/analitika-cen-novostroyki-moskva-mo-2026.html"
   }
+
 ];
