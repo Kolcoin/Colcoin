@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Canonical host and sitemap
+Host: xn--h1aagfvid9b.xn--p1ai
+
+# Service files
+Allow: /starts/
+Allow: /assets/
+Allow: /llms.txt
+Sitemap: https://xn--h1aagfvid9b.xn--p1ai/sitemap.xml
+Sitemap: https://xn--h1aagfvid9b.xn--p1ai/sitemap-priority.xml
