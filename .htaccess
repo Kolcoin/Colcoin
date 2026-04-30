@@ -1,7 +1,12 @@
 RewriteEngine On
 
+# 0) Root query cleanup: /?q=... -> https://host/ (one hop)
+RewriteCond %{REQUEST_URI} ^/?$ [NC]
+RewriteCond %{QUERY_STRING} (^|&)q=[^&]*(&|$) [NC]
+RewriteRule ^$ https://xn--h1aagfvid9b.xn--p1ai/? [R=301,L,NE]
+
 # 1) Remove noisy q=... query variants in one step to canonical HTTPS URL
-#    Use THE_REQUEST + QUERY_STRING to avoid rewrite loops and handle Beget proxy behavior.
+#    Use THE_REQUEST + QUERY_STRING for non-root paths to avoid rewrite loops.
 RewriteCond %{THE_REQUEST} \s/+[^\s?]+\?[^\s]*\bq= [NC]
 RewriteCond %{QUERY_STRING} (^|&)q=[^&]*(&|$) [NC]
 RewriteRule ^ https://xn--h1aagfvid9b.xn--p1ai%{REQUEST_URI}? [R=301,L,NE]
