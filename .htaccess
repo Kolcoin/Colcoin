@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Canonical redirects to reduce duplicate URL variants
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Redirect noisy query pattern from SearchAction variants
+RewriteCond %{QUERY_STRING} (^|&)q=\{search_term_string\}(&|$) [NC]
+RewriteRule ^$ /? [R=301,L]
+
+# Normalize trailing slash on html files
+RewriteCond %{REQUEST_URI} \.html/$ [NC]
+RewriteRule ^(.+)\.html/$ /$1.html [R=301,L]
