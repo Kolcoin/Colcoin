@@ -1,0 +1,136 @@
+from __future__ import annotations
+
+import json
+import socket
+import threading
+import unittest
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from urllib.error import HTTPError
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
+
+from seo_service.app import create_app
+
+
+def free_port() -> int:
+    with socket.socket() as sock:
+        sock.bind(("127.0.0.1", 0))
+        return int(sock.getsockname()[1])
+
+
+class DemoSiteHandler(BaseHTTPRequestHandler):
+    def log_message(self, fmt: str, *args: object) -> None:
+        return
+
+    def do_GET(self) -> None:
+        if self.path == "/robots.txt":
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"User-agent: *\nAllow: /\n")
+            return
+        if self.path == "/":
+            body = """
+            <html>
+              <head>
+                <title>Automation SEO Service</title>
+                <meta name="description" content="Automation SEO Service for technical promotion audits.">
+                <link rel="canonical" href="/">
+              </head>
+              <body>
+                <h1>Automation SEO Service</h1>
+                <h2>Promotion audit</h2>
+                <p>Automation SEO Service helps plan promotion tasks and content fixes.</p>
+                <img src="/logo.png">
+                <a href="/pricing">Pricing</a>
+              </body>
+            </html>
+            """
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html")
+            self.end_headers()
+            self.wfile.write(body.encode())
+            return
+        if self.path == "/pricing":
+            body = """
+            <html>
+              <head><title>Pricing</title></head>
+              <body><h1>Pricing</h1><p>Short page.</p></body>
+            </html>
+            """
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html")
+            self.end_headers()
+            self.wfile.write(body.encode())
+            return
+        self.send_error(404)
+
+
+class SeoServiceEndToEndTest(unittest.TestCase):
+    def setUp(self) -> None:
+        self.site_port = free_port()
+        self.site = ThreadingHTTPServer(("127.0.0.1", self.site_port), DemoSiteHandler)
+        self.site_thread = threading.Thread(target=self.site.serve_forever, daemon=True)
+        self.site_thread.start()
+
+        self.tmp = TemporaryDirectory()
+        self.app_port = free_port()
+        self.app = create_app(Path(self.tmp.name) / "projects.json")
+        self.app_server = ThreadingHTTPServer(("127.0.0.1", self.app_port), self.app)
+        self.app_thread = threading.Thread(target=self.app_server.serve_forever, daemon=True)
+        self.app_thread.start()
+
+    def tearDown(self) -> None:
+        self.app_server.shutdown()
+        self.site.shutdown()
+        self.tmp.cleanup()
+
+    def post_form(self, path: str, data: dict[str, str]) -> str:
+        encoded = urlencode(data).encode()
+        request = Request(
+            f"http://127.0.0.1:{self.app_port}{path}",
+            data=encoded,
+            headers={"Content-Type": "application/x-www-form-urlencoded"},
+            method="POST",
+        )
+        try:
+            with urlopen(request, timeout=10) as response:
+                return response.read().decode()
+        except HTTPError as error:
+            if error.code in {302, 303}:
+                return error.headers["Location"]
+            raise
+
+    def get_json(self, path: str) -> dict[str, object]:
+        with urlopen(f"http://127.0.0.1:{self.app_port}{path}", timeout=10) as response:
+            return json.loads(response.read().decode())
+
+    def test_project_creation_audit_and_export(self) -> None:
+        location = self.post_form(
+            "/projects",
+            {
+                "name": "Demo",
+                "site_url": f"http://127.0.0.1:{self.site_port}/",
+                "keywords": "Automation SEO Service\npromotion audit",
+            },
+        )
+        project_id = location.rsplit("/", 1)[-1]
+
+        report = self.get_json(f"/api/projects/{project_id}/audit")
+        self.assertEqual(report["summary"]["pages_crawled"], 2)
+        self.assertGreaterEqual(report["summary"]["average_score"], 0)
+        self.assertTrue(report["action_plan"])
+
+        pages = {page["url"]: page for page in report["pages"]}
+        home = pages[f"http://127.0.0.1:{self.site_port}/"]
+        self.assertEqual(home["keywords_found"]["Automation SEO Service"], 3)
+        self.assertIn("Add descriptive alt attributes to images.", home["recommendations"])
+
+        exported = self.get_json(f"/api/projects/{project_id}")
+        self.assertEqual(exported["last_report"]["summary"]["pages_crawled"], 2)
+
+
+if __name__ == "__main__":
+    unittest.main()
