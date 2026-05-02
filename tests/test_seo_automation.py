@@ -30,7 +30,7 @@ def test_audit_detects_basic_issues() -> None:
             _page(
                 "https://example.com/service",
                 "Service page",
-                "A" * 170,
+                "A" * 171,
                 ["One", "Two"],
                 900,
             ),
@@ -47,7 +47,7 @@ def test_audit_detects_basic_issues() -> None:
     assert "thin_content" in first_codes
     assert "description_too_long" in second_codes
     assert "multiple_h1" in second_codes
-    assert "multiple_h1" in second_codes
+    assert "title_too_short" in second_codes
 
 
 def test_planner_suggests_target_pages() -> None:
