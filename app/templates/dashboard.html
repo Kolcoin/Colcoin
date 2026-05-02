@@ -1,0 +1,122 @@
+{% extends "_base.html" %}
+{% block title %}Личный кабинет — AutoPromo{% endblock %}
+{% block body %}
+<div class="min-h-screen flex flex-col">
+  <header class="bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/" class="font-extrabold text-lg gradient-text">AutoPromo</a>
+      <div class="flex items-center gap-4 text-sm">
+        <span id="userEmail" class="text-slate-500"></span>
+        <button id="logoutBtn" class="text-slate-500 hover:text-slate-800">Выйти</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl mx-auto px-6 py-8 w-full">
+    <!-- Header summary -->
+    <div class="flex items-center justify-between flex-wrap gap-3">
+      <div>
+        <h1 class="text-2xl font-extrabold">Мои проекты</h1>
+        <p class="text-slate-500 text-sm">Запускайте автоматическое продвижение и следите за позициями в реальном времени.</p>
+      </div>
+      <button id="newProjectBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-lg">
+        + Новый проект
+      </button>
+    </div>
+
+    <!-- Projects grid -->
+    <div id="projectsGrid" class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <!-- Project details -->
+    <section id="projectDetails" class="mt-8 hidden bg-white border border-slate-200 rounded-2xl p-6">
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <div class="text-sm text-slate-500">Проект</div>
+          <h2 id="pdName" class="text-xl font-bold"></h2>
+          <div id="pdMeta" class="text-sm text-slate-500"></div>
+        </div>
+        <div class="flex gap-2 flex-wrap">
+          <button id="runNowBtn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-4 py-2 rounded-lg">
+            ▶ Запустить 5 визитов сейчас
+          </button>
+          <button id="toggleProjectBtn" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold px-4 py-2 rounded-lg">
+            Пауза/Запуск
+          </button>
+          <button id="deleteProjectBtn" class="bg-red-50 text-red-600 hover:bg-red-100 font-semibold px-4 py-2 rounded-lg">
+            Удалить
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="mt-6 border-b border-slate-200 flex gap-6 text-sm font-semibold">
+        <button data-tab="kw" class="tab-btn pb-2 border-b-2 border-indigo-600 text-indigo-600">Запросы</button>
+        <button data-tab="tasks" class="tab-btn pb-2 border-b-2 border-transparent text-slate-500">Задачи роботов</button>
+      </div>
+
+      <!-- Keywords tab -->
+      <div id="tab-kw" class="tab-pane mt-4">
+        <div class="flex gap-2 mb-3">
+          <textarea id="kwInput" rows="3" placeholder="Введите запросы — каждый с новой строки" class="flex-1 border border-slate-300 rounded-lg p-2 text-sm"></textarea>
+          <button id="addKwBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 rounded-lg self-stretch">+ Добавить</button>
+        </div>
+        <table class="w-full text-sm">
+          <thead><tr class="text-left text-slate-500 border-b border-slate-200">
+            <th class="py-2">Запрос</th><th>Поз.</th><th>Проверено</th><th></th>
+          </tr></thead>
+          <tbody id="kwTable"></tbody>
+        </table>
+      </div>
+
+      <!-- Tasks tab -->
+      <div id="tab-tasks" class="tab-pane mt-4 hidden">
+        <button id="reloadTasks" class="text-sm text-indigo-600 hover:underline mb-3">↻ Обновить</button>
+        <table class="w-full text-sm">
+          <thead><tr class="text-left text-slate-500 border-b border-slate-200">
+            <th class="py-2">#</th><th>Запрос</th><th>Статус</th><th>Поз.</th><th>Стр.</th><th>Сек.</th><th>UA</th><th>Когда</th>
+          </tr></thead>
+          <tbody id="tasksTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Modal: new project -->
+<div id="newProjectModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center p-4 z-50">
+  <div class="bg-white rounded-2xl p-6 w-full max-w-md">
+    <h3 class="text-lg font-bold">Новый проект</h3>
+    <form id="newProjectForm" class="mt-4 space-y-3">
+      <div><label class="text-sm text-slate-600">Название</label>
+        <input name="name" required class="w-full border border-slate-300 rounded-lg px-3 py-2"/></div>
+      <div><label class="text-sm text-slate-600">Домен (без http://)</label>
+        <input name="domain" required placeholder="example.com" class="w-full border border-slate-300 rounded-lg px-3 py-2"/></div>
+      <div class="grid grid-cols-2 gap-2">
+        <div><label class="text-sm text-slate-600">Регион (lr)</label>
+          <select name="region" class="w-full border border-slate-300 rounded-lg px-3 py-2">
+            <option value="213">Москва</option><option value="2">Санкт-Петербург</option>
+            <option value="65">Новосибирск</option><option value="0">Все регионы</option>
+          </select></div>
+        <div><label class="text-sm text-slate-600">Тариф</label>
+          <select name="plan" class="w-full border border-slate-300 rounded-lg px-3 py-2">
+            <option value="lite">Lite (50 запросов)</option>
+            <option value="pro">Pro (100 запросов)</option>
+            <option value="premium">Premium (300 запросов)</option>
+          </select></div>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div><label class="text-sm text-slate-600">Визитов в сутки</label>
+          <input name="daily_visits_target" type="number" value="20" min="1" max="2000" class="w-full border border-slate-300 rounded-lg px-3 py-2"/></div>
+        <div><label class="text-sm text-slate-600">Длительность сессии (сек)</label>
+          <input name="avg_session_seconds" type="number" value="90" min="20" max="600" class="w-full border border-slate-300 rounded-lg px-3 py-2"/></div>
+      </div>
+      <div class="flex justify-end gap-2 pt-2">
+        <button type="button" id="cancelNewProject" class="px-4 py-2">Отмена</button>
+        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-lg">Создать</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/static/dashboard.js"></script>
+{% endblock %}

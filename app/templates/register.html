@@ -1,0 +1,48 @@
+{% extends "_base.html" %}
+{% block title %}Регистрация — AutoPromo{% endblock %}
+{% block body %}
+<div class="min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-md border border-slate-100 p-8">
+    <a href="/" class="text-sm text-slate-500 hover:text-slate-700">← на главную</a>
+    <h1 class="text-2xl font-extrabold mt-3">Регистрация</h1>
+    <p class="text-slate-500 text-sm mt-1">5 дней бесплатного доступа сразу после регистрации.</p>
+
+    <form id="registerForm" class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm text-slate-600 mb-1">Email</label>
+        <input name="email" type="email" required class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-indigo-200" />
+      </div>
+      <div>
+        <label class="block text-sm text-slate-600 mb-1">Пароль (от 6 символов)</label>
+        <input name="password" type="password" required minlength="6" class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-indigo-200" />
+      </div>
+      <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg">Создать аккаунт</button>
+      <div id="err" class="text-sm text-red-600 hidden"></div>
+    </form>
+
+    <div class="text-sm text-slate-500 mt-4 text-center">
+      Уже есть аккаунт? <a class="text-indigo-600 font-semibold" href="/login">Войти</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const r = await fetch('/api/auth/register', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(Object.fromEntries(fd))
+  });
+  if (r.ok) {
+    location.href = '/dashboard';
+  } else {
+    const err = await r.json();
+    const el = document.getElementById('err');
+    el.textContent = err.detail || 'Ошибка регистрации';
+    el.classList.remove('hidden');
+  }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "_base.html" %}
+{% block title %}Вход — AutoPromo{% endblock %}
+{% block body %}
+<div class="min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-md border border-slate-100 p-8">
+    <a href="/" class="text-sm text-slate-500 hover:text-slate-700">← на главную</a>
+    <h1 class="text-2xl font-extrabold mt-3">Вход в личный кабинет</h1>
+    <p class="text-slate-500 text-sm mt-1">Войдите, чтобы управлять проектами и роботами.</p>
+
+    <form id="loginForm" class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm text-slate-600 mb-1">Email</label>
+        <input name="email" type="email" required class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-indigo-200" />
+      </div>
+      <div>
+        <label class="block text-sm text-slate-600 mb-1">Пароль</label>
+        <input name="password" type="password" required class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-indigo-200" />
+      </div>
+      <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg">Войти</button>
+      <div id="err" class="text-sm text-red-600 hidden"></div>
+    </form>
+
+    <div class="text-sm text-slate-500 mt-4 text-center">
+      Ещё нет аккаунта? <a class="text-indigo-600 font-semibold" href="/register">Зарегистрироваться</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const r = await fetch('/api/auth/login', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(Object.fromEntries(fd))
+  });
+  if (r.ok) {
+    location.href = '/dashboard';
+  } else {
+    const err = await r.json();
+    const el = document.getElementById('err');
+    el.textContent = err.detail || 'Ошибка входа';
+    el.classList.remove('hidden');
+  }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends "_base.html" %}
+{% block body %}
+<header class="gradient-bg text-white">
+  <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 text-xl font-extrabold">
+      <span class="inline-block w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">A</span>
+      AutoPromo
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a class="hover:opacity-80" href="#how">Как работает</a>
+      <a class="hover:opacity-80" href="#plans">Тарифы</a>
+      <a class="hover:opacity-80" href="#cases">Кейсы</a>
+      <a class="hover:opacity-80" href="#faq">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="/login" class="text-sm hover:opacity-80">Войти</a>
+      <a href="/register" class="bg-white text-indigo-700 font-semibold text-sm px-4 py-2 rounded-lg hover:bg-slate-100">
+        Попробовать 5 дней бесплатно
+      </a>
+    </div>
+  </div>
+
+  <section class="max-w-5xl mx-auto px-6 pt-12 pb-24 text-center">
+    <span class="inline-block bg-white/15 px-3 py-1 rounded-full text-xs uppercase tracking-wider">
+      бесплатный тестовый период 5 дней
+    </span>
+    <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
+      Автоматическое SEO-продвижение<br/>
+      сайтов в Яндекс
+    </h1>
+    <p class="mt-5 text-white/90 text-lg max-w-2xl mx-auto">
+      Роботы-имитаторы заходят на выдачу под видом живых пользователей,
+      кликают на ваш сайт и улучшают поведенческие факторы.
+      Позиции растут автоматически — без ручной работы.
+    </p>
+    <div class="mt-8 flex justify-center gap-3">
+      <a href="/register" class="bg-white text-indigo-700 font-bold px-7 py-3 rounded-xl hover:bg-slate-100">
+        Начать бесплатно
+      </a>
+      <a href="#how" class="bg-white/15 text-white font-semibold px-7 py-3 rounded-xl hover:bg-white/25">
+        Как это работает
+      </a>
+    </div>
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+      {% for item in [("Быстрая регистрация","Через email или Telegram-бот за 30 секунд"),
+                      ("Помощь на каждом этапе","Дашборд + Telegram-уведомления"),
+                      ("Видимый результат","Первые улучшения позиций уже на 3-5 день")] %}
+        <div class="bg-white/10 rounded-xl p-5 backdrop-blur">
+          <div class="font-semibold">{{ item[0] }}</div>
+          <div class="text-sm text-white/80 mt-1">{{ item[1] }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</header>
+
+<section id="how" class="py-20 max-w-6xl mx-auto px-6">
+  <h2 class="text-3xl md:text-4xl font-extrabold text-center">Как работает наш сервис</h2>
+  <p class="text-center text-slate-500 mt-3 max-w-2xl mx-auto">
+    Запустите автоматическое SEO без лишних сложностей. Достаточно зарегистрироваться,
+    добавить сайт и поисковые запросы — дальше система всё сделает сама.
+  </p>
+  <div class="mt-12 grid md:grid-cols-4 gap-5">
+    {% for n, t, d in [
+      (1,"Регистрация","Заведите аккаунт через сайт или Telegram-бот"),
+      (2,"Добавьте сайт","Укажите домен и регион (Москва, СПб, и т.д.)"),
+      (3,"Загрузите запросы","До 300 ключевых фраз — массовой загрузкой"),
+      (4,"Нажмите СТАРТ","Роботы начинают улучшать поведенческие факторы")
+    ] %}
+      <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
+        <div class="w-10 h-10 rounded-lg gradient-bg text-white font-bold flex items-center justify-center">{{ n }}</div>
+        <div class="mt-3 font-semibold">{{ t }}</div>
+        <div class="text-sm text-slate-500 mt-1">{{ d }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="plans" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center">Выберите подходящий тариф</h2>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      {% for plan in [
+        ("Lite","малому бизнесу","от 200 ₽/сутки","До 50 запросов","lite"),
+        ("Pro","среднему бизнесу","от 400 ₽/сутки","До 100 запросов","pro"),
+        ("Premium","крупному бизнесу","от 700 ₽/сутки","До 300 запросов","premium")
+      ] %}
+        <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition">
+          <div class="text-sm uppercase tracking-wider text-indigo-600 font-semibold">{{ plan[0] }}</div>
+          <div class="text-slate-500 mt-1">идеально {{ plan[1] }}</div>
+          <div class="mt-4 text-3xl font-extrabold gradient-text">{{ plan[2] }}</div>
+          <div class="mt-2 text-sm">{{ plan[3] }}</div>
+          <a href="/register" class="mt-6 block text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg">
+            Попробовать 5 дней бесплатно
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="cases" class="py-20 max-w-6xl mx-auto px-6">
+  <h2 class="text-3xl md:text-4xl font-extrabold text-center">Кейсы</h2>
+  <div class="mt-12 grid md:grid-cols-3 gap-5">
+    {% for niche, result in [
+      ("Стоматологическая клиника","Стабильные позиции в ТОП-3 за первый месяц"),
+      ("Производитель окон","99 ключей в ТОП-10 за 3 месяца"),
+      ("Автосалон","Более 100 ключей в ТОП-5 за первый месяц"),
+      ("Услуги 1С","Стабильные позиции в ТОП-10 за первый месяц"),
+      ("Ремонт техники","60+ запросов в ТОП-5 за 2 месяца"),
+      ("Юридическое агентство","ТОП-3 по 40+ запросам")
+    ] %}
+      <div class="rounded-2xl p-6 bg-slate-50 border border-slate-100">
+        <div class="text-xs uppercase tracking-wider text-slate-400">Кейс в нише</div>
+        <div class="font-semibold">{{ niche }}</div>
+        <div class="mt-3 text-indigo-700 font-bold">{{ result }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="faq" class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center">Часто задаваемые вопросы</h2>
+    <div class="mt-10 space-y-4">
+      {% for q, a in [
+        ("Как можно бесплатно протестировать сервис?","Просто зарегистрируйтесь — даём 5 дней полного доступа без оплаты."),
+        ("Гарантируете ли вы вывод в ТОП?","Гарантируем рост позиций и трафика. Точные результаты зависят от стартовой ситуации и конкурентности ниши."),
+        ("Что будет после отключения?","Достигнутые позиции сохраняются, могут постепенно снижаться, но не упадут ниже стартовых."),
+        ("Безопасна ли технология?","Да. Мы используем имитацию реальных пользователей с разными User-Agent, прокси и человекоподобным поведением.")
+      ] %}
+        <details class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+          <summary class="font-semibold cursor-pointer">{{ q }}</summary>
+          <p class="mt-2 text-slate-600">{{ a }}</p>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<footer class="bg-slate-900 text-slate-400 py-10">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-4 text-sm">
+    <div>© AutoPromo — автоматическое SEO-продвижение поведенческими факторами.</div>
+    <div class="flex gap-4">
+      <a class="hover:text-white" href="/login">Вход</a>
+      <a class="hover:text-white" href="/register">Регистрация</a>
+    </div>
+  </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    container_name: autopromo
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
