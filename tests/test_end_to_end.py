@@ -7,8 +7,6 @@ import unittest
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from tempfile import TemporaryDirectory
-from urllib.error import HTTPError
-from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 from seo_service.app import create_app
@@ -85,40 +83,37 @@ class SeoServiceEndToEndTest(unittest.TestCase):
     def tearDown(self) -> None:
         self.app_server.shutdown()
         self.site.shutdown()
+        self.app_server.server_close()
+        self.site.server_close()
         self.tmp.cleanup()
 
-    def post_form(self, path: str, data: dict[str, str]) -> str:
-        encoded = urlencode(data).encode()
+    def post_json(self, path: str, data: dict[str, object] | None = None) -> dict[str, object]:
+        encoded = json.dumps(data or {}).encode()
         request = Request(
             f"http://127.0.0.1:{self.app_port}{path}",
             data=encoded,
-            headers={"Content-Type": "application/x-www-form-urlencoded"},
+            headers={"Content-Type": "application/json"},
             method="POST",
         )
-        try:
-            with urlopen(request, timeout=10) as response:
-                return response.read().decode()
-        except HTTPError as error:
-            if error.code in {302, 303}:
-                return error.headers["Location"]
-            raise
+        with urlopen(request, timeout=10) as response:
+            return json.loads(response.read().decode())
 
     def get_json(self, path: str) -> dict[str, object]:
         with urlopen(f"http://127.0.0.1:{self.app_port}{path}", timeout=10) as response:
             return json.loads(response.read().decode())
 
     def test_project_creation_audit_and_export(self) -> None:
-        location = self.post_form(
-            "/projects",
+        project = self.post_json(
+            "/api/projects",
             {
                 "name": "Demo",
                 "site_url": f"http://127.0.0.1:{self.site_port}/",
-                "keywords": "Automation SEO Service\npromotion audit",
+                "keywords": ["Automation SEO Service", "promotion audit"],
             },
         )
-        project_id = location.rsplit("/", 1)[-1]
+        project_id = str(project["id"])
 
-        report = self.get_json(f"/api/projects/{project_id}/audit")
+        report = self.post_json(f"/api/projects/{project_id}/audit")
         self.assertEqual(report["summary"]["pages_crawled"], 2)
         self.assertGreaterEqual(report["summary"]["average_score"], 0)
         self.assertTrue(report["action_plan"])
@@ -126,7 +121,7 @@ class SeoServiceEndToEndTest(unittest.TestCase):
         pages = {page["url"]: page for page in report["pages"]}
         home = pages[f"http://127.0.0.1:{self.site_port}/"]
         self.assertEqual(home["keywords_found"]["Automation SEO Service"], 3)
-        self.assertIn("Add descriptive alt attributes to images.", home["recommendations"])
+        self.assertIn("Add descriptive alt attributes to important images.", home["recommendations"])
 
         exported = self.get_json(f"/api/projects/{project_id}")
         self.assertEqual(exported["last_report"]["summary"]["pages_crawled"], 2)
