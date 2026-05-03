@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 import time
 from html.parser import HTMLParser
-from urllib.parse import urldefrag, urljoin, urlparse
+from urllib.parse import quote, urldefrag, urljoin, urlparse
 from urllib.request import Request, urlopen
 from urllib.robotparser import RobotFileParser
 
@@ -112,11 +112,11 @@ class SeoCrawler:
             content_type = response.headers.get("content-type", "")
             body = response.read(1_500_000)
         except Exception as exc:  # noqa: BLE001 - surfaced in the audit report.
-            return PageAudit(url=url, status_code=0, issues=[f"Fetch failed: {exc}"])
+            return PageAudit(url=url, status_code=0, issues=[f"Не удалось загрузить страницу: {exc}"])
 
         load_time_ms = int((time.monotonic() - started) * 1000)
         if "html" not in content_type:
-            return PageAudit(url=url, status_code=status_code, load_time_ms=load_time_ms, issues=["Page is not HTML"])
+            return PageAudit(url=url, status_code=status_code, load_time_ms=load_time_ms, issues=["Страница не является HTML"])
 
         html = body.decode("utf-8", errors="replace")
         parser = SeoHtmlParser()
@@ -163,7 +163,18 @@ def normalize_url(url: str) -> str:
         url = "https://" + url
     parsed = urlparse(url)
     path = parsed.path or "/"
-    return parsed._replace(path=path, fragment="", query="").geturl()
+    netloc = parsed.netloc
+    if parsed.hostname:
+        host = parsed.hostname.encode("idna").decode("ascii")
+        if parsed.port:
+            host = f"{host}:{parsed.port}"
+        netloc = host
+    return parsed._replace(
+        netloc=netloc,
+        path=quote(path, safe="/%"),
+        query=quote(parsed.query, safe="=&;%+"),
+        fragment="",
+    ).geturl()
 
 
 def split_links(base_url: str, raw_links: list[str], domain: str) -> tuple[list[str], list[str]]:
@@ -174,7 +185,7 @@ def split_links(base_url: str, raw_links: list[str], domain: str) -> tuple[list[
         parsed = urlparse(absolute)
         if parsed.scheme not in {"http", "https"}:
             continue
-        normalized = parsed._replace(query="", fragment="").geturl()
+        normalized = normalize_url(parsed._replace(fragment="", query="").geturl())
         target = internal if parsed.netloc == domain else external
         if normalized not in target:
             target.append(normalized)
@@ -185,30 +196,30 @@ def inspect_page(page: PageAudit, keywords: list[str]) -> tuple[list[str], list[
     issues: list[str] = []
     recommendations: list[str] = []
     if page.status_code >= 400 or page.status_code == 0:
-        issues.append("Page is unavailable")
-        recommendations.append("Fix HTTP errors before promotion work.")
+        issues.append("Страница недоступна")
+        recommendations.append("Сначала исправьте ошибку загрузки страницы.")
     if not page.title:
-        issues.append("Missing title")
-        recommendations.append("Add a unique title with the primary query near the beginning.")
+        issues.append("Не заполнен title")
+        recommendations.append("Добавьте уникальный title с основным запросом ближе к началу.")
     elif len(page.title) > 70:
-        issues.append("Title is too long")
-        recommendations.append("Shorten the title to about 50-70 characters.")
+        issues.append("Title слишком длинный")
+        recommendations.append("Сократите title примерно до 50-70 символов.")
     if not page.meta_description:
-        issues.append("Missing meta description")
-        recommendations.append("Add a persuasive meta description for search snippets.")
+        issues.append("Не заполнен meta description")
+        recommendations.append("Добавьте понятное meta description для поискового сниппета.")
     if len(page.h1) != 1:
-        issues.append("Page should have exactly one H1")
-        recommendations.append("Keep one clear H1 that matches the page intent.")
+        issues.append("На странице должен быть ровно один H1")
+        recommendations.append("Оставьте один понятный H1, соответствующий смыслу страницы.")
     if page.word_count < 250:
-        issues.append("Thin content")
-        recommendations.append("Expand the page with useful answers, examples, pricing, FAQ, and proof.")
+        issues.append("Мало полезного текста")
+        recommendations.append("Расширьте страницу: добавьте ответы, примеры, цены, FAQ и доказательства.")
     if page.missing_alt_images:
-        issues.append("Images without alt text")
-        recommendations.append("Add descriptive alt attributes to important images.")
+        issues.append("У изображений нет alt-текста")
+        recommendations.append("Добавьте описательные alt-атрибуты к важным изображениям.")
     missing_keywords = [keyword for keyword in keywords if page.keywords_found.get(keyword, 0) == 0]
     if missing_keywords:
-        issues.append("Target queries are absent from visible text")
-        recommendations.append("Naturally cover missing queries: " + ", ".join(missing_keywords[:5]))
+        issues.append("Целевые запросы отсутствуют в видимом тексте")
+        recommendations.append("Естественно раскройте недостающие запросы: " + ", ".join(missing_keywords[:5]))
     return issues, dedupe(recommendations)
 
 
@@ -242,5 +253,5 @@ def build_action_plan(pages: list[PageAudit]) -> list[str]:
         for recommendation in page.recommendations:
             actions.append(f"{page.url}: {recommendation}")
     if not actions:
-        actions.append("Keep publishing useful content and monitor positions weekly.")
+        actions.append("Продолжайте публиковать полезный контент и проверяйте позиции каждую неделю.")
     return dedupe(actions)[:20]

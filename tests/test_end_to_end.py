@@ -7,9 +7,11 @@ import unittest
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 from seo_service.app import create_app
+from seo_service.crawler import normalize_url
 
 
 def free_port() -> int:
@@ -124,10 +126,14 @@ class SeoServiceEndToEndTest(unittest.TestCase):
         pages = {page["url"]: page for page in report["pages"]}
         home = pages[f"http://127.0.0.1:{self.site_port}/"]
         self.assertEqual(home["keywords_found"]["Automation SEO Service"], 3)
-        self.assertIn("Add descriptive alt attributes to important images.", home["recommendations"])
+        self.assertIn("Добавьте описательные alt-атрибуты к важным изображениям.", home["recommendations"])
 
         exported = self.get_json(f"/api/projects/{project_id}")
         self.assertEqual(exported["last_report"]["summary"]["pages_crawled"], 2)
+
+    def test_cyrillic_urls_are_encoded_for_http(self) -> None:
+        encoded = normalize_url("https://умныйсервис.рф/страница тест")
+        self.assertEqual(encoded, "https://xn--b1afkbogxgel4g.xn--p1ai/" + quote("страница тест"))
 
 
 if __name__ == "__main__":
