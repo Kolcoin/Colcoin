@@ -88,6 +88,37 @@ class AuditReport:
 
 
 @dataclass(slots=True)
+class Payment:
+    id: str
+    project_id: str
+    amount_rub: int
+    status: str = "pending"
+    created_at: str = field(default_factory=utc_now_iso)
+    paid_at: str | None = None
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "id": self.id,
+            "project_id": self.project_id,
+            "amount_rub": self.amount_rub,
+            "status": self.status,
+            "created_at": self.created_at,
+            "paid_at": self.paid_at,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "Payment":
+        return cls(
+            id=str(data["id"]),
+            project_id=str(data["project_id"]),
+            amount_rub=int(data.get("amount_rub", 100)),
+            status=str(data.get("status") or "pending"),
+            created_at=str(data.get("created_at") or utc_now_iso()),
+            paid_at=str(data["paid_at"]) if data.get("paid_at") else None,
+        )
+
+
+@dataclass(slots=True)
 class Project:
     id: str
     name: str
@@ -96,6 +127,8 @@ class Project:
     created_at: str = field(default_factory=utc_now_iso)
     updated_at: str = field(default_factory=utc_now_iso)
     last_report: dict[str, Any] | None = None
+    audit_credits: int = 0
+    payments: list[Payment] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -106,6 +139,8 @@ class Project:
             "created_at": self.created_at,
             "updated_at": self.updated_at,
             "last_report": self.last_report,
+            "audit_credits": self.audit_credits,
+            "payments": [payment.to_dict() for payment in self.payments],
         }
 
     @classmethod
@@ -118,4 +153,9 @@ class Project:
             created_at=str(data.get("created_at") or utc_now_iso()),
             updated_at=str(data.get("updated_at") or utc_now_iso()),
             last_report=data.get("last_report"),
+            audit_credits=int(data.get("audit_credits", 0)),
+            payments=[Payment.from_dict(item) for item in data.get("payments", [])],
         )
+
+    def find_payment(self, payment_id: str) -> Payment | None:
+        return next((payment for payment in self.payments if payment.id == payment_id), None)

@@ -11,11 +11,13 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 from .crawler import SEOAuditor
-from .models import Project
+from .models import Payment, Project, utc_now_iso
 from .storage import ProjectStore
 
 
 DEFAULT_DATA_FILE = Path(os.environ.get("SEO_SERVICE_DATA", "data/projects.json"))
+AUDIT_PRICE_RUB = int(os.environ.get("SEO_AUDIT_PRICE_RUB", "100"))
+PAYMENT_CONFIRM_TOKEN = os.environ.get("SEO_PAYMENT_CONFIRM_TOKEN", "dev-payment-token")
 
 
 def html_page(title: str, body: str) -> bytes:
@@ -53,6 +55,8 @@ def html_page(title: str, body: str) -> bytes:
 class SEOServiceHandler(BaseHTTPRequestHandler):
     store: ProjectStore
     auditor: SEOAuditor
+    audit_price_rub: int
+    payment_confirm_token: str
 
     def do_GET(self) -> None:
         path = urlparse(self.path).path
@@ -62,6 +66,8 @@ class SEOServiceHandler(BaseHTTPRequestHandler):
             self.render_home()
         elif path.startswith("/projects/") and path.endswith("/report.json"):
             self.render_report_json(path.split("/")[2])
+        elif path.startswith("/projects/") and path.endswith("/pay"):
+            self.render_payment_page(path.split("/")[2], parse_qs(urlparse(self.path).query))
         elif path.startswith("/api/projects/") and path.endswith("/audit"):
             self.run_audit_json(path.split("/")[3])
         elif path.startswith("/api/projects/"):
@@ -79,6 +85,14 @@ class SEOServiceHandler(BaseHTTPRequestHandler):
             self.create_project()
         elif path == "/api/projects":
             self.create_project_json()
+        elif path.startswith("/api/projects/") and path.endswith("/payments"):
+            self.create_payment_json(path.split("/")[3])
+        elif path.startswith("/projects/") and path.endswith("/payments"):
+            self.create_payment(path.split("/")[2])
+        elif path.startswith("/api/payments/") and path.endswith("/confirm"):
+            self.confirm_payment_json(path.split("/")[3])
+        elif path.startswith("/payments/") and path.endswith("/confirm"):
+            self.confirm_payment_form(path.split("/")[2])
         elif path.startswith("/api/projects/") and path.endswith("/audit"):
             self.run_audit_json(path.split("/")[3])
         elif path.startswith("/projects/") and path.endswith("/audit"):
@@ -148,17 +162,64 @@ class SEOServiceHandler(BaseHTTPRequestHandler):
 <p><a class="button" href="/projects/{project.id}/report.json">Скачать JSON-отчет</a></p>
 <table><thead><tr><th>Страница</th><th>Балл</th><th>Проблемы</th></tr></thead><tbody>{pages}</tbody></table>
 """
+        payment_rows = "".join(
+            "<tr>"
+            f"<td>{html.escape(payment.created_at)}</td>"
+            f"<td>{payment.amount_rub} ₽</td>"
+            f"<td>{'оплачен' if payment.status == 'paid' else 'ожидает оплаты'}</td>"
+            "</tr>"
+            for payment in project.payments[-5:]
+        ) or "<tr><td colspan='3' class='muted'>Платежей пока нет</td></tr>"
+        audit_button = (
+            f'<form method="post" action="/projects/{project.id}/audit"><button type="submit">Запустить аудит</button></form>'
+            if project.audit_credits > 0
+            else (
+                "<p class='warn'>Для запуска аудита оплатите 100 ₽. "
+                "После подтверждения оплаты появится 1 запуск аудита.</p>"
+                f'<form method="post" action="/projects/{project.id}/payments">'
+                "<button type='submit'>Оплатить аудит 100 ₽</button></form>"
+            )
+        )
         body = f"""
 <section>
   <p><a href="/">← Все проекты</a></p>
   <h2>{html.escape(project.name)}</h2>
   <p>{html.escape(project.site_url)}</p>
   <p><strong>Ключи:</strong> {html.escape(', '.join(project.keywords))}</p>
-  <form method="post" action="/projects/{project.id}/audit"><button type="submit">Запустить аудит</button></form>
+  <p><strong>Оплаченных запусков аудита:</strong> {project.audit_credits}</p>
+  {audit_button}
+</section>
+<section>
+  <h3>Платежи</h3>
+  <table><thead><tr><th>Дата</th><th>Сумма</th><th>Статус</th></tr></thead><tbody>{payment_rows}</tbody></table>
 </section>
 <section>{report_html}</section>
 """
         self.write_html(project.name, body)
+
+    def render_payment_page(self, project_id: str, query: dict[str, list[str]]) -> None:
+        project = self.store.get_project(project_id)
+        payment_id = query.get("payment_id", [""])[0]
+        payment = project.find_payment(payment_id) if project else None
+        if not project or not payment:
+            self.send_error(HTTPStatus.NOT_FOUND)
+            return
+        body = f"""
+<section>
+  <p><a href="/projects/{project.id}">← Вернуться к проекту</a></p>
+  <h2>Оплата аудита</h2>
+  <p>Проект: <strong>{html.escape(project.name)}</strong></p>
+  <p>Сумма: <strong>{payment.amount_rub} ₽</strong></p>
+  <p>Статус: <strong>{'оплачен' if payment.status == 'paid' else 'ожидает оплаты'}</strong></p>
+  <p class="muted">MVP-режим: карта не хранится и реальный эквайринг не подключен. Для боевого приема денег подключите ЮKassa/CloudPayments к API подтверждения платежа.</p>
+  <form method="post" action="/payments/{payment.id}/confirm">
+    <label>Токен подтверждения платежа</label>
+    <input name="token" required placeholder="Введите токен кассы">
+    <button type="submit">Подтвердить оплату</button>
+  </form>
+</section>
+"""
+        self.write_html("Оплата аудита", body)
 
     def render_report_json(self, project_id: str) -> None:
         project = self.store.get_project(project_id)
@@ -193,12 +254,72 @@ class SEOServiceHandler(BaseHTTPRequestHandler):
         self.store.save_project(project)
         self.write_json(project.to_dict(), HTTPStatus.CREATED)
 
+    def create_payment(self, project_id: str) -> None:
+        payment = self.issue_payment(project_id)
+        if payment is None:
+            self.send_error(HTTPStatus.NOT_FOUND)
+            return
+        self.redirect(f"/projects/{payment.project_id}/pay?payment_id={payment.id}")
+
+    def create_payment_json(self, project_id: str) -> None:
+        payment = self.issue_payment(project_id)
+        if payment is None:
+            self.send_error(HTTPStatus.NOT_FOUND)
+            return
+        self.write_json(payment.to_dict(), HTTPStatus.CREATED)
+
+    def issue_payment(self, project_id: str) -> Payment | None:
+        project = self.store.get_project(project_id)
+        if not project:
+            return None
+        payment = Payment(id=uuid.uuid4().hex[:12], project_id=project.id, amount_rub=self.audit_price_rub)
+        project.payments.append(payment)
+        project.updated_at = payment.created_at
+        self.store.save_project(project)
+        return payment
+
+    def confirm_payment_json(self, payment_id: str) -> None:
+        payload = self.read_json()
+        if str(payload.get("token") or "") != self.payment_confirm_token:
+            self.write_json({"error": "invalid payment token"}, HTTPStatus.FORBIDDEN)
+            return
+        project, payment = self.store.find_payment(payment_id)
+        if not project or not payment:
+            self.send_error(HTTPStatus.NOT_FOUND)
+            return
+        self.mark_payment_paid(project, payment)
+        self.write_json({"status": "paid", "project": project.to_dict()})
+
+    def confirm_payment_form(self, payment_id: str) -> None:
+        form = self.read_form()
+        if form.get("token", [""])[0] != self.payment_confirm_token:
+            self.write_html("Ошибка оплаты", "<section><h2>Неверный токен оплаты</h2></section>", HTTPStatus.FORBIDDEN)
+            return
+        project, payment = self.store.find_payment(payment_id)
+        if not project or not payment:
+            self.send_error(HTTPStatus.NOT_FOUND)
+            return
+        self.mark_payment_paid(project, payment)
+        self.redirect(f"/projects/{project.id}")
+
+    def mark_payment_paid(self, project: Project, payment: Payment) -> None:
+        if payment.status != "paid":
+            payment.status = "paid"
+            payment.paid_at = utc_now_iso()
+            project.audit_credits += 1
+            project.updated_at = payment.paid_at
+            self.store.save_project(project)
+
     def run_audit(self, project_id: str) -> None:
         project = self.store.get_project(project_id)
         if not project:
             self.send_error(HTTPStatus.NOT_FOUND)
             return
+        if project.audit_credits < 1:
+            self.redirect(f"/projects/{project.id}")
+            return
         report = self.auditor.audit(project).to_dict()
+        project.audit_credits -= 1
         project.last_report = report
         project.updated_at = report["generated_at"]
         self.store.save_project(project)
@@ -209,7 +330,11 @@ class SEOServiceHandler(BaseHTTPRequestHandler):
         if not project:
             self.send_error(HTTPStatus.NOT_FOUND)
             return
+        if project.audit_credits < 1:
+            self.write_json({"error": "payment_required", "amount_rub": self.audit_price_rub}, HTTPStatus.PAYMENT_REQUIRED)
+            return
         report = self.auditor.audit(project).to_dict()
+        project.audit_credits -= 1
         project.last_report = report
         project.updated_at = report["generated_at"]
         self.store.save_project(project)
@@ -262,6 +387,8 @@ def create_app(data_file: Path, max_pages: int = 25) -> type[SEOServiceHandler]:
     class ConfiguredHandler(SEOServiceHandler):
         store = ProjectStore(data_file)
         auditor = SEOAuditor(max_pages=max_pages)
+        audit_price_rub = AUDIT_PRICE_RUB
+        payment_confirm_token = PAYMENT_CONFIRM_TOKEN
 
     return ConfiguredHandler
 

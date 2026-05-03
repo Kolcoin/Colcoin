@@ -7,6 +7,7 @@ import unittest
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from urllib.error import HTTPError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
@@ -100,6 +101,12 @@ class SeoServiceEndToEndTest(unittest.TestCase):
         with urlopen(request, timeout=10) as response:
             return json.loads(response.read().decode())
 
+    def post_json_error(self, path: str, data: dict[str, object] | None = None) -> tuple[int, dict[str, object]]:
+        try:
+            return 200, self.post_json(path, data)
+        except HTTPError as error:
+            return error.code, json.loads(error.read().decode())
+
     def get_json(self, path: str) -> dict[str, object]:
         with urlopen(f"http://127.0.0.1:{self.app_port}{path}", timeout=10) as response:
             return json.loads(response.read().decode())
@@ -118,6 +125,17 @@ class SeoServiceEndToEndTest(unittest.TestCase):
         )
         project_id = str(project["id"])
 
+        status, payment_required = self.post_json_error(f"/api/projects/{project_id}/audit")
+        self.assertEqual(status, 402)
+        self.assertEqual(payment_required["error"], "payment_required")
+        self.assertEqual(payment_required["amount_rub"], 100)
+
+        payment = self.post_json(f"/api/projects/{project_id}/payments")
+        self.assertEqual(payment["amount_rub"], 100)
+        paid = self.post_json(f"/api/payments/{payment['id']}/confirm", {"token": "dev-payment-token"})
+        self.assertEqual(paid["status"], "paid")
+        self.assertEqual(paid["project"]["audit_credits"], 1)
+
         report = self.post_json(f"/api/projects/{project_id}/audit")
         self.assertEqual(report["summary"]["pages_crawled"], 2)
         self.assertGreaterEqual(report["summary"]["average_score"], 0)
@@ -130,6 +148,7 @@ class SeoServiceEndToEndTest(unittest.TestCase):
 
         exported = self.get_json(f"/api/projects/{project_id}")
         self.assertEqual(exported["last_report"]["summary"]["pages_crawled"], 2)
+        self.assertEqual(exported["audit_credits"], 0)
 
     def test_cyrillic_urls_are_encoded_for_http(self) -> None:
         encoded = normalize_url("https://умныйсервис.рф/страница тест")

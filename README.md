@@ -58,6 +58,22 @@ curl -X POST http://127.0.0.1:8080/api/projects/<project_id>/audit
 curl http://127.0.0.1:8080/api/projects
 ```
 
+Оплата аудита стоит 100 рублей. До оплаты запуск аудита вернет `payment_required`.
+
+Создать счет:
+
+```bash
+curl -X POST http://127.0.0.1:8080/api/projects/<project_id>/payments
+```
+
+Подтвердить оплату через кассу или вручную в MVP-режиме:
+
+```bash
+curl -X POST http://127.0.0.1:8080/api/payments/<payment_id>/confirm \
+  -H 'Content-Type: application/json' \
+  -d '{"token":"dev-payment-token"}'
+```
+
 Проверить, что сервис жив:
 
 ```bash

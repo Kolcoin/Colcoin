@@ -46,7 +46,7 @@ mkdir -p /var/lib/seo-automation-service
 cp deploy/seo-automation-service.env.example /etc/seo-automation-service.env
 ```
 
-Сервис использует только стандартную библиотеку Python, поэтому `pip install` не нужен. В файле `/etc/seo-automation-service.env` можно поменять порт, путь к данным и лимит страниц.
+Сервис использует только стандартную библиотеку Python, поэтому `pip install` не нужен. В файле `/etc/seo-automation-service.env` можно поменять порт, путь к данным, лимит страниц, цену аудита и токен подтверждения оплаты.
 
 ## 5. Установить systemd-сервис
 
@@ -92,6 +92,29 @@ python3 scripts/smoke_test.py http://127.0.0.1:8080
 ```
 
 Откройте домен в браузере, добавьте свой сайт и ключевые запросы, затем нажмите `Запустить аудит`.
+
+## Оплата аудита
+
+По умолчанию один аудит стоит `100 ₽`. Без оплаты запуск аудита возвращает `402 Payment Required`.
+
+MVP-поток:
+
+1. пользователь создает проект;
+2. нажимает `Оплатить аудит 100 ₽`;
+3. сервис создает платеж;
+4. касса или администратор подтверждает платеж через API;
+5. проект получает 1 оплаченный запуск аудита;
+6. запуск аудита списывает 1 оплаченный запуск.
+
+Для подтверждения платежа API:
+
+```bash
+curl -X POST http://127.0.0.1:8080/api/payments/<payment_id>/confirm \
+  -H 'Content-Type: application/json' \
+  -d '{"token":"dev-payment-token"}'
+```
+
+В production замените `SEO_PAYMENT_CONFIRM_TOKEN` в `/etc/seo-automation-service.env` и подключите этот endpoint к ЮKassa/CloudPayments webhook.
 
 ## 9. Обновление сервиса
 

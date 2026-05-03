@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from threading import Lock
 
-from seo_service.models import Project
+from seo_service.models import Payment, Project
 
 
 class ProjectStore:
@@ -35,11 +35,18 @@ class ProjectStore:
                 projects.append(project.to_dict())
             self._write_raw({"projects": projects})
 
+    def find_payment(self, payment_id: str) -> tuple[Project | None, Payment | None]:
+        for project in self.list_projects():
+            payment = project.find_payment(payment_id)
+            if payment:
+                return project, payment
+        return None, None
+
     def _read_raw(self) -> dict:
         try:
             return json.loads(self.path.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
-            return {"projects": []}
+            return {"projects": [], "payments": []}
 
     def _write_raw(self, data: dict) -> None:
         self.path.write_text(
