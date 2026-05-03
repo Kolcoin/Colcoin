@@ -80,3 +80,8 @@ python3 scripts/smoke_test.py http://127.0.0.1:8080
 ## Размещение на Beget
 
 Пошаговая инструкция для VPS/VDS Beget находится в `docs/BEGET_DEPLOY.md`.
+Быстрая установка одной командой:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Kolcoin/Colcoin/cursor/seo-automation-service-c1de/scripts/install_beget.sh | bash
+```

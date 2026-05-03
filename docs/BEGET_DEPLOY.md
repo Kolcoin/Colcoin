@@ -8,6 +8,20 @@
 ssh root@SERVER_IP
 ```
 
+## Быстрая установка одной командой
+
+Если сервис нужно поставить на сервер `217.12.40.193`, выполните в консоли VPS:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Kolcoin/Colcoin/cursor/seo-automation-service-c1de/scripts/install_beget.sh | bash
+```
+
+Для другого домена или IP:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Kolcoin/Colcoin/cursor/seo-automation-service-c1de/scripts/install_beget.sh | PUBLIC_HOST=seo.example.ru bash
+```
+
 ## 2. Установить базовые пакеты
 
 ```bash
