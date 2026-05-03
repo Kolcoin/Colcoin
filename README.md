@@ -19,7 +19,7 @@
 ## Быстрый запуск
 
 ```bash
-python -m seo_service serve --host 127.0.0.1 --port 8080
+python3 -m seo_service serve --host 127.0.0.1 --port 8080
 ```
 
 Откройте `http://127.0.0.1:8080`, добавьте сайт и ключевые запросы, затем нажмите “Запустить аудит”.
@@ -27,7 +27,7 @@ python -m seo_service serve --host 127.0.0.1 --port 8080
 По умолчанию данные сохраняются в `data/projects.json`. Путь можно изменить:
 
 ```bash
-python -m seo_service serve --data-file /path/to/projects.json
+python3 -m seo_service serve --data-file /path/to/projects.json
 ```
 
 ## API
@@ -55,7 +55,7 @@ curl http://127.0.0.1:8080/api/projects
 ## CLI-аудит одной страницы
 
 ```bash
-python -m seo_service audit https://example.com --keyword seo --keyword "поисковое продвижение"
+python3 -m seo_service audit https://example.com --keyword seo --keyword "поисковое продвижение"
 ```
 
 ## Тесты
