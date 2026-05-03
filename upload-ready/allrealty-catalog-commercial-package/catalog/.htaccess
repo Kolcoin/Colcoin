@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /catalog/
+
+# Route /catalog/api/* requests to proxy script
+RewriteRule ^api/(.*)$ api-proxy.php/api/$1 [QSA,L]
+
+# Keep direct proxy entry executable
+RewriteRule ^api-proxy\.php$ - [L]
+RewriteRule ^api-proxy\.php/.*$ - [L]
+
+# Existing files and directories should bypass SPA fallback
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback
+RewriteRule ^ index.html [L]
