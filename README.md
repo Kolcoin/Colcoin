@@ -61,5 +61,9 @@ python -m seo_service audit https://example.com --keyword seo --keyword "пои�
 ## Тесты
 
 ```bash
-python -m unittest
+python3 -m unittest discover -s tests -v
 ```
+
+## Размещение на Beget
+
+Пошаговая инструкция для VPS/VDS Beget находится в `docs/BEGET_DEPLOY.md`.
