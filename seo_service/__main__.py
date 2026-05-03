@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import uuid
 from pathlib import Path
@@ -11,15 +12,25 @@ from .crawler import SEOAuditor
 from .models import Project
 
 
+def env_int(name: str, default: int) -> int:
+    value = os.environ.get(name)
+    if not value:
+        return default
+    try:
+        return int(value)
+    except ValueError:
+        return default
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Automated white-hat SEO promotion service")
     subparsers = parser.add_subparsers(dest="command")
 
     serve_parser = subparsers.add_parser("serve", help="Run the web service")
-    serve_parser.add_argument("--host", default="127.0.0.1")
-    serve_parser.add_argument("--port", type=int, default=8080)
+    serve_parser.add_argument("--host", default=os.environ.get("SEO_SERVICE_HOST", "127.0.0.1"))
+    serve_parser.add_argument("--port", type=int, default=env_int("SEO_SERVICE_PORT", 8080))
     serve_parser.add_argument("--data-file", type=Path, default=DEFAULT_DATA_FILE)
-    serve_parser.add_argument("--max-pages", type=int, default=25)
+    serve_parser.add_argument("--max-pages", type=int, default=env_int("SEO_SERVICE_MAX_PAGES", 25))
 
     audit_parser = subparsers.add_parser("audit", help="Run a one-off website audit")
     audit_parser.add_argument("site_url")

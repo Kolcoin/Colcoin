@@ -103,6 +103,9 @@ class SeoServiceEndToEndTest(unittest.TestCase):
             return json.loads(response.read().decode())
 
     def test_project_creation_audit_and_export(self) -> None:
+        health = self.get_json("/health")
+        self.assertEqual(health["status"], "ok")
+
         project = self.post_json(
             "/api/projects",
             {

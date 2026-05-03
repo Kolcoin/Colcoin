@@ -56,7 +56,9 @@ class SEOServiceHandler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         path = urlparse(self.path).path
-        if path == "/":
+        if path == "/health":
+            self.write_json({"status": "ok"})
+        elif path == "/":
             self.render_home()
         elif path.startswith("/projects/") and path.endswith("/report.json"):
             self.render_report_json(path.split("/")[2])
@@ -268,4 +270,3 @@ def serve(host: str, port: int, data_file: Path, max_pages: int) -> None:
     server = ThreadingHTTPServer((host, port), create_app(data_file, max_pages))
     print(f"SEO service is running at http://{host}:{port}")
     server.serve_forever()
-

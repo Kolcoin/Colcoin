@@ -29,27 +29,15 @@ git checkout cursor/seo-automation-service-c1de
 ```bash
 python3 -m venv .venv
 mkdir -p /var/lib/seo-automation-service
+cp deploy/seo-automation-service.env.example /etc/seo-automation-service.env
 ```
 
-Сервис использует только стандартную библиотеку Python, поэтому `pip install` не нужен.
+Сервис использует только стандартную библиотеку Python, поэтому `pip install` не нужен. В файле `/etc/seo-automation-service.env` можно поменять порт, путь к данным и лимит страниц.
 
-## 5. Создать systemd-сервис
+## 5. Установить systemd-сервис
 
 ```bash
-cat >/etc/systemd/system/seo-automation-service.service <<'EOF'
-[Unit]
-Description=SEO Automation Service
-After=network.target
-
-[Service]
-WorkingDirectory=/opt/seo-automation-service
-ExecStart=/opt/seo-automation-service/.venv/bin/python -m seo_service serve --host 127.0.0.1 --port 8080 --data-file /var/lib/seo-automation-service/projects.json --max-pages 25
-Restart=always
-RestartSec=5
-
-[Install]
-WantedBy=multi-user.target
-EOF
+cp deploy/seo-automation-service.service /etc/systemd/system/seo-automation-service.service
 ```
 
 Запустить сервис:
@@ -65,21 +53,8 @@ systemctl status seo-automation-service
 Замените `seo.example.ru` на ваш домен или поддомен.
 
 ```bash
-cat >/etc/nginx/sites-available/seo-automation-service <<'EOF'
-server {
-    listen 80;
-    server_name seo.example.ru;
-
-    location / {
-        proxy_pass http://127.0.0.1:8080;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-EOF
-
+cp deploy/nginx.conf.example /etc/nginx/sites-available/seo-automation-service
+nano /etc/nginx/sites-available/seo-automation-service
 ln -s /etc/nginx/sites-available/seo-automation-service /etc/nginx/sites-enabled/
 nginx -t
 systemctl reload nginx
@@ -99,6 +74,7 @@ systemctl reload nginx
 
 ```bash
 curl http://127.0.0.1:8080/api/projects
+python3 scripts/smoke_test.py http://127.0.0.1:8080
 ```
 
 Откройте домен в браузере, добавьте свой сайт и ключевые запросы, затем нажмите `Запустить аудит`.

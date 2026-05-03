@@ -1,0 +1,14 @@
+[Unit]
+Description=SEO Automation Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/seo-automation-service
+EnvironmentFile=/etc/seo-automation-service.env
+ExecStart=/opt/seo-automation-service/.venv/bin/python -m seo_service serve
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

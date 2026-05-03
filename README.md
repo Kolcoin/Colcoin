@@ -19,7 +19,7 @@
 ## Быстрый запуск
 
 ```bash
-python3 -m seo_service serve --host 127.0.0.1 --port 8080
+python3 -m seo_service serve --host 0.0.0.0 --port 8080
 ```
 
 Откройте `http://127.0.0.1:8080`, добавьте сайт и ключевые запросы, затем нажмите “Запустить аудит”.
@@ -28,6 +28,12 @@ python3 -m seo_service serve --host 127.0.0.1 --port 8080
 
 ```bash
 python3 -m seo_service serve --data-file /path/to/projects.json
+```
+
+Для production можно задавать настройки через переменные окружения:
+
+```bash
+SEO_SERVICE_HOST=0.0.0.0 SEO_SERVICE_PORT=8080 SEO_SERVICE_DATA=/var/lib/seo-automation-service/projects.json python3 -m seo_service serve
 ```
 
 ## API
@@ -52,6 +58,12 @@ curl -X POST http://127.0.0.1:8080/api/projects/<project_id>/audit
 curl http://127.0.0.1:8080/api/projects
 ```
 
+Проверить, что сервис жив:
+
+```bash
+curl http://127.0.0.1:8080/health
+```
+
 ## CLI-аудит одной страницы
 
 ```bash
@@ -62,6 +74,7 @@ python3 -m seo_service audit https://example.com --keyword seo --keyword "пои
 
 ```bash
 python3 -m unittest discover -s tests -v
+python3 scripts/smoke_test.py http://127.0.0.1:8080
 ```
 
 ## Размещение на Beget
