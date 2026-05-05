@@ -1,0 +1,32 @@
+# ==========================================================
+# Beget-ready domain migration: шмитрикс.рф -> новостроймаркет.рф
+# Source old domain: xn--h1aagfvid9b.xn--p1ai
+# Target new domain: xn--80adkogkeibavehoi.xn--p1ai
+# ==========================================================
+
+RewriteEngine On
+
+# Old domain (both Cyrillic and punycode, with/without www) -> new canonical domain (HTTPS)
+RewriteCond %{HTTP_HOST} ^(www\.)?(шмитрикс\.рф|xn--h1aagfvid9b\.xn--p1ai)$ [NC]
+RewriteRule ^(.*)$ https://xn--80adkogkeibavehoi.xn--p1ai/$1 [R=301,L,QSA]
+
+# www new domain -> non-www canonical
+RewriteCond %{HTTP_HOST} ^www\.xn--80adkogkeibavehoi\.xn--p1ai$ [NC]
+RewriteRule ^(.*)$ https://xn--80adkogkeibavehoi.xn--p1ai/$1 [R=301,L,QSA]
+
+# Force HTTPS on new canonical domain
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP_HOST} ^xn--80adkogkeibavehoi\.xn--p1ai$ [NC]
+RewriteRule ^(.*)$ https://xn--80adkogkeibavehoi.xn--p1ai/$1 [R=301,L,QSA]
+
+# Optional canonical cleanup for query-based ghost URLs
+RewriteCond %{QUERY_STRING} (^|&)q=[^&]+ [NC]
+RewriteRule ^$ https://xn--80adkogkeibavehoi.xn--p1ai/? [R=301,L]
+
+# Keep existing files/directories behavior
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback (if your site is SPA-like)
+RewriteRule . /index.html [L]

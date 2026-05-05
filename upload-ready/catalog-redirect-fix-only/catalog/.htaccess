@@ -1,0 +1,22 @@
+RewriteEngine On
+RewriteBase /catalog/
+
+# Hard domain migration for full /catalog subtree (including js/css/api)
+RewriteCond %{HTTP_HOST} ^(www\.)?(шмитрикс\.рф|xn--h1aagfvid9b\.xn--p1ai)$ [NC]
+RewriteCond %{REQUEST_URI} ^/catalog/ [NC]
+RewriteRule ^ https://xn--80adkogkeibavehoi.xn--p1ai%{REQUEST_URI} [R=301,L,QSA,NE]
+
+# Route /catalog/api/* requests to proxy script
+RewriteRule ^api/(.*)$ api-proxy.php/api/$1 [QSA,L]
+
+# Keep direct proxy entry executable
+RewriteRule ^api-proxy\.php$ - [L]
+RewriteRule ^api-proxy\.php/.*$ - [L]
+
+# Existing files and directories should bypass SPA fallback
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback
+RewriteRule ^ index.html [L]
