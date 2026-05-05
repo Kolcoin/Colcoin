@@ -1,9 +1,10 @@
 RewriteEngine On
 RewriteBase /catalog/
 
-# Domain migration for catalog subtree: old domain -> new domain
+# Hard domain migration for full /catalog subtree (including js/css/api)
 RewriteCond %{HTTP_HOST} ^(www\.)?(шмитрикс\.рф|xn--h1aagfvid9b\.xn--p1ai)$ [NC]
-RewriteRule ^(.*)$ https://xn--80adkogkeibavehoi.xn--p1ai/catalog/$1 [R=301,L,QSA]
+RewriteCond %{REQUEST_URI} ^/catalog/ [NC]
+RewriteRule ^ https://xn--80adkogkeibavehoi.xn--p1ai%{REQUEST_URI} [R=301,L,QSA,NE]
 
 # Route /catalog/api/* requests to proxy script
 RewriteRule ^api/(.*)$ api-proxy.php/api/$1 [QSA,L]
