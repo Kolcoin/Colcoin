@@ -1,0 +1,127 @@
+{
+  "purpose": "Стартовый список публичных Telegram-сообществ по новостройкам и недвижимости. Перед мониторингом проверьте правила каждого чата/канала.",
+  "safe_use": [
+    "Не писать людям автоматически.",
+    "Не собирать закрытые чаты без доступа.",
+    "Использовать список как watchlist для ручного вступления/экспорта или мониторинга разрешенных публичных источников.",
+    "Хранить результаты в CSV/CRM и отвечать вручную там, где это не запрещено правилами сообщества."
+  ],
+  "keywords": [
+    "купить квартиру",
+    "покупка квартиры",
+    "новостройки",
+    "жк",
+    "ипотека",
+    "бронь",
+    "цена",
+    "планировка",
+    "срок сдачи"
+  ],
+  "sources": [
+    {
+      "title": "Новостройки PRO | Москва МО",
+      "username": "novostroikipro",
+      "url": "https://t.me/novostroikipro",
+      "type": "channel",
+      "topic": "новостройки, предложения застройщиков, рынок недвижимости"
+    },
+    {
+      "title": "Купить квартиру в Москве, продажа",
+      "username": "kvartiryvmoskve",
+      "url": "https://t.me/kvartiryvmoskve",
+      "type": "chat",
+      "topic": "покупка и продажа квартир в Москве и МО"
+    },
+    {
+      "title": "Novostroyman. Москва. Недвижимость",
+      "username": "novostroyman",
+      "url": "https://t.me/novostroyman",
+      "type": "channel",
+      "topic": "новостройки Москвы, застройщики, ЖК"
+    },
+    {
+      "title": "Новострой-М. Москва и МО",
+      "username": "NovostroyM",
+      "url": "https://t.me/NovostroyM",
+      "type": "channel",
+      "topic": "база новостроек, цены, акции, аналитика"
+    },
+    {
+      "title": "РК Moscow",
+      "username": "rcmosc0w",
+      "url": "https://t.me/rcmosc0w",
+      "type": "channel",
+      "topic": "новостройки бизнес-класса"
+    },
+    {
+      "title": "Москва строит | Недвижимость",
+      "username": "msk_stroit",
+      "url": "https://t.me/msk_stroit",
+      "type": "channel",
+      "topic": "строительство, недвижимость, ЖК Москвы"
+    },
+    {
+      "title": "Москва Недвижимость Новости",
+      "username": "new_mske",
+      "url": "https://t.me/new_mske",
+      "type": "channel",
+      "topic": "новостройки, девелоперы, апартаменты"
+    },
+    {
+      "title": "Move | Новостройки Москвы",
+      "username": "moverealty",
+      "url": "https://t.me/moverealty",
+      "type": "channel",
+      "topic": "аналитика, старты продаж, рынок недвижимости"
+    },
+    {
+      "title": "Недвижимость PRO | Москва МО",
+      "username": "nedmos",
+      "url": "https://t.me/nedmos",
+      "type": "channel",
+      "topic": "новостройки, предложения, правовое регулирование"
+    },
+    {
+      "title": "Недвижимость PRO чат",
+      "username": "nedvizmo",
+      "url": "https://t.me/nedvizmo",
+      "type": "chat",
+      "topic": "обсуждение недвижимости"
+    },
+    {
+      "title": "Роман Поляков | Новостройки Москвы",
+      "username": "BigCity_Polyakov",
+      "url": "https://t.me/BigCity_Polyakov",
+      "type": "channel",
+      "topic": "подбор новостроек, старты продаж"
+    },
+    {
+      "title": "Московские метры",
+      "username": "meters2",
+      "url": "https://t.me/meters2",
+      "type": "channel",
+      "topic": "аналитика недвижимости и застройщиков"
+    },
+    {
+      "title": "Красавченко | Инвестиционная недвижимость Москвы",
+      "username": "ten_homes",
+      "url": "https://t.me/ten_homes",
+      "type": "channel",
+      "topic": "инвестиционная недвижимость, ипотека, рассрочка"
+    },
+    {
+      "title": "ЖК Скандинавия от А101",
+      "username": "gkskandinavia",
+      "url": "https://t.me/gkskandinavia",
+      "type": "chat",
+      "topic": "чат ЖК"
+    },
+    {
+      "title": "ЖК Сказочный лес",
+      "username": "skazochnyy_les_zhk",
+      "url": "https://t.me/skazochnyy_les_zhk",
+      "type": "chat",
+      "topic": "чат ЖК"
+    }
+  ]
+}

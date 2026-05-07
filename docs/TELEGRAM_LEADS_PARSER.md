@@ -31,6 +31,49 @@ python3 scripts/telegram_leads_parser.py /path/to/exports --csv leads.csv
 python3 scripts/telegram_leads_parser.py result.json --keyword "жк алия" --keyword "новостройки митино"
 ```
 
+## Фильтрация по ЖК или району
+
+Например, оставить только сообщения про Митино или ЖК Алия:
+
+```bash
+python3 scripts/telegram_leads_parser.py result.json \
+  --filter "митино" \
+  --filter "жк алия" \
+  --csv leads-filtered.csv
+```
+
+## Только новые сообщения
+
+Для регулярного запуска используйте state-файл. Первый запуск сохранит обработанные сообщения, следующие запуски с `--only-new` выгрузят только новые лиды:
+
+```bash
+python3 scripts/telegram_leads_parser.py exports \
+  --state data/telegram-leads-state.json \
+  --only-new \
+  --csv leads-new.csv
+```
+
+## Уведомления в Telegram
+
+Создайте своего бота через `@BotFather`, получите token и узнайте chat ID, куда слать уведомления. Затем:
+
+```bash
+python3 scripts/telegram_leads_parser.py exports \
+  --state data/telegram-leads-state.json \
+  --only-new \
+  --csv leads-new.csv \
+  --notify-bot-token "123456:BOT_TOKEN" \
+  --notify-chat-id "123456789"
+```
+
+Скрипт отправит краткое уведомление с первыми найденными лидами. Автоматически писать потенциальным клиентам в личку он не будет.
+
+## Стартовый список публичных источников
+
+Файл `config/telegram_newbuild_watchlist.json` содержит стартовый watchlist публичных каналов/чатов по новостройкам, ЖК и недвижимости Москвы.
+
+Перед мониторингом проверьте правила каждого сообщества. Если чат запрещает сбор данных или рекламные ответы, не используйте его.
+
 ## Что будет в CSV
 
 - `chat_name` — название чата;
