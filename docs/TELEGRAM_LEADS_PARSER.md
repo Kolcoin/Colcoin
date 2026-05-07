@@ -19,10 +19,18 @@
 python3 scripts/telegram_leads_parser.py /path/to/result.json --csv leads.csv --json leads.json
 ```
 
+По умолчанию включен строгий режим покупательского интереса. Он ищет именно сообщения людей вида `хочу купить`, `ищу квартиру`, `интересует ЖК`, `какая цена`, `можно забронировать` и отбрасывает обычные посты/новости канала.
+
 Можно передать папку с несколькими JSON-файлами:
 
 ```bash
 python3 scripts/telegram_leads_parser.py /path/to/exports --csv leads.csv
+```
+
+Если нужно старое широкое поведение по ключевым словам, добавьте `--broad`, но для лидов этот режим обычно дает много мусора:
+
+```bash
+python3 scripts/telegram_leads_parser.py result.json --broad --csv leads-broad.csv
 ```
 
 ## Дополнительные ключевые слова

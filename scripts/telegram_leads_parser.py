@@ -33,6 +33,47 @@ DEFAULT_KEYWORDS = [
     "метро",
 ]
 
+BUYER_INTENT_PATTERNS = [
+    r"\bхочу\b.{0,80}\b(купить|взять|приобрести|забронировать)\b",
+    r"\bищу\b.{0,80}\b(квартир|новостро|жк|студи|двуш|однуш)",
+    r"\bинтересует\b.{0,80}\b(квартир|новостро|жк|ипотек|цен|стоимост|планиров)",
+    r"\bподскажите\b.{0,100}\b(цен|стоимост|ипотек|квартир|жк|новостро|брон)",
+    r"\bкакая\b.{0,40}\b(цена|стоимость)\b",
+    r"\bсколько\b.{0,60}\b(стоит|стоимость|цена)\b",
+    r"\bможно\b.{0,80}\b(забронировать|купить|посмотреть|оформить)\b",
+    r"\bнужна\b.{0,80}\b(квартир|новостро|ипотек|двуш|однуш|студи)",
+    r"\bрассматриваю\b.{0,80}\b(квартир|новостро|жк|покупк)",
+    r"\bпланирую\b.{0,80}\b(покуп|купить|взять|ипотек)",
+]
+
+REAL_ESTATE_CONTEXT = [
+    "квартир",
+    "новостро",
+    "жк",
+    "ипотек",
+    "студи",
+    "однуш",
+    "двуш",
+    "треш",
+    "апартамент",
+    "метро",
+]
+
+POST_LIKE_KEYWORDS = [
+    "итоги года",
+    "новые правила",
+    "почему дорожают",
+    "эксперты",
+    "аналитика",
+    "подборка",
+    "топ-",
+    "рейтинг",
+    "банк предлож",
+    "застройщик объявил",
+    "старт продаж",
+    "акция от",
+]
+
 NEGATIVE_KEYWORDS = [
     "снять",
     "сниму",
@@ -84,12 +125,23 @@ def normalize_spaces(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def score_text(text: str, keywords: list[str]) -> tuple[int, list[str]]:
+def has_buyer_intent(text: str) -> bool:
     normalized = normalize_spaces(text.lower())
+    has_intent = any(re.search(pattern, normalized) for pattern in BUYER_INTENT_PATTERNS)
+    has_context = any(keyword in normalized for keyword in REAL_ESTATE_CONTEXT)
+    looks_like_post = any(keyword in normalized for keyword in POST_LIKE_KEYWORDS)
+    return has_intent and has_context and not looks_like_post
+
+
+def score_text(text: str, keywords: list[str], strict_buyer: bool = True) -> tuple[int, list[str]]:
+    normalized = normalize_spaces(text.lower())
+    if strict_buyer and not has_buyer_intent(normalized):
+        return 0, []
     matched = [keyword for keyword in keywords if keyword.lower() in normalized]
-    score = len(matched)
+    intent_bonus = 3 if has_buyer_intent(normalized) else 0
+    score = len(matched) + intent_bonus
     if any(keyword in normalized for keyword in NEGATIVE_KEYWORDS):
-        score -= 1
+        score -= 3
     return score, matched
 
 
@@ -103,7 +155,7 @@ def iter_export_files(paths: list[Path]) -> list[Path]:
     return files
 
 
-def parse_export(path: Path, keywords: list[str], min_score: int) -> list[Lead]:
+def parse_export(path: Path, keywords: list[str], min_score: int, strict_buyer: bool = True) -> list[Lead]:
     data = json.loads(path.read_text(encoding="utf-8"))
     chat_name = str(data.get("name") or data.get("id") or path.stem)
     leads: list[Lead] = []
@@ -114,7 +166,7 @@ def parse_export(path: Path, keywords: list[str], min_score: int) -> list[Lead]:
         text = normalize_spaces(normalize_message_text(message.get("text")))
         if not text:
             continue
-        score, matched = score_text(text, keywords)
+        score, matched = score_text(text, keywords, strict_buyer=strict_buyer)
         if score < min_score:
             continue
         leads.append(
@@ -235,6 +287,7 @@ def main() -> int:
     parser.add_argument("--keyword", action="append", default=[], help="Additional lead keyword")
     parser.add_argument("--filter", action="append", default=[], help="Keep only leads containing this ЖК/район term")
     parser.add_argument("--min-score", type=int, default=1, help="Minimum keyword score")
+    parser.add_argument("--broad", action="store_true", help="Broad keyword mode; includes posts/news, not recommended for leads")
     parser.add_argument("--state", type=Path, help="State file for incremental runs")
     parser.add_argument("--only-new", action="store_true", help="Export only messages newer than state")
     parser.add_argument("--notify-bot-token", help="Telegram bot token for lead notifications")
@@ -245,7 +298,7 @@ def main() -> int:
     state = load_state(args.state)
     leads: list[Lead] = []
     for export_file in iter_export_files(args.paths):
-        leads.extend(parse_export(export_file, keywords, args.min_score))
+        leads.extend(parse_export(export_file, keywords, args.min_score, strict_buyer=not args.broad))
 
     if args.only_new:
         leads = filter_new_leads(leads, state)
