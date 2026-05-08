@@ -8,7 +8,24 @@
       name="description"
       content="Карточка жилого комплекса: галерея, таблица цен и планировок, корпуса и сроки сдачи, FAQ и похожие объекты."
     />
-    <link rel="canonical" href="https://xn--80adkogkeibavehoi.xn--p1ai/project.html" />
+    <meta property="og:url" content="https://xn--80adkogkeibavehoi.xn--p1ai/project.html" />
+    <script>
+      (function syncProjectCanonical() {
+        var params = new URLSearchParams(window.location.search);
+        var project = params.get("project") || params.get("id");
+        var base = "https://xn--80adkogkeibavehoi.xn--p1ai/project.html";
+        var canonical = project ? base + "?project=" + encodeURIComponent(project) : base;
+        var link = document.querySelector('link[rel="canonical"]');
+        if (!link) {
+          link = document.createElement("link");
+          link.setAttribute("rel", "canonical");
+          document.head.appendChild(link);
+        }
+        link.setAttribute("href", canonical);
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute("content", canonical);
+      })();
+    </script>
     <link rel="stylesheet" href="./styles.css?v=20260417b" />
   </head>
   <body>

@@ -6,3 +6,4 @@ Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap.xml
 
 # Article pages
 Allow: /starts/
+Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-catalog-projects.xml
