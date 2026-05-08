@@ -13,6 +13,28 @@ function getElementByIds(ids) {
   return null;
 }
 
+function syncProjectSeo(project) {
+  const baseUrl = "https://xn--80adkogkeibavehoi.xn--p1ai/project.html";
+  const projectKey = encodeURIComponent(project.slug || project.id || "");
+  const canonicalUrl = projectKey ? `${baseUrl}?project=${projectKey}` : baseUrl;
+
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", canonicalUrl);
+
+  let ogUrl = document.querySelector('meta[property="og:url"]');
+  if (!ogUrl) {
+    ogUrl = document.createElement("meta");
+    ogUrl.setAttribute("property", "og:url");
+    document.head.appendChild(ogUrl);
+  }
+  ogUrl.setAttribute("content", canonicalUrl);
+}
+
 function renderProjectHeader(project) {
   const title = document.getElementById("project-title");
   const subtitle = document.getElementById("project-subtitle");
@@ -133,6 +155,7 @@ function renderSimilar(project) {
 
 function initProjectPage() {
   const project = getProjectFromQuery();
+  syncProjectSeo(project);
   renderProjectHeader(project);
   renderProjectGallery(project);
   renderLayouts(project);
