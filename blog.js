@@ -1,5 +1,13 @@
 const BLOG_PAGE_SIZE = 6;
 
+function getBlogElementByIds(ids) {
+  for (const id of ids) {
+    const node = document.getElementById(id);
+    if (node) return node;
+  }
+  return null;
+}
+
 function getBlogState() {
   const params = new URLSearchParams(window.location.search);
   return {
@@ -28,7 +36,7 @@ function sortedPostsByDate(posts) {
 }
 
 function renderCategoryFilters(currentCategory) {
-  const root = document.getElementById("blog-category-filters");
+  const root = getBlogElementByIds(["blog-category-filters", "blog-categories"]);
   if (!root) return;
   const categories = [...new Set(window.REALTY_BLOG_POSTS.map((post) => post.category))];
   const all = [{ key: "", label: "Все" }, ...categories.map((c) => ({ key: c, label: c }))];
@@ -49,7 +57,7 @@ function filterPosts(category) {
 }
 
 function renderPosts(posts, page) {
-  const root = document.getElementById("blog-results");
+  const root = getBlogElementByIds(["blog-results", "blog-grid"]);
   if (!root) return;
   const visible = posts.slice(0, page * BLOG_PAGE_SIZE);
   root.innerHTML = visible
