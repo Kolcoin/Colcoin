@@ -61,6 +61,33 @@ function annuityPayment(loan, annualRate, years) {
   return (loan * monthlyRate) / (1 - (1 + monthlyRate) ** -months);
 }
 
+function renderMortgageProgramCards() {
+  const root = document.getElementById("mortgage-program-cards");
+  if (!root || !Array.isArray(window.REALTY_MORTGAGE_PROGRAMS)) return;
+  const visuals = getMortgageVisuals();
+  const visualByProgram = {
+    family: visuals.loan,
+    it: visuals.monthly,
+    base: visuals.overpayment,
+    subsidized: visuals.rate
+  };
+
+  root.innerHTML = window.REALTY_MORTGAGE_PROGRAMS.map((program) => {
+    const image = visualByProgram[program.id] || visuals.loan;
+    return `
+      <article class="mortgage-card mortgage-program-card">
+        <img class="mortgage-program-image" src="${image}" alt="${program.title}" loading="lazy" />
+        <h3>${program.title}</h3>
+        <p>${program.note || "Условия зависят от выбранного банка и параметров заявки."}</p>
+        <div class="mortgage-program-meta">
+          <span class="project-meta">Взнос от ${program.minDownPayment}% · до ${program.termYears} лет</span>
+          <strong class="mortgage-rate">${program.rate.toFixed(2)}%</strong>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
 function recalcMortgage() {
   const propertyPriceInput = document.getElementById("mortgage-price");
   const downPaymentInput = document.getElementById("mortgage-down-payment");
@@ -175,6 +202,8 @@ function initMortgagePage() {
       )
       .join("");
   }
+
+  renderMortgageProgramCards();
 
   const faqRoot = document.getElementById("mortgage-faq");
   if (faqRoot) {

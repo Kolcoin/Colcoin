@@ -844,7 +844,7 @@ h1 {
 .districts-page-grid {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .districts-page-card {
@@ -878,6 +878,67 @@ h1 {
   padding: 5px 9px;
   font-size: 0.82rem;
   font-weight: 600;
+}
+
+.district-accordion {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.district-accordion-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.district-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.district-toggle-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #3f49b6;
+  background: #eef1ff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+.district-accordion[open] .district-toggle-label {
+  background: #e8ecff;
+  color: #26379a;
+}
+
+.district-accordion-content {
+  border-top: 1px solid var(--border);
+  padding: 12px 14px 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.district-project-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.district-project-card {
+  min-height: 100%;
+}
+
+.district-project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
 }
 
 .developers-toolbar {
@@ -936,6 +997,26 @@ h1 {
 .mortgage-rate {
   color: #2449d8;
   font-weight: 700;
+}
+
+.mortgage-program-card {
+  min-height: 100%;
+  align-content: start;
+}
+
+.mortgage-program-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.mortgage-program-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: baseline;
 }
 
 .mortgage-calculator {
@@ -1562,6 +1643,10 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .district-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .mortgage-grid,
   .mortgage-calculator {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1666,6 +1751,10 @@ h1 {
   .mortgage-grid,
   .mortgage-calculator,
   .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .district-project-grid {
     grid-template-columns: 1fr;
   }
 }
