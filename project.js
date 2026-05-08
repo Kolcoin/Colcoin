@@ -5,6 +5,15 @@ function getProjectKeyFromQuery() {
 
 function redirectToExpandedProjectPage(projectKey) {
   const normalized = (projectKey || "").toLowerCase();
+  if (normalized === "enigmiya") {
+    const targetUrl = new URL("/starts/enigmiya.html", window.location.origin);
+    if (window.location.href !== targetUrl.toString()) {
+      window.location.replace(targetUrl.toString());
+      return true;
+    }
+    return false;
+  }
+
   // Full commercial pages for nmarket projects live in /catalog/projects/.
   if (!/^nmarket-\d+$/.test(normalized)) return false;
 
