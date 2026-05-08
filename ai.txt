@@ -1,0 +1,8 @@
+AI discovery resources
+Canonical: https://xn--80adkogkeibavehoi.xn--p1ai/
+LLMs: https://xn--80adkogkeibavehoi.xn--p1ai/llms.txt
+Sitemaps:
+- https://xn--80adkogkeibavehoi.xn--p1ai/sitemap.xml
+- https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-catalog-projects.xml
+- https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-priority.xml
+- https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-safe-import-original-images.xml

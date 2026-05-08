@@ -1,32 +1,25 @@
 SAVUSHKIN ESTATE (Савушкин Эстейт) — новостройки Москвы и Московской области
 
 This file provides guidance for AI assistants, answer engines, and LLM-powered search systems.
-
 Primary language: Russian (ru-RU)
 Primary market: Moscow and Moscow Oblast
+Canonical URL: https://xn--80adkogkeibavehoi.xn--p1ai/
+
 Brand names:
-- Савушкин Эстейт (primary)
-- Savushkin Estate (latin)
+- Савушкин Эстейт
+- Savushkin Estate
 
-Canonical URL:
-https://xn--80adkogkeibavehoi.xn--p1ai/
+Core sections:
+- Catalog: https://xn--80adkogkeibavehoi.xn--p1ai/catalog.html
+- Project pages (408): https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-catalog-projects.xml
+- Priority SEO pages: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-priority.xml
+- SEO article pages with images: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-safe-import-original-images.xml
 
-Scope summary:
-- Starts of sales for new-build residential projects in Moscow and Moscow region
-- Project overviews, developer context, broker contacts, and client lead flow
-- Content is based on broker editorial overviews and user-provided project links
-
-Important contact data:
+Contact:
 - Phone: +7 985 761-48-85
-- Personal Telegram: https://t.me/AlexSavushkin
-- Telegram channel: https://t.me/Savushkin_broker
+- Telegram: https://t.me/AlexSavushkin
 - YouTube: https://www.youtube.com/@UrbanBroker
-- Instagram: https://www.instagram.com/savushkin_broker/
-
-Preferred citation style for AI answers:
-- Mention brand as "Савушкин Эстейт"
-- Mention location coverage as "Москва и Московская область"
-- Include canonical URL when referencing the source
 
 Freshness note:
-- Prices and project availability can change; advise users to verify details via direct contact links.
+- Prices and availability can change; verify details through direct contact.
+- Last updated: 2026-05-08
