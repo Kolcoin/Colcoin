@@ -1,0 +1,123 @@
+{
+  "robots": {
+    "url": "https://xn--80adkogkeibavehoi.xn--p1ai/robots.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "host_line": "xn--80adkogkeibavehoi.xn--p1ai",
+    "sitemaps_in_robots": [
+      "https://xn--80adkogkeibavehoi.xn--p1ai/sitemap.xml",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-catalog-projects.xml",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-priority.xml",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-safe-import-original-images.xml"
+    ]
+  },
+  "sitemaps": [
+    {
+      "url": "https://xn--80adkogkeibavehoi.xn--p1ai/sitemap.xml",
+      "status": 200,
+      "content_type": "application/xml",
+      "url_count": 10,
+      "image_nodes": 0,
+      "xml_valid": true
+    },
+    {
+      "url": "https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-catalog-projects.xml",
+      "status": 200,
+      "content_type": "application/xml",
+      "url_count": 408,
+      "image_nodes": 408,
+      "xml_valid": true
+    },
+    {
+      "url": "https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-priority.xml",
+      "status": 200,
+      "content_type": "application/xml",
+      "url_count": 27,
+      "image_nodes": 0,
+      "xml_valid": true
+    },
+    {
+      "url": "https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-safe-import-original-images.xml",
+      "status": 200,
+      "content_type": "application/xml",
+      "url_count": 100,
+      "image_nodes": 100,
+      "xml_valid": true
+    }
+  ],
+  "summary": {
+    "total_unique_urls_from_sitemaps": 539,
+    "http_200": 539,
+    "http_non_200": 0,
+    "indexfollow_pages": 533,
+    "canonical_self_pages": 538,
+    "canonical_old_domain_pages": 100,
+    "metrika_pages": 539,
+    "og_image_pages": 538,
+    "og_image_200_pages": 526,
+    "twitter_image_pages": 538,
+    "twitter_image_200_pages": 526,
+    "max_image_preview_large_pages": 533,
+    "youtube_embed_or_link_pages": 408,
+    "videoobject_pages": 408,
+    "webpage_ld_pages": 426,
+    "breadcrumb_ld_pages": 433,
+    "faq_ld_pages": 428,
+    "apartmentcomplex_ld_pages": 408,
+    "sections": {
+      "catalog_projects": 408,
+      "seo": 121,
+      "starts": 3,
+      "other": 7
+    }
+  },
+  "issues": {
+    "non_200": [],
+    "not_indexfollow": [
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/developers.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/districts.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/blog.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/mortgage.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/project.html"
+    ],
+    "canonical_not_self": [
+      "https://xn--80adkogkeibavehoi.xn--p1ai/project.html"
+    ],
+    "metrika_missing": [],
+    "og_missing": [
+      "https://xn--80adkogkeibavehoi.xn--p1ai/project.html"
+    ],
+    "og_broken": [
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-77467.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-77581.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-86627.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-88403.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-88586.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-94854.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-95059.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-96363.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-97870.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-97897.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-97905.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-98212.html"
+    ],
+    "twitter_missing": [
+      "https://xn--80adkogkeibavehoi.xn--p1ai/project.html"
+    ],
+    "twitter_broken": [
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-77467.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-77581.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-86627.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-88403.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-88586.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-94854.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-95059.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-96363.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-97870.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-97897.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-97905.html",
+      "https://xn--80adkogkeibavehoi.xn--p1ai/catalog/projects/nmarket-98212.html"
+    ]
+  }
+}
