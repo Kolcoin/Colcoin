@@ -966,15 +966,47 @@ h1 {
   color: var(--text-muted);
 }
 
+#mortgage-result-cards,
+#mortgage-result-cards.article-kpi-grid {
+  display: block;
+}
+
 .mortgage-result-grid {
   display: grid;
+  align-items: stretch;
   gap: 12px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.mortgage-result-grid .project-card {
-  min-height: auto;
+.mortgage-result-card {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+}
+
+.mortgage-result-media {
+  margin: 0;
+}
+
+.mortgage-result-image {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.mortgage-result-card h3 {
+  margin: 0;
+  min-height: 2.8em;
+  line-height: 1.4;
+}
+
+.mortgage-result-card .project-price {
+  margin-top: auto;
+  font-weight: 700;
 }
 
 .mortgage-metric-illustration {
