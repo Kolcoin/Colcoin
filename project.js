@@ -1,6 +1,30 @@
-function getProjectFromQuery() {
+function getProjectKeyFromQuery() {
   const params = new URLSearchParams(window.location.search);
-  const slug = params.get("project") || params.get("id") || "first-donskoy";
+  return params.get("project") || params.get("id") || "first-donskoy";
+}
+
+function redirectToExpandedProjectPage(projectKey) {
+  const normalized = (projectKey || "").toLowerCase();
+  // Full commercial pages for nmarket projects live in /catalog/projects/.
+  if (!/^nmarket-\d+$/.test(normalized)) return false;
+
+  const targetUrl = new URL(`/catalog/projects/${normalized}.html`, window.location.origin);
+  const passthrough = new URLSearchParams(window.location.search);
+  passthrough.delete("project");
+  passthrough.delete("id");
+  if (passthrough.toString()) {
+    targetUrl.search = passthrough.toString();
+  }
+
+  if (window.location.href !== targetUrl.toString()) {
+    window.location.replace(targetUrl.toString());
+    return true;
+  }
+  return false;
+}
+
+function getProjectFromQuery(projectKey) {
+  const slug = projectKey || "first-donskoy";
   const match = window.REALTY_PROJECTS.find((project) => project.slug === slug || project.id === slug);
   return match || window.REALTY_PROJECTS[0];
 }
@@ -154,7 +178,10 @@ function renderSimilar(project) {
 }
 
 function initProjectPage() {
-  const project = getProjectFromQuery();
+  const projectKey = getProjectKeyFromQuery();
+  if (redirectToExpandedProjectPage(projectKey)) return;
+
+  const project = getProjectFromQuery(projectKey);
   syncProjectSeo(project);
   renderProjectHeader(project);
   renderProjectGallery(project);
