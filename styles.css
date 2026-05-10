@@ -206,6 +206,15 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.hero-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 26px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
 .card-label {
   display: inline-block;
   margin-bottom: 26px;
@@ -232,7 +241,8 @@ h3 {
 
 .service-grid,
 .advantage-grid,
-.pricing-grid {
+.pricing-grid,
+.faq-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
@@ -241,6 +251,7 @@ h3 {
 .service-grid article,
 .advantage-grid article,
 .price-card,
+.faq-grid article,
 .document-list,
 .trust {
   background: var(--white);
@@ -287,6 +298,18 @@ h3 {
 }
 
 .advantage-grid p {
+  color: var(--gray);
+}
+
+.faq-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.faq-grid article {
+  padding: 30px;
+}
+
+.faq-grid p {
   color: var(--gray);
 }
 
@@ -387,6 +410,7 @@ address {
   .service-grid,
   .advantage-grid,
   .pricing-grid,
+  .faq-grid,
   .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -414,6 +438,7 @@ address {
   .service-grid,
   .advantage-grid,
   .pricing-grid,
+  .faq-grid,
   .steps {
     grid-template-columns: 1fr;
   }
