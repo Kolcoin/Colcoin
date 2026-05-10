@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://urban-ritual.ru/sitemap.xml
+Sitemap: https://urban-ritual.ru/sitemap.txt
