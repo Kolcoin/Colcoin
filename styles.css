@@ -106,6 +106,25 @@ a {
     var(--navy);
 }
 
+.page-hero {
+  min-height: auto;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: #cbd5df;
+  font-size: 14px;
+}
+
+.breadcrumbs a {
+  color: var(--gold);
+}
+
 .eyebrow {
   margin: 0 0 14px;
   color: var(--gold);
@@ -197,6 +216,25 @@ h3 {
   color: #cbd5df;
 }
 
+.hero-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 24px 0 0;
+  color: #d8e0e8;
+  list-style: none;
+}
+
+.hero-list li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
 .hero-card {
   padding: 36px;
   color: #dce4ec;
@@ -233,6 +271,36 @@ h3 {
 
 .section-heading p:not(.eyebrow) {
   color: var(--gray);
+}
+
+.content-grid,
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.content-card,
+.related-card {
+  padding: 30px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(13, 27, 42, 0.06);
+}
+
+.content-card p,
+.related-card p {
+  color: var(--gray);
+}
+
+.related-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(196, 161, 90, 0.7);
 }
 
 .muted {
@@ -407,6 +475,8 @@ address {
     grid-template-columns: 1fr;
   }
 
+  .content-grid,
+  .related-grid,
   .service-grid,
   .advantage-grid,
   .pricing-grid,
@@ -438,6 +508,8 @@ address {
   .service-grid,
   .advantage-grid,
   .pricing-grid,
+  .content-grid,
+  .related-grid,
   .faq-grid,
   .steps {
     grid-template-columns: 1fr;

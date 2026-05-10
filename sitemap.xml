@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://urban-ritual.ru/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://urban-ritual.ru/himki/ritualnye-uslugi/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://urban-ritual.ru/himki/organizaciya-pohoron/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://urban-ritual.ru/himki/vyezd-ritualnogo-agenta/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://urban-ritual.ru/himki/ritualnyy-agent-na-dom/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://urban-ritual.ru/himki/perevozka-umershih/</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
