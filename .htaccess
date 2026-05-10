@@ -1,0 +1,4 @@
+Options -Indexes
+AddDefaultCharset UTF-8
+AddType application/xml .xml
+AddType image/png .png
