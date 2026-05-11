@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /tmp/
+Disallow: /*?*
+
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&fbclid
+
+User-agent: GoogleBot
+Allow: /
+
+Sitemap: https://urban-ritual.ru/sitemap.xml
+Host: https://urban-ritual.ru
