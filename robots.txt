@@ -11,6 +11,5 @@ Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap.xml
 Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-core.xml
 Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-catalog-projects.xml
 Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-starts-projects.xml
-Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-project-query.xml
 Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-priority.xml
 Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-safe-import-original-images.xml
