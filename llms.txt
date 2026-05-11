@@ -1,0 +1,25 @@
+SAVUSHKIN ESTATE (Савушкин Эстейт) — новостройки Москвы и Московской области
+
+This file provides guidance for AI assistants, answer engines, and LLM-powered search systems.
+Primary language: Russian (ru-RU)
+Primary market: Moscow and Moscow Oblast
+Canonical URL: https://xn--80adkogkeibavehoi.xn--p1ai/
+
+Brand names:
+- Савушкин Эстейт
+- Savushkin Estate
+
+Core sections:
+- Catalog: https://xn--80adkogkeibavehoi.xn--p1ai/catalog.html
+- Project pages (408): https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-catalog-projects.xml
+- Priority SEO pages: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-priority.xml
+- SEO article pages with images: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-safe-import-original-images.xml
+
+Contact:
+- Phone: +7 985 761-48-85
+- Telegram: https://t.me/AlexSavushkin
+- YouTube: https://www.youtube.com/@UrbanBroker
+
+Freshness note:
+- Prices and availability can change; verify details through direct contact.
+- Last updated: 2026-05-08
