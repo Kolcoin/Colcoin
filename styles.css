@@ -332,14 +332,35 @@ a:hover { text-decoration: underline; }
 }
 
 /* City page MAP block */
+.city-map-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
 .city-map {
   border-radius: var(--radius); overflow: hidden;
   background: var(--bg-alt);
   border: 1px solid var(--line);
-  min-height: 380px;
+  min-height: 420px;
 }
-.city-map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; }
-.map-note { text-align: center; color: var(--ink-soft); margin: 18px auto 0; max-width: 720px; font-size: 14.5px; }
+.city-map iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; }
+.city-map__side {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 26px;
+  display: flex; flex-direction: column;
+}
+.city-map__side h3 { font: 700 18px/1.25 var(--serif); margin: 0 0 8px; }
+.city-map__addr { font-size: 15px; margin: 0 0 16px; color: var(--ink-soft); }
+.city-map__addr b { color: var(--ink); }
+.city-map__side .plain { margin-bottom: 18px; font-size: 14px; }
+.city-map__side .btn { margin-bottom: 8px; }
+.city-map__side .btn:last-child { margin-bottom: 0; }
+.map-note { text-align: center; color: var(--ink-soft); margin: 20px auto 0; max-width: 760px; font-size: 14.5px; }
+
+@media (max-width: 980px) {
+  .city-map-grid { grid-template-columns: 1fr; }
+}
 
 /* Hero address card on district/city pages */
 .hero__card-addr { font-size: 14px; color: var(--ink-soft); margin: 0 0 14px; }
@@ -440,6 +461,20 @@ a:hover { text-decoration: underline; }
   background: var(--white); border: 1px solid var(--line);
   padding: 14px 16px; border-radius: var(--radius-sm);
   font-size: 14.5px;
+}
+
+/* WHY US (premium) */
+.why__card {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 24px;
+}
+.why__card h3 { font: 700 17px/1.3 var(--serif); margin: 0 0 8px; }
+.why__card p { font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+.why__num {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: rgba(110,42,42,.08);
+  display: grid; place-items: center;
+  font-size: 22px; margin-bottom: 14px;
 }
 
 /* ABOUT (SEO block) */

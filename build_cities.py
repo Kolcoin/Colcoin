@@ -336,19 +336,33 @@ PAGE_TMPL = r"""<!doctype html>
   <section id="map" class="section section--alt">
     <div class="container">
       <header class="section__head">
-        <h2>Где мы&nbsp;находимся {namePrep}</h2>
-        <p>{officeAddress}</p>
+        <h2>📍 Наш магазин-салон {namePrep} — у&nbsp;{morgueLow}</h2>
+        <p>Точный адрес отмечен на&nbsp;карте. Можно приехать или вызвать агента к&nbsp;себе.</p>
       </header>
-      <div class="city-map" aria-label="Карта расположения салона у морга">
-        <iframe
-          title="Городской Ритуал — {name}, карта"
-          src="https://yandex.ru/map-widget/v1/?ll={lng}%2C{lat}&z=15&pt={lng},{lat},pm2rdm"
-          allowfullscreen loading="lazy"></iframe>
+      <div class="city-map-grid">
+        <div class="city-map" aria-label="Карта расположения магазина-салона у морга">
+          <iframe
+            title="Городской Ритуал — {name}, карта"
+            src="https://yandex.ru/map-widget/v1/?ll={morgueLng}%2C{morgueLat}&z=16&pt={morgueLng},{morgueLat},pm2rdm"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+        <aside class="city-map__side">
+          <h3>Магазин-салон {namePrep}</h3>
+          <p class="city-map__addr"><b>{officeAddress}</b></p>
+          <ul class="plain">
+            <li><b>Морг:</b> {morgue}</li>
+            <li><b>Адрес морга:</b> {morgueAddress}</li>
+            <li><b>Часы работы:</b> 24/7 без выходных</li>
+            <li><b>Услуги в&nbsp;салоне:</b> подбор гроба, венков, лент, оформление документов</li>
+          </ul>
+          <a class="btn btn--primary btn--block" href="tel:{phone_tel}">Вызвать агента {namePrep}</a>
+          <a class="btn btn--ghost btn--block" href="https://yandex.ru/maps/?ll={morgueLng}%2C{morgueLat}&z=16&pt={morgueLng},{morgueLat},pm2rdm&rtext=~{morgueLat},{morgueLng}&rtt=auto" target="_blank" rel="noopener">Построить маршрут</a>
+        </aside>
       </div>
       <p class="map-note">
-        <b>Точка-салон {namePrep}</b> расположена в&nbsp;шаговой доступности
-        от&nbsp;{morgueLow}. Это позволяет агенту максимально оперативно решать вопросы
-        выдачи тела, согласования бригады и&nbsp;перевозки.
+        Магазин-салон находится в&nbsp;шаговой доступности от&nbsp;{morgueLow}. Это позволяет
+        оперативно решать вопросы выдачи тела, согласования бригады и&nbsp;перевозки —
+        без поездок из&nbsp;Москвы или соседних городов.
       </p>
     </div>
   </section>
@@ -512,6 +526,7 @@ def build():
             namePrep=c["namePrep"],
             nameGen=c["nameGen"],
             lat=c["lat"], lng=c["lng"],
+            morgueLat=c["morgueLat"], morgueLng=c["morgueLng"],
             minutes=c["minutes"],
             officeAddress=c["officeAddress"],
             morgue=c["morgue"],
