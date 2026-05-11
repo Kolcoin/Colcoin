@@ -4,34 +4,100 @@
 
   <url>
     <loc>https://urban-ritual.ru/</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
     <image:image>
       <image:loc>https://urban-ritual.ru/assets/products/coffin_kosichka_6_oreh.jpg</image:loc>
-      <image:title>Ритуальный гроб «Косичка» 6-гранный орех в Химках</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://urban-ritual.ru/assets/products/coffin_ekol_4_oreh.jpeg</image:loc>
-      <image:title>Ритуальный гроб «Эколь» 4-гранный орех в Химках</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://urban-ritual.ru/assets/products/wreath_elite_30.jpg</image:loc>
-      <image:title>Ритуальный венок «Элит №30» — Ратин</image:title>
+      <image:title>Ритуальный гроб «Косичка» 6-гранный орех</image:title>
     </image:image>
   </url>
 
-  <url><loc>https://urban-ritual.ru/rayon/tsentr/</loc>            <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/levoberezhny/</loc>      <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/shodnya/</loc>           <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/podrezkovo/</loc>        <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/novogorsk/</loc>         <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/planernaya/</loc>        <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/starbeevo/</loc>         <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/klyazma-starbeevo/</loc> <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/firsanovka/</loc>        <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/novopodrezkovo/</loc>    <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/ikea-mega/</loc>         <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://urban-ritual.ru/rayon/kurkino/</loc>           <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Микрорайоны Химок -->
+  <url><loc>https://urban-ritual.ru/rayon/tsentr/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/levoberezhny/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/shodnya/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/podrezkovo/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/novogorsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/planernaya/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/starbeevo/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/klyazma-starbeevo/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/firsanovka/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/novopodrezkovo/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/ikea-mega/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/kurkino/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Города Подмосковья -->
+  <url><loc>https://urban-ritual.ru/city/himki/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/balashiha/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/podolsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/korolev/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/mytishchi/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/krasnogorsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/odincovo/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/shchyolkovo/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/lyubercy/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/ramenskoe/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/domodedovo/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/serpuhov/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/kolomna/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/elektrostal/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/noginsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/orekhovo-zuevo/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/sergiev-posad/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/klin/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/dmitrov/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/dolgoprudnyj/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/lobnya/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/reutov/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/zhukovskij/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/pushkino/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/ivanteevka/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/fryazino/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/chekhov/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/stupino/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/kashira/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/egorevsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/shatura/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/voskresensk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/luhovicy/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/ozery/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/zarajsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/bronnicy/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/vidnoe/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/dzerzhinskij/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/kotelniki/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/lytkarino/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/naro-fominsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/mozhajsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/volokolamsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/ruza/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/istra/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/dedovsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/krasnoarmejsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/krasnoznamensk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/zvenigorod/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/golicino/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/aprelevka/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/vereya/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/kubinka/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/pavlovskij-posad/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/dubna/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/taldom/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/hotkovo/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/krasnozavodsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/peresvet/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/vysokovsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/yahroma/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/drezna/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/kurovskoe/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/likino-dulyovo/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/elektrogorsk/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/elektrougli/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/staraya-kupavna/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/chernogolovka/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/losino-petrovskij/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/beloozyorskij/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/protvino/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/pushchino/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/city/roshal/</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 </urlset>

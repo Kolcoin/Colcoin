@@ -226,12 +226,23 @@
 
     <nav class="nav" aria-label="Основная навигация">
       <a href="#services">Услуги</a>
-      <a href="#catalog">Каталог</a>
       <a href="#prices">Цены</a>
+      <a href="#cities">Города</a>
       <a href="#agent">Выезд агента</a>
       <a href="#faq">Вопросы</a>
-      <a href="#contacts">Контакты</a>
     </nav>
+
+    <div class="city-switcher" data-city-switcher>
+      <button type="button" class="city-switcher__btn" aria-haspopup="listbox" aria-expanded="false">
+        <span class="city-switcher__icon" aria-hidden="true">📍</span>
+        <span class="city-switcher__label">Химки</span>
+        <span class="city-switcher__chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="city-switcher__pop" role="listbox" hidden>
+        <input type="search" class="city-switcher__input" placeholder="Поиск города…" aria-label="Поиск города">
+        <ul class="city-switcher__list" id="city-switcher-list"></ul>
+      </div>
+    </div>
 
     <a class="phone-link" href="tel:+74951201515">
       <span class="phone-link__dot" aria-hidden="true"></span>
@@ -604,6 +615,23 @@
     </div>
   </section>
 
+  <!-- CITIES MO -->
+  <section id="cities" class="section">
+    <div class="container">
+      <header class="section__head">
+        <h2>Работаем во всех городах Московской области</h2>
+        <p>73 точки-салона у моргов городов Подмосковья. В каждом городе — свой ритуальный агент с выездом за 30–60 минут.</p>
+      </header>
+      <div class="cities-filter">
+        <input type="search" class="cities-filter__input" placeholder="Найти ваш город…" aria-label="Поиск города" id="cities-filter-input">
+      </div>
+      <ul class="cities-grid" id="cities-grid">
+        <!-- заполняется JS из data-cities -->
+      </ul>
+      <p class="cities-note">В каждом городе мы базируемся в шаговой доступности от центрального морга. Это позволяет минимизировать время выезда и быстро согласовать выдачу тела.</p>
+    </div>
+  </section>
+
   <!-- CONTACTS -->
   <section id="contacts" class="section section--alt">
     <div class="container contacts">
@@ -614,7 +642,7 @@
         </p>
         <p>Круглосуточно. Звонок и&nbsp;выезд агента — бесплатно.</p>
         <ul class="contacts__list">
-          <li><b>Адрес:</b> г.&nbsp;Химки, ул.&nbsp;Московская, 21 (1&nbsp;этаж)</li>
+          <li><b>Адрес (Химки):</b> г.&nbsp;Химки, ул.&nbsp;Молодёжная, 9 (у&nbsp;морга ЦКБ Химок)</li>
           <li><b>Юр. лицо:</b> ООО «Урбан Брокер»</li>
           <li><b>WhatsApp / Telegram:</b> <a href="https://wa.me/74951201515">написать</a></li>
           <li><b>E-mail:</b> <a href="mailto:info@gorodskoy-ritual.ru">info@gorodskoy-ritual.ru</a></li>
@@ -672,6 +700,7 @@
   </div>
 </footer>
 
+<script src="cities-data.js" defer></script>
 <script src="script.js" defer></script>
 </body>
 </html>

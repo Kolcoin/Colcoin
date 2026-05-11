@@ -49,9 +49,9 @@ a:hover { text-decoration: underline; }
 }
 .topbar__row {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
   padding: 14px 0;
 }
 .logo { display: flex; align-items: center; gap: 12px; color: var(--ink); }
@@ -254,6 +254,96 @@ a:hover { text-decoration: underline; }
 .agent__zones-hint {
   font-size: 13px; color: var(--muted); margin: -6px 0 12px;
 }
+
+/* CITY SWITCHER (header dropdown) */
+.city-switcher { position: relative; }
+.city-switcher__btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--white); border: 1px solid var(--line);
+  padding: 9px 14px; border-radius: 999px;
+  cursor: pointer; font: 600 14px/1 var(--sans); color: var(--ink);
+  transition: border-color .15s;
+}
+.city-switcher__btn:hover { border-color: var(--accent); }
+.city-switcher__icon { font-size: 14px; }
+.city-switcher__chev { color: var(--muted); font-size: 11px; }
+.city-switcher__pop {
+  position: absolute; right: 0; top: calc(100% + 8px);
+  width: 320px; max-width: 92vw;
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 12px; z-index: 100;
+}
+.city-switcher__input {
+  width: 100%; padding: 10px 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--line); background: var(--bg);
+  font: 14px var(--sans); margin-bottom: 8px;
+}
+.city-switcher__input:focus { outline: 2px solid rgba(110,42,42,.25); border-color: var(--accent); }
+.city-switcher__list {
+  list-style: none; padding: 0; margin: 0;
+  max-height: 320px; overflow-y: auto;
+  display: grid; gap: 2px;
+}
+.city-switcher__list li a {
+  display: block; padding: 8px 12px; border-radius: var(--radius-sm);
+  color: var(--ink); font-size: 14px;
+}
+.city-switcher__list li a:hover {
+  background: var(--bg-alt); text-decoration: none;
+}
+.city-switcher__list li a.active {
+  background: var(--accent); color: #fff;
+}
+.city-switcher__list .empty { padding: 12px; color: var(--muted); font-size: 14px; }
+
+/* CITIES GRID on main page */
+.cities-filter { max-width: 520px; margin: 0 auto 20px; }
+.cities-filter__input {
+  width: 100%; padding: 12px 16px; border-radius: var(--radius-sm);
+  border: 1px solid var(--line); background: var(--white);
+  font: 15px var(--sans);
+}
+.cities-filter__input:focus { outline: 2px solid rgba(110,42,42,.25); border-color: var(--accent); }
+.cities-grid {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+.cities-grid li a {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 14px 16px; border-radius: var(--radius-sm);
+  background: var(--white); border: 1px solid var(--line);
+  color: var(--ink); transition: border-color .15s, transform .05s;
+}
+.cities-grid li a:hover {
+  border-color: var(--accent); text-decoration: none; transform: translateY(-1px);
+}
+.cgrid__name { font-weight: 600; font-size: 14.5px; }
+.cgrid__min { font-size: 12px; color: var(--muted); }
+.cities-note { text-align: center; color: var(--muted); margin: 20px 0 0; font-size: 14px; }
+
+@media (max-width: 980px) {
+  .cities-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .cities-grid { grid-template-columns: repeat(2, 1fr); }
+  .city-switcher__btn { padding: 8px 12px; font-size: 13px; }
+  .city-switcher__pop { right: -50px; width: 280px; }
+}
+
+/* City page MAP block */
+.city-map {
+  border-radius: var(--radius); overflow: hidden;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  min-height: 380px;
+}
+.city-map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; }
+.map-note { text-align: center; color: var(--ink-soft); margin: 18px auto 0; max-width: 720px; font-size: 14.5px; }
+
+/* Hero address card on district/city pages */
+.hero__card-addr { font-size: 14px; color: var(--ink-soft); margin: 0 0 14px; }
+.hero__card-addr b { color: var(--ink); }
 
 /* Breadcrumbs */
 .breadcrumbs {
@@ -484,8 +574,8 @@ a:hover { text-decoration: underline; }
 /* RESPONSIVE */
 @media (max-width: 980px) {
   .topbar__row {
-    grid-template-columns: 1fr auto;
-    gap: 12px;
+    grid-template-columns: 1fr auto auto;
+    gap: 8px;
   }
   .nav { display: none; }
   .hero__grid, .agent, .docs, .contacts, .footer__row {
