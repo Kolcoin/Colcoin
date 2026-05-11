@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   <url>
     <loc>https://urban-ritual.ru/</loc>
     <lastmod>2026-05-11</lastmod>
@@ -9,17 +10,28 @@
     <image:image>
       <image:loc>https://urban-ritual.ru/assets/products/coffin_kosichka_6_oreh.jpg</image:loc>
       <image:title>Ритуальный гроб «Косичка» 6-гранный орех в Химках</image:title>
-      <image:caption>Гроб ФКО-6, модель «Косичка», цвет орех, серия «Классика»</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://urban-ritual.ru/assets/products/coffin_ekol_4_oreh.jpeg</image:loc>
       <image:title>Ритуальный гроб «Эколь» 4-гранный орех в Химках</image:title>
-      <image:caption>Гроб Ф-5, модель «Эколь», цвет орех, лакированный</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://urban-ritual.ru/assets/products/wreath_elite_30.jpg</image:loc>
       <image:title>Ритуальный венок «Элит №30» — Ратин</image:title>
-      <image:caption>Премиальный венок производства «Ратин», серия «Элит»</image:caption>
     </image:image>
   </url>
+
+  <url><loc>https://urban-ritual.ru/rayon/tsentr/</loc>            <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/levoberezhny/</loc>      <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/shodnya/</loc>           <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/podrezkovo/</loc>        <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/novogorsk/</loc>         <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/planernaya/</loc>        <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/starbeevo/</loc>         <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/klyazma-starbeevo/</loc> <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/firsanovka/</loc>        <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/novopodrezkovo/</loc>    <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/ikea-mega/</loc>         <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://urban-ritual.ru/rayon/kurkino/</loc>           <lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
 </urlset>
