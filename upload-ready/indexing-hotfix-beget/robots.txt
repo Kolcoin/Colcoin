@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /starts/
+Allow: /assets/
+Allow: /llms.txt
+Allow: /ai.txt
+
+Host: xn--80adkogkeibavehoi.xn--p1ai
+
+Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap.xml
+Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-core.xml
+Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-catalog-projects.xml
+Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-starts-projects.xml
+Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-priority.xml
+Sitemap: https://xn--80adkogkeibavehoi.xn--p1ai/sitemap-safe-import-original-images.xml
