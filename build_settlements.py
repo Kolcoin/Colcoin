@@ -85,7 +85,8 @@ PAGE_TMPL = """<!doctype html>
     <nav class="nav">
       <a href="../../#services">Услуги</a>
       <a href="../../#prices">Цены</a>
-      <a href="../../#cities">Города</a>
+      <a href="../../#moscow">Москва</a>
+      <a href="../../#cities">Города МО</a>
       <a href="../../#cemeteries">Кладбища</a>
       <a href="../../#faq">Вопросы</a>
     </nav>

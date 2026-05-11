@@ -153,11 +153,12 @@ PAGE_TMPL = r"""<!doctype html>
       </span>
     </a>
     <nav class="nav" aria-label="Основная навигация">
-      <a href="#services">Услуги</a>
-      <a href="#prices">Цены</a>
-      <a href="#agent">Выезд агента</a>
-      <a href="#map">Адрес</a>
-      <a href="#faq">Вопросы</a>
+      <a href="../../#services">Услуги</a>
+      <a href="../../#prices">Цены</a>
+      <a href="../../#moscow">Москва</a>
+      <a href="../../#cities">Города МО</a>
+      <a href="../../#cemeteries">Кладбища</a>
+      <a href="../../#faq">Вопросы</a>
     </nav>
     <div class="city-switcher" data-city-switcher>
       <button type="button" class="city-switcher__btn" aria-haspopup="listbox" aria-expanded="false">

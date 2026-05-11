@@ -1818,15 +1818,6 @@
     "feat": "Село Авсюнино Орехово-Зуевского округа."
   },
   {
-    "slug": "belozyorsky-vosk",
-    "name": "Белоозёрский",
-    "parent": "voskresensk",
-    "minutes": 85,
-    "lat": 55.466,
-    "lng": 38.451,
-    "feat": "Городской посёлок Белоозёрский в Воскресенском округе."
-  },
-  {
     "slug": "yegoryevskoe-selo",
     "name": "Денежниково",
     "parent": "egorevsk",
@@ -3006,15 +2997,6 @@
     "feat": "Деревня Костровo Истринского округа."
   },
   {
-    "slug": "buzhanino",
-    "name": "Бужаниново",
-    "parent": "sergiev-posad",
-    "minutes": 110,
-    "lat": 56.357,
-    "lng": 38.299,
-    "feat": "Село Бужаниново Сергиево-Посадского округа."
-  },
-  {
     "slug": "kosherovo",
     "name": "Кошерово",
     "parent": "ramenskoe",
@@ -3427,15 +3409,6 @@
     "lat": 55.155,
     "lng": 37.467,
     "feat": "Историческое название района Лопасня в Чехове."
-  },
-  {
-    "slug": "konobeevo",
-    "name": "Конобеево",
-    "parent": "voskresensk",
-    "minutes": 85,
-    "lat": 55.353,
-    "lng": 38.612,
-    "feat": "Посёлок Конобеево в Воскресенском округе."
   },
   {
     "slug": "semenovskoye",

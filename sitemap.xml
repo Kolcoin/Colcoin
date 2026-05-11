@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url><loc>https://urban-ritual.ru/</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-
-  <!-- Микрорайоны Химок -->
+  <url><loc>https://urban-ritual.ru/</loc><priority>1.0</priority></url>
   <url><loc>https://urban-ritual.ru/rayon/tsentr/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/rayon/levoberezhny/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/rayon/shodnya/</loc><priority>0.7</priority></url>
@@ -16,8 +13,6 @@
   <url><loc>https://urban-ritual.ru/rayon/novopodrezkovo/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/rayon/ikea-mega/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/rayon/kurkino/</loc><priority>0.7</priority></url>
-
-  <!-- Города МО -->
   <url><loc>https://urban-ritual.ru/city/himki/</loc><priority>0.8</priority></url>
   <url><loc>https://urban-ritual.ru/city/balashiha/</loc><priority>0.8</priority></url>
   <url><loc>https://urban-ritual.ru/city/podolsk/</loc><priority>0.8</priority></url>
@@ -91,8 +86,6 @@
   <url><loc>https://urban-ritual.ru/city/protvino/</loc><priority>0.8</priority></url>
   <url><loc>https://urban-ritual.ru/city/pushchino/</loc><priority>0.8</priority></url>
   <url><loc>https://urban-ritual.ru/city/roshal/</loc><priority>0.8</priority></url>
-
-  <!-- Населённые пункты МО -->
   <url><loc>https://urban-ritual.ru/settlement/zheleznodorozhny/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/saltykovka/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/kuchino/</loc><priority>0.6</priority></url>
@@ -295,7 +288,6 @@
   <url><loc>https://urban-ritual.ru/settlement/sobolevo/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/davydovo/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/avsyunino/</loc><priority>0.6</priority></url>
-  <url><loc>https://urban-ritual.ru/settlement/belozyorsky-vosk/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/yegoryevskoe-selo/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/opytnoe-pole/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/belaya-dacha/</loc><priority>0.6</priority></url>
@@ -427,7 +419,6 @@
   <url><loc>https://urban-ritual.ru/settlement/agroshkola/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/belousovo-istra/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/kostrovo-istra/</loc><priority>0.6</priority></url>
-  <url><loc>https://urban-ritual.ru/settlement/buzhanino/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/kosherovo/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/borodino-ramen/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/selivanikha/</loc><priority>0.6</priority></url>
@@ -474,7 +465,6 @@
   <url><loc>https://urban-ritual.ru/settlement/povarovo-oz/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/tarutino/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/liopasnya/</loc><priority>0.6</priority></url>
-  <url><loc>https://urban-ritual.ru/settlement/konobeevo/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/semenovskoye/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/yamovino/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/chashnikovo/</loc><priority>0.6</priority></url>
@@ -497,8 +487,6 @@
   <url><loc>https://urban-ritual.ru/settlement/vodniki/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/selyatino-3/</loc><priority>0.6</priority></url>
   <url><loc>https://urban-ritual.ru/settlement/alabino-2/</loc><priority>0.6</priority></url>
-
-  <!-- Москва: АО -->
   <url><loc>https://urban-ritual.ru/moscow/cao/</loc><priority>0.8</priority></url>
   <url><loc>https://urban-ritual.ru/moscow/svao/</loc><priority>0.8</priority></url>
   <url><loc>https://urban-ritual.ru/moscow/vao/</loc><priority>0.8</priority></url>
@@ -510,8 +498,6 @@
   <url><loc>https://urban-ritual.ru/moscow/sao/</loc><priority>0.8</priority></url>
   <url><loc>https://urban-ritual.ru/moscow/zelao/</loc><priority>0.8</priority></url>
   <url><loc>https://urban-ritual.ru/moscow/tinao/</loc><priority>0.8</priority></url>
-
-  <!-- Москва: районы -->
   <url><loc>https://urban-ritual.ru/moscow/arbat/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/moscow/basmanny/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/moscow/zamoskvorechye/</loc><priority>0.7</priority></url>
@@ -647,8 +633,6 @@
   <url><loc>https://urban-ritual.ru/moscow/ryazanovskoe/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/moscow/marushkinskoe/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/moscow/kokoshkino/</loc><priority>0.7</priority></url>
-
-  <!-- Кладбища / крематории / морги -->
   <url><loc>https://urban-ritual.ru/cemetery/khovanskoe/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/cemetery/mitinskoe/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/cemetery/nikolo-arkhangelskoe/</loc><priority>0.7</priority></url>
@@ -731,5 +715,4 @@
   <url><loc>https://urban-ritual.ru/cemetery/morg-balashiha/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/cemetery/morg-podolsk/</loc><priority>0.7</priority></url>
   <url><loc>https://urban-ritual.ru/cemetery/morg-krasnogorsk/</loc><priority>0.7</priority></url>
-
 </urlset>

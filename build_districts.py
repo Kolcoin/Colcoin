@@ -141,11 +141,11 @@ PAGE_TMPL = """<!doctype html>
     </a>
     <nav class="nav" aria-label="Основная навигация">
       <a href="../../#services">Услуги</a>
-      <a href="../../#catalog">Каталог</a>
       <a href="../../#prices">Цены</a>
-      <a href="../../#agent">Выезд агента</a>
+      <a href="../../#moscow">Москва</a>
+      <a href="../../#cities">Города МО</a>
+      <a href="../../#cemeteries">Кладбища</a>
       <a href="../../#faq">Вопросы</a>
-      <a href="../../#contacts">Контакты</a>
     </nav>
     <a class="phone-link" href="tel:{phone_tel}">
       <span class="phone-link__dot" aria-hidden="true"></span>
