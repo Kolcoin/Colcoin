@@ -20,7 +20,7 @@
 })();
 
 /* ===== Отправка форм через FormSubmit AJAX (без бэкенда) ===== */
-const FORMSUBMIT_EMAIL = 'info@urban-ritual.ru'; // куда летят заявки
+const FORMSUBMIT_EMAIL = 'direkt.ritual@yandex.ru'; // куда летят заявки
 
 function submitCallback(e) {
   e.preventDefault();
