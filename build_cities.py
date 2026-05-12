@@ -85,6 +85,44 @@ def render_jsonld(c: dict) -> str:
     )
 
 
+SETTLEMENTS = None
+def _load_settlements():
+    global SETTLEMENTS
+    if SETTLEMENTS is None:
+        try:
+            SETTLEMENTS = json.loads((ROOT / "data" / "settlements-mo.json").read_text(encoding="utf-8"))
+        except Exception:
+            SETTLEMENTS = []
+    return SETTLEMENTS
+
+
+def render_settlement_block(city: dict) -> str:
+    """Чипы населённых пунктов округа (только если есть)."""
+    sett = [s for s in _load_settlements() if s.get('parent') == city['slug']]
+    if not sett:
+        return ""
+    sett_sorted = sorted(sett, key=lambda x: x['name'])
+    chips = "\n        ".join(
+        f'<li><a href="../../settlement/{s["slug"]}/">{s["name"]}</a></li>'
+        for s in sett_sorted
+    )
+    n = len(sett_sorted)
+    morgue_low = city["morgue"].lower().replace("морг ", "морга ")
+    return f"""
+  <section class="section" data-settlement-block="1">
+    <div class="container">
+      <header class="section__head">
+        <h2>Населённые пункты {city['nameGen']}</h2>
+        <p>Работаем во&nbsp;всех {n}&nbsp;населённых пунктах округа. Кликните на&nbsp;свой посёлок или микрорайон.</p>
+      </header>
+      <ul class="chips chips--linked">
+        {chips}
+      </ul>
+      <p class="cities-note">Выезд ритуального агента в&nbsp;любой из&nbsp;этих населённых пунктов&nbsp;— из&nbsp;нашего салона у&nbsp;{morgue_low}.</p>
+    </div>
+  </section>"""
+
+
 def neighbours(slug: str, n: int = 6) -> list:
     """6 ближайших городов по координатам."""
     me = next(x for x in DATA if x["slug"] == slug)
@@ -409,6 +447,8 @@ PAGE_TMPL = r"""<!doctype html>
     </div>
   </section>
 
+  {settlementBlock}
+
   <section class="section section--alt">
     <div class="container">
       <h2 class="zones__title">Похороны и&nbsp;кремация в&nbsp;соседних городах</h2>
@@ -554,6 +594,7 @@ def build():
             jsonld=render_jsonld(c),
             cityopts=build_city_options(c["slug"]),
             neighbours=render_neighbours(c["slug"]),
+            settlementBlock=render_settlement_block(c),
         )
 
         out = slug_dir / "index.html"
