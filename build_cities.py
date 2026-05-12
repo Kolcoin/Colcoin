@@ -50,12 +50,6 @@ def render_jsonld(c: dict) -> str:
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
             "opens": "00:00", "closes": "23:59"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "47",
-            "bestRating": "5"
         }
     }
     service = {
