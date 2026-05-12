@@ -162,11 +162,17 @@ PAGE_TMPL = """<!doctype html>
       <a href="../../#cemeteries">Кладбища</a>
       <a href="../../#faq">Вопросы</a>
     </nav>
-    <a class="phone-link" href="tel:{phone_tel}">
-      <span class="phone-link__dot" aria-hidden="true"></span>
-      <span class="phone-link__num">{phone_vis}</span>
-      <span class="phone-link__sub">круглосуточно, бесплатно</span>
-    </a>
+    <div class="phone-block">
+      <a class="phone-link" href="tel:{phone_tel}">
+        <span class="phone-link__dot" aria-hidden="true"></span>
+        <span class="phone-link__num">{phone_vis}</span>
+        <span class="phone-link__sub">круглосуточно · мобильный</span>
+      </a>
+      <a class="phone-link phone-link--second" href="tel:+74951915128">
+        <span class="phone-link__num">+7 (495) 191-51-28</span>
+        <span class="phone-link__sub">офис · городской</span>
+      </a>
+    </div>
   </div>
 </header>
 
@@ -326,6 +332,12 @@ PAGE_TMPL = """<!doctype html>
     <div>
       <div class="footer__brand">Городской Ритуал — Химки</div>
       <div class="footer__legal">ООО «Городской Ритуал» · ОГРН&nbsp;1147746000000 · ИНН&nbsp;7700000000</div>
+      <div class="footer__phones">
+        <a href="tel:{phone_tel}">{phone_vis}</a>
+        <span class="footer__phone-sep">·</span>
+        <a href="tel:+74951915128">+7 (495) 191-51-28</a>
+        <span class="footer__phone-sub">круглосуточно</span>
+      </div>
     </div>
     <nav class="footer__nav" aria-label="Подвал">
       <a href="../../">Главная</a>
