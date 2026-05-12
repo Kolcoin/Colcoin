@@ -782,13 +782,22 @@
             <span>Телефон для связи</span>
             <input type="tel" name="phone" required autocomplete="tel" placeholder="+7 ___ ___-__-__">
           </label>
-          <input type="text" name="company" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <label>
+            <span>Комментарий (необязательно)</span>
+            <textarea name="comment" rows="2" placeholder="Например: нужен срочный выезд агента"></textarea>
+          </label>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Заявка с сайта urban-ritual.ru — обратный звонок">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="Источник" value="Главная страница / форма «Перезвоните мне»">
           <label class="consent">
             <input type="checkbox" required checked>
             <span>Согласен с&nbsp;<a href="#">обработкой персональных данных</a> в&nbsp;соответствии со&nbsp;152-ФЗ.</span>
           </label>
           <button type="submit" class="btn btn--primary btn--block">Жду звонка</button>
-          <p class="callback__ok" hidden>Спасибо. Перезвоним в&nbsp;течение 5&nbsp;минут.</p>
+          <p class="callback__ok" hidden>Спасибо! Перезвоним в&nbsp;течение 5&nbsp;минут.</p>
+          <p class="callback__err" hidden>Не&nbsp;удалось отправить. Позвоните <a href="tel:+79852198394">+7&nbsp;(985)&nbsp;219-83-94</a></p>
         </form>
       </div>
 
