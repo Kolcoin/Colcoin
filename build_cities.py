@@ -18,8 +18,8 @@ DATA = json.loads((ROOT / "data" / "cities-mo.json").read_text(encoding="utf-8")
 OUT_DIR = ROOT / "city"
 
 CANONICAL_BASE = "https://urban-ritual.ru"
-PHONE_TEL = "+74951201515"
-PHONE_VIS = "+7 (495) 120-15-15"
+PHONE_TEL = "+79852198394"
+PHONE_VIS = "+7 (985) 219-83-94"
 
 
 def render_jsonld(c: dict) -> str:
@@ -135,14 +135,14 @@ PAGE_TMPL = r"""<!doctype html>
 
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
-      (function(m,e,t,r,i,k,a){
-          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      (function(m,e,t,r,i,k,a){{
+          m[i]=m[i]||function(){{(m[i].a=m[i].a||[]).push(arguments)}};
           m[i].l=1*new Date();
-          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          for (var j = 0; j < document.scripts.length; j++) {{if (document.scripts[j].src === r) {{ return; }}}}
           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109160037', 'ym');
+      }})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109160037', 'ym');
 
-      ym(109160037, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+      ym(109160037, 'init', {{ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true}});
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/109160037" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
@@ -442,7 +442,7 @@ PAGE_TMPL = r"""<!doctype html>
   <div class="container footer__row">
     <div>
       <div class="footer__brand">Городской Ритуал — {name}</div>
-      <div class="footer__legal">ООО «Урбан Брокер» · ОГРН&nbsp;1147746000000 · ИНН&nbsp;7700000000</div>
+      <div class="footer__legal">ООО «Городской Ритуал» · ОГРН&nbsp;1147746000000 · ИНН&nbsp;7700000000</div>
     </div>
     <nav class="footer__nav" aria-label="Подвал">
       <a href="../../">Главная</a>
