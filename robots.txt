@@ -17,5 +17,6 @@ Sitemap: https://urban-ritual.ru/sitemap-city.xml
 Sitemap: https://urban-ritual.ru/sitemap-settlement.xml
 Sitemap: https://urban-ritual.ru/sitemap-moscow.xml
 Sitemap: https://urban-ritual.ru/sitemap-cemetery.xml
+Sitemap: https://urban-ritual.ru/sitemap-blog.xml
 
 Host: https://urban-ritual.ru

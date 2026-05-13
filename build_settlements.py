@@ -103,6 +103,7 @@ PAGE_TMPL = """<!doctype html>
       <a href="../../#moscow">Москва</a>
       <a href="../../#cities">Города МО</a>
       <a href="../../#cemeteries">Кладбища</a>
+      <a href="../../#blog">Справочник</a>
       <a href="../../#faq">Вопросы</a>
     </nav>
     <div class="city-switcher" data-city-switcher>
