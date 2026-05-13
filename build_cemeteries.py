@@ -36,10 +36,10 @@ def render_jsonld(c: dict) -> str:
     service = {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": f"Организация похорон на {c['nameGen']}",
+        "serviceType": f"Организация похорон {c.get('prepFull', 'на ' + c['nameGen'])}",
         "provider": {"@id": f"{CANONICAL_BASE}/#organization"},
         "areaServed": {"@type": "Place", "name": c["name"]},
-        "description": f"Полное сопровождение похорон на {c['nameGen']}: оформление участка, копка могилы, катафалк, бригада, координатор церемонии.",
+        "description": f"Полное сопровождение похорон {c.get('prepFull', 'на ' + c['nameGen'])}: оформление участка, копка могилы, катафалк, бригада, координатор церемонии.",
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "RUB",
@@ -63,9 +63,9 @@ def render_jsonld(c: dict) -> str:
              "acceptedAnswer": {"@type": "Answer", "text": c["schedule"]}},
             {"@type": "Question", "name": f"Как добраться до {c['nameGen']}?",
              "acceptedAnswer": {"@type": "Answer", "text": c["directions"]}},
-            {"@type": "Question", "name": f"Какие документы нужны для захоронения на {c['nameGen']}?",
+            {"@type": "Question", "name": f"Какие документы нужны для захоронения {c.get('prepFull', 'на ' + c['nameGen'])}?",
              "acceptedAnswer": {"@type": "Answer", "text": c["documents"]}},
-            {"@type": "Question", "name": f"Какие типы захоронений возможны на {c['nameGen']}?",
+            {"@type": "Question", "name": f"Какие типы захоронений возможны {c.get('prepFull', 'на ' + c['nameGen'])}?",
              "acceptedAnswer": {"@type": "Answer", "text": c["burialTypes"]}},
         ]
     }
@@ -185,7 +185,7 @@ PAGE_TMPL = """<!doctype html>
         <div class="hero__eyebrow">Кладбище · {type} · {districts}</div>
         <h1>{name} — схема проезда, режим работы, документы</h1>
         <p class="hero__lead">
-          <b>Полное сопровождение похорон на&nbsp;{nameGen}.</b>
+          <b>Полное сопровождение похорон {prepFull}.</b>
           Оформление участка, копка могилы, катафалк, бригада, координатор церемонии.
           Помощь с&nbsp;документами и&nbsp;согласование с&nbsp;администрацией кладбища.
         </p>
@@ -216,26 +216,26 @@ PAGE_TMPL = """<!doctype html>
 
   <section class="section">
     <div class="container district-text">
-      <h2>О&nbsp;{nameGen}</h2>
+      <h2>О&nbsp;{namePrep}</h2>
       <p>{features}</p>
 
       <h3>Режим работы {nameGen}</h3>
-      <p>{schedule} Администрация кладбища принимает заявления о&nbsp;захоронении в&nbsp;будние дни. Наш ритуальный агент согласует все вопросы с&nbsp;администрацией и&nbsp;поможет получить участок без очередей.</p>
+      <p>{schedule} Администрация принимает заявления о&nbsp;захоронении в&nbsp;будние дни. Наш ритуальный агент согласует все вопросы с&nbsp;администрацией и&nbsp;поможет получить участок без очередей.</p>
 
       <h3>Как добраться до&nbsp;{nameGen} — схема проезда</h3>
       <p>{directions}</p>
 
-      <h3>Документы для захоронения на&nbsp;{nameGen}</h3>
+      <h3>Документы для захоронения {prepFull}</h3>
       <p>{documents}</p>
-      <p>Если документов не&nbsp;хватает, наш ритуальный агент поможет восстановить недостающие справки в&nbsp;ЗАГСе и&nbsp;администрации кладбища. Также мы&nbsp;берём на&nbsp;себя коммуникацию с&nbsp;администрацией: согласование даты захоронения, оплату работ, оформление удостоверения о&nbsp;захоронении.</p>
+      <p>Если документов не&nbsp;хватает, наш ритуальный агент поможет восстановить недостающие справки в&nbsp;ЗАГСе и&nbsp;администрации. Также мы&nbsp;берём на&nbsp;себя коммуникацию с&nbsp;администрацией: согласование даты захоронения, оплату работ, оформление удостоверения о&nbsp;захоронении.</p>
 
-      <h3>Типы захоронений на&nbsp;{nameGen}</h3>
+      <h3>Типы захоронений {prepFull}</h3>
       <p>{burialTypes}</p>
 
-      <h3>Стоимость захоронения на&nbsp;{nameGen}</h3>
+      <h3>Стоимость захоронения {prepFull}</h3>
       <p>
         Полный комплекс работ — копка могилы, катафалк, бригада, гроб, венки и&nbsp;оформление документов — начинается от&nbsp;34&nbsp;900&nbsp;₽ (социальные похороны) и&nbsp;до&nbsp;129&nbsp;000&nbsp;₽ (премиум-пакет под&nbsp;ключ). Подробный расчёт делает наш агент на&nbsp;месте, исходя из&nbsp;ваших пожеланий.
-        Стоимость самого участка зависит от&nbsp;типа: подзахоронение в&nbsp;родственную могилу обычно бесплатно (городская услуга), новый участок — оформляется через администрацию кладбища.
+        Стоимость самого участка зависит от&nbsp;типа: подзахоронение в&nbsp;родственную могилу обычно бесплатно (городская услуга), новый участок — оформляется через администрацию.
       </p>
     </div>
   </section>
@@ -262,7 +262,7 @@ PAGE_TMPL = """<!doctype html>
   <section class="section">
     <div class="container">
       <header class="section__head">
-        <h2>Услуги ритуального агентства на {nameGen}</h2>
+        <h2>Услуги ритуального агентства {prepFull}</h2>
         <p>Полное сопровождение церемонии прощания и&nbsp;погребения. Берём на&nbsp;себя всё — от&nbsp;звонка до&nbsp;благоустройства могилы.</p>
       </header>
       <div class="grid grid--3">
@@ -272,7 +272,7 @@ PAGE_TMPL = """<!doctype html>
         </article>
         <article class="card">
           <h3>Копка могилы и&nbsp;бригада</h3>
-          <p>Профессиональная копка по&nbsp;нормативам кладбища, бригада из&nbsp;4–6&nbsp;человек для&nbsp;выноса и&nbsp;опускания гроба, заключительные работы.</p>
+          <p>Профессиональная копка по&nbsp;нормативам, бригада из&nbsp;4–6&nbsp;человек для&nbsp;выноса и&nbsp;опускания гроба, заключительные работы.</p>
         </article>
         <article class="card">
           <h3>Катафалк до&nbsp;{nameGen}</h3>
@@ -284,7 +284,7 @@ PAGE_TMPL = """<!doctype html>
         </article>
         <article class="card">
           <h3>Координатор церемонии</h3>
-          <p>Распорядитель ведёт всю церемонию на&nbsp;{nameGen}: встречает гостей, организует подвоз цветов, согласует время с&nbsp;бригадой и&nbsp;администрацией.</p>
+          <p>Распорядитель ведёт всю церемонию {prepFull}: встречает гостей, организует подвоз цветов, согласует время с&nbsp;бригадой и&nbsp;администрацией.</p>
         </article>
         <article class="card">
           <h3>Памятник и&nbsp;благоустройство</h3>
@@ -297,7 +297,7 @@ PAGE_TMPL = """<!doctype html>
   <section class="section section--alt">
     <div class="container faq">
       <header class="section__head">
-        <h2>Частые вопросы о {nameGen}</h2>
+        <h2>Частые вопросы о {namePrep}</h2>
       </header>
       <details open>
         <summary>Какой режим работы {nameGen}?</summary>
@@ -308,19 +308,19 @@ PAGE_TMPL = """<!doctype html>
         <p>{directions}</p>
       </details>
       <details>
-        <summary>Какие документы нужны для захоронения на {nameGen}?</summary>
+        <summary>Какие документы нужны для захоронения {prepFull}?</summary>
         <p>{documents}</p>
       </details>
       <details>
-        <summary>Какие типы захоронений возможны на {nameGen}?</summary>
+        <summary>Какие типы захоронений возможны {prepFull}?</summary>
         <p>{burialTypes}</p>
       </details>
       <details>
-        <summary>Сколько стоят похороны на {nameGen}?</summary>
-        <p>Полный пакет «под ключ» — от&nbsp;68&nbsp;500&nbsp;₽, социальные похороны — от&nbsp;34&nbsp;900&nbsp;₽. Включают копку могилы, катафалк, бригаду, гроб, венки и&nbsp;оформление документов. Сам участок на&nbsp;{nameGen} оформляется отдельно через администрацию.</p>
+        <summary>Сколько стоят похороны {prepFull}?</summary>
+        <p>Полный пакет «под ключ» — от&nbsp;68&nbsp;500&nbsp;₽, социальные похороны — от&nbsp;34&nbsp;900&nbsp;₽. Включают копку могилы, катафалк, бригаду, гроб, венки и&nbsp;оформление документов. Сам участок {prepFull} оформляется отдельно через администрацию.</p>
       </details>
       <details>
-        <summary>Можно ли заказать кремацию вместо захоронения на {nameGen}?</summary>
+        <summary>Можно ли заказать кремацию вместо захоронения {prepFull}?</summary>
         <p>{cremaAnswer}</p>
       </details>
     </div>
@@ -329,7 +329,7 @@ PAGE_TMPL = """<!doctype html>
   <section class="section">
     <div class="container contacts-cta">
       <div>
-        <h2>Похороны на {nameGen}</h2>
+        <h2>Похороны {prepFull}</h2>
         <p>Звонок и&nbsp;консультация — бесплатно, круглосуточно. Берём на&nbsp;себя всё, от&nbsp;документов до&nbsp;благоустройства могилы.</p>
       </div>
       <a class="btn btn--primary btn--xl" href="tel:{phone_tel}">{phone_vis}</a>
@@ -391,11 +391,11 @@ def build():
             f"{c['name']} документы для захоронения",
             f"{c['name']} как добраться",
             f"{c['name']} адрес",
-            f"похороны на {c['nameGen']}",
+            f"похороны {c.get('prepFull', 'на ' + c['nameGen'])}",
             f"{c['name']} участок",
             f"{c['name']} цена",
             f"{c['name']} подзахоронение",
-            f"захоронение на {c['nameGen']}",
+            f"захоронение {c.get('prepFull', 'на ' + c['nameGen'])}",
             f"организация похорон {c['nameGen']}",
         ]
         if c.get("crematorium"):
@@ -407,7 +407,7 @@ def build():
 
         desc = (
             f"{c['name']}: адрес, режим работы, схема проезда, документы для захоронения. "
-            f"Организация похорон на {c['nameGen']} под ключ. ☎ {PHONE_VIS}"
+            f"Организация похорон {c.get('prepFull', 'на ' + c['nameGen'])} под ключ. ☎ {PHONE_VIS}"
         )
         if len(desc) > 180:
             desc = desc[:177] + "…"
@@ -417,7 +417,7 @@ def build():
         crema_answer = (
             f"Да, на территории {c['nameGen']} действует крематорий. Сопровождаем кремацию полностью: документы, гроб для кремации, урна, доставка праха."
             if c.get("crematorium")
-            else f"На {c['nameGen']} крематория нет. Кремацию проводим в крематориях Москвы (Хованский, Митинский, Николо-Архангельский) или МО (Носовиха). После — урну захораниваем в нишу колумбария или подзахораниваем в родственную могилу на {c['nameGen']}."
+            else f"{c.get('prepFull', 'на ' + c['nameGen']).capitalize()} крематория нет. Кремацию проводим в крематориях Москвы (Хованский, Митинский, Николо-Архангельский) или МО (Носовиха). После — урну захораниваем в нишу колумбария или подзахораниваем в родственную могилу {c.get('prepFull', 'на ' + c['nameGen'])}."
         )
 
         html = PAGE_TMPL.format(
@@ -425,10 +425,12 @@ def build():
             title=title,
             description=desc,
             ogtitle=f"{c['name']} — Городской Ритуал",
-            ogdesc=f"Похороны на {c['nameGen']}: схема, режим, документы, цены. 24/7.",
+            ogdesc=f"Похороны {c.get('prepFull', 'на ' + c['nameGen'])}: схема, режим, документы, цены. 24/7.",
             keywords=", ".join(kw),
             name=c["name"],
             nameGen=c["nameGen"],
+            namePrep=c.get("namePrep", c["nameGen"]),
+            prepFull=c.get("prepFull", "на " + c["nameGen"]),
             type=c["type"],
             districts=c["districts"],
             lat=c["lat"], lng=c["lng"],
