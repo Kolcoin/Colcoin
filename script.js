@@ -60,8 +60,11 @@ function submitCallback(e) {
   .then(d => {
     if (d && (d.success === 'true' || d.success === true)) {
       if (ok) ok.hidden = false;
-      // Цель в Яндекс.Метрике
+      // Цели в Яндекс.Метрике: общая + city-specific
       if (typeof ym === 'function') ym(109160037, 'reachGoal', 'callback_form_submit');
+      if (window.URTrack && typeof window.URTrack.formSubmit === 'function') {
+        window.URTrack.formSubmit();
+      }
       form.reset();
     } else {
       if (err) err.hidden = false;
@@ -75,11 +78,103 @@ function submitCallback(e) {
   return false;
 }
 
-/* Клики по телефонам — цель в Метрике */
-document.addEventListener('click', function (e) {
-  const a = e.target.closest('a[href^="tel:"]');
-  if (a && typeof ym === 'function') ym(109160037, 'reachGoal', 'phone_click');
-}, true);
+/* ===== Расширенный трекинг для Директа =====
+   - Автоопределение города из URL вида /city/{slug}/{intent?}/
+   - Goals в Метрике с city-параметром
+   - Параметры визита (Метрика) для сегментации по UTM-меткам и городу
+*/
+(function () {
+  const METRIKA_ID = 109160037;
+
+  // 1) Автоопределение «города и интента» по URL
+  function getPageContext() {
+    const m = location.pathname.match(/^\/city\/([^\/]+)\/?(?:([^\/]+)\/?)?/);
+    const city = m ? m[1] : null;
+    const intent = m && m[2] ? m[2] : null;
+    return { city, intent };
+  }
+
+  // 2) Прокидываем UTM-метки в Метрику + city как «параметры визита»
+  function sendVisitParams() {
+    if (typeof ym !== 'function') return;
+    const ctx = getPageContext();
+    const usp = new URLSearchParams(location.search);
+    const params = {};
+    if (ctx.city) params.city = ctx.city;
+    if (ctx.intent) params.intent = ctx.intent;
+    if (usp.get('utm_source'))   params.utm_source   = usp.get('utm_source');
+    if (usp.get('utm_medium'))   params.utm_medium   = usp.get('utm_medium');
+    if (usp.get('utm_campaign')) params.utm_campaign = usp.get('utm_campaign');
+    if (usp.get('utm_content'))  params.utm_content  = usp.get('utm_content');
+    if (usp.get('utm_term'))     params.utm_term     = usp.get('utm_term');
+    if (Object.keys(params).length) {
+      try { ym(METRIKA_ID, 'params', params); } catch (e) {}
+    }
+  }
+  // отправка при первой загрузке + при изменении hash/history
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', sendVisitParams);
+  } else {
+    sendVisitParams();
+  }
+
+  // 3) Универсальный трекинг кликов по контактам и формам
+  function reachGoal(name) {
+    if (typeof ym !== 'function') return;
+    try { ym(METRIKA_ID, 'reachGoal', name); } catch (e) {}
+  }
+
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    const ctx = getPageContext();
+    const suffix = ctx.city ? '_' + ctx.city : '';
+    const intentSuffix = ctx.intent ? '_' + ctx.intent : '';
+
+    // --- Telephone clicks ---
+    if (href.startsWith('tel:')) {
+      reachGoal('phone_click');                   // общая
+      if (ctx.city) {
+        reachGoal('phone_click' + suffix);        // напр. phone_click_mytishchi
+        if (ctx.intent) reachGoal('phone_click' + suffix + intentSuffix); // phone_click_mytishchi_kremaciya
+      }
+      return;
+    }
+
+    // --- WhatsApp ---
+    if (href.indexOf('wa.me') > -1 || href.indexOf('whatsapp') > -1) {
+      reachGoal('whatsapp_click');
+      if (ctx.city) reachGoal('whatsapp_click' + suffix);
+      return;
+    }
+
+    // --- Telegram ---
+    if (href.indexOf('t.me') > -1 || href.indexOf('telegram') > -1) {
+      reachGoal('telegram_click');
+      if (ctx.city) reachGoal('telegram_click' + suffix);
+      return;
+    }
+
+    // --- Email ---
+    if (href.startsWith('mailto:')) {
+      reachGoal('email_click');
+      if (ctx.city) reachGoal('email_click' + suffix);
+      return;
+    }
+  }, true);
+
+  // 4) Удобный глобал-helper для всех форм: вызовем из submitCallback() и других мест
+  window.URTrack = {
+    formSubmit: function () {
+      reachGoal('form_submit');
+      const ctx = getPageContext();
+      const suffix = ctx.city ? '_' + ctx.city : '';
+      if (ctx.city) reachGoal('form_submit' + suffix);
+    },
+    context: getPageContext
+  };
+})();
 
 /* ===== Плавающая модалка «Заказать звонок» (на всех страницах) ===== */
 (function () {
