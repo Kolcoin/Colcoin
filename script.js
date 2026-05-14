@@ -19,8 +19,13 @@
   }
 })();
 
-/* ===== Отправка форм через FormSubmit AJAX (без бэкенда) ===== */
-const FORMSUBMIT_EMAIL = 'direkt.ritual@yandex.ru'; // куда летят заявки
+/* ===== Отправка форм через FormSubmit AJAX (без бэкенда) =====
+   Используется активированный хеш FormSubmit вместо «голого» email.
+   Преимущества: (1) не нужна повторная активация формы при изменениях,
+   (2) email не виден спам-ботам, (3) Cloudflare-защита FormSubmit лояльнее
+   относится к запросам с хешем, чем с email.
+   Активирован для direkt.ritual@yandex.ru (письмо «Action Required: Activate FormSubmit»). */
+const FORMSUBMIT_EMAIL = 'f2f92f8ed5ed154d0e712899e0d490e5'; // → direkt.ritual@yandex.ru
 
 function submitCallback(e) {
   e.preventDefault();
