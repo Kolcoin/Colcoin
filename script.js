@@ -19,13 +19,15 @@
   }
 })();
 
-/* ===== Отправка форм через FormSubmit AJAX (без бэкенда) =====
-   Используется активированный хеш FormSubmit вместо «голого» email.
-   Преимущества: (1) не нужна повторная активация формы при изменениях,
-   (2) email не виден спам-ботам, (3) Cloudflare-защита FormSubmit лояльнее
-   относится к запросам с хешем, чем с email.
-   Активирован для direkt.ritual@yandex.ru (письмо «Action Required: Activate FormSubmit»). */
-const FORMSUBMIT_EMAIL = 'f2f92f8ed5ed154d0e712899e0d490e5'; // → direkt.ritual@yandex.ru
+/* ===== Отправка форм — два независимых канала =====
+   ОСНОВНОЙ: Web3Forms (api.web3forms.com) — почта urbanbrokerwm@gmail.com
+   РЕЗЕРВ:   FormSubmit (formsubmit.co) — direkt.ritual@yandex.ru (через хеш)
+
+   Если Web3Forms ответил success — показываем "Спасибо".
+   Если упал — пробуем FormSubmit.
+   Если оба упали — fallback c кнопкой WhatsApp и звонком. */
+const W3F_ACCESS_KEY = '05d3c356-47f7-46f5-81e0-ed818daacfec'; // → urbanbrokerwm@gmail.com
+const FORMSUBMIT_EMAIL = 'f2f92f8ed5ed154d0e712899e0d490e5';   // → direkt.ritual@yandex.ru
 
 /* Конфиг каналов доставки заявок. Срабатывает по приоритету (1-й, 2-й…).
    Если первый канал упал — пробуем следующий. Если все упали — показываем кнопки
@@ -134,8 +136,40 @@ function submitCallback(e) {
     if (typeof ym === 'function') ym(109160037, 'reachGoal', 'callback_form_fail');
   }
 
+  function tryWeb3Forms() {
+    // Основной канал. Web3Forms — без Cloudflare-защиты, работает стабильно.
+    const ac = new AbortController();
+    const timer = setTimeout(() => ac.abort(), 10000);
+    const body = {
+      access_key: W3F_ACCESS_KEY,
+      subject: payload._subject || 'Заявка с urban-ritual.ru',
+      from_name: 'Городской Ритуал — сайт',
+      // Поля для письма
+      name: payload['Имя'],
+      phone: payload['Телефон'],
+      message: payload['Комментарий'] || '—',
+      'Источник': payload['Источник'],
+      'Страница': payload['Страница'],
+      'UTM-метки': payload['UTM-метки'],
+    };
+    return fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(body),
+      signal: ac.signal,
+      mode: 'cors'
+    }).then(r => {
+      clearTimeout(timer);
+      if (!r.ok) throw new Error('w3f http ' + r.status);
+      return r.json();
+    }).then(d => {
+      if (d && d.success === true) return 'web3forms';
+      throw new Error('w3f-not-success: ' + (d && d.message));
+    });
+  }
+
   function tryFormSubmit() {
-    // 8-секундный таймаут чтобы пользователь долго не ждал зависшего FormSubmit
+    // Резервный канал — если Web3Forms по какой-то причине упал.
     const ac = new AbortController();
     const timer = setTimeout(() => ac.abort(), 8000);
     return fetch('https://formsubmit.co/ajax/' + encodeURIComponent(FORMSUBMIT_EMAIL), {
@@ -146,17 +180,29 @@ function submitCallback(e) {
       mode: 'cors'
     }).then(r => {
       clearTimeout(timer);
-      if (!r.ok) throw new Error('http ' + r.status);
+      if (!r.ok) throw new Error('fs http ' + r.status);
       return r.json();
     }).then(d => {
-      if (d && (d.success === 'true' || d.success === true)) return true;
+      if (d && (d.success === 'true' || d.success === true)) return 'formsubmit';
       throw new Error('formsubmit-not-success');
     });
   }
 
-  // 1) Пробуем основной канал FormSubmit. Если упал — fallback к мессенджерам.
-  tryFormSubmit()
-    .then(onSuccess)
+  // Каскад: Web3Forms → FormSubmit → fallback (WhatsApp/звонок)
+  tryWeb3Forms()
+    .then(channel => {
+      onSuccess();
+      // Отдельная цель чтобы видеть, что канал реально сработал
+      if (typeof ym === 'function') ym(109160037, 'reachGoal', 'form_success_' + channel);
+    })
+    .catch(() => {
+      // Web3Forms упал — пробуем FormSubmit
+      return tryFormSubmit()
+        .then(channel => {
+          onSuccess();
+          if (typeof ym === 'function') ym(109160037, 'reachGoal', 'form_success_' + channel);
+        });
+    })
     .catch(onFail)
     .finally(() => {
       if (btn) { btn.disabled = false; btn.textContent = btn.dataset.txt || 'Жду звонка'; }
