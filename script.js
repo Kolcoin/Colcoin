@@ -27,6 +27,66 @@
    Активирован для direkt.ritual@yandex.ru (письмо «Action Required: Activate FormSubmit»). */
 const FORMSUBMIT_EMAIL = 'f2f92f8ed5ed154d0e712899e0d490e5'; // → direkt.ritual@yandex.ru
 
+/* Конфиг каналов доставки заявок. Срабатывает по приоритету (1-й, 2-й…).
+   Если первый канал упал — пробуем следующий. Если все упали — показываем кнопки
+   мессенджеров с pre-filled текстом, чтобы пользователь точно мог нас достать. */
+const WHATSAPP_NUMBER = '79852198394';            // без +
+const TELEGRAM_USERNAME = 'ritual_khimki';        // без @
+
+function fmtPayloadText(p) {
+  return [
+    '🔔 Заявка с сайта urban-ritual.ru',
+    '',
+    'Имя: ' + (p['Имя'] || '—'),
+    'Телефон: ' + (p['Телефон'] || '—'),
+    'Комментарий: ' + (p['Комментарий'] || '—'),
+    '',
+    'Источник: ' + (p['Источник'] || '—'),
+    'Страница: ' + (p['Страница'] || location.href),
+    'UTM: ' + (p['UTM-метки'] || '—'),
+  ].join('\n');
+}
+
+function buildMessengerLinks(payload) {
+  const text = fmtPayloadText(payload);
+  const enc = encodeURIComponent(text);
+  return {
+    whatsapp: 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + enc,
+    telegram: 'https://t.me/' + TELEGRAM_USERNAME + '?text=' + enc,
+  };
+}
+
+function showFallbackUI(form, payload) {
+  // Скрываем ok/err стандартные, рисуем красивый блок с кнопками мессенджеров
+  const ok  = form.querySelector('.callback__ok');
+  const err = form.querySelector('.callback__err');
+  if (ok)  ok.hidden = true;
+  if (err) err.hidden = true;
+
+  let fallback = form.querySelector('.callback__fallback');
+  if (!fallback) {
+    fallback = document.createElement('div');
+    fallback.className = 'callback__fallback';
+    fallback.style.cssText = 'margin-top:14px;padding:14px;background:#FFF8F0;border:1px solid #E8C28A;border-radius:10px;color:#5a4520;font-size:14px;line-height:1.45';
+    form.appendChild(fallback);
+  }
+  const links = buildMessengerLinks(payload);
+  fallback.innerHTML =
+    '<b>Минутку — форма временно недоступна.</b><br>' +
+    'Чтобы мы точно получили заявку, выберите удобный способ:<br>' +
+    '<div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">' +
+      '<a href="' + links.whatsapp + '" target="_blank" rel="noopener" ' +
+        'onclick="if(typeof ym===\'function\')ym(109160037,\'reachGoal\',\'whatsapp_fallback\')" ' +
+        'style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;background:#25D366;color:#fff;text-decoration:none;border-radius:8px;font-weight:600">' +
+        '🟢 Отправить в WhatsApp (рекомендуем)</a>' +
+      '<a href="tel:+79852198394" ' +
+        'onclick="if(typeof ym===\'function\')ym(109160037,\'reachGoal\',\'phone_fallback\')" ' +
+        'style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;background:#6E2A2A;color:#fff;text-decoration:none;border-radius:8px;font-weight:600">' +
+        '📞 Позвонить +7 (985) 219-83-94</a>' +
+    '</div>' +
+    '<p style="margin:10px 0 0;font-size:12px;color:#7a7066">Звонок и&nbsp;ответ в&nbsp;WhatsApp&nbsp;— в&nbsp;течение 1–5&nbsp;минут, круглосуточно.</p>';
+}
+
 function submitCallback(e) {
   e.preventDefault();
   const form = e.target;
@@ -39,6 +99,8 @@ function submitCallback(e) {
   if (btn) { btn.disabled = true; btn.dataset.txt = btn.textContent; btn.textContent = 'Отправка…'; }
   if (ok)  ok.hidden = true;
   if (err) err.hidden = true;
+  const oldFallback = form.querySelector('.callback__fallback');
+  if (oldFallback) oldFallback.remove();
 
   // Собираем понятную структуру для письма
   const payload = {
@@ -56,29 +118,49 @@ function submitCallback(e) {
     '_captcha': 'false'
   };
 
-  fetch('https://formsubmit.co/ajax/' + encodeURIComponent(FORMSUBMIT_EMAIL), {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(payload)
-  })
-  .then(r => r.json())
-  .then(d => {
-    if (d && (d.success === 'true' || d.success === true)) {
-      if (ok) ok.hidden = false;
-      // Цели в Яндекс.Метрике: общая + city-specific
-      if (typeof ym === 'function') ym(109160037, 'reachGoal', 'callback_form_submit');
-      if (window.URTrack && typeof window.URTrack.formSubmit === 'function') {
-        window.URTrack.formSubmit();
-      }
-      form.reset();
-    } else {
-      if (err) err.hidden = false;
+  function onSuccess() {
+    if (ok) ok.hidden = false;
+    if (typeof ym === 'function') ym(109160037, 'reachGoal', 'callback_form_submit');
+    if (window.URTrack && typeof window.URTrack.formSubmit === 'function') {
+      window.URTrack.formSubmit();
     }
-  })
-  .catch(() => { if (err) err.hidden = false; })
-  .finally(() => {
-    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.txt || 'Жду звонка'; }
-  });
+    form.reset();
+  }
+
+  function onFail() {
+    // Не показываем "сухое" сообщение об ошибке — даём пользователю реальные варианты связи
+    showFallbackUI(form, payload);
+    // Метрика: отметим что форма упала и пользователю показан fallback
+    if (typeof ym === 'function') ym(109160037, 'reachGoal', 'callback_form_fail');
+  }
+
+  function tryFormSubmit() {
+    // 8-секундный таймаут чтобы пользователь долго не ждал зависшего FormSubmit
+    const ac = new AbortController();
+    const timer = setTimeout(() => ac.abort(), 8000);
+    return fetch('https://formsubmit.co/ajax/' + encodeURIComponent(FORMSUBMIT_EMAIL), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: ac.signal,
+      mode: 'cors'
+    }).then(r => {
+      clearTimeout(timer);
+      if (!r.ok) throw new Error('http ' + r.status);
+      return r.json();
+    }).then(d => {
+      if (d && (d.success === 'true' || d.success === true)) return true;
+      throw new Error('formsubmit-not-success');
+    });
+  }
+
+  // 1) Пробуем основной канал FormSubmit. Если упал — fallback к мессенджерам.
+  tryFormSubmit()
+    .then(onSuccess)
+    .catch(onFail)
+    .finally(() => {
+      if (btn) { btn.disabled = false; btn.textContent = btn.dataset.txt || 'Жду звонка'; }
+    });
 
   return false;
 }
