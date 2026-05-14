@@ -181,6 +181,10 @@ PAGE_TMPL = """<!doctype html>
   <noscript><div><img src="https://mc.yandex.ru/watch/109160037" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
 
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
 
@@ -329,7 +333,7 @@ PAGE_TMPL = """<!doctype html>
       <a href="tel:{phone_tel}">{phone_vis}</a>
       <a href="tel:+74951915128">+7&nbsp;(495)&nbsp;191-51-28</a>
       <a href="https://t.me/ritual_khimki" rel="nofollow noopener" target="_blank">Telegram</a>
-      <a href="mailto:info@urban-ritual.ru">info@urban-ritual.ru</a>
+      <a href="mailto:direkt.ritual@yandex.ru">direkt.ritual@yandex.ru</a>
     </div>
   </div>
   <div class="container footer__bottom">
@@ -528,7 +532,7 @@ INDEX_TMPL = """<!doctype html>
       <a href="tel:{phone_tel}">{phone_vis}</a>
       <a href="tel:+74951915128">+7&nbsp;(495)&nbsp;191-51-28</a>
       <a href="https://t.me/ritual_khimki" rel="nofollow noopener" target="_blank">Telegram</a>
-      <a href="mailto:info@urban-ritual.ru">info@urban-ritual.ru</a>
+      <a href="mailto:direkt.ritual@yandex.ru">direkt.ritual@yandex.ru</a>
     </div>
   </div>
   <div class="container footer__bottom">© 2026 ООО «Городской Ритуал». Все права защищены.</div>
