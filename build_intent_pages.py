@@ -22,8 +22,9 @@ PHONE_VIS2 = "+7 (495) 191-51-28"
 
 ROOT = Path(__file__).parent
 
-# Какие города получают интент-страницы (пока — Мытищи; легко расширить)
-TARGETS = ["mytishchi"]
+# Города с интент-страницами под Яндекс.Директ.
+# Каждый получает 3 интент-страницы: /kremaciya/, /agent/, /morg/
+TARGETS = ["mytishchi", "dolgoprudnyj", "lobnya", "himki", "krasnogorsk"]
 
 INTENTS = {
     "kremaciya": {
