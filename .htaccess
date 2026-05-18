@@ -1,0 +1,28 @@
+# urban-ritual.ru — .htaccess для Beget (Apache)
+# Главная цель: 301-редиректы для битых URL, найденных Google Search Console
+# (вложенные пути вида /moscow/X/city/Y/), которые возникли из-за бага
+# в JS city-switcher (исправлено в script.js).
+
+RewriteEngine On
+
+# ─── 301-редиректы для битых URL из Google Search Console ───
+# /moscow/{slug}/city/{city}/  →  /city/{city}/
+# /settlement/{slug}/city/{city}/  →  /city/{city}/
+# /cemetery/{slug}/city/{city}/  →  /city/{city}/
+# /rayon/{slug}/city/{city}/  →  /city/{city}/
+RewriteRule ^(moscow|settlement|cemetery|rayon)/[^/]+/city/([^/]+)/?$ /city/$2/ [R=301,L]
+
+# Аналогично для intent-страниц city/{slug}/city/{city}/
+RewriteRule ^city/[^/]+/city/([^/]+)/?$ /city/$1/ [R=301,L]
+
+# ─── Стандартные правила ───
+# Принудительный HTTPS (если ещё не настроен на уровне Beget)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Убираем index.html из URL (всегда trailing slash)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)/index\.html [NC]
+RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
+
+# Возвращаем 404 для попыток обхода типичных служебных файлов
+RewriteRule ^(wp-admin|wp-login\.php|wp-config\.php|administrator|admin\.php|phpmyadmin)(/|$) - [R=404,L]

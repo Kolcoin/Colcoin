@@ -380,13 +380,14 @@ function submitCallback(e) {
   const list = switcher.querySelector('.city-switcher__list');
   const input = switcher.querySelector('.city-switcher__input');
 
-  // Build list
+  // Build list. ВАЖНО: всегда абсолютные ссылки '/city/{slug}/' — иначе Googlebot
+  // резолвит относительные пути относительно текущей страницы и пытается
+  // индексировать несуществующие URL вида /moscow/lefortovo/city/vidnoe/.
   function render(q) {
     q = (q || '').toLowerCase().trim();
-    const base = location.pathname.indexOf('/city/') > -1 ? '../' : 'city/';
     const items = window.CITIES_MO
       .filter(c => !q || c.name.toLowerCase().includes(q))
-      .map(c => `<li><a href="${base}${c.slug}/">${c.name}</a></li>`)
+      .map(c => `<li><a href="/city/${c.slug}/">${c.name}</a></li>`)
       .join('');
     list.innerHTML = items || '<li class="empty">Ничего не найдено</li>';
   }
@@ -419,13 +420,12 @@ function submitCallback(e) {
   const filter = document.getElementById('cities-filter-input');
   if (!grid || !window.CITIES_MO) return;
 
-  const base = location.pathname.indexOf('/city/') > -1 ? '../' : 'city/';
-
+  // ВАЖНО: абсолютные ссылки. См. комментарий в city-switcher выше.
   function render(q) {
     q = (q || '').toLowerCase().trim();
     const html = window.CITIES_MO
       .filter(c => !q || c.name.toLowerCase().includes(q))
-      .map(c => `<li><a href="${base}${c.slug}/"><span class="cgrid__name">${c.name}</span><span class="cgrid__min">от ${c.minutes} мин</span></a></li>`)
+      .map(c => `<li><a href="/city/${c.slug}/"><span class="cgrid__name">${c.name}</span><span class="cgrid__min">от ${c.minutes} мин</span></a></li>`)
       .join('');
     grid.innerHTML = html || '<li class="empty">Город не найден. Звоните — обсудим выезд.</li>';
   }
