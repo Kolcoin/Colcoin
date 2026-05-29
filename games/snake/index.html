@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Змейка — играть онлайн</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      color: #eef7f1;
+      font-family: "Segoe UI", Arial, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(64, 255, 153, 0.13), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(255, 218, 108, 0.13), transparent 30%),
+        linear-gradient(145deg, #070b16 0%, #101827 100%);
+    }
+
+    .game-wrapper {
+      width: min(100%, 760px);
+      padding: clamp(12px, 3vw, 22px);
+      border: 1px solid rgba(134, 255, 178, 0.18);
+      border-radius: 36px;
+      background: rgba(2, 7, 14, 0.62);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .game-container {
+      padding: clamp(12px, 3vw, 20px);
+      text-align: center;
+      border-radius: 28px;
+      background: #0d1320;
+      box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.48);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #eaffd6;
+      font-size: clamp(24px, 5vw, 36px);
+      line-height: 1;
+      text-align: left;
+    }
+
+    .status-pill {
+      min-width: 140px;
+      padding: 8px 14px;
+      color: #cce6ff;
+      font-size: 0.95rem;
+      border: 1px solid rgba(156, 221, 255, 0.16);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.34);
+    }
+
+    canvas {
+      display: block;
+      width: min(100%, 600px);
+      height: auto;
+      margin: 0 auto;
+      touch-action: none;
+      cursor: pointer;
+      border: 1px solid rgba(120, 255, 177, 0.2);
+      border-radius: 22px;
+      background: #111722;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.62);
+    }
+
+    .info-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-top: 16px;
+      padding: 10px;
+      border: 1px solid rgba(90, 220, 140, 0.22);
+      border-radius: 24px;
+      background: rgba(3, 9, 17, 0.72);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .stat {
+      display: grid;
+      gap: 4px;
+      padding: 10px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .stat span:first-child {
+      color: #aebdcc;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .stat strong {
+      color: #f4ffb0;
+      font-family: Monaco, "Courier New", monospace;
+      font-size: clamp(20px, 4vw, 28px);
+      line-height: 1;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    button {
+      min-height: 42px;
+      padding: 9px 16px;
+      color: #f5ffe8;
+      font-size: 1rem;
+      font-weight: 800;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #315b37, #1f3524);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.38);
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    button:hover {
+      filter: brightness(1.12);
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, 72px);
+      gap: 10px;
+      justify-content: center;
+      margin: 18px auto 10px;
+    }
+
+    .control-btn {
+      width: 72px;
+      height: 58px;
+      padding: 0;
+      font-size: 1.7rem;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #1e3148, #111b2c);
+    }
+
+    .control-btn[data-dir="up"] {
+      grid-column: 2;
+    }
+
+    .control-btn[data-dir="left"] {
+      grid-column: 1;
+    }
+
+    .control-btn[data-dir="down"] {
+      grid-column: 2;
+    }
+
+    .control-btn[data-dir="right"] {
+      grid-column: 3;
+    }
+
+    .hint {
+      margin: 8px 0 0;
+      color: #b7c7d8;
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .hint kbd {
+      display: inline-block;
+      padding: 2px 8px;
+      color: #f3ffcf;
+      border-radius: 8px;
+      background: #1f2a35;
+      font-family: inherit;
+      font-weight: 800;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        align-items: flex-start;
+        padding: 10px;
+      }
+
+      .game-wrapper {
+        border-radius: 26px;
+      }
+
+      .topbar,
+      .info-panel {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .status-pill,
+      h1 {
+        text-align: center;
+      }
+
+      .stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .actions {
+        justify-content: center;
+      }
+
+      .controls {
+        grid-template-columns: repeat(3, minmax(64px, 1fr));
+        max-width: 260px;
+      }
+
+      .control-btn {
+        width: auto;
+        height: 56px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="game-wrapper">
+    <div class="game-container">
+      <div class="topbar">
+        <h1>🐍 Змейка</h1>
+        <div class="status-pill" id="statusText">Игра началась</div>
+      </div>
+
+      <canvas id="gameCanvas" width="600" height="600" aria-label="Игровое поле змейки"></canvas>
+
+      <div class="info-panel">
+        <div class="stats">
+          <div class="stat">
+            <span>Счёт</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div class="stat">
+            <span>Рекорд</span>
+            <strong id="highScoreValue">0</strong>
+          </div>
+          <div class="stat">
+            <span>Скорость</span>
+            <strong id="speedValue">1</strong>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="pauseButton" type="button">⏸ Пауза</button>
+          <button id="restartButton" type="button">⟳ Новая игра</button>
+        </div>
+      </div>
+
+      <div class="controls" aria-label="Кнопки управления">
+        <button class="control-btn" type="button" data-dir="up" aria-label="Вверх">⬆️</button>
+        <button class="control-btn" type="button" data-dir="left" aria-label="Влево">⬅️</button>
+        <button class="control-btn" type="button" data-dir="down" aria-label="Вниз">⬇️</button>
+        <button class="control-btn" type="button" data-dir="right" aria-label="Вправо">➡️</button>
+      </div>
+
+      <p class="hint">
+        Управление: стрелки или кнопки. <kbd>Пробел</kbd> — пауза, <kbd>R</kbd> — рестарт.
+        На телефоне можно свайпать по полю.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const canvas = document.getElementById('gameCanvas');
+      const ctx = canvas.getContext('2d');
+      const scoreValue = document.getElementById('scoreValue');
+      const highScoreValue = document.getElementById('highScoreValue');
+      const speedValue = document.getElementById('speedValue');
+      const statusText = document.getElementById('statusText');
+      const pauseButton = document.getElementById('pauseButton');
+      const restartButton = document.getElementById('restartButton');
+
+      const GRID_SIZE = 20;
+      const CELL_SIZE = canvas.width / GRID_SIZE;
+      const START_SPEED = 120;
+      const MIN_SPEED = 55;
+      const SPEED_STEP = 8;
+      const SPEED_EVERY = 5;
+
+      let snake;
+      let direction;
+      let nextDirection;
+      let food;
+      let score;
+      let highScore;
+      let gameOver;
+      let paused;
+      let gameInterval;
+      let speed;
+      let touchStart = null;
+
+      function loadHighScore() {
+        try {
+          const saved = Number.parseInt(localStorage.getItem('snakeHighScore'), 10);
+          return Number.isFinite(saved) ? saved : 0;
+        } catch (error) {
+          return 0;
+        }
+      }
+
+      function saveHighScore() {
+        try {
+          localStorage.setItem('snakeHighScore', String(highScore));
+        } catch (error) {}
+      }
+
+      function updateScoreUI() {
+        scoreValue.textContent = score;
+        highScoreValue.textContent = highScore;
+        speedValue.textContent = Math.max(1, Math.round((START_SPEED - speed) / SPEED_STEP) + 1);
+
+        if (score > highScore) {
+          highScore = score;
+          highScoreValue.textContent = highScore;
+          saveHighScore();
+        }
+      }
+
+      function setStatus(text) {
+        statusText.textContent = text;
+      }
+
+      function restartLoop() {
+        if (gameInterval) clearInterval(gameInterval);
+        gameInterval = setInterval(() => {
+          updateGame();
+          draw();
+        }, speed);
+      }
+
+      function occupiedCells() {
+        return new Set(snake.map((segment) => `${segment.x},${segment.y}`));
+      }
+
+      function generateRandomFood() {
+        const busy = occupiedCells();
+        const freeCells = [];
+
+        for (let x = 0; x < GRID_SIZE; x++) {
+          for (let y = 0; y < GRID_SIZE; y++) {
+            if (!busy.has(`${x},${y}`)) freeCells.push({ x, y });
+          }
+        }
+
+        if (!freeCells.length) {
+          gameOver = true;
+          setStatus('Победа! Поле заполнено');
+          return;
+        }
+
+        food = freeCells[Math.floor(Math.random() * freeCells.length)];
+      }
+
+      function setDirection(dx, dy) {
+        if (gameOver) return;
+        if (direction.dx === -dx && direction.dy === -dy) return;
+        nextDirection = { dx, dy };
+      }
+
+      function eatFood() {
+        score++;
+        updateScoreUI();
+
+        if (score % SPEED_EVERY === 0 && speed > MIN_SPEED) {
+          speed = Math.max(MIN_SPEED, speed - SPEED_STEP);
+          restartLoop();
+          setStatus(`Скорость выше: ${speedValue.textContent}`);
+        }
+
+        generateRandomFood();
+      }
+
+      function updateGame() {
+        if (gameOver || paused) return;
+
+        if (!(direction.dx === -nextDirection.dx && direction.dy === -nextDirection.dy)) {
+          direction = { ...nextDirection };
+        }
+
+        const head = snake[0];
+        const newHead = {
+          x: head.x + direction.dx,
+          y: head.y + direction.dy
+        };
+
+        const hitWall = newHead.x < 0 || newHead.x >= GRID_SIZE || newHead.y < 0 || newHead.y >= GRID_SIZE;
+        if (hitWall) {
+          gameOver = true;
+          setStatus('Игра окончена');
+          return;
+        }
+
+        const willEat = newHead.x === food.x && newHead.y === food.y;
+        const hitBody = snake.some((segment, index) => {
+          const isTail = index === snake.length - 1;
+          const tailMovesAway = isTail && !willEat;
+          return !tailMovesAway && segment.x === newHead.x && segment.y === newHead.y;
+        });
+
+        if (hitBody) {
+          gameOver = true;
+          setStatus('Игра окончена');
+          return;
+        }
+
+        snake.unshift(newHead);
+
+        if (willEat) {
+          eatFood();
+        } else {
+          snake.pop();
+        }
+      }
+
+      function roundedRect(x, y, width, height, radius) {
+        ctx.beginPath();
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width - radius, y);
+        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+        ctx.lineTo(x + width, y + height - radius);
+        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+        ctx.lineTo(x + radius, y + height);
+        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+        ctx.lineTo(x, y + radius);
+        ctx.quadraticCurveTo(x, y, x + radius, y);
+        ctx.closePath();
+      }
+
+      function drawBackground() {
+        ctx.fillStyle = '#0d1420';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = '#243247';
+        ctx.lineWidth = 0.75;
+        for (let i = 0; i <= GRID_SIZE; i++) {
+          const pos = i * CELL_SIZE;
+          ctx.beginPath();
+          ctx.moveTo(pos, 0);
+          ctx.lineTo(pos, canvas.height);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(0, pos);
+          ctx.lineTo(canvas.width, pos);
+          ctx.stroke();
+        }
+      }
+
+      function drawFood() {
+        const x = food.x * CELL_SIZE;
+        const y = food.y * CELL_SIZE;
+        const gradient = ctx.createRadialGradient(
+          x + CELL_SIZE * 0.35,
+          y + CELL_SIZE * 0.3,
+          2,
+          x + CELL_SIZE / 2,
+          y + CELL_SIZE / 2,
+          CELL_SIZE / 2
+        );
+        gradient.addColorStop(0, '#ff9a73');
+        gradient.addColorStop(1, '#d9361d');
+
+        ctx.fillStyle = gradient;
+        ctx.shadowColor = 'rgba(255, 72, 42, 0.55)';
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+        ctx.arc(x + CELL_SIZE / 2, y + CELL_SIZE / 2, CELL_SIZE / 2 - 3, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = '#96d35a';
+        ctx.beginPath();
+        ctx.ellipse(x + CELL_SIZE * 0.72, y + CELL_SIZE * 0.23, 5, 3, 0.55, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#fff0bb';
+        ctx.beginPath();
+        ctx.arc(x + CELL_SIZE * 0.65, y + CELL_SIZE * 0.36, 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      function drawSnake() {
+        snake.forEach((segment, index) => {
+          const isHead = index === 0;
+          const x = segment.x * CELL_SIZE;
+          const y = segment.y * CELL_SIZE;
+          const padding = isHead ? 2 : 3;
+          const size = CELL_SIZE - padding * 2;
+          const gradient = ctx.createLinearGradient(x, y, x + CELL_SIZE, y + CELL_SIZE);
+
+          if (isHead) {
+            gradient.addColorStop(0, '#baffc7');
+            gradient.addColorStop(1, '#64f08b');
+            ctx.shadowColor = 'rgba(100, 255, 160, 0.58)';
+            ctx.shadowBlur = 7;
+          } else {
+            gradient.addColorStop(0, '#43da73');
+            gradient.addColorStop(1, '#159a43');
+            ctx.shadowColor = 'rgba(64, 230, 120, 0.28)';
+            ctx.shadowBlur = 3;
+          }
+
+          ctx.fillStyle = gradient;
+          roundedRect(x + padding, y + padding, size, size, 7);
+          ctx.fill();
+          ctx.shadowBlur = 0;
+
+          if (isHead) drawEyes(x, y);
+        });
+      }
+
+      function drawEyes(x, y) {
+        const vertical = direction.dy !== 0;
+        const firstEye = vertical
+          ? { x: x + CELL_SIZE * 0.36, y: y + (direction.dy > 0 ? CELL_SIZE * 0.64 : CELL_SIZE * 0.36) }
+          : { x: x + (direction.dx > 0 ? CELL_SIZE * 0.64 : CELL_SIZE * 0.36), y: y + CELL_SIZE * 0.36 };
+        const secondEye = vertical
+          ? { x: x + CELL_SIZE * 0.64, y: y + (direction.dy > 0 ? CELL_SIZE * 0.64 : CELL_SIZE * 0.36) }
+          : { x: x + (direction.dx > 0 ? CELL_SIZE * 0.64 : CELL_SIZE * 0.36), y: y + CELL_SIZE * 0.64 };
+
+        [firstEye, secondEye].forEach((eye) => {
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath();
+          ctx.arc(eye.x, eye.y, 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = '#102515';
+          ctx.beginPath();
+          ctx.arc(eye.x, eye.y, 2, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
+
+      function drawOverlay(title, subtitle, color) {
+        ctx.fillStyle = 'rgba(5, 8, 16, 0.86)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.textAlign = 'center';
+        ctx.fillStyle = color;
+        ctx.font = '700 42px "Segoe UI", Arial';
+        ctx.fillText(title, canvas.width / 2, canvas.height / 2 - 34);
+        ctx.fillStyle = '#d4e6ff';
+        ctx.font = '22px "Segoe UI", Arial';
+        ctx.fillText(subtitle, canvas.width / 2, canvas.height / 2 + 26);
+        ctx.textAlign = 'left';
+      }
+
+      function draw() {
+        drawBackground();
+        drawFood();
+        drawSnake();
+
+        if (gameOver) {
+          drawOverlay('Игра окончена', `Счёт: ${score}. Нажми R или Новая игра`, '#ffdf9d');
+        } else if (paused) {
+          drawOverlay('Пауза', 'Нажми пробел или кнопку Пауза', '#b9ffd5');
+        }
+      }
+
+      function togglePause() {
+        if (gameOver) return;
+        paused = !paused;
+        pauseButton.textContent = paused ? '▶️ Продолжить' : '⏸ Пауза';
+        setStatus(paused ? 'Пауза' : 'Игра идёт');
+        draw();
+      }
+
+      function resetGame() {
+        snake = [
+          { x: 10, y: 10 },
+          { x: 9, y: 10 },
+          { x: 8, y: 10 }
+        ];
+        direction = { dx: 1, dy: 0 };
+        nextDirection = { dx: 1, dy: 0 };
+        score = 0;
+        speed = START_SPEED;
+        gameOver = false;
+        paused = false;
+        pauseButton.textContent = '⏸ Пауза';
+        setStatus('Игра началась');
+        generateRandomFood();
+        updateScoreUI();
+        restartLoop();
+        draw();
+      }
+
+      function handleKeydown(event) {
+        if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          setDirection(0, -1);
+        } else if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          setDirection(0, 1);
+        } else if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          setDirection(-1, 0);
+        } else if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          setDirection(1, 0);
+        } else if (event.key === ' ' || event.code === 'Space') {
+          event.preventDefault();
+          togglePause();
+        } else if (event.key === 'r' || event.key === 'R' || event.key === 'к' || event.key === 'К') {
+          event.preventDefault();
+          resetGame();
+        }
+      }
+
+      function handleControlButton(event) {
+        const dir = event.currentTarget.dataset.dir;
+        if (dir === 'up') setDirection(0, -1);
+        if (dir === 'down') setDirection(0, 1);
+        if (dir === 'left') setDirection(-1, 0);
+        if (dir === 'right') setDirection(1, 0);
+      }
+
+      function handleTouchStart(event) {
+        const touch = event.changedTouches[0];
+        touchStart = { x: touch.clientX, y: touch.clientY };
+      }
+
+      function handleTouchEnd(event) {
+        if (!touchStart) return;
+        const touch = event.changedTouches[0];
+        const dx = touch.clientX - touchStart.x;
+        const dy = touch.clientY - touchStart.y;
+
+        if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
+
+        if (Math.abs(dx) > Math.abs(dy)) {
+          setDirection(dx > 0 ? 1 : -1, 0);
+        } else {
+          setDirection(0, dy > 0 ? 1 : -1);
+        }
+
+        touchStart = null;
+      }
+
+      highScore = loadHighScore();
+      document.addEventListener('keydown', handleKeydown);
+      restartButton.addEventListener('click', resetGame);
+      pauseButton.addEventListener('click', togglePause);
+      document.querySelectorAll('.control-btn').forEach((button) => {
+        button.addEventListener('click', handleControlButton);
+      });
+      canvas.addEventListener('touchstart', handleTouchStart, { passive: true });
+      canvas.addEventListener('touchend', handleTouchEnd, { passive: true });
+      canvas.addEventListener('click', () => {
+        if (gameOver) resetGame();
+      });
+
+      resetGame();
+    })();
+  </script>
+</body>
+</html>
