@@ -1,0 +1,624 @@
+#!/usr/bin/env python3
+"""
+Генератор страниц городов Подмосковья для urban-ritual.ru.
+
+Для каждого города:
+- уникальный текст с привязкой к моргу и кладбищам
+- 12 ключевых слов, включая морг, кладбище, отпевание, панихида, перевозка, прощание
+- LocalBusiness JSON-LD с координатами морга (точка-салон у морга)
+- Карта Яндекс iframe указывает на адрес морга
+- Хлебные крошки + Service + BreadcrumbList
+"""
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+DATA = json.loads((ROOT / "data" / "cities-mo.json").read_text(encoding="utf-8"))
+OUT_DIR = ROOT / "city"
+
+CANONICAL_BASE = "https://urban-ritual.ru"
+PHONE_TEL = "+79852198394"
+PHONE_VIS = "+7 (985) 219-83-94"
+
+
+def render_jsonld(c: dict) -> str:
+    org = {
+        "@context": "https://schema.org",
+        "@type": "FuneralHome",
+        "@id": f"{CANONICAL_BASE}/city/{c['slug']}/#org",
+        "name": f"Городской Ритуал — {c['name']}",
+        "parentOrganization": {"@id": f"{CANONICAL_BASE}/#organization"},
+        "url": f"{CANONICAL_BASE}/city/{c['slug']}/",
+        "telephone": PHONE_TEL,
+        "image": f"{CANONICAL_BASE}/assets/products/wreath_elite_30.jpg",
+        "priceRange": "₽₽",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": c["officeAddress"],
+            "addressLocality": c["name"],
+            "addressRegion": "Московская область",
+            "addressCountry": "RU",
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": c["morgueLat"],
+            "longitude": c["morgueLng"],
+        },
+        "areaServed": {"@type": "City", "name": c["name"]},
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00", "closes": "23:59"
+        }
+    }
+    service = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": f"Ритуальные услуги {c['namePrep']}",
+        "provider": {"@id": f"{CANONICAL_BASE}/city/{c['slug']}/#org"},
+        "areaServed": {"@type": "City", "name": c["name"]},
+        "description": f"Организация похорон и кремации {c['namePrep']}. Выезд ритуального агента за {c['minutes']} минут. Точка-салон у {c['morgue'].lower()}. Помощь с документами, перевозка умершего, отпевание, поминальный обед.",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "RUB",
+            "lowPrice": "34900",
+            "highPrice": "129000",
+            "offerCount": "4"
+        }
+    }
+    bc = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Главная",
+             "item": f"{CANONICAL_BASE}/"},
+            {"@type": "ListItem", "position": 2, "name": "Города Подмосковья",
+             "item": f"{CANONICAL_BASE}/#cities"},
+            {"@type": "ListItem", "position": 3, "name": c["name"],
+             "item": f"{CANONICAL_BASE}/city/{c['slug']}/"},
+        ]
+    }
+    return "\n".join(
+        f'<script type="application/ld+json">\n{json.dumps(b, ensure_ascii=False, indent=2)}\n</script>'
+        for b in (org, service, bc)
+    )
+
+
+SETTLEMENTS = None
+def _load_settlements():
+    global SETTLEMENTS
+    if SETTLEMENTS is None:
+        try:
+            SETTLEMENTS = json.loads((ROOT / "data" / "settlements-mo.json").read_text(encoding="utf-8"))
+        except Exception:
+            SETTLEMENTS = []
+    return SETTLEMENTS
+
+
+def render_settlement_block(city: dict) -> str:
+    """Чипы населённых пунктов округа (только если есть)."""
+    sett = [s for s in _load_settlements() if s.get('parent') == city['slug']]
+    if not sett:
+        return ""
+    sett_sorted = sorted(sett, key=lambda x: x['name'])
+    chips = "\n        ".join(
+        f'<li><a href="../../settlement/{s["slug"]}/">{s["name"]}</a></li>'
+        for s in sett_sorted
+    )
+    n = len(sett_sorted)
+    morgue_low = city["morgue"].lower().replace("морг ", "морга ")
+    return f"""
+  <section class="section" data-settlement-block="1">
+    <div class="container">
+      <header class="section__head">
+        <h2>Населённые пункты {city['nameGen']}</h2>
+        <p>Работаем во&nbsp;всех {n}&nbsp;населённых пунктах округа. Кликните на&nbsp;свой посёлок или микрорайон.</p>
+      </header>
+      <ul class="chips chips--linked">
+        {chips}
+      </ul>
+      <p class="cities-note">Выезд ритуального агента в&nbsp;любой из&nbsp;этих населённых пунктов&nbsp;— из&nbsp;нашего салона у&nbsp;{morgue_low}.</p>
+    </div>
+  </section>"""
+
+
+def neighbours(slug: str, n: int = 6) -> list:
+    """6 ближайших городов по координатам."""
+    me = next(x for x in DATA if x["slug"] == slug)
+    others = [x for x in DATA if x["slug"] != slug]
+    def d(o): return (o["lat"]-me["lat"])**2 + (o["lng"]-me["lng"])**2
+    others.sort(key=d)
+    return others[:n]
+
+
+def render_neighbours(slug: str) -> str:
+    items = []
+    for c in neighbours(slug):
+        items.append(f'<li><a href="../{c["slug"]}/">{c["name"]}</a></li>')
+    return "\n        ".join(items)
+
+
+PAGE_TMPL = r"""<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F5F2">
+
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <meta name="keywords" content="{keywords}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="{canonical}">
+
+  <meta name="geo.region" content="RU-MOS">
+  <meta name="geo.placename" content="{name}, Московская область">
+  <meta name="geo.position" content="{lat};{lng}">
+  <meta name="ICBM" content="{lat}, {lng}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{canonical}">
+  <meta property="og:title" content="{ogtitle}">
+  <meta property="og:description" content="{ogdesc}">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="{base}/assets/products/wreath_elite_30.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+
+  {jsonld}
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){{
+          m[i]=m[i]||function(){{(m[i].a=m[i].a||[]).push(arguments)}};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {{if (document.scripts[j].src === r) {{ return; }}}}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      }})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109160037', 'ym');
+
+      ym(109160037, 'init', {{ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true}});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109160037" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+
+<a class="skip" href="#main">Перейти к содержимому</a>
+
+<header class="topbar">
+  <div class="container topbar__row">
+    <a href="../../" class="logo" aria-label="Городской Ритуал — на главную">
+      <span class="logo__mark" aria-hidden="true">ГР</span>
+      <span class="logo__text">
+        <span class="logo__name">Городской Ритуал</span>
+        <span class="logo__sub">{name} · круглосуточно</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../../#services">Услуги</a>
+      <a href="../../#prices">Цены</a>
+      <a href="../../#moscow">Москва</a>
+      <a href="../../#cities">Города МО</a>
+      <a href="../../#cemeteries">Кладбища</a>
+      <a href="../../#blog">Справочник</a>
+      <a href="../../#faq">Вопросы</a>
+    </nav>
+    <div class="city-switcher" data-city-switcher>
+      <button type="button" class="city-switcher__btn" aria-haspopup="listbox" aria-expanded="false">
+        <span class="city-switcher__icon" aria-hidden="true">📍</span>
+        <span class="city-switcher__label">{name}</span>
+        <span class="city-switcher__chev" aria-hidden="true">▾</span>
+      </button>
+      <div class="city-switcher__pop" role="listbox" hidden>
+        <input type="search" class="city-switcher__input" placeholder="Поиск города…" aria-label="Поиск города">
+        <ul class="city-switcher__list">
+          {cityopts}
+        </ul>
+      </div>
+    </div>
+    <div class="phone-block">
+      <a class="phone-link" href="tel:{phone_tel}">
+        <span class="phone-link__dot" aria-hidden="true"></span>
+        <span class="phone-link__num">{phone_vis}</span>
+        <span class="phone-link__sub">круглосуточно · мобильный</span>
+      </a>
+      <a class="phone-link phone-link--second" href="tel:+74951915128">
+        <span class="phone-link__num">+7 (495) 191-51-28</span>
+        <span class="phone-link__sub">офис · городской</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <div class="container">
+      <a href="../../">Главная</a>
+      <span aria-hidden="true">›</span>
+      <a href="../../#cities">Города Подмосковья</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">{name}</span>
+    </div>
+  </nav>
+
+  <section class="hero hero--district">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <div class="hero__eyebrow">Ритуальное агентство · {name} · круглосуточно</div>
+        <h1>Ритуальные услуги {namePrep}</h1>
+        <p class="hero__lead">
+          <b>Точка-салон {namePrep} — рядом с&nbsp;{morgueInstrumental}.</b>
+          Выезд ритуального агента за&nbsp;{minutes}&nbsp;минут, бесплатно, круглосуточно.
+          Организация похорон, кремации, отпевания и&nbsp;поминального обеда «под&nbsp;ключ».
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="tel:{phone_tel}">Вызвать агента {namePrep}</a>
+          <a class="btn btn--ghost" href="#map">Где мы — карта</a>
+        </div>
+        <ul class="hero__badges" aria-label="Гарантии">
+          <li>Свой агент {namePrep}</li>
+          <li>Точка у морга</li>
+          <li>Договор и&nbsp;чек</li>
+          <li>24 / 7</li>
+        </ul>
+      </div>
+      <aside class="hero__card">
+        <h2 class="hero__card-title">Точка-салон {namePrep}</h2>
+        <p class="hero__card-addr">
+          <b>{officeAddress}</b><br>
+          Работаем 24/7 без выходных
+        </p>
+        <ul class="plain">
+          <li>Морг: {morgue}</li>
+          <li>Ближайшие кладбища: {cemeteries}</li>
+          <li>Отпевание в&nbsp;храмах: {churches}</li>
+          <li>Подключаемся к&nbsp;{hospitalsShort}</li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="tel:{phone_tel}">Позвонить</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container district-text">
+      <h2>Организация похорон {namePrep} — полное сопровождение</h2>
+      <p>{specific}</p>
+      <p>
+        Наш ритуальный агент {namePrep} приедет к&nbsp;вам в&nbsp;квартиру, частный дом,
+        больницу или морг за&nbsp;{minutes}&nbsp;минут после звонка. Услуга выезда —
+        бесплатная и&nbsp;ни&nbsp;к&nbsp;чему не&nbsp;обязывает. Агент подробно объяснит порядок
+        действий, оформит документы, согласует смету и&nbsp;организует перевозку умершего.
+      </p>
+
+      <h3>Морг {namePrep} — с кем мы работаем</h3>
+      <p>Основной морг города — <b>{morgue}</b> ({morgueAddress}). Сотрудничаем также с патологоанатомическими отделениями {hospitals}. Наш агент знает порядок выдачи тел, помогает быстро получить медицинское свидетельство о&nbsp;смерти и&nbsp;организовать перевозку в&nbsp;ритуальный зал, на&nbsp;отпевание или к&nbsp;месту захоронения.</p>
+
+      <h3>Кладбища {namePrep} и&nbsp;района</h3>
+      <p>Захоронение организуем на&nbsp;ближайших кладбищах: {cemeteries}. Помогаем оформить участок (новый, родственный, подзахоронение в&nbsp;родственную могилу). Подбираем оптимальный по&nbsp;стоимости и&nbsp;близости вариант.</p>
+
+      <h3>Отпевание и&nbsp;гражданская панихида {namePrep}</h3>
+      <p>Помогаем согласовать отпевание в&nbsp;храмах: {churches}. Организуем гражданскую панихиду в&nbsp;зале прощания, музыкальное и&nbsp;цветочное оформление церемонии. Берём на&nbsp;себя коммуникацию со&nbsp;священником и&nbsp;распорядителем.</p>
+
+      <h3>Кремация {namePrep}</h3>
+      <p>Организация кремации {namePrep} — сопровождение в&nbsp;крематории Носовиха или Митино, гроб для кремации, урна для праха, оформление документов и&nbsp;доставка праха родственникам или подзахоронение урны.</p>
+
+      <h3>Перевозка умершего из&nbsp;{nameGen}</h3>
+      <p>Спецавтомобиль 24/7, бригада грузчиков, оформление всех справок для перевозки тела по&nbsp;Московской области, в&nbsp;Москву и&nbsp;в&nbsp;регионы РФ. Перевозим из&nbsp;дома, больницы или морга — до&nbsp;ритуального зала или кладбища.</p>
+
+      <h3>Поминальный обед {namePrep}</h3>
+      <p>Подбираем кафе-партнёров {namePrep} для проведения поминок. Залы на&nbsp;10–120&nbsp;человек, традиционное меню по&nbsp;любому бюджету, выезд кейтеринга на&nbsp;дом или в&nbsp;частный дом.</p>
+    </div>
+  </section>
+
+  <section id="prices" class="section section--alt">
+    <div class="container">
+      <header class="section__head">
+        <h2>Цены {namePrep}</h2>
+        <p>Все цены фиксируются в&nbsp;договоре. Доплат «на&nbsp;месте» не&nbsp;возникает.</p>
+      </header>
+      <div class="grid grid--3 plans">
+        <article class="plan">
+          <header class="plan__head">
+            <h3>Эконом</h3>
+            <p class="plan__price">от <b>34&nbsp;900&nbsp;₽</b></p>
+            <p class="plan__sub">социальные похороны</p>
+          </header>
+          <ul class="plan__list">
+            <li>Выезд агента и&nbsp;оформление документов</li>
+            <li>Гроб обитый, ритуальный набор</li>
+            <li>Катафалк {namePrep}</li>
+            <li>Бригада из&nbsp;4&nbsp;человек</li>
+            <li>Венок и&nbsp;лента с&nbsp;надписью</li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="tel:{phone_tel}">Уточнить состав</a>
+        </article>
+        <article class="plan plan--featured">
+          <div class="plan__badge">Выбирают чаще</div>
+          <header class="plan__head">
+            <h3>Стандарт</h3>
+            <p class="plan__price">от <b>68&nbsp;500&nbsp;₽</b></p>
+            <p class="plan__sub">похороны под ключ</p>
+          </header>
+          <ul class="plan__list">
+            <li>Всё из&nbsp;пакета «Эконом»</li>
+            <li>Гроб лакированный</li>
+            <li>Подготовка тела в&nbsp;{morgueShort}</li>
+            <li>2&nbsp;венка, корзина цветов, лента</li>
+            <li>Координатор церемонии</li>
+            <li>Помощь с&nbsp;соц. пособием</li>
+          </ul>
+          <a class="btn btn--primary btn--block" href="tel:{phone_tel}">Заказать пакет</a>
+        </article>
+        <article class="plan">
+          <header class="plan__head">
+            <h3>Премиум</h3>
+            <p class="plan__price">от <b>129&nbsp;000&nbsp;₽</b></p>
+            <p class="plan__sub">полное сопровождение</p>
+          </header>
+          <ul class="plan__list">
+            <li>Всё из&nbsp;пакета «Стандарт»</li>
+            <li>Премиум-гроб, индивидуальный декор</li>
+            <li>Зал прощания и&nbsp;отпевание</li>
+            <li>Цветочное оформление церемонии</li>
+            <li>Поминальный обед {namePrep}</li>
+            <li>Персональный распорядитель</li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="tel:{phone_tel}">Обсудить детали</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="agent" class="section">
+    <div class="container district-text">
+      <h2>Выезд ритуального агента {namePrep} за&nbsp;{minutes}&nbsp;минут</h2>
+      <p>
+        Агент <b>{namePrep}</b> приезжает к&nbsp;вам с&nbsp;каталогом цен, договором и&nbsp;бланками
+        документов. Объясняет порядок действий, согласовывает смету, организует перевозку
+        умершего из&nbsp;дома или больницы в&nbsp;<b>{morgue}</b>. Услуга выезда — <b>бесплатная,
+        круглосуточная, без обязательств</b>: вы&nbsp;ничего не&nbsp;подписываете до&nbsp;того, как
+        поймёте полный состав работ и&nbsp;их&nbsp;стоимость.
+      </p>
+    </div>
+  </section>
+
+  <section id="map" class="section section--alt">
+    <div class="container">
+      <header class="section__head">
+        <h2>📍 Наш магазин-салон {namePrep} — у&nbsp;{morgueLow}</h2>
+        <p>Точный адрес отмечен на&nbsp;карте. Можно приехать или вызвать агента к&nbsp;себе.</p>
+      </header>
+      <div class="city-map-grid">
+        <div class="city-map" aria-label="Карта расположения магазина-салона у морга">
+          <iframe
+            title="Городской Ритуал — {name}, карта"
+            src="https://yandex.ru/map-widget/v1/?ll={morgueLng}%2C{morgueLat}&z=16&pt={morgueLng},{morgueLat},pm2rdm"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+        <aside class="city-map__side">
+          <h3>Магазин-салон {namePrep}</h3>
+          <p class="city-map__addr"><b>{officeAddress}</b></p>
+          <ul class="plain">
+            <li><b>Морг:</b> {morgue}</li>
+            <li><b>Адрес морга:</b> {morgueAddress}</li>
+            <li><b>Часы работы:</b> 24/7 без выходных</li>
+            <li><b>Услуги в&nbsp;салоне:</b> подбор гроба, венков, лент, оформление документов</li>
+          </ul>
+          <a class="btn btn--primary btn--block" href="tel:{phone_tel}">Вызвать агента {namePrep}</a>
+          <a class="btn btn--ghost btn--block" href="https://yandex.ru/maps/?ll={morgueLng}%2C{morgueLat}&z=16&pt={morgueLng},{morgueLat},pm2rdm&rtext=~{morgueLat},{morgueLng}&rtt=auto" target="_blank" rel="noopener">Построить маршрут</a>
+        </aside>
+      </div>
+      <p class="map-note">
+        Магазин-салон находится в&nbsp;шаговой доступности от&nbsp;{morgueLow}. Это позволяет
+        оперативно решать вопросы выдачи тела, согласования бригады и&nbsp;перевозки —
+        без поездок из&nbsp;Москвы или соседних городов.
+      </p>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container faq">
+      <header class="section__head">
+        <h2>Частые вопросы {namePrep}</h2>
+      </header>
+      <details open>
+        <summary>Сколько ехать ритуальному агенту {namePrep}?</summary>
+        <p>В&nbsp;среднем {minutes}&nbsp;минут. Наша точка-салон находится у&nbsp;{morgueLow}, поэтому агент стартует уже из&nbsp;вашего города, а&nbsp;не&nbsp;из&nbsp;Москвы.</p>
+      </details>
+      <details>
+        <summary>На&nbsp;каких кладбищах вы&nbsp;организуете похороны {namePrep}?</summary>
+        <p>{cemeteries}. Подберём вариант по&nbsp;стоимости и&nbsp;близости, поможем оформить участок.</p>
+      </details>
+      <details>
+        <summary>С&nbsp;каким моргом вы&nbsp;работаете {namePrep}?</summary>
+        <p>Основной — <b>{morgue}</b> ({morgueAddress}). Также сотрудничаем с&nbsp;ПАО {hospitals}.</p>
+      </details>
+      <details>
+        <summary>Можно ли организовать отпевание {namePrep}?</summary>
+        <p>Да. Согласуем отпевание в&nbsp;храмах: {churches}. Берём на&nbsp;себя коммуникацию со&nbsp;священником, подвоз родственников, цветочное и&nbsp;музыкальное оформление.</p>
+      </details>
+      <details>
+        <summary>Сколько стоит кремация {namePrep}?</summary>
+        <p>Базовая кремация — от&nbsp;34&nbsp;900&nbsp;₽. В&nbsp;стоимость входит гроб для кремации, перевозка в&nbsp;крематорий Носовиха или Митино, урна, оформление документов и&nbsp;доставка праха.</p>
+      </details>
+      <details>
+        <summary>Есть ли социальное пособие на&nbsp;погребение для жителей {nameGen}?</summary>
+        <p>Да. Пособие в&nbsp;Московской области — около 9&nbsp;000&nbsp;₽ для неработающих пенсионеров, больше — для отдельных категорий. Поможем подать заявление в&nbsp;Соцфонд.</p>
+      </details>
+    </div>
+  </section>
+
+  {settlementBlock}
+
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="zones__title">Похороны и&nbsp;кремация в&nbsp;соседних городах</h2>
+      <ul class="chips chips--linked">
+        {neighbours}
+      </ul>
+      <p class="zones__note">Работаем по&nbsp;всей Московской области — выберите ваш город из&nbsp;<a href="../../#cities">полного списка</a>.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contacts-cta">
+      <div>
+        <h2>Связаться с&nbsp;нами — {name}</h2>
+        <p>Точка-салон: {officeAddress}. Круглосуточно. Звонок и&nbsp;выезд&nbsp;— бесплатно.</p>
+      </div>
+      <a class="btn btn--primary btn--xl" href="tel:{phone_tel}">{phone_vis}</a>
+    </div>
+  </section>
+
+</main>
+
+<a class="fab" href="tel:{phone_tel}" aria-label="Позвонить">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <path fill="currentColor" d="M6.6 10.8c1.5 2.9 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1H7.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1L6.6 10.8Z"/>
+  </svg>
+  <span>Позвонить</span>
+</a>
+
+<footer class="footer">
+  <div class="container footer__row">
+    <div>
+      <div class="footer__brand">Городской Ритуал — {name}</div>
+      <div class="footer__legal">ООО «Городской Ритуал» · ОГРН&nbsp;1147746000000 · ИНН&nbsp;7700000000</div>
+      <div class="footer__phones">
+        <a href="tel:{phone_tel}">{phone_vis}</a>
+        <span class="footer__phone-sep">·</span>
+        <a href="tel:+74951915128">+7 (495) 191-51-28</a>
+        <span class="footer__phone-sub">круглосуточно</span>
+      </div>
+    </div>
+    <nav class="footer__nav" aria-label="Подвал">
+      <a href="../../">Главная</a>
+      <a href="../../#cities">Все города МО</a>
+      <a href="#services">Услуги</a>
+      <a href="#prices">Цены</a>
+    </nav>
+    <div class="footer__copy">© 2014–2026. Все права защищены.</div>
+  </div>
+</footer>
+
+<script src="../../cities-data.js" defer></script>
+<script src="../../script.js" defer></script>
+</body>
+</html>
+"""
+
+
+def build_city_options(current_slug: str) -> str:
+    """Options for the dropdown city switcher (all cities)."""
+    items = []
+    for c in DATA:
+        active = ' aria-current="true" class="active"' if c["slug"] == current_slug else ""
+        items.append(
+            f'<li><a href="../{c["slug"]}/"{active}>{c["name"]}</a></li>'
+        )
+    return "\n          ".join(items)
+
+
+def short_morgue(name: str) -> str:
+    """Краткое имя морга для шаблона (без префикса 'Морг ')."""
+    return re.sub(r"^Морг\s+", "", name)
+
+
+def morgue_instrumental(name: str) -> str:
+    """Форма для предлога 'с' — творительный падеж: 'Морг X' -> 'моргом X'."""
+    return re.sub(r"^Морг\s+", "моргом ", name, flags=re.IGNORECASE)
+
+
+def morgue_genitive_low(name: str) -> str:
+    """Для 'у Х': 'Морг X' -> 'морга X' (название после морга — как было)."""
+    return re.sub(r"^Морг\s+", "морга ", name, flags=re.IGNORECASE)
+
+
+def build():
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    for c in DATA:
+        slug_dir = OUT_DIR / c["slug"]
+        slug_dir.mkdir(parents=True, exist_ok=True)
+
+        # 12 keywords on every city page
+        kw = [
+            f"ритуальные услуги {c['name']}",
+            f"похороны {c['name']}",
+            f"кремация {c['name']}",
+            f"ритуальный агент {c['name']}",
+            f"выезд ритуального агента {c['name']}",
+            f"перевозка умершего {c['name']}",
+            f"организация похорон {c['name']}",
+            f"ритуальное агентство {c['name']}",
+            f"морг {c['name']}",
+            f"кладбища {c['name']}",
+            f"отпевание {c['name']}",
+            f"гражданская панихида {c['name']}",
+        ]
+
+        title = f"Ритуальные услуги {c['namePrep']} 24/7 — морг, кладбища, отпевание, кремация"
+        if len(title) > 95:
+            title = title[:92] + "…"
+
+        desc = (
+            f"Организация похорон, кремации, отпевания {c['namePrep']}. "
+            f"Точка-салон у {short_morgue(c['morgue']).lower()}. "
+            f"Выезд ритуального агента за {c['minutes']} минут, круглосуточно. ☎ {PHONE_VIS}"
+        )
+        if len(desc) > 180:
+            desc = desc[:177] + "…"
+
+        # Sanitize hospitals to a short variant for headline list
+        hospitals_short = c["hospitals"].split(",")[0].strip()
+
+        html = PAGE_TMPL.format(
+            base=CANONICAL_BASE,
+            canonical=f"{CANONICAL_BASE}/city/{c['slug']}/",
+            title=title,
+            description=desc,
+            ogtitle=f"Ритуальные услуги {c['namePrep']} — Городской Ритуал",
+            ogdesc=f"Похороны и кремация {c['namePrep']}. Свой агент, точка у морга, выезд за {c['minutes']} мин, 24/7.",
+            keywords=", ".join(kw),
+            name=c["name"],
+            namePrep=c["namePrep"],
+            nameGen=c["nameGen"],
+            lat=c["lat"], lng=c["lng"],
+            morgueLat=c["morgueLat"], morgueLng=c["morgueLng"],
+            minutes=c["minutes"],
+            officeAddress=c["officeAddress"],
+            morgue=c["morgue"],
+            morgueLow=morgue_genitive_low(c["morgue"]),
+            morgueInstrumental=morgue_instrumental(c["morgue"]),
+            morgueShort=short_morgue(c["morgue"]),
+            morgueAddress=c["morgueAddress"],
+            cemeteries=c["cemeteries"],
+            churches=c["churches"],
+            hospitals=c["hospitals"],
+            hospitalsShort=hospitals_short,
+            specific=c["specific"],
+            phone_tel=PHONE_TEL,
+            phone_vis=PHONE_VIS,
+            jsonld=render_jsonld(c),
+            cityopts=build_city_options(c["slug"]),
+            neighbours=render_neighbours(c["slug"]),
+            settlementBlock=render_settlement_block(c),
+        )
+
+        out = slug_dir / "index.html"
+        out.write_text(html, encoding="utf-8")
+
+    print(f"Generated {len(DATA)} city pages in {OUT_DIR}")
+
+
+if __name__ == "__main__":
+    build()

@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /tmp/
+Disallow: /*?*
+
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&fbclid
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://urban-ritual.ru/sitemap.xml
+Sitemap: https://urban-ritual.ru/sitemap-main.xml
+Sitemap: https://urban-ritual.ru/sitemap-rayon.xml
+Sitemap: https://urban-ritual.ru/sitemap-city.xml
+Sitemap: https://urban-ritual.ru/sitemap-settlement.xml
+Sitemap: https://urban-ritual.ru/sitemap-moscow.xml
+Sitemap: https://urban-ritual.ru/sitemap-cemetery.xml
+Sitemap: https://urban-ritual.ru/sitemap-blog.xml
+
+Host: https://urban-ritual.ru

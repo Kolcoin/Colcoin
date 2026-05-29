@@ -1,0 +1,18 @@
+{
+  "name": "Городской Ритуал",
+  "short_name": "Городской Ритуал",
+  "description": "Ритуальное агентство в Москве и Подмосковье — организация похорон, кремация, памятники. Круглосуточно.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#F7F5F2",
+  "theme_color": "#6E2A2A",
+  "lang": "ru",
+  "icons": [
+    { "src": "/favicon-32x32.png", "type": "image/png", "sizes": "32x32" },
+    { "src": "/favicon-96x96.png", "type": "image/png", "sizes": "96x96" },
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

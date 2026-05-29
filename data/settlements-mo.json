@@ -1,0 +1,3611 @@
+[
+  {
+    "slug": "zheleznodorozhny",
+    "name": "Железнодорожный",
+    "parent": "balashiha",
+    "minutes": 40,
+    "lat": 55.745,
+    "lng": 38.011,
+    "feat": "Бывший отдельный город, ныне крупный микрорайон Балашихи. Кладбище — Кучинское и Балашихинское."
+  },
+  {
+    "slug": "saltykovka",
+    "name": "Салтыковка",
+    "parent": "balashiha",
+    "minutes": 40,
+    "lat": 55.762,
+    "lng": 37.943,
+    "feat": "Микрорайон Балашихи на западе округа, у платформы Салтыковская. Близко Кучинское кладбище."
+  },
+  {
+    "slug": "kuchino",
+    "name": "Кучино",
+    "parent": "balashiha",
+    "minutes": 45,
+    "lat": 55.745,
+    "lng": 37.954,
+    "feat": "Микрорайон Балашихи, у одноимённого Кучинского кладбища."
+  },
+  {
+    "slug": "nikolsko-arkhangelsky",
+    "name": "Никольско-Архангельский",
+    "parent": "balashiha",
+    "minutes": 35,
+    "lat": 55.764,
+    "lng": 37.911,
+    "feat": "Микрорайон Балашихи. Расположение Николо-Архангельского кладбища и крематория."
+  },
+  {
+    "slug": "kupavna",
+    "name": "Купавна",
+    "parent": "balashiha",
+    "minutes": 50,
+    "lat": 55.806,
+    "lng": 38.165,
+    "feat": "Микрорайон Балашихи у границы с Богородским округом. Близко Купавинское кладбище."
+  },
+  {
+    "slug": "polovo",
+    "name": "Полтево",
+    "parent": "balashiha",
+    "minutes": 50,
+    "lat": 55.799,
+    "lng": 38.043,
+    "feat": "Посёлок Балашихинского округа. Сельская местность, частный сектор."
+  },
+  {
+    "slug": "vniipo",
+    "name": "ВНИИПО",
+    "parent": "balashiha",
+    "minutes": 50,
+    "lat": 55.838,
+    "lng": 37.97,
+    "feat": "Посёлок ВНИИПО Балашихинского округа. Жилая зона у научно-исследовательского института."
+  },
+  {
+    "slug": "zarya-balashiha",
+    "name": "Заря",
+    "parent": "balashiha",
+    "minutes": 50,
+    "lat": 55.788,
+    "lng": 37.946,
+    "feat": "Микрорайон Заря в составе Балашихинского округа."
+  },
+  {
+    "slug": "novy-svet-balashiha",
+    "name": "Новый Свет",
+    "parent": "balashiha",
+    "minutes": 50,
+    "lat": 55.756,
+    "lng": 37.957,
+    "feat": "Микрорайон Балашихи."
+  },
+  {
+    "slug": "sobolikha",
+    "name": "Соболиха",
+    "parent": "balashiha",
+    "minutes": 55,
+    "lat": 55.815,
+    "lng": 37.967,
+    "feat": "Деревня в составе Балашихинского округа."
+  },
+  {
+    "slug": "dyatlovka",
+    "name": "Дятловка",
+    "parent": "balashiha",
+    "minutes": 55,
+    "lat": 55.844,
+    "lng": 37.929,
+    "feat": "Деревня Балашихинского округа в северной части."
+  },
+  {
+    "slug": "pekhra-pokrovskoe",
+    "name": "Пехра-Покровское",
+    "parent": "balashiha",
+    "minutes": 55,
+    "lat": 55.853,
+    "lng": 37.937,
+    "feat": "Село Балашихинского округа с историческим Покровским храмом."
+  },
+  {
+    "slug": "zhukovsky-ramenskij",
+    "name": "Жуковский",
+    "parent": "ramenskoe",
+    "minutes": 60,
+    "lat": 55.591,
+    "lng": 38.119,
+    "feat": "Город-наукоград авиации в составе Раменского округа. Морг Жуковской ГКБ."
+  },
+  {
+    "slug": "bykovo-ramenskoe",
+    "name": "Быково",
+    "parent": "ramenskoe",
+    "minutes": 55,
+    "lat": 55.62,
+    "lng": 38.077,
+    "feat": "Посёлок Быково Раменского округа у аэропорта Быково и Быковского кладбища."
+  },
+  {
+    "slug": "ilyinsky",
+    "name": "Ильинский",
+    "parent": "ramenskoe",
+    "minutes": 55,
+    "lat": 55.625,
+    "lng": 38.056,
+    "feat": "Посёлок Ильинский Раменского округа у станции Ильинская."
+  },
+  {
+    "slug": "udelnaya",
+    "name": "Удельная",
+    "parent": "ramenskoe",
+    "minutes": 55,
+    "lat": 55.6,
+    "lng": 38.041,
+    "feat": "Посёлок Удельная Раменского округа, дачная застройка."
+  },
+  {
+    "slug": "kratovo",
+    "name": "Кратово",
+    "parent": "ramenskoe",
+    "minutes": 60,
+    "lat": 55.594,
+    "lng": 38.181,
+    "feat": "Дачный посёлок Кратово Раменского округа."
+  },
+  {
+    "slug": "gzhel",
+    "name": "Гжель",
+    "parent": "ramenskoe",
+    "minutes": 75,
+    "lat": 55.595,
+    "lng": 38.391,
+    "feat": "Село Гжель Раменского округа, родина гжельского фарфора."
+  },
+  {
+    "slug": "ostrovtsy",
+    "name": "Островцы",
+    "parent": "ramenskoe",
+    "minutes": 50,
+    "lat": 55.56,
+    "lng": 37.916,
+    "feat": "Посёлок Островцы Раменского округа у Москвы-реки."
+  },
+  {
+    "slug": "sofyino",
+    "name": "Софьино",
+    "parent": "ramenskoe",
+    "minutes": 60,
+    "lat": 55.502,
+    "lng": 38.276,
+    "feat": "Село Софьино Раменского округа."
+  },
+  {
+    "slug": "chulkovo",
+    "name": "Чулково",
+    "parent": "ramenskoe",
+    "minutes": 55,
+    "lat": 55.518,
+    "lng": 37.928,
+    "feat": "Посёлок Чулково Раменского округа, на берегу Москвы-реки."
+  },
+  {
+    "slug": "yurovo",
+    "name": "Юрово",
+    "parent": "ramenskoe",
+    "minutes": 55,
+    "lat": 55.53,
+    "lng": 37.965,
+    "feat": "Деревня Юрово Раменского округа."
+  },
+  {
+    "slug": "ignatevo",
+    "name": "Игнатьево",
+    "parent": "ramenskoe",
+    "minutes": 60,
+    "lat": 55.515,
+    "lng": 38.26,
+    "feat": "Деревня Игнатьево Раменского округа."
+  },
+  {
+    "slug": "novokharitonovo",
+    "name": "Новохаритоново",
+    "parent": "ramenskoe",
+    "minutes": 75,
+    "lat": 55.612,
+    "lng": 38.443,
+    "feat": "Село Новохаритоново, центр Гжельской керамической промышленности."
+  },
+  {
+    "slug": "nikitskoe",
+    "name": "Никитское",
+    "parent": "ramenskoe",
+    "minutes": 75,
+    "lat": 55.526,
+    "lng": 38.553,
+    "feat": "Село Никитское Раменского округа на восточной окраине."
+  },
+  {
+    "slug": "khripan",
+    "name": "Хрипань",
+    "parent": "ramenskoe",
+    "minutes": 70,
+    "lat": 55.616,
+    "lng": 38.291,
+    "feat": "Деревня Хрипань Раменского округа."
+  },
+  {
+    "slug": "dergaevo",
+    "name": "Дергаево",
+    "parent": "ramenskoe",
+    "minutes": 60,
+    "lat": 55.595,
+    "lng": 38.176,
+    "feat": "Деревня Дергаево Раменского округа."
+  },
+  {
+    "slug": "zagornovo",
+    "name": "Загорново",
+    "parent": "ramenskoe",
+    "minutes": 60,
+    "lat": 55.582,
+    "lng": 38.262,
+    "feat": "Деревня Загорново Раменского округа."
+  },
+  {
+    "slug": "kuznetsovo-ramen",
+    "name": "Кузнецово",
+    "parent": "ramenskoe",
+    "minutes": 60,
+    "lat": 55.547,
+    "lng": 38.286,
+    "feat": "Деревня Кузнецово Раменского округа."
+  },
+  {
+    "slug": "klishevo",
+    "name": "Клишево",
+    "parent": "ramenskoe",
+    "minutes": 55,
+    "lat": 55.541,
+    "lng": 38.157,
+    "feat": "Деревня Клишево Раменского округа."
+  },
+  {
+    "slug": "verkhneye-myachkovo",
+    "name": "Верхнее Мячково",
+    "parent": "ramenskoe",
+    "minutes": 55,
+    "lat": 55.526,
+    "lng": 37.94,
+    "feat": "Село Верхнее Мячково Раменского округа на Москве-реке."
+  },
+  {
+    "slug": "nikulino-ramen",
+    "name": "Никулино",
+    "parent": "ramenskoe",
+    "minutes": 65,
+    "lat": 55.575,
+    "lng": 38.35,
+    "feat": "Деревня Никулино Раменского округа."
+  },
+  {
+    "slug": "nakhabino",
+    "name": "Нахабино",
+    "parent": "krasnogorsk",
+    "minutes": 40,
+    "lat": 55.836,
+    "lng": 37.166,
+    "feat": "Крупный посёлок городского типа в составе Красногорского округа, у платформы Нахабино."
+  },
+  {
+    "slug": "snegiri",
+    "name": "Снегири",
+    "parent": "krasnogorsk",
+    "minutes": 55,
+    "lat": 55.899,
+    "lng": 36.999,
+    "feat": "Посёлок Снегири, известный военным мемориалом ВОВ."
+  },
+  {
+    "slug": "opalikha",
+    "name": "Опалиха",
+    "parent": "krasnogorsk",
+    "minutes": 40,
+    "lat": 55.836,
+    "lng": 37.252,
+    "feat": "Микрорайон Красногорска, у платформы Опалиха."
+  },
+  {
+    "slug": "pavlovskaya-sloboda",
+    "name": "Павловская Слобода",
+    "parent": "krasnogorsk",
+    "minutes": 50,
+    "lat": 55.892,
+    "lng": 37.115,
+    "feat": "Историческое село на берегу Истры в составе округа Истра."
+  },
+  {
+    "slug": "pionersky",
+    "name": "Пионерский",
+    "parent": "krasnogorsk",
+    "minutes": 50,
+    "lat": 55.842,
+    "lng": 37.092,
+    "feat": "Посёлок в составе Красногорского округа."
+  },
+  {
+    "slug": "arkhangelskoe",
+    "name": "Архангельское",
+    "parent": "krasnogorsk",
+    "minutes": 45,
+    "lat": 55.788,
+    "lng": 37.295,
+    "feat": "Знаменитая усадьба и посёлок в Красногорском округе."
+  },
+  {
+    "slug": "znamenskoe",
+    "name": "Знаменское",
+    "parent": "krasnogorsk",
+    "minutes": 45,
+    "lat": 55.835,
+    "lng": 37.245,
+    "feat": "Посёлок Знаменское Красногорского округа."
+  },
+  {
+    "slug": "lesnoj-gorodok",
+    "name": "Лесной городок",
+    "parent": "odincovo",
+    "minutes": 60,
+    "lat": 55.66,
+    "lng": 37.225,
+    "feat": "Посёлок городского типа Лесной городок в Одинцовском округе."
+  },
+  {
+    "slug": "perkhushkovo",
+    "name": "Перхушково",
+    "parent": "odincovo",
+    "minutes": 60,
+    "lat": 55.683,
+    "lng": 37.118,
+    "feat": "Село Перхушково Одинцовского округа, у Можайского шоссе."
+  },
+  {
+    "slug": "bolshie-vyazyomy",
+    "name": "Большие Вязёмы",
+    "parent": "odincovo",
+    "minutes": 65,
+    "lat": 55.62,
+    "lng": 37.026,
+    "feat": "Историческое село с пушкинскими местами в Одинцовском округе."
+  },
+  {
+    "slug": "zakharovo",
+    "name": "Захарово",
+    "parent": "odincovo",
+    "minutes": 70,
+    "lat": 55.633,
+    "lng": 37.005,
+    "feat": "Усадьба и село Захарово Одинцовского округа, связанные с Пушкиным."
+  },
+  {
+    "slug": "zhavoronki",
+    "name": "Жаворонки",
+    "parent": "odincovo",
+    "minutes": 65,
+    "lat": 55.672,
+    "lng": 37.083,
+    "feat": "Посёлок Жаворонки Одинцовского округа."
+  },
+  {
+    "slug": "chastsy",
+    "name": "Часцы",
+    "parent": "odincovo",
+    "minutes": 75,
+    "lat": 55.638,
+    "lng": 36.911,
+    "feat": "Посёлок Часцы Одинцовского округа."
+  },
+  {
+    "slug": "barvikha",
+    "name": "Барвиха",
+    "parent": "odincovo",
+    "minutes": 55,
+    "lat": 55.751,
+    "lng": 37.302,
+    "feat": "Элитный посёлок Барвиха Одинцовского округа."
+  },
+  {
+    "slug": "zhukovka-odin",
+    "name": "Жуковка",
+    "parent": "odincovo",
+    "minutes": 55,
+    "lat": 55.752,
+    "lng": 37.279,
+    "feat": "Дачный посёлок Жуковка Одинцовского округа."
+  },
+  {
+    "slug": "razdory",
+    "name": "Раздоры",
+    "parent": "odincovo",
+    "minutes": 50,
+    "lat": 55.755,
+    "lng": 37.33,
+    "feat": "Посёлок Раздоры на Рублёво-Успенском шоссе."
+  },
+  {
+    "slug": "dubki-odin",
+    "name": "Дубки",
+    "parent": "odincovo",
+    "minutes": 55,
+    "lat": 55.747,
+    "lng": 37.317,
+    "feat": "Дачный посёлок Дубки Одинцовского округа."
+  },
+  {
+    "slug": "anosino",
+    "name": "Аносино",
+    "parent": "odincovo",
+    "minutes": 65,
+    "lat": 55.808,
+    "lng": 37.11,
+    "feat": "Село Аносино Истринского округа, известное Аносиным монастырём."
+  },
+  {
+    "slug": "ubory",
+    "name": "Уборы",
+    "parent": "odincovo",
+    "minutes": 55,
+    "lat": 55.73,
+    "lng": 37.205,
+    "feat": "Историческое село Уборы Одинцовского округа на Рублёво-Успенском шоссе."
+  },
+  {
+    "slug": "maslovo",
+    "name": "Маслово",
+    "parent": "odincovo",
+    "minutes": 55,
+    "lat": 55.737,
+    "lng": 37.232,
+    "feat": "Деревня Маслово Одинцовского округа."
+  },
+  {
+    "slug": "islavskoe",
+    "name": "Иславское",
+    "parent": "odincovo",
+    "minutes": 60,
+    "lat": 55.73,
+    "lng": 37.155,
+    "feat": "Село Иславское Одинцовского округа."
+  },
+  {
+    "slug": "karinskoe",
+    "name": "Каринское",
+    "parent": "odincovo",
+    "minutes": 75,
+    "lat": 55.683,
+    "lng": 36.802,
+    "feat": "Село Каринское Одинцовского округа."
+  },
+  {
+    "slug": "yakhroma-dmitrov",
+    "name": "Яхрома",
+    "parent": "dmitrov",
+    "minutes": 75,
+    "lat": 56.287,
+    "lng": 37.486,
+    "feat": "Город Яхрома в составе Дмитровского округа, на канале им. Москвы."
+  },
+  {
+    "slug": "dedenevo",
+    "name": "Деденёво",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.232,
+    "lng": 37.539,
+    "feat": "Посёлок Деденёво Дмитровского округа, у Перемиловских высот."
+  },
+  {
+    "slug": "zaprudnya",
+    "name": "Запрудня",
+    "parent": "dmitrov",
+    "minutes": 120,
+    "lat": 56.561,
+    "lng": 37.456,
+    "feat": "Посёлок Запрудня Талдомского округа."
+  },
+  {
+    "slug": "verbilki",
+    "name": "Вербилки",
+    "parent": "dmitrov",
+    "minutes": 120,
+    "lat": 56.53,
+    "lng": 37.595,
+    "feat": "Посёлок Вербилки, родина Вербилковского фарфора."
+  },
+  {
+    "slug": "iksha",
+    "name": "Икша",
+    "parent": "dmitrov",
+    "minutes": 80,
+    "lat": 56.213,
+    "lng": 37.532,
+    "feat": "Посёлок Икша Дмитровского округа на канале им. Москвы."
+  },
+  {
+    "slug": "dubki-dmitrov",
+    "name": "Дубки",
+    "parent": "dmitrov",
+    "minutes": 80,
+    "lat": 56.351,
+    "lng": 37.555,
+    "feat": "Посёлок Дубки Дмитровского округа."
+  },
+  {
+    "slug": "tatishchevo",
+    "name": "Татищево",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.337,
+    "lng": 37.498,
+    "feat": "Деревня Татищево Дмитровского округа."
+  },
+  {
+    "slug": "olyavidovo",
+    "name": "Ольявидово",
+    "parent": "dmitrov",
+    "minutes": 110,
+    "lat": 56.484,
+    "lng": 37.7,
+    "feat": "Деревня Ольявидово Дмитровского округа."
+  },
+  {
+    "slug": "kamenka",
+    "name": "Каменка",
+    "parent": "dmitrov",
+    "minutes": 90,
+    "lat": 56.402,
+    "lng": 37.535,
+    "feat": "Деревня Каменка Дмитровского округа."
+  },
+  {
+    "slug": "orudyevo",
+    "name": "Орудьево",
+    "parent": "dmitrov",
+    "minutes": 90,
+    "lat": 56.404,
+    "lng": 37.473,
+    "feat": "Деревня Орудьево Дмитровского округа."
+  },
+  {
+    "slug": "vnukovo-dmitrov",
+    "name": "Внуково",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.343,
+    "lng": 37.529,
+    "feat": "Деревня Внуково Дмитровского округа."
+  },
+  {
+    "slug": "podyachevo",
+    "name": "Подъячево",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.29,
+    "lng": 37.327,
+    "feat": "Деревня Подъячево Дмитровского округа."
+  },
+  {
+    "slug": "kostino",
+    "name": "Костино",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.398,
+    "lng": 37.557,
+    "feat": "Деревня Костино Дмитровского округа."
+  },
+  {
+    "slug": "khotkovo-sp",
+    "name": "Хотьково",
+    "parent": "sergiev-posad",
+    "minutes": 95,
+    "lat": 56.252,
+    "lng": 37.982,
+    "feat": "Город Хотьково в Сергиево-Посадском округе, родина Покровского монастыря."
+  },
+  {
+    "slug": "krasnozavodsk-sp",
+    "name": "Краснозаводск",
+    "parent": "sergiev-posad",
+    "minutes": 110,
+    "lat": 56.45,
+    "lng": 38.217,
+    "feat": "Город Краснозаводск в Сергиево-Посадском округе."
+  },
+  {
+    "slug": "peresvet-sp",
+    "name": "Пересвет",
+    "parent": "sergiev-posad",
+    "minutes": 110,
+    "lat": 56.433,
+    "lng": 38.183,
+    "feat": "Город Пересвет в Сергиево-Посадском округе."
+  },
+  {
+    "slug": "bogorodskoe-sp",
+    "name": "Богородское",
+    "parent": "sergiev-posad",
+    "minutes": 105,
+    "lat": 56.305,
+    "lng": 38.219,
+    "feat": "Посёлок Богородское Сергиево-Посадского округа."
+  },
+  {
+    "slug": "shemetovo",
+    "name": "Шеметово",
+    "parent": "sergiev-posad",
+    "minutes": 105,
+    "lat": 56.319,
+    "lng": 38.078,
+    "feat": "Село Шеметово Сергиево-Посадского округа."
+  },
+  {
+    "slug": "kulikovo",
+    "name": "Куликово",
+    "parent": "sergiev-posad",
+    "minutes": 105,
+    "lat": 56.342,
+    "lng": 38.054,
+    "feat": "Деревня Куликово Сергиево-Посадского округа."
+  },
+  {
+    "slug": "sharapovo-sp",
+    "name": "Шарапово",
+    "parent": "sergiev-posad",
+    "minutes": 100,
+    "lat": 56.296,
+    "lng": 38.069,
+    "feat": "Деревня Шарапово Сергиево-Посадского округа."
+  },
+  {
+    "slug": "buzhaninovo",
+    "name": "Бужаниново",
+    "parent": "sergiev-posad",
+    "minutes": 110,
+    "lat": 56.357,
+    "lng": 38.299,
+    "feat": "Село Бужаниново Сергиево-Посадского округа."
+  },
+  {
+    "slug": "loza",
+    "name": "Лоза",
+    "parent": "sergiev-posad",
+    "minutes": 110,
+    "lat": 56.288,
+    "lng": 38.169,
+    "feat": "Посёлок Лоза Сергиево-Посадского округа."
+  },
+  {
+    "slug": "radonezh",
+    "name": "Радонеж",
+    "parent": "sergiev-posad",
+    "minutes": 100,
+    "lat": 56.231,
+    "lng": 37.998,
+    "feat": "Историческое село Радонеж — родина Преподобного Сергия Радонежского."
+  },
+  {
+    "slug": "remmash",
+    "name": "Реммаш",
+    "parent": "sergiev-posad",
+    "minutes": 105,
+    "lat": 56.31,
+    "lng": 38.041,
+    "feat": "Посёлок Реммаш Сергиево-Посадского округа."
+  },
+  {
+    "slug": "samotovo",
+    "name": "Самотово",
+    "parent": "sergiev-posad",
+    "minutes": 110,
+    "lat": 56.367,
+    "lng": 38.094,
+    "feat": "Деревня Самотово Сергиево-Посадского округа."
+  },
+  {
+    "slug": "snegiri-istra",
+    "name": "Снегири",
+    "parent": "istra",
+    "minutes": 75,
+    "lat": 55.899,
+    "lng": 36.999,
+    "feat": "Посёлок Снегири Истринского округа с военным мемориалом."
+  },
+  {
+    "slug": "holshcheviki",
+    "name": "Холщёвики",
+    "parent": "istra",
+    "minutes": 85,
+    "lat": 55.969,
+    "lng": 36.802,
+    "feat": "Деревня Холщёвики Истринского округа."
+  },
+  {
+    "slug": "buzharovo",
+    "name": "Бужарово",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 56.005,
+    "lng": 36.764,
+    "feat": "Село Бужарово Истринского округа."
+  },
+  {
+    "slug": "polevo-istra",
+    "name": "Полево",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 55.949,
+    "lng": 36.755,
+    "feat": "Деревня Полево Истринского округа."
+  },
+  {
+    "slug": "nikulino-istra",
+    "name": "Никулино",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 55.921,
+    "lng": 36.764,
+    "feat": "Деревня Никулино Истринского округа."
+  },
+  {
+    "slug": "kotovo",
+    "name": "Котово",
+    "parent": "istra",
+    "minutes": 75,
+    "lat": 55.881,
+    "lng": 36.836,
+    "feat": "Деревня Котово Истринского округа."
+  },
+  {
+    "slug": "vysokoe",
+    "name": "Высокое",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 55.949,
+    "lng": 36.81,
+    "feat": "Деревня Высокое Истринского округа."
+  },
+  {
+    "slug": "glebovo",
+    "name": "Глебово",
+    "parent": "istra",
+    "minutes": 85,
+    "lat": 56.012,
+    "lng": 36.661,
+    "feat": "Село Глебово Истринского округа."
+  },
+  {
+    "slug": "kurtnikovo",
+    "name": "Куртниково",
+    "parent": "istra",
+    "minutes": 85,
+    "lat": 55.964,
+    "lng": 36.681,
+    "feat": "Деревня Куртниково Истринского округа."
+  },
+  {
+    "slug": "yadromino",
+    "name": "Ядромино",
+    "parent": "istra",
+    "minutes": 85,
+    "lat": 55.916,
+    "lng": 36.696,
+    "feat": "Село Ядромино Истринского округа."
+  },
+  {
+    "slug": "baltschuk",
+    "name": "Балтшук",
+    "parent": "istra",
+    "minutes": 85,
+    "lat": 55.952,
+    "lng": 36.713,
+    "feat": "Деревня Балтшук Истринского округа."
+  },
+  {
+    "slug": "khlebnikovo",
+    "name": "Хлебниково",
+    "parent": "dolgoprudnyj",
+    "minutes": 35,
+    "lat": 55.913,
+    "lng": 37.499,
+    "feat": "Микрорайон Долгопрудного у одноимённой платформы."
+  },
+  {
+    "slug": "sheremetyevsky",
+    "name": "Шереметьевский",
+    "parent": "dolgoprudnyj",
+    "minutes": 35,
+    "lat": 55.962,
+    "lng": 37.51,
+    "feat": "Микрорайон Долгопрудного у платформы Шереметьевская."
+  },
+  {
+    "slug": "paveltsevo",
+    "name": "Павельцево",
+    "parent": "dolgoprudnyj",
+    "minutes": 40,
+    "lat": 55.954,
+    "lng": 37.475,
+    "feat": "Микрорайон Долгопрудного."
+  },
+  {
+    "slug": "likhachevo",
+    "name": "Лихачёво",
+    "parent": "dolgoprudnyj",
+    "minutes": 40,
+    "lat": 55.972,
+    "lng": 37.523,
+    "feat": "Микрорайон Лихачёво Долгопрудного."
+  },
+  {
+    "slug": "bukino",
+    "name": "Букино",
+    "parent": "lobnya",
+    "minutes": 45,
+    "lat": 56.026,
+    "lng": 37.485,
+    "feat": "Микрорайон Букино города Лобня."
+  },
+  {
+    "slug": "krasnaya-polyana",
+    "name": "Красная Поляна",
+    "parent": "lobnya",
+    "minutes": 50,
+    "lat": 56.044,
+    "lng": 37.49,
+    "feat": "Микрорайон Красная Поляна города Лобня."
+  },
+  {
+    "slug": "lugovaya",
+    "name": "Луговая",
+    "parent": "lobnya",
+    "minutes": 50,
+    "lat": 56.029,
+    "lng": 37.515,
+    "feat": "Микрорайон Луговая Лобни."
+  },
+  {
+    "slug": "depo",
+    "name": "Депо",
+    "parent": "lobnya",
+    "minutes": 45,
+    "lat": 56.013,
+    "lng": 37.482,
+    "feat": "Микрорайон Депо города Лобня."
+  },
+  {
+    "slug": "moskvich",
+    "name": "Москвич",
+    "parent": "lobnya",
+    "minutes": 45,
+    "lat": 56.013,
+    "lng": 37.477,
+    "feat": "Микрорайон Москвич Лобни."
+  },
+  {
+    "slug": "apreljevka",
+    "name": "Апрелевка",
+    "parent": "naro-fominsk",
+    "minutes": 70,
+    "lat": 55.545,
+    "lng": 37.073,
+    "feat": "Город Апрелевка в Наро-Фоминском округе."
+  },
+  {
+    "slug": "selyatino",
+    "name": "Селятино",
+    "parent": "naro-fominsk",
+    "minutes": 75,
+    "lat": 55.499,
+    "lng": 37.038,
+    "feat": "Посёлок Селятино Наро-Фоминского округа."
+  },
+  {
+    "slug": "alabino",
+    "name": "Алабино",
+    "parent": "naro-fominsk",
+    "minutes": 85,
+    "lat": 55.453,
+    "lng": 36.886,
+    "feat": "Посёлок Алабино Наро-Фоминского округа."
+  },
+  {
+    "slug": "kalininec",
+    "name": "Калининец",
+    "parent": "naro-fominsk",
+    "minutes": 80,
+    "lat": 55.471,
+    "lng": 36.946,
+    "feat": "Посёлок Калининец Наро-Фоминского округа."
+  },
+  {
+    "slug": "atepcevo",
+    "name": "Атепцево",
+    "parent": "naro-fominsk",
+    "minutes": 85,
+    "lat": 55.358,
+    "lng": 36.708,
+    "feat": "Село Атепцево Наро-Фоминского округа."
+  },
+  {
+    "slug": "bekasovo",
+    "name": "Бекасово",
+    "parent": "naro-fominsk",
+    "minutes": 80,
+    "lat": 55.521,
+    "lng": 36.954,
+    "feat": "Посёлок Бекасово Наро-Фоминского округа."
+  },
+  {
+    "slug": "kashino-nar",
+    "name": "Кашино",
+    "parent": "naro-fominsk",
+    "minutes": 90,
+    "lat": 55.42,
+    "lng": 36.802,
+    "feat": "Деревня Кашино Наро-Фоминского округа."
+  },
+  {
+    "slug": "lesodolgorukovo",
+    "name": "Лесодолгоруково",
+    "parent": "naro-fominsk",
+    "minutes": 95,
+    "lat": 55.358,
+    "lng": 36.555,
+    "feat": "Деревня Лесодолгоруково Наро-Фоминского округа."
+  },
+  {
+    "slug": "stremilovo",
+    "name": "Стремилово",
+    "parent": "naro-fominsk",
+    "minutes": 95,
+    "lat": 55.38,
+    "lng": 36.7,
+    "feat": "Село Стремилово Наро-Фоминского округа."
+  },
+  {
+    "slug": "yushkovo",
+    "name": "Юшково",
+    "parent": "naro-fominsk",
+    "minutes": 90,
+    "lat": 55.385,
+    "lng": 36.731,
+    "feat": "Деревня Юшково Наро-Фоминского округа."
+  },
+  {
+    "slug": "klimovsk",
+    "name": "Климовск",
+    "parent": "podolsk",
+    "minutes": 50,
+    "lat": 55.355,
+    "lng": 37.535,
+    "feat": "Микрорайон Климовск в составе Подольска."
+  },
+  {
+    "slug": "dubrovicy",
+    "name": "Дубровицы",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.441,
+    "lng": 37.495,
+    "feat": "Историческое село Дубровицы Подольского округа."
+  },
+  {
+    "slug": "lvovsky",
+    "name": "Львовский",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.339,
+    "lng": 37.609,
+    "feat": "Посёлок Львовский Подольского округа."
+  },
+  {
+    "slug": "kutuzovo-podolsk",
+    "name": "Кутузово",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.398,
+    "lng": 37.516,
+    "feat": "Микрорайон Кутузово Подольска."
+  },
+  {
+    "slug": "shepchinki",
+    "name": "Шепчинки",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.422,
+    "lng": 37.58,
+    "feat": "Микрорайон Шепчинки Подольска."
+  },
+  {
+    "slug": "romantsevo",
+    "name": "Романцево",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.422,
+    "lng": 37.535,
+    "feat": "Деревня Романцево Подольского округа."
+  },
+  {
+    "slug": "strelkovskoe",
+    "name": "Стрелковское",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.428,
+    "lng": 37.566,
+    "feat": "Посёлок Стрелковское Подольского округа."
+  },
+  {
+    "slug": "klenovo",
+    "name": "Кленово",
+    "parent": "podolsk",
+    "minutes": 65,
+    "lat": 55.355,
+    "lng": 37.272,
+    "feat": "Село Кленово Подольского округа."
+  },
+  {
+    "slug": "kuznechiki",
+    "name": "Кузнечики",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.42,
+    "lng": 37.518,
+    "feat": "Микрорайон Кузнечики Подольска."
+  },
+  {
+    "slug": "venyukovo",
+    "name": "Венюково",
+    "parent": "chekhov",
+    "minutes": 75,
+    "lat": 55.146,
+    "lng": 37.428,
+    "feat": "Посёлок Венюково Чеховского округа."
+  },
+  {
+    "slug": "lyubuchany",
+    "name": "Любучаны",
+    "parent": "chekhov",
+    "minutes": 75,
+    "lat": 55.193,
+    "lng": 37.617,
+    "feat": "Село Любучаны Чеховского округа."
+  },
+  {
+    "slug": "stolbovaya",
+    "name": "Столбовая",
+    "parent": "chekhov",
+    "minutes": 80,
+    "lat": 55.235,
+    "lng": 37.612,
+    "feat": "Посёлок Столбовая Чеховского округа."
+  },
+  {
+    "slug": "manushkino-ch",
+    "name": "Манушкино",
+    "parent": "chekhov",
+    "minutes": 75,
+    "lat": 55.207,
+    "lng": 37.43,
+    "feat": "Деревня Манушкино Чеховского округа."
+  },
+  {
+    "slug": "molodi",
+    "name": "Молоди",
+    "parent": "chekhov",
+    "minutes": 80,
+    "lat": 55.234,
+    "lng": 37.56,
+    "feat": "Село Молоди Чеховского округа, известно битвой при Молодях 1572 г."
+  },
+  {
+    "slug": "meshcherskoe",
+    "name": "Мещерское",
+    "parent": "chekhov",
+    "minutes": 80,
+    "lat": 55.137,
+    "lng": 37.38,
+    "feat": "Село Мещерское Чеховского округа."
+  },
+  {
+    "slug": "bolshevik",
+    "name": "Большевик",
+    "parent": "serpuhov",
+    "minutes": 80,
+    "lat": 54.916,
+    "lng": 37.488,
+    "feat": "Посёлок Большевик Серпуховского округа."
+  },
+  {
+    "slug": "proletarsky",
+    "name": "Пролетарский",
+    "parent": "serpuhov",
+    "minutes": 80,
+    "lat": 54.901,
+    "lng": 37.547,
+    "feat": "Посёлок Пролетарский Серпуховского округа."
+  },
+  {
+    "slug": "kalinovo",
+    "name": "Калиново",
+    "parent": "serpuhov",
+    "minutes": 85,
+    "lat": 54.872,
+    "lng": 37.461,
+    "feat": "Деревня Калиново Серпуховского округа."
+  },
+  {
+    "slug": "dashkovka",
+    "name": "Дашковка",
+    "parent": "serpuhov",
+    "minutes": 85,
+    "lat": 54.876,
+    "lng": 37.402,
+    "feat": "Село Дашковка Серпуховского округа."
+  },
+  {
+    "slug": "raysemyonovskoe",
+    "name": "Райсемёновское",
+    "parent": "serpuhov",
+    "minutes": 85,
+    "lat": 54.985,
+    "lng": 37.347,
+    "feat": "Село Райсемёновское Серпуховского округа."
+  },
+  {
+    "slug": "belozersky",
+    "name": "Белоозёрский",
+    "parent": "voskresensk",
+    "minutes": 85,
+    "lat": 55.466,
+    "lng": 38.451,
+    "feat": "Посёлок Белоозёрский в Воскресенском округе."
+  },
+  {
+    "slug": "khorlovo",
+    "name": "Хорлово",
+    "parent": "voskresensk",
+    "minutes": 80,
+    "lat": 55.412,
+    "lng": 38.77,
+    "feat": "Посёлок Хорлово Воскресенского округа."
+  },
+  {
+    "slug": "fosforitny",
+    "name": "Фосфоритный",
+    "parent": "voskresensk",
+    "minutes": 85,
+    "lat": 55.413,
+    "lng": 38.802,
+    "feat": "Посёлок Фосфоритный Воскресенского округа."
+  },
+  {
+    "slug": "vinogradovo",
+    "name": "Виноградово",
+    "parent": "voskresensk",
+    "minutes": 80,
+    "lat": 55.337,
+    "lng": 38.629,
+    "feat": "Посёлок Виноградово Воскресенского округа."
+  },
+  {
+    "slug": "ashitkovo",
+    "name": "Ашитково",
+    "parent": "voskresensk",
+    "minutes": 85,
+    "lat": 55.43,
+    "lng": 38.578,
+    "feat": "Село Ашитково Воскресенского округа."
+  },
+  {
+    "slug": "radovicky",
+    "name": "Радовицкий",
+    "parent": "shatura",
+    "minutes": 130,
+    "lat": 55.439,
+    "lng": 40.014,
+    "feat": "Посёлок Радовицкий Шатурского округа."
+  },
+  {
+    "slug": "cherusti",
+    "name": "Черусти",
+    "parent": "shatura",
+    "minutes": 140,
+    "lat": 55.519,
+    "lng": 40.252,
+    "feat": "Посёлок Черусти Шатурского округа."
+  },
+  {
+    "slug": "misheronsky",
+    "name": "Мишеронский",
+    "parent": "shatura",
+    "minutes": 140,
+    "lat": 55.48,
+    "lng": 40.121,
+    "feat": "Посёлок Мишеронский Шатурского округа."
+  },
+  {
+    "slug": "krivandino",
+    "name": "Кривандино",
+    "parent": "shatura",
+    "minutes": 130,
+    "lat": 55.532,
+    "lng": 39.668,
+    "feat": "Посёлок Кривандино Шатурского округа."
+  },
+  {
+    "slug": "baksheevo",
+    "name": "Бакшеево",
+    "parent": "shatura",
+    "minutes": 130,
+    "lat": 55.61,
+    "lng": 40.06,
+    "feat": "Посёлок Бакшеево Шатурского округа."
+  },
+  {
+    "slug": "ozherelye",
+    "name": "Ожерелье",
+    "parent": "kashira",
+    "minutes": 100,
+    "lat": 54.802,
+    "lng": 38.243,
+    "feat": "Посёлок Ожерелье в Каширском округе."
+  },
+  {
+    "slug": "tarasovo",
+    "name": "Тарасково",
+    "parent": "kashira",
+    "minutes": 100,
+    "lat": 54.872,
+    "lng": 38.18,
+    "feat": "Село Тарасково Каширского округа."
+  },
+  {
+    "slug": "topkanovo",
+    "name": "Топканово",
+    "parent": "kashira",
+    "minutes": 100,
+    "lat": 54.825,
+    "lng": 38.213,
+    "feat": "Село Топканово Каширского округа."
+  },
+  {
+    "slug": "mikhnevo",
+    "name": "Михнево",
+    "parent": "stupino",
+    "minutes": 90,
+    "lat": 55.124,
+    "lng": 38.045,
+    "feat": "Посёлок Михнево Ступинского округа."
+  },
+  {
+    "slug": "malino",
+    "name": "Малино",
+    "parent": "stupino",
+    "minutes": 95,
+    "lat": 55.099,
+    "lng": 38.245,
+    "feat": "Село Малино Ступинского округа."
+  },
+  {
+    "slug": "gorodishchi",
+    "name": "Городищи",
+    "parent": "stupino",
+    "minutes": 95,
+    "lat": 54.974,
+    "lng": 38.005,
+    "feat": "Село Городищи Ступинского округа."
+  },
+  {
+    "slug": "sitne-shchelkanovo",
+    "name": "Ситне-Щелканово",
+    "parent": "stupino",
+    "minutes": 95,
+    "lat": 54.939,
+    "lng": 38.182,
+    "feat": "Село Ситне-Щелканово Ступинского округа."
+  },
+  {
+    "slug": "reshetnikovo",
+    "name": "Решетниково",
+    "parent": "klin",
+    "minutes": 100,
+    "lat": 56.453,
+    "lng": 36.58,
+    "feat": "Посёлок Решетниково Клинского округа."
+  },
+  {
+    "slug": "poyarkovo",
+    "name": "Поярково",
+    "parent": "klin",
+    "minutes": 95,
+    "lat": 56.371,
+    "lng": 36.752,
+    "feat": "Село Поярково Клинского округа."
+  },
+  {
+    "slug": "selinskoe",
+    "name": "Селинское",
+    "parent": "klin",
+    "minutes": 95,
+    "lat": 56.297,
+    "lng": 36.799,
+    "feat": "Село Селинское Клинского округа."
+  },
+  {
+    "slug": "sloboda-klin",
+    "name": "Слобода",
+    "parent": "klin",
+    "minutes": 95,
+    "lat": 56.31,
+    "lng": 36.625,
+    "feat": "Деревня Слобода Клинского округа."
+  },
+  {
+    "slug": "voronino-klin",
+    "name": "Воронино",
+    "parent": "klin",
+    "minutes": 95,
+    "lat": 56.319,
+    "lng": 36.728,
+    "feat": "Деревня Воронино Клинского округа."
+  },
+  {
+    "slug": "zubovo-klin",
+    "name": "Зубово",
+    "parent": "klin",
+    "minutes": 95,
+    "lat": 56.297,
+    "lng": 36.701,
+    "feat": "Деревня Зубово Клинского округа."
+  },
+  {
+    "slug": "belomut",
+    "name": "Белоомут",
+    "parent": "luhovicy",
+    "minutes": 120,
+    "lat": 54.945,
+    "lng": 39.339,
+    "feat": "Посёлок Белоомут Луховицкого округа."
+  },
+  {
+    "slug": "dedinovo",
+    "name": "Дединово",
+    "parent": "luhovicy",
+    "minutes": 120,
+    "lat": 54.971,
+    "lng": 39.236,
+    "feat": "Село Дединово Луховицкого округа."
+  },
+  {
+    "slug": "gazoprovodsk",
+    "name": "Газопроводск",
+    "parent": "luhovicy",
+    "minutes": 120,
+    "lat": 54.973,
+    "lng": 39.063,
+    "feat": "Посёлок Газопроводск Луховицкого округа."
+  },
+  {
+    "slug": "sennicy",
+    "name": "Сенницы",
+    "parent": "ozery",
+    "minutes": 110,
+    "lat": 54.866,
+    "lng": 38.485,
+    "feat": "Село Сенницы Озёрского округа."
+  },
+  {
+    "slug": "poluryadinki",
+    "name": "Полурядинки",
+    "parent": "ozery",
+    "minutes": 110,
+    "lat": 54.795,
+    "lng": 38.581,
+    "feat": "Село Полурядинки Озёрского округа."
+  },
+  {
+    "slug": "sychyovo",
+    "name": "Сычёво",
+    "parent": "volokolamsk",
+    "minutes": 115,
+    "lat": 55.916,
+    "lng": 36.149,
+    "feat": "Посёлок Сычёво Волоколамского округа."
+  },
+  {
+    "slug": "chismena",
+    "name": "Чисмена",
+    "parent": "volokolamsk",
+    "minutes": 110,
+    "lat": 55.985,
+    "lng": 36.197,
+    "feat": "Посёлок Чисмена Волоколамского округа."
+  },
+  {
+    "slug": "teryaevo",
+    "name": "Теряево",
+    "parent": "volokolamsk",
+    "minutes": 115,
+    "lat": 56.097,
+    "lng": 36.19,
+    "feat": "Село Теряево, центр Иосифо-Волоцкого монастыря."
+  },
+  {
+    "slug": "yaropolets",
+    "name": "Ярополец",
+    "parent": "volokolamsk",
+    "minutes": 120,
+    "lat": 56.135,
+    "lng": 35.832,
+    "feat": "Историческое село Ярополец Волоколамского округа."
+  },
+  {
+    "slug": "shahovskaya",
+    "name": "Шаховская",
+    "parent": "volokolamsk",
+    "minutes": 130,
+    "lat": 56.043,
+    "lng": 35.515,
+    "feat": "Посёлок Шаховская Волоколамского округа."
+  },
+  {
+    "slug": "uvarovka",
+    "name": "Уваровка",
+    "parent": "mozhajsk",
+    "minutes": 120,
+    "lat": 55.547,
+    "lng": 35.616,
+    "feat": "Посёлок Уваровка Можайского округа."
+  },
+  {
+    "slug": "borodino",
+    "name": "Бородино",
+    "parent": "mozhajsk",
+    "minutes": 115,
+    "lat": 55.519,
+    "lng": 35.815,
+    "feat": "Знаменитое село Бородино Можайского округа, поле Бородинской битвы."
+  },
+  {
+    "slug": "drovnino",
+    "name": "Дровнино",
+    "parent": "mozhajsk",
+    "minutes": 120,
+    "lat": 55.566,
+    "lng": 35.53,
+    "feat": "Деревня Дровнино Можайского округа."
+  },
+  {
+    "slug": "borisovo-mozh",
+    "name": "Борисово",
+    "parent": "mozhajsk",
+    "minutes": 120,
+    "lat": 55.479,
+    "lng": 35.917,
+    "feat": "Село Борисово Можайского округа."
+  },
+  {
+    "slug": "vereya-mozh",
+    "name": "Верея",
+    "parent": "mozhajsk",
+    "minutes": 125,
+    "lat": 55.346,
+    "lng": 36.186,
+    "feat": "Самый маленький город Подмосковья — Верея, в Наро-Фоминском округе."
+  },
+  {
+    "slug": "tuchkovo",
+    "name": "Тучково",
+    "parent": "ruza",
+    "minutes": 95,
+    "lat": 55.594,
+    "lng": 36.45,
+    "feat": "Посёлок Тучково Рузского округа."
+  },
+  {
+    "slug": "dorokhovo",
+    "name": "Дорохово",
+    "parent": "ruza",
+    "minutes": 100,
+    "lat": 55.583,
+    "lng": 36.227,
+    "feat": "Село Дорохово Рузского округа."
+  },
+  {
+    "slug": "kolyubakino",
+    "name": "Колюбакино",
+    "parent": "ruza",
+    "minutes": 100,
+    "lat": 55.726,
+    "lng": 36.33,
+    "feat": "Село Колюбакино Рузского округа."
+  },
+  {
+    "slug": "briket",
+    "name": "Брикет",
+    "parent": "ruza",
+    "minutes": 100,
+    "lat": 55.7,
+    "lng": 36.13,
+    "feat": "Посёлок Брикет Рузского округа."
+  },
+  {
+    "slug": "nesterovo",
+    "name": "Нестерово",
+    "parent": "ruza",
+    "minutes": 100,
+    "lat": 55.736,
+    "lng": 36.23,
+    "feat": "Село Нестерово Рузского округа."
+  },
+  {
+    "slug": "sofrino",
+    "name": "Софрино",
+    "parent": "pushkino",
+    "minutes": 80,
+    "lat": 56.157,
+    "lng": 37.929,
+    "feat": "Посёлок Софрино Пушкинского округа, родина Софринского завода церковной утвари."
+  },
+  {
+    "slug": "pravdinsky",
+    "name": "Правдинский",
+    "parent": "pushkino",
+    "minutes": 75,
+    "lat": 56.044,
+    "lng": 37.871,
+    "feat": "Посёлок Правдинский Пушкинского округа."
+  },
+  {
+    "slug": "ashukino",
+    "name": "Ашукино",
+    "parent": "pushkino",
+    "minutes": 85,
+    "lat": 56.123,
+    "lng": 37.945,
+    "feat": "Посёлок Ашукино Пушкинского округа."
+  },
+  {
+    "slug": "chernogolovka-sp",
+    "name": "Зеленоградский",
+    "parent": "pushkino",
+    "minutes": 80,
+    "lat": 56.092,
+    "lng": 37.918,
+    "feat": "Посёлок Зеленоградский Пушкинского округа."
+  },
+  {
+    "slug": "frjazino-shch",
+    "name": "Фрязино",
+    "parent": "shchyolkovo",
+    "minutes": 70,
+    "lat": 55.961,
+    "lng": 38.046,
+    "feat": "Город Фрязино в составе Щёлковского округа."
+  },
+  {
+    "slug": "zagoryansky",
+    "name": "Загорянский",
+    "parent": "shchyolkovo",
+    "minutes": 60,
+    "lat": 55.913,
+    "lng": 37.957,
+    "feat": "Посёлок Загорянский Щёлковского округа."
+  },
+  {
+    "slug": "monino",
+    "name": "Монино",
+    "parent": "shchyolkovo",
+    "minutes": 65,
+    "lat": 55.846,
+    "lng": 38.197,
+    "feat": "Посёлок городского типа Монино Щёлковского округа."
+  },
+  {
+    "slug": "sverdlovsky",
+    "name": "Свердловский",
+    "parent": "shchyolkovo",
+    "minutes": 65,
+    "lat": 55.886,
+    "lng": 38.139,
+    "feat": "Посёлок Свердловский Щёлковского округа."
+  },
+  {
+    "slug": "grebnevo",
+    "name": "Гребнево",
+    "parent": "shchyolkovo",
+    "minutes": 70,
+    "lat": 55.949,
+    "lng": 38.09,
+    "feat": "Историческое село Гребнево с одноимённой усадьбой."
+  },
+  {
+    "slug": "chyolyuskinsky",
+    "name": "Челюскинский",
+    "parent": "mytishchi",
+    "minutes": 45,
+    "lat": 55.954,
+    "lng": 37.789,
+    "feat": "Посёлок Челюскинский Мытищинского округа."
+  },
+  {
+    "slug": "pirogovsky",
+    "name": "Пирогово",
+    "parent": "mytishchi",
+    "minutes": 50,
+    "lat": 55.971,
+    "lng": 37.748,
+    "feat": "Посёлок Пирогово Мытищинского округа."
+  },
+  {
+    "slug": "taininka",
+    "name": "Тайнинка",
+    "parent": "mytishchi",
+    "minutes": 40,
+    "lat": 55.926,
+    "lng": 37.762,
+    "feat": "Микрорайон Тайнинка Мытищ."
+  },
+  {
+    "slug": "perlovka",
+    "name": "Перловка",
+    "parent": "mytishchi",
+    "minutes": 40,
+    "lat": 55.911,
+    "lng": 37.769,
+    "feat": "Микрорайон Перловка Мытищ."
+  },
+  {
+    "slug": "druzhba",
+    "name": "Дружба",
+    "parent": "mytishchi",
+    "minutes": 45,
+    "lat": 55.892,
+    "lng": 37.76,
+    "feat": "Микрорайон Дружба Мытищ."
+  },
+  {
+    "slug": "elektrougli-bog",
+    "name": "Электроугли",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.719,
+    "lng": 38.22,
+    "feat": "Город Электроугли Богородского округа."
+  },
+  {
+    "slug": "staraya-kupavna-bog",
+    "name": "Старая Купавна",
+    "parent": "noginsk",
+    "minutes": 60,
+    "lat": 55.806,
+    "lng": 38.172,
+    "feat": "Город Старая Купавна Богородского округа."
+  },
+  {
+    "slug": "obukhovo",
+    "name": "Обухово",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.831,
+    "lng": 38.281,
+    "feat": "Посёлок Обухово Богородского округа."
+  },
+  {
+    "slug": "zelyony",
+    "name": "Зелёный",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.811,
+    "lng": 38.137,
+    "feat": "Посёлок Зелёный Богородского округа."
+  },
+  {
+    "slug": "vorovskogo",
+    "name": "Воровского",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.811,
+    "lng": 38.243,
+    "feat": "Посёлок имени Воровского Богородского округа."
+  },
+  {
+    "slug": "timohovo",
+    "name": "Тимохово",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.703,
+    "lng": 38.225,
+    "feat": "Деревня Тимохово Богородского округа."
+  },
+  {
+    "slug": "kudinovo",
+    "name": "Кудиново",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.72,
+    "lng": 38.193,
+    "feat": "Село Кудиново Богородского округа."
+  },
+  {
+    "slug": "stromyn",
+    "name": "Стромынь",
+    "parent": "noginsk",
+    "minutes": 75,
+    "lat": 55.94,
+    "lng": 38.56,
+    "feat": "Село Стромынь Богородского округа."
+  },
+  {
+    "slug": "drezna-oz",
+    "name": "Дрезна",
+    "parent": "orekhovo-zuevo",
+    "minutes": 105,
+    "lat": 55.748,
+    "lng": 38.852,
+    "feat": "Город Дрезна Орехово-Зуевского округа."
+  },
+  {
+    "slug": "likino-dulyovo-oz",
+    "name": "Ликино-Дулёво",
+    "parent": "orekhovo-zuevo",
+    "minutes": 100,
+    "lat": 55.716,
+    "lng": 38.966,
+    "feat": "Город Ликино-Дулёво, родина Дулёвского фарфора."
+  },
+  {
+    "slug": "kurovskoe-oz",
+    "name": "Куровское",
+    "parent": "orekhovo-zuevo",
+    "minutes": 110,
+    "lat": 55.582,
+    "lng": 38.918,
+    "feat": "Город Куровское в составе Орехово-Зуевского округа."
+  },
+  {
+    "slug": "demikhovo",
+    "name": "Демихово",
+    "parent": "orekhovo-zuevo",
+    "minutes": 95,
+    "lat": 55.785,
+    "lng": 38.954,
+    "feat": "Посёлок Демихово, известный Демиховским машиностроительным заводом."
+  },
+  {
+    "slug": "malaya-dubna",
+    "name": "Малая Дубна",
+    "parent": "orekhovo-zuevo",
+    "minutes": 95,
+    "lat": 55.901,
+    "lng": 38.948,
+    "feat": "Село Малая Дубна Орехово-Зуевского округа."
+  },
+  {
+    "slug": "sobolevo",
+    "name": "Соболево",
+    "parent": "orekhovo-zuevo",
+    "minutes": 95,
+    "lat": 55.866,
+    "lng": 38.984,
+    "feat": "Деревня Соболево Орехово-Зуевского округа."
+  },
+  {
+    "slug": "davydovo",
+    "name": "Давыдово",
+    "parent": "orekhovo-zuevo",
+    "minutes": 105,
+    "lat": 55.704,
+    "lng": 38.886,
+    "feat": "Село Давыдово Орехово-Зуевского округа."
+  },
+  {
+    "slug": "avsyunino",
+    "name": "Авсюнино",
+    "parent": "orekhovo-zuevo",
+    "minutes": 115,
+    "lat": 55.583,
+    "lng": 38.989,
+    "feat": "Село Авсюнино Орехово-Зуевского округа."
+  },
+  {
+    "slug": "yegoryevskoe-selo",
+    "name": "Денежниково",
+    "parent": "egorevsk",
+    "minutes": 110,
+    "lat": 55.353,
+    "lng": 39.13,
+    "feat": "Село Денежниково Егорьевского округа."
+  },
+  {
+    "slug": "opytnoe-pole",
+    "name": "Опытное поле",
+    "parent": "kotelniki",
+    "minutes": 50,
+    "lat": 55.654,
+    "lng": 37.879,
+    "feat": "Микрорайон Опытное поле Котельников."
+  },
+  {
+    "slug": "belaya-dacha",
+    "name": "Белая Дача",
+    "parent": "kotelniki",
+    "minutes": 50,
+    "lat": 55.665,
+    "lng": 37.875,
+    "feat": "Микрорайон Белая Дача Котельников."
+  },
+  {
+    "slug": "turaevo",
+    "name": "Тураево",
+    "parent": "lytkarino",
+    "minutes": 60,
+    "lat": 55.564,
+    "lng": 37.918,
+    "feat": "Микрорайон Тураево Лыткарино."
+  },
+  {
+    "slug": "volkusha",
+    "name": "Волкуша",
+    "parent": "lytkarino",
+    "minutes": 60,
+    "lat": 55.586,
+    "lng": 37.901,
+    "feat": "Микрорайон Волкуша Лыткарино."
+  },
+  {
+    "slug": "makarovo",
+    "name": "Макарово",
+    "parent": "chernogolovka",
+    "minutes": 90,
+    "lat": 56.025,
+    "lng": 38.405,
+    "feat": "Село Макарово в Черноголовском округе."
+  },
+  {
+    "slug": "biokombinata",
+    "name": "Биокомбината",
+    "parent": "losino-petrovskij",
+    "minutes": 75,
+    "lat": 55.886,
+    "lng": 38.184,
+    "feat": "Посёлок Биокомбината Лосино-Петровского округа."
+  },
+  {
+    "slug": "sverdlovsky-lp",
+    "name": "Свердловский",
+    "parent": "losino-petrovskij",
+    "minutes": 75,
+    "lat": 55.886,
+    "lng": 38.139,
+    "feat": "Посёлок Свердловский Лосино-Петровского округа."
+  },
+  {
+    "slug": "litvinovo",
+    "name": "Литвиново",
+    "parent": "losino-petrovskij",
+    "minutes": 75,
+    "lat": 55.86,
+    "lng": 38.139,
+    "feat": "Деревня Литвиново Лосино-Петровского округа."
+  },
+  {
+    "slug": "radonezh-hot",
+    "name": "Радонеж",
+    "parent": "hotkovo",
+    "minutes": 100,
+    "lat": 56.231,
+    "lng": 37.998,
+    "feat": "Историческое село Радонеж — место рождения Преподобного Сергия."
+  },
+  {
+    "slug": "bolshaya-volga",
+    "name": "Большая Волга",
+    "parent": "dubna",
+    "minutes": 125,
+    "lat": 56.741,
+    "lng": 37.174,
+    "feat": "Микрорайон Большая Волга города Дубна."
+  },
+  {
+    "slug": "chyornaya-rechka",
+    "name": "Чёрная Речка",
+    "parent": "dubna",
+    "minutes": 125,
+    "lat": 56.77,
+    "lng": 37.185,
+    "feat": "Микрорайон Чёрная Речка Дубны."
+  },
+  {
+    "slug": "aleksandrovka-dub",
+    "name": "Александровка",
+    "parent": "dubna",
+    "minutes": 125,
+    "lat": 56.752,
+    "lng": 37.171,
+    "feat": "Микрорайон Александровка Дубны."
+  },
+  {
+    "slug": "zaprudnja-taldom",
+    "name": "Запрудня",
+    "parent": "taldom",
+    "minutes": 125,
+    "lat": 56.561,
+    "lng": 37.456,
+    "feat": "Посёлок Запрудня Талдомского округа."
+  },
+  {
+    "slug": "verbilki-taldom",
+    "name": "Вербилки",
+    "parent": "taldom",
+    "minutes": 125,
+    "lat": 56.53,
+    "lng": 37.595,
+    "feat": "Посёлок Вербилки Талдомского округа."
+  },
+  {
+    "slug": "severny-taldom",
+    "name": "Северный",
+    "parent": "taldom",
+    "minutes": 140,
+    "lat": 56.62,
+    "lng": 37.62,
+    "feat": "Посёлок Северный Талдомского округа."
+  },
+  {
+    "slug": "spasdoshchatoe",
+    "name": "Спас-Дощатое",
+    "parent": "zarajsk",
+    "minutes": 120,
+    "lat": 54.7,
+    "lng": 38.872,
+    "feat": "Село Спас-Дощатое Зарайского округа."
+  },
+  {
+    "slug": "snegiri-loss",
+    "name": "Снегири",
+    "parent": "losino-petrovskij",
+    "minutes": 80,
+    "lat": 55.953,
+    "lng": 38.158,
+    "feat": "Посёлок Снегири Лосино-Петровского округа."
+  },
+  {
+    "slug": "silikatnaya",
+    "name": "Силикатная",
+    "parent": "podolsk",
+    "minutes": 50,
+    "lat": 55.401,
+    "lng": 37.503,
+    "feat": "Микрорайон Силикатная в Подольске."
+  },
+  {
+    "slug": "kuzovlevo",
+    "name": "Кузовлево",
+    "parent": "podolsk",
+    "minutes": 60,
+    "lat": 55.349,
+    "lng": 37.477,
+    "feat": "Деревня Кузовлево Подольского округа."
+  },
+  {
+    "slug": "erino",
+    "name": "Ерино",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.366,
+    "lng": 37.526,
+    "feat": "Деревня Ерино Подольского округа."
+  },
+  {
+    "slug": "sertyakino",
+    "name": "Сертякино",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.385,
+    "lng": 37.553,
+    "feat": "Деревня Сертякино Подольского округа."
+  },
+  {
+    "slug": "data-serpuhov",
+    "name": "Данки",
+    "parent": "serpuhov",
+    "minutes": 85,
+    "lat": 54.866,
+    "lng": 37.535,
+    "feat": "Деревня Данки Серпуховского округа."
+  },
+  {
+    "slug": "luzhki-ser",
+    "name": "Лужки",
+    "parent": "serpuhov",
+    "minutes": 85,
+    "lat": 54.949,
+    "lng": 37.553,
+    "feat": "Деревня Лужки Серпуховского округа."
+  },
+  {
+    "slug": "nikiforovo-ser",
+    "name": "Никифорово",
+    "parent": "serpuhov",
+    "minutes": 85,
+    "lat": 54.917,
+    "lng": 37.395,
+    "feat": "Деревня Никифорово Серпуховского округа."
+  },
+  {
+    "slug": "borisovo-ser",
+    "name": "Борисово",
+    "parent": "serpuhov",
+    "minutes": 85,
+    "lat": 54.873,
+    "lng": 37.46,
+    "feat": "Деревня Борисово Серпуховского округа."
+  },
+  {
+    "slug": "oboleinsk",
+    "name": "Оболенск",
+    "parent": "serpuhov",
+    "minutes": 90,
+    "lat": 54.808,
+    "lng": 37.286,
+    "feat": "Посёлок Оболенск Серпуховского округа."
+  },
+  {
+    "slug": "fenino",
+    "name": "Фенино",
+    "parent": "balashiha",
+    "minutes": 50,
+    "lat": 55.778,
+    "lng": 37.961,
+    "feat": "Деревня Фенино Балашихинского округа."
+  },
+  {
+    "slug": "abramcevo-bal",
+    "name": "Абрамцево",
+    "parent": "balashiha",
+    "minutes": 50,
+    "lat": 55.806,
+    "lng": 37.991,
+    "feat": "Деревня Абрамцево Балашихинского округа."
+  },
+  {
+    "slug": "savvino",
+    "name": "Саввино",
+    "parent": "balashiha",
+    "minutes": 50,
+    "lat": 55.755,
+    "lng": 38.001,
+    "feat": "Микрорайон Саввино Балашихинского округа."
+  },
+  {
+    "slug": "olgino-bal",
+    "name": "Ольгино",
+    "parent": "balashiha",
+    "minutes": 50,
+    "lat": 55.748,
+    "lng": 37.962,
+    "feat": "Микрорайон Ольгино Балашихинского округа."
+  },
+  {
+    "slug": "vyhlino",
+    "name": "Вахлино",
+    "parent": "balashiha",
+    "minutes": 55,
+    "lat": 55.788,
+    "lng": 37.971,
+    "feat": "Деревня Вахлино Балашихинского округа."
+  },
+  {
+    "slug": "bronnicy-ramen",
+    "name": "Бронницы (пос.)",
+    "parent": "ramenskoe",
+    "minutes": 80,
+    "lat": 55.435,
+    "lng": 38.27,
+    "feat": "Посёлок около Бронниц, в составе Раменского округа."
+  },
+  {
+    "slug": "chemodurovo",
+    "name": "Чемодурово",
+    "parent": "ramenskoe",
+    "minutes": 70,
+    "lat": 55.485,
+    "lng": 38.317,
+    "feat": "Деревня Чемодурово Раменского округа."
+  },
+  {
+    "slug": "konstantinovo-ramen",
+    "name": "Константиново",
+    "parent": "ramenskoe",
+    "minutes": 70,
+    "lat": 55.512,
+    "lng": 38.33,
+    "feat": "Село Константиново Раменского округа."
+  },
+  {
+    "slug": "sevryukovo",
+    "name": "Севрюково",
+    "parent": "ramenskoe",
+    "minutes": 70,
+    "lat": 55.54,
+    "lng": 38.296,
+    "feat": "Деревня Севрюково Раменского округа."
+  },
+  {
+    "slug": "kolontaevo",
+    "name": "Колонтаево",
+    "parent": "ramenskoe",
+    "minutes": 65,
+    "lat": 55.567,
+    "lng": 38.244,
+    "feat": "Деревня Колонтаево Раменского округа."
+  },
+  {
+    "slug": "kostino-ramen",
+    "name": "Костино",
+    "parent": "ramenskoe",
+    "minutes": 65,
+    "lat": 55.577,
+    "lng": 38.258,
+    "feat": "Деревня Костино Раменского округа."
+  },
+  {
+    "slug": "pesochnoe",
+    "name": "Песочное",
+    "parent": "ramenskoe",
+    "minutes": 70,
+    "lat": 55.586,
+    "lng": 38.366,
+    "feat": "Деревня Песочное Раменского округа."
+  },
+  {
+    "slug": "levkovo",
+    "name": "Левково",
+    "parent": "ramenskoe",
+    "minutes": 75,
+    "lat": 55.567,
+    "lng": 38.342,
+    "feat": "Деревня Левково Раменского округа."
+  },
+  {
+    "slug": "voskresenskoe-ramen",
+    "name": "Воскресенское",
+    "parent": "ramenskoe",
+    "minutes": 65,
+    "lat": 55.62,
+    "lng": 38.114,
+    "feat": "Село Воскресенское Раменского округа."
+  },
+  {
+    "slug": "shchedrino",
+    "name": "Щедрино",
+    "parent": "ramenskoe",
+    "minutes": 65,
+    "lat": 55.617,
+    "lng": 38.225,
+    "feat": "Деревня Щедрино Раменского округа."
+  },
+  {
+    "slug": "konstantinovo-ramen2",
+    "name": "Константиново-2",
+    "parent": "ramenskoe",
+    "minutes": 75,
+    "lat": 55.48,
+    "lng": 38.345,
+    "feat": "Деревня в Раменском округе."
+  },
+  {
+    "slug": "trofimovo",
+    "name": "Трофимово",
+    "parent": "ramenskoe",
+    "minutes": 70,
+    "lat": 55.604,
+    "lng": 38.224,
+    "feat": "Деревня Трофимово Раменского округа."
+  },
+  {
+    "slug": "trusovo",
+    "name": "Трусово",
+    "parent": "istra",
+    "minutes": 85,
+    "lat": 55.951,
+    "lng": 36.748,
+    "feat": "Деревня Трусово Истринского округа."
+  },
+  {
+    "slug": "krasnovidovo",
+    "name": "Красновидово",
+    "parent": "istra",
+    "minutes": 85,
+    "lat": 55.927,
+    "lng": 36.808,
+    "feat": "Деревня Красновидово Истринского округа."
+  },
+  {
+    "slug": "manihino",
+    "name": "Манихино",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 55.879,
+    "lng": 36.945,
+    "feat": "Деревня Манихино Истринского округа."
+  },
+  {
+    "slug": "sokolovo-istra",
+    "name": "Соколово",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 55.87,
+    "lng": 36.927,
+    "feat": "Деревня Соколово Истринского округа."
+  },
+  {
+    "slug": "safonovo",
+    "name": "Сафоново",
+    "parent": "istra",
+    "minutes": 85,
+    "lat": 55.974,
+    "lng": 36.756,
+    "feat": "Деревня Сафоново Истринского округа."
+  },
+  {
+    "slug": "obushkovo",
+    "name": "Обушково",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 55.846,
+    "lng": 36.984,
+    "feat": "Деревня Обушково Истринского округа."
+  },
+  {
+    "slug": "alyokhnovo",
+    "name": "Алёхново",
+    "parent": "istra",
+    "minutes": 85,
+    "lat": 55.929,
+    "lng": 36.685,
+    "feat": "Деревня Алёхново Истринского округа."
+  },
+  {
+    "slug": "davydovskoe",
+    "name": "Давыдовское",
+    "parent": "istra",
+    "minutes": 85,
+    "lat": 55.94,
+    "lng": 36.798,
+    "feat": "Деревня Давыдовское Истринского округа."
+  },
+  {
+    "slug": "ramenye",
+    "name": "Раменье",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.392,
+    "lng": 37.611,
+    "feat": "Деревня Раменье Дмитровского округа."
+  },
+  {
+    "slug": "sloboda-dmitrov",
+    "name": "Слобода",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.337,
+    "lng": 37.48,
+    "feat": "Деревня Слобода Дмитровского округа."
+  },
+  {
+    "slug": "kuzyaevo-dmit",
+    "name": "Кузяево",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.376,
+    "lng": 37.585,
+    "feat": "Деревня Кузяево Дмитровского округа."
+  },
+  {
+    "slug": "medvedevo",
+    "name": "Медведево",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.388,
+    "lng": 37.553,
+    "feat": "Деревня Медведево Дмитровского округа."
+  },
+  {
+    "slug": "shuvanovo",
+    "name": "Шуваново",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.388,
+    "lng": 37.638,
+    "feat": "Деревня Шуваново Дмитровского округа."
+  },
+  {
+    "slug": "buzhanovo-dmit",
+    "name": "Бужаново",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.358,
+    "lng": 37.42,
+    "feat": "Деревня Бужаново Дмитровского округа."
+  },
+  {
+    "slug": "nepeitsino",
+    "name": "Непейцино",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.347,
+    "lng": 37.628,
+    "feat": "Деревня Непейцино Дмитровского округа."
+  },
+  {
+    "slug": "dunino",
+    "name": "Дунино",
+    "parent": "odincovo",
+    "minutes": 60,
+    "lat": 55.768,
+    "lng": 37.13,
+    "feat": "Деревня Дунино Одинцовского округа на берегу Москвы-реки."
+  },
+  {
+    "slug": "nikolina-gora",
+    "name": "Николина Гора",
+    "parent": "odincovo",
+    "minutes": 60,
+    "lat": 55.751,
+    "lng": 37.115,
+    "feat": "Дачный посёлок Николина Гора Одинцовского округа."
+  },
+  {
+    "slug": "zhukovka-odin2",
+    "name": "Жуковка-2",
+    "parent": "odincovo",
+    "minutes": 55,
+    "lat": 55.755,
+    "lng": 37.273,
+    "feat": "Дачный посёлок Жуковка-2 Одинцовского округа."
+  },
+  {
+    "slug": "barvikha-2",
+    "name": "Барвиха-2",
+    "parent": "odincovo",
+    "minutes": 55,
+    "lat": 55.755,
+    "lng": 37.296,
+    "feat": "Микрорайон Барвиха-2 Одинцовского округа."
+  },
+  {
+    "slug": "usovo",
+    "name": "Усово",
+    "parent": "odincovo",
+    "minutes": 55,
+    "lat": 55.766,
+    "lng": 37.26,
+    "feat": "Дачный посёлок Усово Одинцовского округа."
+  },
+  {
+    "slug": "gorky-2",
+    "name": "Горки-2",
+    "parent": "odincovo",
+    "minutes": 55,
+    "lat": 55.751,
+    "lng": 37.273,
+    "feat": "Дачный посёлок Горки-2 Одинцовского округа."
+  },
+  {
+    "slug": "gorky-10",
+    "name": "Горки-10",
+    "parent": "odincovo",
+    "minutes": 55,
+    "lat": 55.764,
+    "lng": 37.213,
+    "feat": "Дачный посёлок Горки-10 Одинцовского округа."
+  },
+  {
+    "slug": "vyazyomy",
+    "name": "Вязёмы",
+    "parent": "odincovo",
+    "minutes": 65,
+    "lat": 55.622,
+    "lng": 36.991,
+    "feat": "Деревня Вязёмы Одинцовского округа."
+  },
+  {
+    "slug": "kublanovo",
+    "name": "Кубланово",
+    "parent": "odincovo",
+    "minutes": 70,
+    "lat": 55.612,
+    "lng": 36.917,
+    "feat": "Деревня Кубланово Одинцовского округа."
+  },
+  {
+    "slug": "sharapovka",
+    "name": "Шараповка",
+    "parent": "odincovo",
+    "minutes": 75,
+    "lat": 55.617,
+    "lng": 36.847,
+    "feat": "Деревня Шараповка Одинцовского округа."
+  },
+  {
+    "slug": "krukovo-ch",
+    "name": "Крюково",
+    "parent": "chekhov",
+    "minutes": 75,
+    "lat": 55.151,
+    "lng": 37.486,
+    "feat": "Деревня Крюково Чеховского округа."
+  },
+  {
+    "slug": "manushkino-ch2",
+    "name": "Манушкино-2",
+    "parent": "chekhov",
+    "minutes": 75,
+    "lat": 55.23,
+    "lng": 37.531,
+    "feat": "Деревня в Чеховском округе."
+  },
+  {
+    "slug": "oksino",
+    "name": "Оксино",
+    "parent": "chekhov",
+    "minutes": 80,
+    "lat": 55.16,
+    "lng": 37.38,
+    "feat": "Деревня Оксино Чеховского округа."
+  },
+  {
+    "slug": "chudinovo",
+    "name": "Чудиново",
+    "parent": "chekhov",
+    "minutes": 80,
+    "lat": 55.158,
+    "lng": 37.553,
+    "feat": "Деревня Чудиново Чеховского округа."
+  },
+  {
+    "slug": "melihovo",
+    "name": "Мелихово",
+    "parent": "chekhov",
+    "minutes": 75,
+    "lat": 55.215,
+    "lng": 37.53,
+    "feat": "Музей-усадьба Мелихово в Чеховском округе."
+  },
+  {
+    "slug": "tuchkovo-mozh",
+    "name": "Тучково",
+    "parent": "mozhajsk",
+    "minutes": 105,
+    "lat": 55.594,
+    "lng": 36.45,
+    "feat": "Посёлок Тучково в Можайском округе."
+  },
+  {
+    "slug": "polyanino",
+    "name": "Полянино",
+    "parent": "mozhajsk",
+    "minutes": 115,
+    "lat": 55.512,
+    "lng": 36.057,
+    "feat": "Деревня Полянино Можайского округа."
+  },
+  {
+    "slug": "isavica",
+    "name": "Исавица",
+    "parent": "mozhajsk",
+    "minutes": 115,
+    "lat": 55.483,
+    "lng": 35.881,
+    "feat": "Деревня Исавица Можайского округа."
+  },
+  {
+    "slug": "horoshilovo",
+    "name": "Хорошилово",
+    "parent": "mozhajsk",
+    "minutes": 115,
+    "lat": 55.49,
+    "lng": 35.957,
+    "feat": "Деревня Хорошилово Можайского округа."
+  },
+  {
+    "slug": "oblachnoe",
+    "name": "Облачное",
+    "parent": "mozhajsk",
+    "minutes": 115,
+    "lat": 55.471,
+    "lng": 35.876,
+    "feat": "Деревня Облачное Можайского округа."
+  },
+  {
+    "slug": "akulovo-klin",
+    "name": "Акулово",
+    "parent": "klin",
+    "minutes": 100,
+    "lat": 56.298,
+    "lng": 36.611,
+    "feat": "Деревня Акулово Клинского округа."
+  },
+  {
+    "slug": "yamuga",
+    "name": "Ямуга",
+    "parent": "klin",
+    "minutes": 100,
+    "lat": 56.292,
+    "lng": 36.726,
+    "feat": "Деревня Ямуга Клинского округа."
+  },
+  {
+    "slug": "shipulino",
+    "name": "Шипулино",
+    "parent": "klin",
+    "minutes": 105,
+    "lat": 56.305,
+    "lng": 36.45,
+    "feat": "Село Шипулино Клинского округа."
+  },
+  {
+    "slug": "voronino-klin2",
+    "name": "Воронино-2",
+    "parent": "klin",
+    "minutes": 100,
+    "lat": 56.336,
+    "lng": 36.762,
+    "feat": "Деревня в Клинском округе."
+  },
+  {
+    "slug": "belozeryorsk",
+    "name": "Туголесский Бор",
+    "parent": "shatura",
+    "minutes": 130,
+    "lat": 55.572,
+    "lng": 39.821,
+    "feat": "Посёлок Туголесский Бор Шатурского округа."
+  },
+  {
+    "slug": "kerva",
+    "name": "Керва",
+    "parent": "shatura",
+    "minutes": 130,
+    "lat": 55.539,
+    "lng": 39.609,
+    "feat": "Деревня Керва Шатурского округа."
+  },
+  {
+    "slug": "dmitrovsky-pog",
+    "name": "Дмитровский Погост",
+    "parent": "shatura",
+    "minutes": 130,
+    "lat": 55.491,
+    "lng": 40.207,
+    "feat": "Село Дмитровский Погост Шатурского округа."
+  },
+  {
+    "slug": "sukharevo",
+    "name": "Сухарево",
+    "parent": "mytishchi",
+    "minutes": 50,
+    "lat": 55.971,
+    "lng": 37.747,
+    "feat": "Деревня Сухарево Мытищинского округа."
+  },
+  {
+    "slug": "manyukhino",
+    "name": "Манюхино",
+    "parent": "mytishchi",
+    "minutes": 50,
+    "lat": 55.957,
+    "lng": 37.692,
+    "feat": "Деревня Манюхино Мытищинского округа."
+  },
+  {
+    "slug": "belyaninovo",
+    "name": "Беляниново",
+    "parent": "mytishchi",
+    "minutes": 50,
+    "lat": 55.948,
+    "lng": 37.696,
+    "feat": "Деревня Беляниново Мытищинского округа."
+  },
+  {
+    "slug": "borisovo-myt",
+    "name": "Борисово",
+    "parent": "mytishchi",
+    "minutes": 50,
+    "lat": 55.892,
+    "lng": 37.72,
+    "feat": "Деревня Борисово Мытищинского округа."
+  },
+  {
+    "slug": "viskovo",
+    "name": "Высково",
+    "parent": "mytishchi",
+    "minutes": 50,
+    "lat": 55.94,
+    "lng": 37.7,
+    "feat": "Деревня Высково Мытищинского округа."
+  },
+  {
+    "slug": "chyolkovo-push",
+    "name": "Челюскинский",
+    "parent": "pushkino",
+    "minutes": 65,
+    "lat": 56.038,
+    "lng": 37.872,
+    "feat": "Посёлок Челюскинский Пушкинского округа."
+  },
+  {
+    "slug": "kuzminki-push",
+    "name": "Тарасовка",
+    "parent": "pushkino",
+    "minutes": 65,
+    "lat": 55.999,
+    "lng": 37.873,
+    "feat": "Посёлок Тарасовка Пушкинского округа."
+  },
+  {
+    "slug": "klyazma-push",
+    "name": "Клязьма",
+    "parent": "pushkino",
+    "minutes": 65,
+    "lat": 55.984,
+    "lng": 37.866,
+    "feat": "Посёлок Клязьма Пушкинского округа."
+  },
+  {
+    "slug": "chersnoye",
+    "name": "Черкизово",
+    "parent": "pushkino",
+    "minutes": 65,
+    "lat": 55.993,
+    "lng": 37.917,
+    "feat": "Посёлок Черкизово Пушкинского округа."
+  },
+  {
+    "slug": "medvezhi-ozyora",
+    "name": "Медвежьи Озёра",
+    "parent": "shchyolkovo",
+    "minutes": 65,
+    "lat": 55.876,
+    "lng": 37.946,
+    "feat": "Деревня Медвежьи Озёра Щёлковского округа."
+  },
+  {
+    "slug": "anisimovo",
+    "name": "Анисимово",
+    "parent": "shchyolkovo",
+    "minutes": 65,
+    "lat": 55.886,
+    "lng": 38.03,
+    "feat": "Деревня Анисимово Щёлковского округа."
+  },
+  {
+    "slug": "butovskoye-shch",
+    "name": "Биокомбинат",
+    "parent": "shchyolkovo",
+    "minutes": 75,
+    "lat": 55.89,
+    "lng": 38.182,
+    "feat": "Посёлок Биокомбинат Щёлковского округа."
+  },
+  {
+    "slug": "sukmanihha",
+    "name": "Сукманиха",
+    "parent": "shchyolkovo",
+    "minutes": 75,
+    "lat": 55.921,
+    "lng": 38.024,
+    "feat": "Деревня Сукманиха Щёлковского округа."
+  },
+  {
+    "slug": "kotelino",
+    "name": "Котельниково",
+    "parent": "kashira",
+    "minutes": 105,
+    "lat": 54.823,
+    "lng": 38.116,
+    "feat": "Деревня Котельниково Каширского округа."
+  },
+  {
+    "slug": "krutyshki",
+    "name": "Крутышки",
+    "parent": "kashira",
+    "minutes": 110,
+    "lat": 54.781,
+    "lng": 38.062,
+    "feat": "Деревня Крутышки Каширского округа."
+  },
+  {
+    "slug": "voskresensk-pos",
+    "name": "Конобеево",
+    "parent": "voskresensk",
+    "minutes": 85,
+    "lat": 55.353,
+    "lng": 38.612,
+    "feat": "Посёлок Конобеево Воскресенского округа."
+  },
+  {
+    "slug": "lopatinsky",
+    "name": "Лопатинский",
+    "parent": "voskresensk",
+    "minutes": 85,
+    "lat": 55.395,
+    "lng": 38.566,
+    "feat": "Посёлок Лопатинский Воскресенского округа."
+  },
+  {
+    "slug": "smenovsky",
+    "name": "Смена",
+    "parent": "sergiev-posad",
+    "minutes": 100,
+    "lat": 56.299,
+    "lng": 38.13,
+    "feat": "Посёлок Смена Сергиево-Посадского округа."
+  },
+  {
+    "slug": "velmino",
+    "name": "Велмино",
+    "parent": "sergiev-posad",
+    "minutes": 110,
+    "lat": 56.397,
+    "lng": 38.262,
+    "feat": "Деревня Велмино Сергиево-Посадского округа."
+  },
+  {
+    "slug": "selikhovo",
+    "name": "Селихово",
+    "parent": "sergiev-posad",
+    "minutes": 110,
+    "lat": 56.346,
+    "lng": 38.18,
+    "feat": "Деревня Селихово Сергиево-Посадского округа."
+  },
+  {
+    "slug": "pochkino",
+    "name": "Почкино",
+    "parent": "taldom",
+    "minutes": 135,
+    "lat": 56.731,
+    "lng": 37.582,
+    "feat": "Деревня Почкино Талдомского округа."
+  },
+  {
+    "slug": "konyaytsevo",
+    "name": "Кончино",
+    "parent": "taldom",
+    "minutes": 135,
+    "lat": 56.737,
+    "lng": 37.561,
+    "feat": "Деревня в Талдомском округе."
+  },
+  {
+    "slug": "gazoprovodsk-2",
+    "name": "Газопроводск-2",
+    "parent": "luhovicy",
+    "minutes": 120,
+    "lat": 54.972,
+    "lng": 39.121,
+    "feat": "Микрорайон Газопроводск Луховицкого округа."
+  },
+  {
+    "slug": "alpatevo-2",
+    "name": "Алпатьево",
+    "parent": "luhovicy",
+    "minutes": 120,
+    "lat": 54.929,
+    "lng": 39.09,
+    "feat": "Село Алпатьево Луховицкого округа."
+  },
+  {
+    "slug": "chapaevka",
+    "name": "Чапаевка",
+    "parent": "kubinka",
+    "minutes": 85,
+    "lat": 55.586,
+    "lng": 36.685,
+    "feat": "Посёлок Чапаевка в Кубинке."
+  },
+  {
+    "slug": "dyutkovo",
+    "name": "Дютьково",
+    "parent": "kubinka",
+    "minutes": 85,
+    "lat": 55.713,
+    "lng": 36.711,
+    "feat": "Деревня Дютьково в составе Одинцовского округа."
+  },
+  {
+    "slug": "verkhneye-baykovo",
+    "name": "Авдеево",
+    "parent": "zarajsk",
+    "minutes": 120,
+    "lat": 54.802,
+    "lng": 38.882,
+    "feat": "Деревня Авдеево Зарайского округа."
+  },
+  {
+    "slug": "savvinskoye",
+    "name": "Саввинское",
+    "parent": "zvenigorod",
+    "minutes": 75,
+    "lat": 55.745,
+    "lng": 36.83,
+    "feat": "Село Саввинское Звенигородского округа."
+  },
+  {
+    "slug": "karinskoe-zven",
+    "name": "Каринское",
+    "parent": "zvenigorod",
+    "minutes": 75,
+    "lat": 55.703,
+    "lng": 36.755,
+    "feat": "Село Каринское Звенигородского округа."
+  },
+  {
+    "slug": "kraskovo-gol",
+    "name": "Полушкино",
+    "parent": "golicino",
+    "minutes": 65,
+    "lat": 55.587,
+    "lng": 36.872,
+    "feat": "Деревня Полушкино в Одинцовском округе."
+  },
+  {
+    "slug": "nudol",
+    "name": "Нудоль",
+    "parent": "vysokovsk",
+    "minutes": 110,
+    "lat": 56.121,
+    "lng": 36.566,
+    "feat": "Деревня Нудоль Клинского округа."
+  },
+  {
+    "slug": "oktyabrskij-eu",
+    "name": "Октябрьский",
+    "parent": "luhovicy",
+    "minutes": 115,
+    "lat": 54.876,
+    "lng": 39.061,
+    "feat": "Посёлок Октябрьский Луховицкого округа."
+  },
+  {
+    "slug": "glafirovo",
+    "name": "Глафирово",
+    "parent": "losino-petrovskij",
+    "minutes": 75,
+    "lat": 55.892,
+    "lng": 38.181,
+    "feat": "Деревня в составе Лосино-Петровского округа."
+  },
+  {
+    "slug": "vyrnyaevo",
+    "name": "Воровского-2",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.808,
+    "lng": 38.231,
+    "feat": "Посёлок в составе Богородского округа."
+  },
+  {
+    "slug": "chyornogolovka-makar",
+    "name": "Доронино",
+    "parent": "chernogolovka",
+    "minutes": 90,
+    "lat": 56.041,
+    "lng": 38.371,
+    "feat": "Деревня Доронино в Черноголовском округе."
+  },
+  {
+    "slug": "karpovskaya",
+    "name": "Карповская",
+    "parent": "orekhovo-zuevo",
+    "minutes": 105,
+    "lat": 55.799,
+    "lng": 38.87,
+    "feat": "Деревня в Орехово-Зуевском округе."
+  },
+  {
+    "slug": "kuzmino-oz",
+    "name": "Кузьмино",
+    "parent": "orekhovo-zuevo",
+    "minutes": 105,
+    "lat": 55.747,
+    "lng": 38.94,
+    "feat": "Деревня Кузьмино Орехово-Зуевского округа."
+  },
+  {
+    "slug": "kabanovo-oz",
+    "name": "Кабаново",
+    "parent": "orekhovo-zuevo",
+    "minutes": 105,
+    "lat": 55.679,
+    "lng": 38.948,
+    "feat": "Деревня Кабаново Орехово-Зуевского округа."
+  },
+  {
+    "slug": "butakovo",
+    "name": "Бутаково",
+    "parent": "himki",
+    "minutes": 25,
+    "lat": 55.892,
+    "lng": 37.397,
+    "feat": "Микрорайон Бутаково в Химках, у Ленинградского шоссе."
+  },
+  {
+    "slug": "kim-himki",
+    "name": "Лунёво",
+    "parent": "himki",
+    "minutes": 40,
+    "lat": 56.027,
+    "lng": 37.413,
+    "feat": "Деревня Лунёво в составе Химкинского округа."
+  },
+  {
+    "slug": "sherbinki",
+    "name": "Юрлово",
+    "parent": "himki",
+    "minutes": 40,
+    "lat": 55.982,
+    "lng": 37.345,
+    "feat": "Деревня Юрлово в составе Химкинского округа."
+  },
+  {
+    "slug": "chernoye",
+    "name": "Чёрное",
+    "parent": "balashiha",
+    "minutes": 50,
+    "lat": 55.76,
+    "lng": 38.116,
+    "feat": "Посёлок Чёрное Балашихинского округа."
+  },
+  {
+    "slug": "agroshkola",
+    "name": "Агрогородок",
+    "parent": "balashiha",
+    "minutes": 55,
+    "lat": 55.756,
+    "lng": 38.025,
+    "feat": "Микрорайон Агрогородок Балашихинского округа."
+  },
+  {
+    "slug": "belousovo-istra",
+    "name": "Лучинское",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 55.926,
+    "lng": 36.846,
+    "feat": "Село Лучинское Истринского округа."
+  },
+  {
+    "slug": "kostrovo-istra",
+    "name": "Костровo",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 55.998,
+    "lng": 36.911,
+    "feat": "Деревня Костровo Истринского округа."
+  },
+  {
+    "slug": "kosherovo",
+    "name": "Кошерово",
+    "parent": "ramenskoe",
+    "minutes": 75,
+    "lat": 55.5,
+    "lng": 38.29,
+    "feat": "Деревня Кошерово Раменского округа."
+  },
+  {
+    "slug": "borodino-ramen",
+    "name": "Бояркино",
+    "parent": "ramenskoe",
+    "minutes": 80,
+    "lat": 55.484,
+    "lng": 38.51,
+    "feat": "Село Бояркино Раменского округа."
+  },
+  {
+    "slug": "selivanikha",
+    "name": "Селиваниха",
+    "parent": "ramenskoe",
+    "minutes": 75,
+    "lat": 55.475,
+    "lng": 38.353,
+    "feat": "Деревня Селиваниха Раменского округа."
+  },
+  {
+    "slug": "shkapovo",
+    "name": "Шкапово",
+    "parent": "ramenskoe",
+    "minutes": 75,
+    "lat": 55.484,
+    "lng": 38.305,
+    "feat": "Деревня Шкапово Раменского округа."
+  },
+  {
+    "slug": "safonovo-ramen",
+    "name": "Сафоново",
+    "parent": "ramenskoe",
+    "minutes": 80,
+    "lat": 55.42,
+    "lng": 38.376,
+    "feat": "Село Сафоново Раменского округа."
+  },
+  {
+    "slug": "ostrovicy",
+    "name": "Островицы",
+    "parent": "ramenskoe",
+    "minutes": 65,
+    "lat": 55.616,
+    "lng": 38.193,
+    "feat": "Деревня Островицы Раменского округа."
+  },
+  {
+    "slug": "shaganovo",
+    "name": "Шаганино",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.355,
+    "lng": 37.413,
+    "feat": "Деревня Шаганино Подольского округа."
+  },
+  {
+    "slug": "shchapovo",
+    "name": "Щапово",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.382,
+    "lng": 37.378,
+    "feat": "Село Щапово Подольского округа."
+  },
+  {
+    "slug": "plyaski",
+    "name": "Пляски",
+    "parent": "podolsk",
+    "minutes": 55,
+    "lat": 55.395,
+    "lng": 37.481,
+    "feat": "Деревня Пляски Подольского округа."
+  },
+  {
+    "slug": "gorki-leninskie",
+    "name": "Горки Ленинские",
+    "parent": "vidnoe",
+    "minutes": 50,
+    "lat": 55.512,
+    "lng": 37.703,
+    "feat": "Музей-заповедник Горки Ленинские, Ленинский округ."
+  },
+  {
+    "slug": "molokovo",
+    "name": "Молоково",
+    "parent": "vidnoe",
+    "minutes": 50,
+    "lat": 55.581,
+    "lng": 37.823,
+    "feat": "Село Молоково Ленинского округа."
+  },
+  {
+    "slug": "bitsa",
+    "name": "Битца",
+    "parent": "vidnoe",
+    "minutes": 45,
+    "lat": 55.547,
+    "lng": 37.586,
+    "feat": "Микрорайон Битца Ленинского округа."
+  },
+  {
+    "slug": "rastorguyevo",
+    "name": "Расторгуево",
+    "parent": "vidnoe",
+    "minutes": 50,
+    "lat": 55.575,
+    "lng": 37.717,
+    "feat": "Микрорайон Расторгуево Видного."
+  },
+  {
+    "slug": "vidnoe-kommun",
+    "name": "Видное-2",
+    "parent": "vidnoe",
+    "minutes": 50,
+    "lat": 55.557,
+    "lng": 37.7,
+    "feat": "Микрорайон Видное-2 Ленинского округа."
+  },
+  {
+    "slug": "silikatnaya-kot",
+    "name": "Силикатная",
+    "parent": "kotelniki",
+    "minutes": 50,
+    "lat": 55.652,
+    "lng": 37.871,
+    "feat": "Микрорайон Силикат города Котельники."
+  },
+  {
+    "slug": "belaya-dacha-2",
+    "name": "Ковровый",
+    "parent": "kotelniki",
+    "minutes": 50,
+    "lat": 55.668,
+    "lng": 37.871,
+    "feat": "Микрорайон Ковровый Котельников."
+  },
+  {
+    "slug": "petrovskoe-lyt",
+    "name": "Петровское",
+    "parent": "lytkarino",
+    "minutes": 60,
+    "lat": 55.553,
+    "lng": 37.892,
+    "feat": "Деревня Петровское Лыткаринского округа."
+  },
+  {
+    "slug": "vsevolodovo",
+    "name": "Всеволодово",
+    "parent": "elektrostal",
+    "minutes": 65,
+    "lat": 55.797,
+    "lng": 38.481,
+    "feat": "Деревня Всеволодово Электростальского округа."
+  },
+  {
+    "slug": "frjazevo",
+    "name": "Фрязево",
+    "parent": "elektrostal",
+    "minutes": 65,
+    "lat": 55.747,
+    "lng": 38.461,
+    "feat": "Посёлок Фрязево Электростальского округа."
+  },
+  {
+    "slug": "verejka",
+    "name": "Верейка",
+    "parent": "orekhovo-zuevo",
+    "minutes": 100,
+    "lat": 55.815,
+    "lng": 39.012,
+    "feat": "Деревня Верейка Орехово-Зуевского округа."
+  },
+  {
+    "slug": "butyrki",
+    "name": "Бутурлино",
+    "parent": "serpuhov",
+    "minutes": 85,
+    "lat": 54.945,
+    "lng": 37.435,
+    "feat": "Деревня Бутурлино Серпуховского округа."
+  },
+  {
+    "slug": "vasilevskoe",
+    "name": "Васильевское",
+    "parent": "serpuhov",
+    "minutes": 85,
+    "lat": 54.952,
+    "lng": 37.503,
+    "feat": "Деревня Васильевское Серпуховского округа."
+  },
+  {
+    "slug": "ostrovsky",
+    "name": "Островский",
+    "parent": "ramenskoe",
+    "minutes": 65,
+    "lat": 55.595,
+    "lng": 38.19,
+    "feat": "Микрорайон Островский Жуковского."
+  },
+  {
+    "slug": "ivanteevka-pl",
+    "name": "Алтуфьево-Ив",
+    "parent": "ivanteevka",
+    "minutes": 60,
+    "lat": 55.987,
+    "lng": 37.92,
+    "feat": "Микрорайон в Ивантеевке."
+  },
+  {
+    "slug": "frjazino-park",
+    "name": "Лесной",
+    "parent": "fryazino",
+    "minutes": 70,
+    "lat": 55.952,
+    "lng": 38.039,
+    "feat": "Микрорайон Лесной Фрязино."
+  },
+  {
+    "slug": "sheremetyevsky-dolgo",
+    "name": "Старбеево",
+    "parent": "dolgoprudnyj",
+    "minutes": 35,
+    "lat": 55.953,
+    "lng": 37.469,
+    "feat": "Микрорайон Долгопрудного граничит со Старбеево."
+  },
+  {
+    "slug": "savelyevo",
+    "name": "Савельево",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 55.88,
+    "lng": 36.967,
+    "feat": "Деревня Савельево Истринского округа."
+  },
+  {
+    "slug": "otrada-istra",
+    "name": "Отрада",
+    "parent": "istra",
+    "minutes": 80,
+    "lat": 55.917,
+    "lng": 36.949,
+    "feat": "Деревня Отрада Истринского округа."
+  },
+  {
+    "slug": "melyukovo",
+    "name": "Мелюково",
+    "parent": "dmitrov",
+    "minutes": 85,
+    "lat": 56.297,
+    "lng": 37.402,
+    "feat": "Деревня Мелюково Дмитровского округа."
+  },
+  {
+    "slug": "udino",
+    "name": "Удино",
+    "parent": "dmitrov",
+    "minutes": 80,
+    "lat": 56.27,
+    "lng": 37.435,
+    "feat": "Деревня Удино Дмитровского округа."
+  },
+  {
+    "slug": "shchapovo-ch",
+    "name": "Чепелёво",
+    "parent": "chekhov",
+    "minutes": 80,
+    "lat": 55.11,
+    "lng": 37.484,
+    "feat": "Деревня Чепелёво Чеховского округа."
+  },
+  {
+    "slug": "znamya-truda",
+    "name": "Знамя Труда",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.844,
+    "lng": 38.503,
+    "feat": "Посёлок Знамя Труда Богородского округа."
+  },
+  {
+    "slug": "isakovo-nog",
+    "name": "Исаково",
+    "parent": "noginsk",
+    "minutes": 70,
+    "lat": 55.886,
+    "lng": 38.56,
+    "feat": "Деревня Исаково Богородского округа."
+  },
+  {
+    "slug": "kuvshinovo",
+    "name": "Кувшиново",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.879,
+    "lng": 38.516,
+    "feat": "Деревня Кувшиново Богородского округа."
+  },
+  {
+    "slug": "voskresenskoye-nog",
+    "name": "Воскресенское",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.819,
+    "lng": 38.413,
+    "feat": "Село Воскресенское Богородского округа."
+  },
+  {
+    "slug": "selyatino-2",
+    "name": "Селятино-2",
+    "parent": "naro-fominsk",
+    "minutes": 75,
+    "lat": 55.501,
+    "lng": 37.012,
+    "feat": "Микрорайон Селятино-2 Наро-Фоминского округа."
+  },
+  {
+    "slug": "kievsky-naro",
+    "name": "Киевский",
+    "parent": "naro-fominsk",
+    "minutes": 80,
+    "lat": 55.553,
+    "lng": 36.94,
+    "feat": "Посёлок Киевский Наро-Фоминского округа."
+  },
+  {
+    "slug": "voronovo-naro",
+    "name": "Вороново",
+    "parent": "naro-fominsk",
+    "minutes": 80,
+    "lat": 55.336,
+    "lng": 37.158,
+    "feat": "Село Вороново Наро-Фоминского округа."
+  },
+  {
+    "slug": "zosima-pustyn",
+    "name": "Зосимова Пустынь",
+    "parent": "naro-fominsk",
+    "minutes": 85,
+    "lat": 55.397,
+    "lng": 36.64,
+    "feat": "Посёлок Зосимова Пустынь Наро-Фоминского округа."
+  },
+  {
+    "slug": "opalikha-2",
+    "name": "Опалиха-Лесная",
+    "parent": "krasnogorsk",
+    "minutes": 40,
+    "lat": 55.837,
+    "lng": 37.245,
+    "feat": "Микрорайон Опалиха-Лесная Красногорска."
+  },
+  {
+    "slug": "krasnogorsk-skvoznik",
+    "name": "Сквозник",
+    "parent": "krasnogorsk",
+    "minutes": 40,
+    "lat": 55.834,
+    "lng": 37.302,
+    "feat": "Микрорайон Сквозник Красногорска."
+  },
+  {
+    "slug": "viktorovka",
+    "name": "Викторовка",
+    "parent": "voskresensk",
+    "minutes": 85,
+    "lat": 55.319,
+    "lng": 38.659,
+    "feat": "Посёлок Викторовка Воскресенского округа."
+  },
+  {
+    "slug": "krasnaya-pojma",
+    "name": "Красная Пойма",
+    "parent": "luhovicy",
+    "minutes": 120,
+    "lat": 54.946,
+    "lng": 39.073,
+    "feat": "Деревня Красная Пойма Луховицкого округа."
+  },
+  {
+    "slug": "povarovo-oz",
+    "name": "Поваровка",
+    "parent": "orekhovo-zuevo",
+    "minutes": 105,
+    "lat": 55.76,
+    "lng": 38.875,
+    "feat": "Деревня Поваровка Орехово-Зуевского округа."
+  },
+  {
+    "slug": "tarutino",
+    "name": "Тарутино",
+    "parent": "serpuhov",
+    "minutes": 85,
+    "lat": 55.005,
+    "lng": 37.041,
+    "feat": "Село Тарутино, известно сражением 1812 г."
+  },
+  {
+    "slug": "liopasnya",
+    "name": "Лопасня",
+    "parent": "chekhov",
+    "minutes": 75,
+    "lat": 55.155,
+    "lng": 37.467,
+    "feat": "Историческое название района Лопасня в Чехове."
+  },
+  {
+    "slug": "semenovskoye",
+    "name": "Семеновское",
+    "parent": "stupino",
+    "minutes": 95,
+    "lat": 54.901,
+    "lng": 38.117,
+    "feat": "Село Семеновское Ступинского округа."
+  },
+  {
+    "slug": "yamovino",
+    "name": "Ямовино",
+    "parent": "stupino",
+    "minutes": 95,
+    "lat": 54.945,
+    "lng": 38.124,
+    "feat": "Деревня Ямовино Ступинского округа."
+  },
+  {
+    "slug": "chashnikovo",
+    "name": "Чашниково",
+    "parent": "himki",
+    "minutes": 40,
+    "lat": 56.012,
+    "lng": 37.401,
+    "feat": "Деревня Чашниково в Химкинском округе."
+  },
+  {
+    "slug": "vashutino",
+    "name": "Вашутино",
+    "parent": "himki",
+    "minutes": 35,
+    "lat": 55.965,
+    "lng": 37.42,
+    "feat": "Деревня Вашутино в Химкинском округе."
+  },
+  {
+    "slug": "reutov-cherkizovo",
+    "name": "Реутов-2",
+    "parent": "reutov",
+    "minutes": 40,
+    "lat": 55.762,
+    "lng": 37.881,
+    "feat": "Микрорайон Реутов-2."
+  },
+  {
+    "slug": "reutov-fabrika",
+    "name": "Фабрика",
+    "parent": "reutov",
+    "minutes": 40,
+    "lat": 55.755,
+    "lng": 37.858,
+    "feat": "Микрорайон Фабрика в Реутове."
+  },
+  {
+    "slug": "ostrovtsy-dzer",
+    "name": "Остров",
+    "parent": "dzerzhinskij",
+    "minutes": 45,
+    "lat": 55.61,
+    "lng": 37.882,
+    "feat": "Микрорайон Остров Дзержинского."
+  },
+  {
+    "slug": "zhukovsky-2",
+    "name": "Жуковский-2",
+    "parent": "zhukovskij",
+    "minutes": 55,
+    "lat": 55.595,
+    "lng": 38.119,
+    "feat": "Микрорайон Жуковский-2."
+  },
+  {
+    "slug": "zhukov-ostrovsky",
+    "name": "Островский",
+    "parent": "zhukovskij",
+    "minutes": 55,
+    "lat": 55.587,
+    "lng": 38.157,
+    "feat": "Микрорайон Островский в Жуковском."
+  },
+  {
+    "slug": "bronnicy-mark",
+    "name": "Марьинка",
+    "parent": "bronnicy",
+    "minutes": 75,
+    "lat": 55.418,
+    "lng": 38.247,
+    "feat": "Деревня Марьинка Бронницкого округа."
+  },
+  {
+    "slug": "vohna-eu",
+    "name": "Вохна",
+    "parent": "elektrostal",
+    "minutes": 70,
+    "lat": 55.811,
+    "lng": 38.547,
+    "feat": "Деревня Вохна в Электростальском округе."
+  },
+  {
+    "slug": "davydovo-oz",
+    "name": "Давыдово-2",
+    "parent": "orekhovo-zuevo",
+    "minutes": 105,
+    "lat": 55.704,
+    "lng": 38.886,
+    "feat": "Микрорайон Давыдово-2 Орехово-Зуевского округа."
+  },
+  {
+    "slug": "sergiev-posad-novaya",
+    "name": "Новое Гришино",
+    "parent": "sergiev-posad",
+    "minutes": 110,
+    "lat": 56.31,
+    "lng": 38.241,
+    "feat": "Село Новое Гришино Сергиево-Посадского округа."
+  },
+  {
+    "slug": "buzhanino-2",
+    "name": "Бужаниново-2",
+    "parent": "sergiev-posad",
+    "minutes": 110,
+    "lat": 56.353,
+    "lng": 38.31,
+    "feat": "Микрорайон Сергиево-Посадского округа."
+  },
+  {
+    "slug": "silikat-shatura",
+    "name": "Силикатный",
+    "parent": "shatura",
+    "minutes": 130,
+    "lat": 55.587,
+    "lng": 39.587,
+    "feat": "Посёлок Силикатный Шатурского округа."
+  },
+  {
+    "slug": "sverdlovsky-2",
+    "name": "Свердловский-2",
+    "parent": "losino-petrovskij",
+    "minutes": 75,
+    "lat": 55.892,
+    "lng": 38.144,
+    "feat": "Микрорайон Свердловский-2 Лосино-Петровского округа."
+  },
+  {
+    "slug": "glukhovo-bog",
+    "name": "Глухово",
+    "parent": "noginsk",
+    "minutes": 65,
+    "lat": 55.802,
+    "lng": 38.451,
+    "feat": "Микрорайон Глухово в Ногинске."
+  },
+  {
+    "slug": "verkhneye-bunkovo",
+    "name": "Большое Буньково",
+    "parent": "noginsk",
+    "minutes": 70,
+    "lat": 55.882,
+    "lng": 38.502,
+    "feat": "Посёлок Большое Буньково Богородского округа."
+  },
+  {
+    "slug": "istra-svobodnaya",
+    "name": "Социалистическая",
+    "parent": "istra",
+    "minutes": 75,
+    "lat": 55.91,
+    "lng": 36.864,
+    "feat": "Микрорайон в составе округа Истра."
+  },
+  {
+    "slug": "vodniki",
+    "name": "Водники",
+    "parent": "dolgoprudnyj",
+    "minutes": 35,
+    "lat": 55.918,
+    "lng": 37.527,
+    "feat": "Микрорайон Водники Долгопрудного."
+  },
+  {
+    "slug": "selyatino-3",
+    "name": "Селятино-Лесная",
+    "parent": "naro-fominsk",
+    "minutes": 75,
+    "lat": 55.508,
+    "lng": 37.024,
+    "feat": "Микрорайон Селятино-Лесная Наро-Фоминского округа."
+  },
+  {
+    "slug": "alabino-2",
+    "name": "Алабино-Учебный",
+    "parent": "naro-fominsk",
+    "minutes": 85,
+    "lat": 55.448,
+    "lng": 36.881,
+    "feat": "Микрорайон Алабино-Учебный Наро-Фоминского округа."
+  }
+]
