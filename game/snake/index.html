@@ -68,7 +68,7 @@
   const ctx = c.getContext('2d');
   const GRID = 20;
   const CELL = c.width / GRID;
-  let snake, dir, next, food, score, high, over, paused, tickId;
+  let snake, dir, next, food, score, high, over, paused, tickId, started;
 
   high = parseInt(localStorage.getItem('snake_high') || '0', 10);
   document.getElementById('highScore').textContent = high;
@@ -81,10 +81,12 @@
     score = 0;
     over = false;
     paused = false;
+    started = false;
     document.getElementById('score').textContent = '0';
     document.getElementById('pauseBtn').textContent = 'Пауза';
     placeFood();
-    tickId = setInterval(loop, 110);
+    const speed = (new URLSearchParams(location.search).get('speed')) || '140';
+    tickId = setInterval(loop, parseInt(speed, 10));
     draw();
   }
 
@@ -100,7 +102,7 @@
   function loop(){ update(); draw(); }
 
   function update(){
-    if (over || paused) return;
+    if (over || paused || !started) return;
     dir = {...next};
     const h = snake[0];
     const nh = {x:h.x+dir.x, y:h.y+dir.y};
@@ -168,14 +170,26 @@
       ctx.textAlign = 'center';
       ctx.font = 'bold 44px Arial';
       ctx.fillText('Пауза', c.width/2, c.height/2);
+    } else if (!started){
+      ctx.fillStyle = 'rgba(0,0,0,0.55)';
+      ctx.fillRect(0,0,c.width,c.height);
+      ctx.fillStyle = '#fff';
+      ctx.textAlign = 'center';
+      ctx.font = 'bold 30px Arial';
+      ctx.fillText('Нажмите стрелку', c.width/2, c.height/2 - 14);
+      ctx.font = '18px Arial';
+      ctx.fillStyle = '#b8b8d8';
+      ctx.fillText('или свайп — чтобы начать', c.width/2, c.height/2 + 18);
     }
   }
 
   function turn(d){
+    if (over) return;
     if (d==='up'    && dir.y!== 1) next = {x:0,y:-1};
     if (d==='down'  && dir.y!==-1) next = {x:0,y: 1};
     if (d==='left'  && dir.x!== 1) next = {x:-1,y:0};
     if (d==='right' && dir.x!==-1) next = {x: 1,y:0};
+    if (!started) { started = true; draw(); }
   }
 
   document.addEventListener('keydown', (e) => {
@@ -205,6 +219,7 @@
   c.addEventListener('touchend', (e) => {
     const t=e.changedTouches[0];
     const dx=t.clientX-tx, dy=t.clientY-ty;
+    if (Math.abs(dx) < 18 && Math.abs(dy) < 18) return;
     if (Math.abs(dx) > Math.abs(dy)) turn(dx>0?'right':'left');
     else turn(dy>0?'down':'up');
   });
